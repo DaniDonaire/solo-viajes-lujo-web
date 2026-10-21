@@ -147,10 +147,10 @@ include ("include/execute_sql.php");
 				<div class="col-md-9">
 				
 					<?php
-					$sql_ofertas_exclusivas = sql_ofertas_exclusivas($id);
+					$sql_ofertas_exclusivas = sql_ofertas_exclusivas();
 					$result_sql_ofertas_exclusivas = execute_sql($sql_ofertas_exclusivas);
 					while($RS = mysqli_fetch_array($result_sql_ofertas_exclusivas)) {
-							$id_lanzamiento = $RS[id_lanzamiento];
+							$id_lanzamiento = $RS['id_lanzamiento'];
 							$id_viaje = $RS["id_news"];
 							$titulo = $RS["titulo"];
 							$imagen = $RS["imagen"];

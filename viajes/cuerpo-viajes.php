@@ -13,11 +13,11 @@ $result_sql_destino = execute_sql($sql_destino);
 
 $RS = mysqli_fetch_array($result_sql_destino);
 if($RS){
-	$imagen_destino = $RS[imagen_destino];
-	$nombre_pagina_pais = $RS[nombre_pagina_pais];
-	$nombre_pais = $RS[nombre_pais];
-	$destino = $RS[destino];
-	$id_pais = $RS[id_pais];
+	$imagen_destino = $RS['imagen_destino'];
+	$nombre_pagina_pais = $RS['nombre_pagina_pais'];
+	$nombre_pais = $RS['nombre_pais'];
+	$destino = $RS['destino'];
+	$id_pais = $RS['id_pais'];
 }
 
 ?>
@@ -257,7 +257,7 @@ if($RS){
 			$sql_viajes = sql_viajes($id);
 			$result_sql_viajes = execute_sql($sql_viajes);
 			while($RS = mysqli_fetch_array($result_sql_viajes)) {
-					$id_lanzamiento = $RS[id_lanzamiento];
+					$id_lanzamiento = $RS['id_lanzamiento'];
 					$id_viaje = $RS["id_news"];
 					$titulo = $RS["titulo"];
 					$imagen = $RS["imagen"];
