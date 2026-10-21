@@ -1,0 +1,559 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<title>Cumplimentar su ficha de pasajeros</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<script language="JavaScript" src="../calendario/CalendarPopup.js" type="text/javascript"></script>
+		<script language="JavaScript" type="text/javascript">
+			function getElement(n) {
+				if(document.getElementById)
+					return document.getElementById(n);
+				if(document.all)
+					return document.all[n];
+				if(document.layers)
+					return document.layers[n];
+			}
+			function ajouterPasajero(n) {
+				nextId = n + 1;
+				div = getElement("additional" + nextId);
+				div.style.display = "inline";
+				l = getElement("linkadd" + n);
+				l.style.display = "none";
+				l = getElement("linkadd" + nextId);
+				if(l)
+					l.style.display = "inline";
+			}
+			function copiarDireccion(f,n) {
+				f.elements["pasajero" + n + "_telefono"].value = f.elements["pasajero1_telefono"].value;
+				f.elements["pasajero" + n + "_mobile"].value = f.elements["pasajero1_mobile"].value;
+				f.elements["pasajero" + n + "_fax"].value = f.elements["pasajero1_fax"].value;
+				f.elements["pasajero" + n + "_email"].value = f.elements["pasajero1_email"].value;
+			}
+			var dateRegEx = /^((((0?[1-9]|[12]\d|3[01])[\.\-\/](0?[13578]|1[02])[\.\-\/]((1[6-9]|[2-9]\d)?\d{2}))|((0?[1-9]|[12]\d|30)[\.\-\/](0?[13456789]|1[012])[\.\-\/]((1[6-9]|[2-9]\d)?\d{2}))|((0?[1-9]|1\d|2[0-8])[\.\-\/]0?2[\.\-\/]((1[6-9]|[2-9]\d)?\d{2}))|(29[\.\-\/]0?2[\.\-\/]((1[6-9]|[2-9]\d)?(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00)|00)))|(((0[1-9]|[12]\d|3[01])(0[13578]|1[02])((1[6-9]|[2-9]\d)?\d{2}))|((0[1-9]|[12]\d|30)(0[13456789]|1[012])((1[6-9]|[2-9]\d)?\d{2}))|((0[1-9]|1\d|2[0-8])02((1[6-9]|[2-9]\d)?\d{2}))|(2902((1[6-9]|[2-9]\d)?(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00)|00))))$/;
+			function isValidDate(d) {
+				return d.match(dateRegEx);
+			}
+			function error(message) {
+				alert(message);
+				return false;
+			}
+			function validateForm(f) {
+				if(f.envoi_nombre.value == "") {
+					f.envoi_nombre.focus();
+					return error("Por favor introducir el nombre donde quiere que le remitamos el billete.");
+				}
+				if(f.envoi_direccion.value == "") {
+					f.envoi_direccion.focus();
+					return error("Por favor introducir la direccion donde quiere que le remitamos el billete.");
+				}
+				if(f.envoi_zip.value == "") {
+					f.envoi_zip.focus();
+					return error("Por favor introducir el codigo postal donde quiere que le remitamos el billete.");
+				}
+				if(f.envoi_ciudad.value == "") {
+					f.envoi_ciudad.focus();
+					return error("Por favor introducir la ciudad donde quiere que le remitamos el billete.");
+				}
+				for(var i = 1; i <= $tot_pass; i++) {
+					prefix = "pasajero" + i + "_";
+					if(f.elements[prefix + "nombre"].value == "") {
+						f.elements[prefix + "nombre"].focus();
+						return error("Por favor introducir el nombre del pasajero " + i + ".");
+					}
+					if(f.elements[prefix + "apellido"].value == "") {
+						f.elements[prefix + "apellido"].focus();
+						return error("Por favor introducir el apellido del pasajero " + i + ".");
+					}
+/*
+					if(f.elements[prefix + "nacionalidad"].selectedIndex == 0) {
+						f.elements[prefix + "nacionalidad"].focus();
+						return error("Por favor introducir la nacionalidad del pasajero " + i + ".");
+					}
+*/
+					if(f.elements[prefix + "lugar_nacimiento"].value == "") {
+						f.elements[prefix + "lugar_nacimiento"].focus();
+						return error("Por favor introducir el lugar de nacimiento del pasajero " + i + ".");
+					}
+					if(!isValidDate(f.elements[prefix + "fecha_nacimiento"].value)) {
+						f.elements[prefix + "fecha_nacimiento"].focus();
+						return error("Por favor introducir la fecha de nacimiento del pasajero " + i + ".");
+					}
+/*
+					if(f.elements[prefix + "typo_doc"].selectedIndex == 0) {
+						f.elements[prefix + "typo_doc"].focus();
+						return error("Por favor introducir el pasaporte del pasajero " + i + ".");
+					}
+*/
+					if(f.elements[prefix + "numero_doc"].value == "") {
+						f.elements[prefix + "numero_doc"].focus();
+						return error("Por favor introducir el numero de pasaporte del pasajero " + i + ".");
+					}
+					var dateEmissionDoc = f.elements[prefix + "fecha_emission_doc"].value;
+					if(!isValidDate(dateEmissionDoc)) {
+						f.elements[prefix + "fecha_emission_doc"].focus();
+						return error("Por favor introducir la fecha de emision del pasaporte del pasajero " + i + ".");
+					}
+					if(f.elements[prefix + "lugar_emission_doc"].value == "") {
+						f.elements[prefix + "lugar_emission_doc"].focus();
+						return error("Por favor introducir el lugar de emision del pasaporte del pasajero " + i + ".");
+					}
+					var dateExpirationDoc = f.elements[prefix + "fecha_expiration_doc"].value;
+					if(!isValidDate(dateExpirationDoc)) {
+						f.elements[prefix + "fecha_expiration_doc"].focus();
+						return error("Por favor introducir la fecha de caducidad del pasaporte del pasajero " + i + ".");
+					}
+					if(f.elements[prefix + "telefono"].value == "") {
+						f.elements[prefix + "telefono"].focus();
+						return error("Por favor introducir el numero de telefono del pasajero " + i + ".");
+					}
+				}
+				return true;
+			}
+			var calendar = new CalendarPopup("calendardiv");
+			calendar.setCssPrefix("CALENDAR");
+			calendar.showYearNavigation();
+			calendar.showYearNavigationInput();
+		</script>
+		<STYLE TYPE="text/css">
+			<!--
+				body {font-family: "Times New Roman", serif; font-size: 10pt}
+				P { margin-bottom: 0cm; color: #000000; text-align: justify }
+				P.western { font-family: "Times New Roman", serif; font-size: 10pt; font-weight: bold }
+				P.cjk { font-family: "Times New Roman", serif; font-size: 10pt; font-weight: bold }
+				P.ctl { font-family: "Times New Roman", serif; font-size: 12pt; font-weight: bold }
+				H1 { margin-top: 0cm; margin-bottom: 0cm; color: #000000; text-align: left }
+				H1.western { font-family: "Times New Roman", serif; font-size: 12pt }
+				H1.cjk { font-family: "Times New Roman", serif; font-size: 12pt }
+				H1.ctl { font-family: "Times New Roman", serif; font-size: 12pt }
+				H3 { margin-top: 0cm; margin-bottom: 0cm; color: #000000; text-align: center }
+				H3.western { font-family: "Times New Roman", serif; font-size: 12pt; font-weight: medium }
+				H3.cjk { font-family: "Times New Roman", serif; font-size: 12pt; font-weight: medium }
+				H3.ctl { font-family: "Times New Roman", serif; font-size: 12pt; font-weight: medium }
+				H6 { margin-top: 0cm; margin-bottom: 0cm; color: #000000; text-align: left }
+				H6.western { font-family: "Times New Roman", serif; font-size: 22pt }
+				H6.cjk { font-family: "Times New Roman", serif; font-size: 22pt }
+				H6.ctl { font-family: "Times New Roman", serif; font-size: 10pt; font-weight: medium }
+			-->
+		</STYLE>
+		<link rel=stylesheet href="../calendario/CalendarStyle.css" type="text/css"/>
+	</head>
+	<body style="width:780px;margin:auto">
+		<div style="font-size:11pt;font-style:italic">
+			<span style="font-size: 20pt"><i>ENTRE3MUNDOS</i></span><br/>
+			Calle Rector Ubach 16,<br/>
+			Barcelona 08021<br/>
+			Teléfono : 93 362 13 51<br/>
+			Fax : 93 200 62 74<br/>
+			Web : www.entre3mundos.com<br/>
+			E-mail : info@entre3mundos.com
+		</div>
+		<p>&nbsp;</p>
+		<table width="100%" border="1" bordercolor="#000000" cellpadding="5" cellspacing="0" style="font-size:11pt;font-weight:bold">
+			<tr valign="top">
+				<td width="254">Compa&ntilde;&iacute;a</td>
+				<td>$compania</td>
+			</tr>
+			<tr valign="top">
+				<td>Naviera</td>
+				<td>$buque</td>
+			</tr>
+			<tr valign="top">
+				<td>Fecha de salida</td>
+				<td>$comenzando_fecha</td>
+			</tr>
+			<tr valign="top">
+				<td>Categor&iacute;a Hotel</td>
+				<td>$tarifas_nombre</td>
+			</tr>
+			<tr valign="top">
+				<td>N&uacute;mero dossier</td>
+				<td>$ref_dossier</td>
+			</tr>
+		</table>
+		<br/>
+		<h3 class="western" align="center">
+			<b><u>FICHA DE IDENTIDAD</u></b>
+		</h3>
+		<p align="center"><font face="Arial,sans-serif" size="2"><b>Debe de ir acompa&ntilde;ada de una fotocopia del pasaporte de cada pasajero.</b></font></p>
+		<ul>
+			<li>
+				<p class="western" align="justify">
+					<font color="#000000" style="font-size: 9pt"><u>Ni&ntilde;os menores</u> - Es recomendable que vayan provistos de su propio pasaporte y en su defecto figurar en el de sus padres. Un menor que viaje sin sus padres deber&aacute; de poseer autorizaci&oacute;n oficial pertinente.</font>
+				</p>
+			</li>
+			<li>
+				<p class="western" align="justify">
+					<font color="#000000" style="font-size: 9pt">Pasaporte formalidades - Los residentes de nacionalidad espa&ntilde;ola deber&aacute;n poseer un pasaporte v&aacute;lido para todos los pa&iacute;ses de escala del viaje. Es responsabilidad del pasajero tramitar los visados necesarios.</font>
+				</p>
+			</li>
+			<li>
+				<p class="western" align="justify">
+					<font color="#000000" style="font-size: 9pt"><u>Les pasajeros de nacionalidad extranjera deber&aacute;n estar en regla con todas las formalidades de polic&iacute;a y aduana de los pa&iacute;ses que se visitan, tomando contacto con los consulados pertinentes</u>.</font>
+				</p>
+			</li>
+		</ul>
+		<p class="western" align="justify"><u>Si se incumpliera alguno de estos puntos, Usted no podr&aacute; embarcar ni pretender reembolso alguno y/o indemnizaci&oacute;n, y en ning&uacute;n caso Grupo Global MPS Viajes y Cruceros S.L. (Worldcruceros) asumir&aacute; ning&uacute;n tipo de responsabilidad</u></p>
+		<form action="memoriser.php" method="post" onsubmit="return validateForm(this)">
+			<input type="hidden" name="id_rand" value="$id_rand"/>
+			<table width=100% border=1 bordercolor="#000000" cellpadding=5 cellspacing=0>
+				<tr>
+					<td colspan=2 width=100% valign="top">
+						<font color="#000000" face="Arial,sans-serif" size=4><b>Importante:</b>&nbsp;<font size=3><b>Direcci&oacute;n para enviar los billetes</b></font></font>
+					</td>
+				</tr>
+				<tr valign="top">
+					<td width=129 nowrap>
+						<font face="Arial, sans-serif" size=2 style="font-size: 11pt"><b>Mr / Miss&nbsp;:</b></font>
+					</td>
+					<td>
+						<input type="text" name="envoi_nombre" size="40" maxlength="50"/>
+					</td>
+				</tr>
+				<tr valign="top">
+					<td nowrap>
+						<font face="Arial, sans-serif" size=2 style="font-size: 11pt"><b>Direccion&nbsp;:</b></font>
+					</td>
+					<td>
+						<input type="text" name="envoi_direccion" size="40" maxlength="50"/>
+					</td>
+				</tr>
+				<tr valign="top">
+					<td nowrap>
+						<font face="Arial, sans-serif" size=2 style="font-size: 11pt"><b>Codigo postal&nbsp;:</b></font>
+					</td>
+					<td>
+						<input type="text" name="envoi_zip" size="10" maxlength="10"/>
+					</td>
+				</tr>
+				<tr valign="top">
+					<td nowrap>
+						<font face="Arial, sans-serif" size=2 style="font-size: 11pt"><b>Ciudad&nbsp;:</b></font>
+					</td>
+					<td>
+						<input type="text" name="envoi_ciudad" size="30" maxlength="50"/>
+					</td>
+				</tr>
+			</table>
+			<div id="pasajero">
+				<font size=2 style="font-size: 11pt">Pasajero $n</font>
+				<table width=100% border=1 bordercolor="#000000" cellpadding=5 cellspacing=0>
+					<tr>
+						<td colspan="4" align="center"><small><b><i>Introducir los datos que aparecen en el pasaporte</i></b></small></td>
+					</tr>
+					<tr valign="top">
+						<td nowrap>
+							<font size=3 color="#000000"><b>Apellido *</b></font>
+						</td>
+						<td>
+							<input type="text" name="pasajero$n_nombre" size="20" maxlength="50"/>
+						</td>
+						<td nowrap>
+							<font size=3><b>Nombre *</b></font>
+						</td>
+						<td>
+							<input type="text" name="pasajero$n_apellido" size="20" maxlength="50"/>
+						</td>
+					</tr>
+					<tr valign="top">
+						<td nowrap>
+							<font size=3><b>Nationalidad *</b></font>
+						</td>
+						<td colspan=3>
+							<select name="pasajero$n_nacionalidad">
+								<option value="">&lt;Nacionalidad&gt;</option>
+								<option>Afghanistan</option>
+								<option>Afrique du Sud</option>
+								<option>Albanie</option>
+								<option>Alg&eacute;rie</option>
+								<option>Allemagne</option>
+								<option>Andorre</option>
+								<option>Angola</option>
+								<option>Antigua et Barbuda</option>
+								<option>Arabie Saoudite</option>
+								<option>Argentine</option>
+								<option>Arm&eacute;nie</option>
+								<option>Australie</option>
+								<option>Autriche</option>
+								<option>Azerba&iuml;djan</option>
+								<option>Bahamas</option>
+								<option>Bahre&iuml;n</option>
+								<option>Bangladesh</option>
+								<option>Barbade</option>
+								<option>Belgique</option>
+								<option>Belize</option>
+								<option>B&eacute;nin</option>
+								<option>Bermudes</option>
+								<option>Bhoutan</option>
+								<option>Bi&eacute;lorussie</option>
+								<option>Bolivie</option>
+								<option>Bosnie-Herz&eacute;govine</option>
+								<option>Botswana</option>
+								<option>Br&eacute;sil</option>
+								<option>Brunei</option>
+								<option>Bulgarie</option>
+								<option>Burkina Faso</option>
+								<option>Burundi</option>
+								<option>Cambodge</option>
+								<option>Cameroun</option>
+								<option>Canada</option>
+								<option>Cap-vert</option>
+								<option>Centrafricaine (R&eacute;p.)</option>
+								<option>Chili</option>
+								<option>Chine</option>
+								<option>Chypre</option>
+								<option>Colombie</option>
+								<option>Comores</option>
+								<option>Congo</option>
+								<option>Congo (R&eacute;publique D&eacute;mocratique)</option>
+								<option>Cor&eacute;e du Nord</option>
+								<option>Cor&eacute;e du Sud</option>
+								<option>Costa Rica</option>
+								<option>C&ocirc;te d&rsquo;Ivoire</option>
+								<option>Croatie</option>
+								<option>Cuba</option>
+								<option>Danemark</option>
+								<option>Djibouti</option>
+								<option>Dominicaine (R&eacute;publique)</option>
+								<option>Dominique</option>
+								<option>Egypte</option>
+								<option>Emirats Arabes Unis</option>
+								<option>Equateur</option>
+								<option>Erythr&eacute;e</option>
+								<option>Espagne</option>
+								<option>Estonie</option>
+								<option>Etats-Unis d&#8217;Am&eacute;rique</option>
+								<option>Ethiopie</option>
+								<option>Fidji</option>
+								<option>Finlande</option>
+								<option>Gabon</option>
+								<option>Gambie</option>
+								<option>G&eacute;orgie</option>
+								<option>Ghana</option>
+								<option>Gibraltar</option>
+								<option>Gr&egrave;ce</option>
+								<option>Grenade</option>
+								<option>Guatemala</option>
+								<option>Guin&eacute;e</option>
+								<option>Guin&eacute;e Bissau</option>
+								<option>Guin&eacute;e Equatoriale</option>
+								<option>Guyana</option>
+								<option>Ha&iuml;ti</option>
+								<option>Honduras</option>
+								<option>Hongkong</option>
+								<option>Hongrie</option>
+								<option>Inde</option>
+								<option>Indon&eacute;sie</option>
+								<option>Irak</option>
+								<option>Iran</option>
+								<option>Irlande</option>
+								<option>Islande</option>
+								<option>Isra&euml;l</option>
+								<option>Italie</option>
+								<option>Jama&iuml;que</option>
+								<option>Japon</option>
+								<option>Jersey et Guernesey</option>
+								<option>Jordanie</option>
+								<option>Kazakhstan</option>
+								<option>Kenya</option>
+								<option>Kirghizistan</option>
+								<option>Kiribati</option>
+								<option>Kowe&iuml;t</option>
+								<option>Laos</option>
+								<option>Lesotho</option>
+								<option>Lettonie</option>
+								<option>Liban</option>
+								<option>Liberia</option>
+								<option>Libye</option>
+								<option>Liechtenstein</option>
+								<option>Lituanie</option>
+								<option>Luxembourg</option>
+								<option>Macao</option>
+								<option>Mac&eacute;doine (Ancienne R&eacute;publique Yougoslave de)</option>
+								<option>Madagascar</option>
+								<option>Malaisie</option>
+								<option>Malawi</option>
+								<option>Maldives</option>
+								<option>Mali</option>
+								<option>Malte</option>
+								<option>Mariannes du Nord (Iles)</option>
+								<option>Maroc</option>
+								<option>Marshall (Iles)</option>
+								<option>Maurice</option>
+								<option>Mauritanie</option>
+								<option>Mexique</option>
+								<option>Micron&eacute;sie</option>
+								<option>Moldavie</option>
+								<option>Monaco</option>
+								<option>Mongolie</option>
+								<option>Mozambique</option>
+								<option>Myanmar (Birmanie)</option>
+								<option>Namibie</option>
+								<option>Nauru</option>
+								<option>N&eacute;pal</option>
+								<option>Nicaragua</option>
+								<option>Niger</option>
+								<option>Nigeria</option>
+								<option>Norv&egrave;ge</option>
+								<option>Nouvelle-Z&eacute;lande</option>
+								<option>Oman</option>
+								<option>Ouganda</option>
+								<option>Ouzb&eacute;kistan</option>
+								<option>Pakistan</option>
+								<option>Palau</option>
+								<option>Panama</option>
+								<option>Papouasie Nouvelle Guin&eacute;e</option>
+								<option>Paraguay</option>
+								<option>Pays-Bas</option>
+								<option>P&eacute;rou</option>
+								<option>Philippines</option>
+								<option>Pologne</option>
+								<option>Portugal</option>
+								<option>Qatar</option>
+								<option>Roumanie</option>
+								<option>Royaume Uni</option>
+								<option>Russie</option>
+								<option>Rwanda</option>
+								<option>Saint Vincent et les Grenadines</option>
+								<option>Saint-Christophe et Ni&eacute;v&egrave;s</option>
+								<option>Saint-Marin</option>
+								<option>Saint-Si&egrave;ge</option>
+								<option>Sainte-Lucie</option>
+								<option>Salomon (Iles)</option>
+								<option>Salvador (El)</option>
+								<option>Samoa occidentales</option>
+								<option>Sao Tome et Principe</option>
+								<option>S&eacute;n&eacute;gal</option>
+								<option>Seychelles</option>
+								<option>Sierra Leone</option>
+								<option>Singapour</option>
+								<option>Slovaquie</option>
+								<option>Slov&eacute;nie</option>
+								<option>Somalie</option>
+								<option>Soudan</option>
+								<option>Sri Lanka</option>
+								<option>Su&egrave;de</option>
+								<option>Suisse</option>
+								<option>Surinam</option>
+								<option>Swaziland</option>
+								<option>Syrie</option>
+								<option>Tadjikistan</option>
+								<option>Ta&iuml;wan</option>
+								<option>Tanzanie</option>
+								<option>Tchad</option>
+								<option>Tch&egrave;que (R&eacute;publique)</option>
+								<option>Tha&iuml;lande</option>
+								<option>Timor l&rsquo;Este</option>
+								<option>Togo</option>
+								<option>Tonga</option>
+								<option>Trinit&eacute; et Tobago</option>
+								<option>Tunisie</option>
+								<option>Turkm&eacute;nist&aacute;n</option>
+								<option>Turquie</option>
+								<option>Tuvalu</option>
+								<option>Ukraine</option>
+								<option>Uruguay</option>
+								<option>Vanuatu</option>
+								<option>Venezuela</option>
+								<option>Vietnam</option>
+								<option>Y&eacute;men</option>
+								<option>Yougoslavie (R.F. de)</option>
+								<option>Zambie</option>
+								<option>Zimbabwe</option>
+							</select>
+						</td>
+					</tr>
+					<tr valign="top">
+						<td nowrap>
+							<FONT SIZE=3><B>Lugar de nacimiento *</B></FONT>
+						</td>
+						<td>
+							<input type="text" name="pasajero$n_lugar_nacimiento" size="20" maxlength="50"/>
+						</td>
+						<td nowrap>
+							<font size=3><b>Fecha *</b></font>
+						</td>
+						<td>
+							<input type="text" name="pasajero$n_fecha_nacimiento" size="10" maxlength="10" onclick="calendar.select(document.forms[0].pasajero$n_fecha_nacimiento,'pasajero$n_fecha_nacimiento_button','dd/MM/yyyy')"/>
+							<a href="#" onclick="calendar.select(document.forms[0].pasajero$n_fecha_nacimiento,'pasajero$n_fecha_nacimiento_button','dd/MM/yyyy');return false;" name="pasajero$n_fecha_nacimiento_button" id="pasajero$n_fecha_nacimiento_button"><img src="../presupuestos/calendario/calendario.png" border="0"/></a>
+						</td>
+					</tr>
+					<tr VALIGN="top">
+						<td nowrap>
+							<FONT SIZE=3><B>Doc d'identit&eacute; *</B></FONT>
+						</td>
+						<td>
+							<select name="pasajero$n_typo_doc">
+								<option value="">(choisir)</option>
+								<option>Carte d'identit&eacute;</option>
+								<option>Passeport</option>
+							</select>
+						</td>
+						<td nowrap>
+							<FONT SIZE=3><B>Numero *</B></FONT>
+						</td>
+						<td>
+							<INPUT type="text" name="pasajero$n_numero_doc" size="20" maxlength="30"/>
+						</td>
+					</tr>
+					<tr VALIGN="top">
+						<td nowrap>
+							<FONT SIZE=3><B>Fecha d'&eacute;mission *</B></FONT>
+						</td>
+						<td>
+							<input type="text" name="pasajero$n_fecha_emission_doc" size="10" maxlength="10" onclick="calendar.select(document.forms[0].pasajero$n_fecha_emission_doc,'pasajero$n_fecha_emission_button','dd/MM/yyyy')"/>
+							<a href="#" onclick="calendar.select(document.forms[0].pasajero$n_fecha_emission_doc,'pasajero$n_fecha_emission_button','dd/MM/yyyy');return false;" name="pasajero$n_fecha_emission_button" id="pasajero$n_fecha_emission_button"><img src="../presupuestos/calendario/calendario.png" border="0"/></a>
+						</td>
+						<td nowrap>
+							<FONT SIZE=3><B>Lugar *</B></FONT>
+						</td>
+						<td>
+							<INPUT type="text" name="pasajero$n_lugar_emission_doc" size="20" maxlength="30"/>
+						</td>
+					</tr>
+					<tr VALIGN="top">
+						<td nowrap>
+							<FONT SIZE=3><B>Fecha d'expiration *</B></FONT>
+						</td>
+						<td COLSPAN=3>
+							<input type="text" name="pasajero$n_fecha_expiration_doc" size="10" maxlength="10" onclick="calendar.select(document.forms[0].pasajero$n_fecha_expiration_doc,'pasajero$n_date_expiration_button','dd/MM/yyyy')"/>
+							<a href="#" onclick="calendar.select(document.forms[0].pasajero$n_fecha_expiration_doc,'pasajero$n_date_expiration_button','dd/MM/yyyy');return false;" name="pasajero$n_date_expiration_button" id="pasajero$n_date_expiration_button"><img src="../presupuestos/calendario/calendario.png" border="0"/></a>
+						</td>
+					</tr>
+					<tr VALIGN="top">
+						<td nowrap>
+							<FONT SIZE=3><B>Num&eacute;ro de telefono *</B></FONT>
+						</td>
+						<td colspan="3">
+							<input type="text" name="pasajero$n_telefono" size="20" maxlength="50"/>
+							<input id="copier" type="button" value="Copiar desde le 1ero pasajero" onclick="copiarDireccion(this.form,$n)"/>
+						</td>
+					</tr>
+					<tr VALIGN="top">
+						<td nowrap>
+							<FONT SIZE=3><B>Mobile</B></FONT>
+						</td>
+						<td>
+							<input type="text" name="pasajero$n_mobile" size="20" maxlength="50"/>
+						</td>
+						<td nowrap>
+							<FONT SIZE=3><B>Num&eacute;ro de Fax</B></FONT>
+						</td>
+						<td>
+							<input type="text" name="pasajero$n_fax" size="20" maxlength="50"/>
+						</td>
+					</tr>
+					<tr VALIGN="top">
+						<td nowrap>
+							<FONT SIZE=3><B>E-mail</B></FONT>
+						</td>
+						<td COLSPAN=3>
+							<INPUT type="text" name="pasajero$n_email" size="50" maxlength="50"/>
+						</td>
+					</tr>
+				</TABLE>
+			</div>
+			<p style="text-align:center"><input type="submit" value="Enviar la ficha pasajeros"/></p>
+		</form>
+		<div id="calendardiv" style="position:absolute;visibility:hidden;background-color:white;layer-background-color:white"></div>
+	</body>
+</html>

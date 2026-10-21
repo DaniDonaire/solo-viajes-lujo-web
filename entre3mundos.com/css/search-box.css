@@ -1,0 +1,4883 @@
+#body #search-box form {
+    border: medium none;
+    padding: 0;
+}
+#body #search-box h2 {
+    font-weight: bold;
+    margin: 10px;
+    padding: 0;
+}
+#body #search-box fieldset {
+    border: medium none;
+    margin: 0 5px;
+    padding: 5px;
+}
+#body #search-box input.highlight, #body #search-box select.highlight {
+    border: 1px solid #999999;
+    font-size: 1em;
+    padding: 4px;
+}
+#body #search-box input.highlight-vh {
+    border: 1px solid #666666;
+    font-size: 1em;
+    padding: 4px;
+    width: 143px;
+}
+#body #search-box input.highlight-vh-disp {
+    border: 1px solid #666666;
+    font-size: 1em;
+    padding: 5px;
+    width: 150px !important;
+}
+#body #search-box .calicon-link input {
+    border: medium none;
+    padding: 1px 0 0 3px;
+}
+#body #search-box input.selected, #body #search-box div.selected {
+    border-color: #008DD6;
+}
+#body #search-box span.calicon-link {
+    cursor: pointer;
+    left: -25px;
+    position: relative;
+    top: 5px;
+    z-index: 1;
+}
+#body #search-box li a {
+    margin-left: 0;
+}
+#body #search-box div.search-box {
+    background-color: #FFFFFF;
+    border-left: 1px solid #75AE11;
+    border-right: 1px solid #75AE11;
+    padding-top: 10px;
+}
+#body.integracion #search-box div.search-box {
+    position: relative;
+}
+#body #search-box {
+    background-color: #FFFFFF;
+    width: 357px;
+}
+#body #search-box .search-box-sup {
+    background: url("/pictures/fondo-deg-verde.gif") repeat-x scroll 0 0 transparent;
+    border-left: 1px solid #75AE11;
+    height: 26px;
+}
+#body #search-box .search-box-sup .titulo h1 {
+    background-image: none;
+    color: #FFFFFF;
+    float: left;
+    font-size: 11px;
+    margin: 0;
+    padding: 6px 0 0 8px;
+    text-transform: uppercase;
+}
+#body #search-box .search-box-sup .borde-derc {
+    float: right;
+}
+#body #search-box .search-box-inf {
+    background-image: url("/pictures/borde-inf-verde.gif");
+    background-repeat: repeat-x;
+    height: 17px;
+}
+#body #search-box .search-box-inf .borde-izq {
+    float: left;
+}
+#body #search-box .search-box-inf .borde-derc {
+    float: right;
+}
+#body #search-box input.checkbox, #body #search-box input.radio {
+    vertical-align: middle;
+}
+#body #search-box input.selected {
+    border-color: #008DD6;
+}
+#body #search-box input.disabled {
+    background-color: #E4E1E1;
+}
+#body #search-box label {
+    display: block;
+    font-size: 10px;
+    font-weight: normal;
+    margin-bottom: 2px;
+}
+#body #search-box label .ninos {
+    font-weight: normal;
+}
+#body #search-box label.radio, #body #search-box label.checkbox {
+    display: inline;
+    margin-right: 0;
+}
+#body #search-box input#destinationSearchVac-vacation.highlight {
+    padding: 6px;
+    width: 150px;
+}
+#body #search-box span#showDestination-vacational.calicon-link img {
+    margin-left: -3px;
+}
+#body #search-box div.select-field {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #999999;
+    float: left;
+    height: 20px;
+    margin: 0 5px 0 0;
+    padding: 2px 5px;
+}
+#body #search-box div.select-field select {
+    border: medium none;
+    float: right;
+    font-size: 10px;
+    padding: 3px 0 0;
+}
+#body #search-box .button-popup {
+    margin: 5px;
+    text-align: right;
+}
+#body #search-box .input-fld-off {
+    margin: 0;
+    padding: 5px 0 0;
+}
+#body #search-box .resume-ages {
+    background: url("/pictures/bg-edades-ninos.jpg") repeat scroll center bottom transparent;
+    border-top: 1px solid #CDECAC;
+    padding: 6px 0;
+    text-align: center;
+    width: 336px;
+}
+#body #search-box .btn-search {
+    bottom: 0;
+    position: absolute;
+    right: 15px;
+}
+#body #search-box .btn-search-lite {
+    float: right;
+    margin: 15px 15px 0 0;
+}
+#body #search-box div.error {
+    color: #CC0000;
+    margin: 0 10px 5px;
+    padding: 3px 5px;
+}
+#body #search-box.has-error {
+    height: auto;
+}
+#body #search-box input.error, #body #search-box select.error, #body #search-box fieldset.error {
+    border: 1px solid #CC0000;
+}
+#body.home #search-box div.search-box {
+    min-height: 330px;
+}
+#body.flight #search-box div.search-box {
+    height: auto !important;
+    min-height: 378px;
+}
+#body.hotel #search-box div.search-box {
+    height: auto !important;
+    min-height: 370px;
+}
+#body.flight-hotel #search-box div.search-box {
+    height: auto !important;
+    min-height: 373px;
+}
+#body.train #search-box div.search-box {
+    height: auto !important;
+    min-height: 333px;
+}
+#body.hotel #search-box div.search-box {
+    height: auto !important;
+    min-height: 365px;
+}
+#body.ski #search-box div.search-box {
+    height: auto !important;
+    min-height: 428px;
+}
+#body.zona #search-box div.search-box, #body.estacion #search-box div.search-box {
+    height: auto !important;
+    min-height: 365px;
+}
+#body #search-box .dates input {
+    width: 95px;
+}
+#body #search-box .locations input {
+    width: 115px;
+}
+#body #search-box-hotel .locations input {
+    width: 145px;
+}
+#body #search-box div.other-options {
+    margin: 3px 8px 0;
+    padding: 0 0 6px;
+}
+#body #search-box div.other-options p {
+    font-weight: bold;
+    margin: 0 0 8px;
+}
+#body #search-box fieldset div.price, #body #search-box fieldset div.time-table {
+    float: left;
+    width: 50%;
+}
+#body #search-box div.button {
+    margin: 0;
+    text-align: right;
+}
+#body #search-box div.button img {
+    cursor: pointer;
+}
+#body.home #search-box div.button img, #body.flight #search-box div.button img, #body.microsite #search-box div.button img, #body.integracion #search-box div.button img, #body #search-box .search-box.new div.button img {
+    cursor: pointer;
+    margin: 0 12px;
+}
+#body #search-box fieldset.more-options {
+    margin: 8px;
+    padding: 0;
+}
+#body #search-box fieldset.more-options legend {
+    cursor: pointer;
+    margin-left: 20px;
+}
+#body #search-box fieldset.more-options label, #body #search-box fieldset.more-options input, #body #search-box fieldset.more-options select, #body #search-box fieldset.more-options option {
+    color: #000000;
+    font-weight: normal;
+}
+#body #search-box fieldset #more-options-link {
+    color: #008DD6;
+}
+#body #search-box #search-box-flight div.button {
+    bottom: 0;
+    position: absolute;
+    right: 0;
+}
+#body #search-box #search-box-flight div.button-sup-fin {
+    font-weight: bold;
+    padding: 5px 0 0;
+    text-align: center;
+    width: 140px;
+}
+#body #search-box #search-box-flight div.button-sup-fin span {
+    color: #CCCCCC;
+}
+#body.ski #search-box-ski .button-hf {
+    margin-right: 13px;
+}
+#body.ski #search-box-ski .button-h {
+    cursor: pointer;
+    margin-left: 250px;
+}
+#body #search-box div.oculto {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    position: absolute;
+    z-index: 1;
+}
+#body #search-box div.oculto fieldset {
+    border: medium none;
+    margin-left: 8px;
+    padding: 4px;
+}
+#body #search-box div.oculto div.title {
+    background-color: #008DD6;
+    height: 12px;
+    padding: 3px 0;
+}
+#body #search-box div.oculto div.title span {
+    color: #FFFFFF;
+    float: left;
+    font-weight: bold;
+    margin: 0 0 0 8px;
+}
+#body #search-box div.oculto div.title span.close {
+    float: right;
+    text-align: right;
+}
+#body #search-box div.oculto div.button {
+    margin: 0;
+}
+#body #search-box div.oculto .group.error {
+    margin: 0 8px 15px;
+}
+#ciudadesEspanolas {
+    left: 342px;
+    top: 20px;
+    width: 300px;
+}
+#ciudadesInternacionales {
+    left: 342px;
+    top: 40px;
+    width: 350px;
+}
+#body.home #ciudadesEspanolas label, #body.home #ciudadesInternacionales label {
+    margin-top: 5px;
+}
+#body #search-box div.ages {
+    left: 342px;
+    top: 125px;
+    width: 220px;
+}
+#body.home #search-box div.ages p {
+    font-weight: bold;
+    margin: 8px 0;
+}
+#body.home #search-box div.room_age {
+    margin: 5px 8px;
+}
+#body.home #search-box div.room_age div.child {
+    margin-top: 8px;
+}
+#body #search-box div.ages-resume {
+    background-color: #DBFCB0;
+    border: 1px solid #B0D67E;
+    color: #0673B7;
+    font-family: arial,helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    margin: 2px 12px 2px 8px;
+    padding: 4px;
+    text-align: center;
+}
+#body #search-box #agesError {
+    float: left;
+}
+.clearer {
+    clear: both;
+    line-height: 0;
+}
+#body #search-header {
+    height: 24px;
+    width: 359px;
+}
+#body #search-header ul {
+    float: left;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+#body #search-header li {
+    background: url("/pictures/fondo-deg-verde.gif") repeat-x scroll 0 0 transparent;
+    border-left: 1px solid #75AE11;
+    border-right: 1px solid #75AE11;
+    color: #000000;
+    cursor: pointer;
+    display: inline;
+    float: left;
+    font-weight: bold;
+    height: 21px;
+    margin: 0 1px 0 0;
+    padding: 4px 18px 0;
+    text-decoration: underline;
+}
+#body #search-header li:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+#body #search-header li.active {
+    color: #000000;
+    text-decoration: none;
+}
+#body #search-header li.active:hover {
+    color: #424242;
+    text-decoration: none;
+}
+#body #search-header li a {
+    color: #000000;
+    text-decoration: underline;
+}
+#body #search-header li a:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+#body #search-header li span {
+    color: #FFFFFF;
+}
+#body #search-header .active {
+    background: url("/pictures/fondo-titulo-busc-activo.gif") repeat-x scroll 0 0 #FFFFFF;
+    border-top: 1px solid #75AE11;
+}
+#body #search-header li.last {
+    background: url("/pictures/borde-buscador.gif") no-repeat scroll right top transparent;
+    border: medium none;
+    padding: 4px 0 0 12px;
+}
+#body.home #search-header li.last {
+    background-image: url("/pictures/borde-buscador.gif");
+    background-repeat: no-repeat;
+    border: medium none;
+    width: 70px;
+}
+#body.home #search-header li.last.active {
+    background-image: url("/pictures/borde-buscador-act.gif");
+    background-repeat: no-repeat;
+    border: medium none;
+}
+#body #search-header li.sbTab-link-last {
+    border-right: medium none;
+}
+#body.home #search-box fieldset.locations {
+    line-height: 18px;
+}
+#body.home #search-box {
+    height: 390px;
+}
+#body.home .search-box.new #more-options ul {
+    margin: 5px 10px 10px;
+}
+#body.home #search-box #search-box-hotel {
+    background-image: url("/pictures/bg-sbmain-hotel.jpg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    float: none;
+    position: relative;
+}
+#body.home #search-box #search-box-fh {
+    background-image: url("/pictures/bg-sbhome-fh.jpg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    float: none;
+    position: relative;
+}
+#body.home #search-box #search-box-vacacional {
+    background-repeat: no-repeat;
+    float: none;
+    position: relative;
+}
+#body.home #search-box #search-box-hotel fieldset {
+    padding: 5px;
+}
+#body.home #search-box #search-box-vacacional fieldset {
+    padding: 5px;
+}
+#body.home #search-box .search-box.new fieldset.locations input {
+    width: 140px;
+}
+#body #search-box .search-box.new fieldset {
+    padding: 7px 5px;
+}
+#body #search-box .search-box.new fieldset.locations span.ajax-loader {
+    position: absolute;
+}
+#body #search-box .search-box.new fieldset.locations-info span.ajax-loader {
+    bottom: 7px;
+    left: 151px;
+    position: absolute;
+}
+#body #search-box .search-box.new fieldset.dates .date-box {
+    border: 1px solid #999999;
+    float: left;
+    height: 20px;
+    padding: 2px 5px;
+    position: relative;
+    width: 138px;
+}
+#body #search-box .search-box.new fieldset.dates .date-box.dep {
+    margin: 0 15px 0 0;
+}
+#body #search-box .search-box.new label.title {
+    float: left;
+    font-weight: bold;
+    padding-top: 4px;
+}
+#body #search-box .search-box.new fieldset.dates .date-box input {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    font-size: 9px;
+    width: 80px;
+}
+#body #search-box .search-box.new span.calicon-link {
+    cursor: pointer;
+    left: auto;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    z-index: 1;
+}
+#body #search-box .search-box.new fieldset.pax-quantities .pax {
+    border: 1px solid #999999;
+    float: left;
+    height: 20px;
+    margin-right: 5px;
+    padding: 2px 5px;
+    width: 80px;
+}
+#body #search-box .search-box.new fieldset.pax-quantities .pax.children {
+    width: 110px;
+}
+#body #search-box .search-box.new fieldset.pax-quantities input.highlight, #body #search-box .search-box.new fieldset.pax-quantities select.highlight {
+    border: medium none;
+    float: right;
+    padding: 3px 0 0;
+}
+#body #search-box .search-box.new fieldset.advanced-search select.highlight {
+    border: medium none;
+    float: right;
+    padding: 3px 0 0;
+}
+#body #search-box .search-box.new fieldset.advanced-search .class {
+    border: 1px solid #999999;
+    height: 20px;
+    margin: 0 3px 0 0;
+    padding: 2px 5px;
+    width: 160px;
+}
+#body #search-box .search-box.new fieldset.advanced-search .classL {
+    border: 1px solid #999999;
+    height: 20px;
+    margin: 0 3px 0 0;
+    padding: 2px 5px;
+    width: 260px;
+}
+#body #search-box .search-box.new fieldset.advanced-search .price-hour {
+    border: 1px solid #999999;
+    height: 20px;
+    padding: 2px 5px;
+    width: 130px;
+}
+#body #search-box .search-box.new fieldset.advanced-search .aerolinea {
+    border: 1px solid #999999;
+    height: 20px;
+    margin-top: 12px;
+    padding: 2px 5px;
+    width: 218px;
+}
+#body #search-box .search-box.new div.button {
+    bottom: 0;
+    position: absolute;
+    right: 0;
+}
+#body #search-box .search-box.new #discounts {
+    margin: 5px;
+}
+#body #search-box .search-box.new #discounts label {
+    background-color: #ECFDD1;
+    background-image: none;
+    color: #5F8E09;
+    font-weight: bold;
+    padding: 2px 0 2px 10px;
+}
+#body #search-box .search-box.new #discounts #largeFamily-disc {
+    border-right: 1px dotted #000000;
+    height: 70px;
+    padding: 0 8px 0 0;
+}
+#body #search-box .search-box.new #more-options ul {
+    line-height: 16px;
+    list-style-position: outside;
+    margin: 0 0 0 10px;
+    padding: 0;
+}
+#body #search-box .search-box.new #more-options ul li {
+    float: none;
+}
+#body.flight #search-box .search-box.new fieldset {
+    padding: 9px 5px;
+}
+#body.home #search-box-vacacional .search-box p {
+    background-color: #EBFDD0;
+    color: #5F8E09;
+    font-size: 10px;
+    font-weight: bold;
+    margin: 5px 8px;
+    padding: 3px;
+}
+#body.home #search-box-vacacional .box-ofertas-search li {
+    color: #CCCCCC;
+    font-weight: bold;
+    list-style-type: none;
+    margin: 2px 0;
+    padding: 0 0 2px 8px;
+}
+#body.home #search-box-vacacional .box-ofertas-search strong {
+    display: block;
+    font-weight: bold;
+    padding: 5px 0 5px 10px;
+}
+#body.home #search-box-vacacional .box-ofertas-search {
+    border: 1px solid #A0CF70;
+    float: left;
+    margin: 5px 10px 0;
+    padding: 0;
+    width: 145px;
+}
+#body.home #search-box-vacacional p.titulo-buscador-vacaciones {
+    background-color: #EBFDD0;
+    color: #5F8E09;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 3px;
+}
+#body.home #search-box-vacacional #palabraclave {
+    margin: 3px 0 0 10px;
+    width: 145px;
+}
+#body.home #search-box span.calicon-link {
+    cursor: pointer;
+    left: -28px;
+    position: relative;
+    z-index: 1;
+}
+#body.home .destination-popup {
+    background-color: #F4F9FE;
+    background-image: url("/pictures/bg-top-destinos-popup.gif");
+    background-position: center top;
+    background-repeat: repeat-x;
+    border: 1px solid #008DD6;
+    float: left;
+    font-size: 10px;
+    left: 300px;
+    padding: 0 0 5px;
+    position: absolute;
+    top: 40px;
+    width: 665px;
+    z-index: 1;
+}
+#body.home .destination-popup a {
+    cursor: pointer;
+}
+#body.home .destination-popup .top-razones {
+    float: left;
+    margin: 0 0 0 5px;
+}
+#body.home .destination-popup .top-razones p, #body.home .destination-popup .top-destinos p {
+    color: #008DD6;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0 0 0 5px;
+}
+#body.home .destination-popup .top-razones ul {
+    color: #000000;
+    font-size: 10px;
+    line-height: 15px;
+    list-style-type: none;
+    margin: 5px 0 12px 5px;
+    padding: 0;
+}
+#body.home .destination-popup .top-destinos {
+    float: left;
+    margin: 0 0 10px 8px;
+}
+#body.home .destination-popup .top-destinos .box-ofertas {
+    background-color: #FFFFFF;
+    border: 1px solid #BBDFFD;
+    float: left;
+    margin: 5px 0;
+    padding: 8px;
+    width: 465px;
+}
+#body.home .destination-popup p.titulo-box-ofertas {
+    color: #808080;
+    font-weight: bold;
+    margin: 0 0 5px;
+}
+#body.home .destination-popup .box-ofertas li a {
+    margin: 0;
+}
+#body.home .destination-popup .top-destinos ul {
+    color: #008DD6;
+    line-height: 17px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+#body.home .destination-popup .top-destinos li {
+    display: inline;
+}
+#body.home .destination-popup .selec-destinos p.titulo-box-ofertas {
+    background: none repeat scroll 0 0 #008DD6;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0 0 5px;
+    padding: 3px;
+}
+#body.home .destination-popup .cerrar {
+    text-align: right;
+}
+#body.home .destination-popup .selec-destinos {
+    float: left;
+    margin: 0 0 10px 8px;
+}
+#body.home .destination-popup .selec-destinos .box-ofertas {
+    background-color: #FFFFFF;
+    border: 1px solid #BBDFFD;
+    float: left;
+    margin: 5px 0;
+    padding: 8px;
+    width: 630px;
+}
+#body.home .destination-popup .selec-destinos p.titulo-popup-ofertas {
+    background: none repeat scroll 0 0 #008DD6;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0 0 5px;
+}
+#body.home .destination-popup .selec-destinos ul.topdestinosul {
+    color: #008DD6;
+    line-height: 17px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+#body.home .destination-popup .selec-destinos li.topdestinosli {
+    display: inline;
+    float: left;
+    margin: 0 5px 0 0;
+}
+#body.home .destination-popup .selec-destinos ul {
+    color: #008DD6;
+    float: left;
+    line-height: 17px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0 15px 0 4px;
+    width: 135px;
+}
+#body.home .destination-popup .selec-destinos li {
+    display: block;
+}
+#body.home .destination-popup .selec-destinos li.destinogeneral {
+    font-weight: bold;
+    padding: 8px 0 3px;
+    text-transform: uppercase;
+}
+#body.home .destination-popup .close {
+    float: right;
+    margin: 8px 10px;
+}
+#body.home .destination-popup #link-close {
+    cursor: pointer;
+    float: left;
+    margin: 0 5px 0 0;
+    text-decoration: underline;
+}
+#body.home .destination-popup a {
+    cursor: pointer;
+}
+#body.home div.advanced-search {
+    background-color: #EBFDD0;
+    border: 1px solid #88B915;
+    border-radius: 5px 5px 5px 5px;
+    float: left;
+    margin: 8px 0;
+    padding: 10px;
+}
+#body.home div.advanced-search .close {
+    float: right;
+    padding: 0 5px;
+}
+#body.home div.advanced-search .w70 {
+    margin: 5px 0;
+}
+#body.home div.advanced-search .cerrar {
+    float: right;
+}
+#body.home div.advanced-search .link-close {
+    color: #79B511;
+    float: left;
+    margin: 0 5px 0 0;
+    text-decoration: underline;
+}
+#body.home div.advanced-search .boton {
+    margin: 20px 0 0 5px;
+}
+#body.home #search-box select#originAdvancedSearch-vacation.vacacional {
+    border: medium none;
+    padding-top: 2px;
+}
+#body.home #search-box select#monthAdvancedSearch-vacation.vacacional {
+    border: medium none;
+    padding-top: 2px;
+}
+#body.home #search-box label#AdvancedSearch-vacation {
+    float: left;
+    font-weight: bold;
+    padding-right: 4px;
+    padding-top: 3px;
+}
+#body #search-box-vacacional.search-box.vac-pt fieldset {
+    padding: 3px 5px !important;
+}
+#body #search-box-vacacional.search-box.vac-pt p {
+    background-color: #EBFDD0;
+    color: #5F8E09;
+    font-size: 10px;
+    font-weight: bold;
+    margin: 4px 8px 8px;
+    padding: 3px;
+}
+#body #search-box-vacacional.search-box.vac-pt h2 {
+    font-size: 10px;
+    font-weight: bold;
+    margin: 0 0 0 15px;
+}
+#body #search-box-vacacional.search-box.vac-pt .select-destiny, #body #search-box-vacacional.search-box.vac-pt .select-type {
+    margin: 8px 0;
+}
+#body #search-box-vacacional.search-box.vac-pt #imgMapa {
+    margin: 6px 0 0;
+    text-align: center;
+}
+#body #search-box-vacacional.search-box.vac-pt #imgMapa img {
+    height: 280px;
+    margin: 0 0 35px;
+    text-align: center;
+}
+#body #search-box-vacacional.search-box.vac-pt .box-oferta {
+    border: 1px solid #B1DF6F;
+    float: left;
+    font-weight: bold;
+    line-height: 21px;
+    margin: 0 4px 0 0;
+    padding: 0 0 10px 10px;
+    width: 45%;
+}
+#body #search-box-vacacional.search-box.vac-pt .box-oferta p {
+    background-color: #FFFFFF;
+    color: #000000;
+    margin: 0;
+}
+#body #search-box-vacacional.search-box.vac-pt div.submit, #body #search-box-vacacional.search-box.vac-pt div.button {
+    margin: 0 12px 0 0;
+    text-align: right;
+}
+#body.home #search-box-hotel #destinos {
+    line-height: 5px;
+}
+#body.home #search-box-hotel #destinos li {
+    margin: 0 0 10px;
+}
+#body.home #search-box #search-box-hotel .search-box.new fieldset.locations .area input {
+    width: auto;
+}
+#body.flight #search-box .search-box.new {
+    background-image: url("/pictures/bg-sbmain-flight.jpg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    float: none;
+    position: relative;
+}
+#body.flight #search-box .search-box.new fieldset.locations #location-dep, #body.flight #search-box .search-box.new fieldset.locations #location-arr {
+}
+#body.flight #search-box .search-box.new fieldset.locations input {
+    width: 140px;
+}
+#body.flight .search-box.new #more-options ul li {
+    float: left;
+    padding: 0 6px 0 0;
+}
+#body.flight .search-box.new legend {
+    color: #5F8E09;
+    cursor: pointer;
+    font-weight: bold;
+    height: 17px;
+    line-height: 16px;
+    margin: 5px 0;
+    padding: 0 0 0 24px;
+    width: 93%;
+}
+#body.flight .search-box.new .min legend {
+    background: url("/pictures/arrow-min-max.gif") no-repeat scroll left top #ECFDD1;
+    margin: 0;
+}
+#body.flight .search-box.new .max legend {
+    background: url("/pictures/arrow-min-max.gif") no-repeat scroll left bottom #ECFDD1;
+    margin: 0;
+}
+#body.flight .search-box.new fieldset.min, #body .search-box.new fieldset.max {
+    margin: 5px 0;
+    padding: 0;
+}
+#body.flight #discounts input {
+    margin-top: 2px;
+}
+#body.flight #discounts fieldset {
+    margin: 0;
+}
+#body.flight #discounts legend {
+    margin: 0;
+}
+#body.flight #discounts-types p {
+    font-weight: bold;
+    margin: 0 0 8px;
+}
+#body.train #search-box {
+    width: 345px;
+}
+#body.train #search-box .borde-derc img {
+}
+#body.train #search-box p {
+    margin: 3px;
+}
+#body.train #search-box-train fieldset.locations {
+    height: 48px;
+}
+#body.train #search-box-train #more-routes {
+    padding: 2px 25px 0 0;
+    text-align: right;
+}
+#body.train #search-box-train .ajax-loader img {
+    margin: 0 0 0 8px;
+}
+#body.train #search-header {
+    background: url("/pictures/fondo-deg-verde.gif") repeat-x scroll 0 0 transparent;
+    height: 25px;
+    width: 345px;
+}
+#body.train #search-header .active {
+    border-left: 1px solid #75AE11;
+    border-right: 1px solid #75AE11;
+    border-top: 1px solid #75AE11;
+    height: 21px;
+    text-decoration: none;
+}
+#body.train #search-header ul {
+    background-color: #FFFFFF;
+}
+#body.train #search-header li {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: -moz-use-text-color #75AE11;
+    border-style: none solid;
+    border-width: medium 1px;
+    text-decoration: underline;
+}
+#body.train #search-header li:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+#body.train #search-header li.active {
+    color: #000000;
+    text-decoration: none;
+}
+#body.train #search-header li.active:hover {
+    color: #424242;
+    text-decoration: none;
+}
+#body.train #search-header li a {
+    color: #000000;
+    text-decoration: none;
+}
+#body.train #search-header li a:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+#body.train #search-header li.active a:hover {
+    color: #424242;
+    text-decoration: none;
+}
+#body.train #search-header li#sbTab-link-hotel {
+    border-right: 1px solid #FFFFFF;
+}
+#body.train #search-header li#sbTab-link-hotel.active {
+    border-right: 1px solid #75AE11;
+}
+#body.train .select-field.pax .dijitComboBox {
+    border: medium none;
+    float: right;
+}
+#body.train .search-box.new .select-field.pax {
+    height: 22px;
+}
+#body.train .search-box.new .select-field.pax p {
+    margin: 0;
+}
+#body.train #search-box #search-box-inter, #body.train #search-box .search-box {
+    background-image: url("/pictures/bg-sbhome-train.jpg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    float: none;
+    position: relative;
+}
+#body.train #search-box #search-box-tgv {
+    background-image: url("/pictures/bg-sbhome-train.jpg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    float: none;
+    position: relative;
+}
+#body.train #search-box #search-box-inter .trainselects {
+    margin-left: -5px;
+}
+#body.flight-hotel #search-box .search-box.new fieldset.locations #location-dep, #body.flight-hotel #search-box .search-box.new fieldset.locations #location-arr {
+    width: 165px;
+}
+#body.flight-hotel #search-box .search-box.new fieldset.locations input {
+    width: 140px;
+}
+#body.flight-hotel #search-box .search-box.new {
+    background-image: url("/pictures/bg-sbhome-fh.jpg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    border: medium none;
+    float: none;
+    padding-top: 0;
+    position: relative;
+}
+#body.flight-hotel #search-box {
+    position: relative;
+}
+#body.flight-hotel #search-box form {
+    background-image: url("/pictures/bg-sbhome-fh.jpg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    border-left: 1px solid #75AE11;
+    border-right: 1px solid #75AE11;
+    height: 375px;
+    padding: 10px 0 0;
+    position: relative;
+}
+#body.flight-hotel #search-box fieldset {
+    margin: 0;
+    padding: 0;
+}
+#body.flight-hotel #search-box .form-line {
+    margin: 0;
+    padding: 0 10px;
+}
+#body.flight-hotel #search-box .select-cal {
+    height: 18px;
+    padding: 3px 3px 0 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 19px;
+}
+#body.flight-hotel #search-box span.calicon-link {
+    cursor: pointer;
+    float: right;
+    left: auto;
+    position: relative;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+#body.flight-hotel #search-box fieldset.acommodation {
+    border-top: 1px dotted #5F8E09;
+    margin: 10px 0 0;
+}
+#body.flight-hotel #search-box fieldset.acommodation p {
+    background-color: #EBFDD0;
+    color: #5F8E09;
+    font-weight: bold;
+    margin: 10px 0;
+    padding: 3px;
+}
+#body.flight-hotel #search-box .button {
+    text-align: right;
+}
+#body.flight-hotel #search-box .ages {
+    background-color: #FFFFFF;
+    border: 1px solid #75AE11;
+    box-shadow: 0 0 8px #666666;
+    left: 330px;
+    padding: 0 0 8px;
+    position: absolute;
+    top: 260px;
+    width: 260px;
+    z-index: 1;
+}
+#body.flight-hotel #search-box .ages .title {
+    background-color: #75AE11;
+    color: #FFFFFF;
+    font-weight: bold;
+    height: 12px;
+    padding: 3px;
+}
+#body.flight-hotel #search-box .ages div.title span {
+    color: #FFFFFF;
+    float: left;
+    font-weight: bold;
+    margin: 0 0 0 8px;
+}
+#body.flight-hotel #search-box .ages .arrow {
+    left: -6px;
+    position: absolute;
+    top: 1px;
+}
+#body.flight-hotel #search-box .ages .title .close {
+    float: right;
+    text-align: right;
+}
+#body.flight-hotel #search-box .ages .button {
+    margin: 10px 10px 0 0;
+    text-align: right;
+}
+#body.flight-hotel #search-box .resume-ages {
+    background: url("/pictures/bg-edades-ninos.jpg") repeat scroll center bottom transparent;
+    border-top: 1px solid #CDECAC;
+    float: left;
+    margin: 10px 0;
+    padding: 6px 0;
+    text-align: center;
+    width: 335px;
+}
+#body.train-hotel #search-box {
+    position: relative;
+}
+#body.train-hotel #search-box form {
+    background-image: url("/pictures/bg-sbhome-train.jpg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    border-left: 1px solid #75AE11;
+    border-right: 1px solid #75AE11;
+    height: 375px;
+    padding: 10px 0 0;
+    position: relative;
+}
+#body.train-hotel #search-box fieldset {
+    margin: 0;
+    padding: 0;
+}
+#body.train-hotel #search-box .form-line {
+    margin: 0;
+    padding: 0 10px;
+}
+#body.train-hotel #search-box .select-cal {
+    height: 18px;
+    padding: 3px 3px 0 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 19px;
+}
+#body.train-hotel #search-box span.calicon-link {
+    cursor: pointer;
+    float: right;
+    left: auto;
+    position: relative;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+#body.train-hotel #search-box fieldset.acommodation {
+    border-top: 1px dotted #5F8E09;
+    margin: 10px 0 0;
+}
+#body.train-hotel #search-box fieldset.acommodation p {
+    background-color: #EBFDD0;
+    color: #5F8E09;
+    font-weight: bold;
+    margin: 10px 0;
+    padding: 3px;
+}
+#body.train-hotel #search-box .button {
+    text-align: right;
+}
+#body.train-hotel #search-box .ages {
+    background-color: #FFFFFF;
+    border: 1px solid #75AE11;
+    box-shadow: 0 0 8px #666666;
+    left: 330px;
+    padding: 0 0 8px;
+    position: absolute;
+    top: 260px;
+    width: 260px;
+    z-index: 1;
+}
+#body.train-hotel #search-box .ages .title {
+    background-color: #75AE11;
+    color: #FFFFFF;
+    font-weight: bold;
+    height: 12px;
+    padding: 3px;
+}
+#body.train-hotel #search-box .ages div.title span {
+    color: #FFFFFF;
+    float: left;
+    font-weight: bold;
+    margin: 0 0 0 8px;
+}
+#body.train-hotel #search-box .ages .arrow {
+    left: -6px;
+    position: absolute;
+    top: 1px;
+}
+#body.train-hotel #search-box .ages .title .close {
+    float: right;
+    text-align: right;
+}
+#body.train-hotel #search-box .ages .button {
+    margin: 10px 10px 0 0;
+    text-align: right;
+}
+#body.train-hotel #search-box .resume-ages {
+    background: url("/pictures/bg-edades-ninos.jpg") repeat scroll center bottom transparent;
+    border-top: 1px solid #CDECAC;
+    float: left;
+    margin: 10px 0;
+    padding: 6px 0;
+    text-align: center;
+    width: 335px;
+}
+#body #search-box .calicon-link-coches {
+    background-image: url("/pictures/calendar.gif");
+    background-position: right center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+#body #search-box #search-box-car h2 {
+    margin: 0 10px;
+}
+#body #search-box #search-box-car .query-types p {
+    margin: 6px 0;
+}
+#body.hotel #search-header h1 {
+    color: #000000;
+    cursor: pointer;
+    float: left;
+    font-family: Verdana,Geneva,sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+}
+#body.hotel #search-box .search-box.new {
+    background-image: url("/pictures/bg-sbhome-hotel.jpg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    float: none;
+    position: relative;
+}
+#body.hotel #search-box .search-box.new fieldset {
+    margin: 0 3px;
+}
+#body.hotel #search-box fieldset #button-h {
+    float: right;
+}
+#body.hotel #search-box .search-box.new fieldset.locations input {
+    width: 160px;
+}
+#body.hotel #search-box {
+    width: 358px;
+}
+#body.hotel #search-box #location-dep {
+    position: relative;
+}
+#body.hotel #search-box #location-dep span img {
+    position: absolute;
+}
+#body.hotel #search-box #ciudadesEspanolas {
+    left: 338px;
+    top: 140px;
+}
+#body.hotel #search-box #ciudadesInternacionales {
+    left: 338px;
+    top: 164px;
+}
+#body.hotel #search-box #agesFormH {
+    left: 336px;
+    top: 248px;
+}
+#body.hotel #search-header {
+    background-color: #FFFFFF;
+    background-image: url("/pictures/fondo-deg-verde.gif");
+    background-repeat: repeat-x;
+    height: 25px;
+    width: 358px;
+}
+#body.hotel #search-header .box-borde-sup, #body.hotel #search-header .box-borde-derc {
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+#body.hotel #search-header ul {
+    background-color: #FFFFFF;
+}
+#body.hotel #search-header .active {
+    border-left: 1px solid #75AE11;
+    border-right: 1px solid #75AE11;
+    border-top: 1px solid #75AE11;
+    height: 21px;
+    text-decoration: none;
+}
+#body.hotel #search-header li {
+    color: #000000;
+    text-decoration: underline;
+}
+#body.hotel #search-header li:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+#body.hotel #search-header li.active:hover {
+    color: #424242;
+    text-decoration: none;
+}
+#body.hotel #search-header li a {
+    text-decoration: none;
+}
+#body.hotel #search-header li a:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+#body.hotel #search-header li.active a:hover {
+    color: #424242;
+    text-decoration: none;
+}
+#body.hotel #search-header li h1 {
+    text-decoration: none;
+}
+#body.hotel #search-header li h1:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+#body.hotel #search-header li.active h1:hover {
+    color: #424242;
+    text-decoration: none;
+}
+#body.hotel #search-header li#sbTab-link-hotel.active {
+    border-right: 1px solid #75AE11;
+}
+#body.hotel #search-box div.search-box {
+    padding-top: 12px;
+}
+#body.hotel #search-box .hotel select.localidad {
+    width: 160px;
+}
+#body.hotel #search-box .localidad-costa {
+    margin: 0 0 12px;
+}
+#body.hotel #search-box fieldset.locations li {
+    line-height: 18px;
+}
+#body.hotel #search-box .costas select {
+    width: 159px;
+}
+#body.hotel #search-box .search-box.new fieldset.locations .area span {
+    float: left;
+    margin: 3px 0 0;
+}
+#body.hotel #search-box .search-box.new fieldset.locations .area input {
+    width: auto;
+}
+#body.hotel #search-box .search-box.new fieldset .button-h {
+    cursor: pointer;
+}
+#body.hotel #search-box #search-box-region {
+    background-image: url("/pictures/bg-sbhome-ski.jpg");
+    background-repeat: no-repeat;
+    float: none;
+    position: relative;
+}
+#body.hotel #search-box #search-box-region2 {
+    background-image: url("/pictures/bg-sbhome-costa.jpg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    float: none;
+    position: relative;
+}
+#body.ski {
+    margin: 2px 0 0;
+}
+#body.ski #search-header {
+    background: url("/pictures/fondo-deg-verde.gif") repeat-x scroll 0 0 transparent;
+    height: 25px;
+}
+#body.zona #search-box, #body.estacion #search-box {
+    width: 475px;
+}
+#body.zona #search-header, #body.estacion #search-header {
+    width: 475px;
+}
+#body.ski #search-header .active {
+    border-left: 1px solid #75AE11;
+    border-right: 1px solid #75AE11;
+    border-top: 1px solid #75AE11;
+    height: 21px;
+    text-decoration: none;
+}
+#body.ski #search-header ul {
+    background-color: #FFFFFF;
+    height: 25px;
+}
+#body.ski #search-header li {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: -moz-use-text-color #75AE11;
+    border-style: none solid;
+    border-width: medium 1px;
+    text-decoration: underline;
+}
+#body.ski #search-header li {
+    color: #000000;
+    text-decoration: underline;
+}
+#body.ski #search-header li:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+#body.ski #search-header li.active:hover {
+    color: #424242;
+    text-decoration: none;
+}
+#body.ski #search-header {
+    width: auto;
+}
+#body.ski #search-box fieldset #button-h {
+    float: right;
+}
+#body.zona #search-header, #body.estacion #search-header {
+    width: 475px;
+}
+#body.ski #search-box #search-box-ski {
+    background-image: url("/pictures/bg-sbmain-ski.jpg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    float: none;
+    position: relative;
+}
+#body.ski #search-box-ski #arrHotel {
+    height: 16px;
+    margin-right: 3px;
+    padding-left: 3px;
+    padding-right: 4px;
+    width: 121px;
+}
+#body.ski #search-box-ski #field-oculto {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+#body.ski #search-box div.select-field {
+}
+#body.ski #search-box div.select-field {
+}
+#body.ski #search-box div.select-field select {
+}
+#body.cruceros #group-left .titulo-buscador {
+    float: left;
+    width: 200px;
+}
+#body.cruceros #group-left .titulo-buscador h1 {
+    background-image: url("/pictures/borde-busc-crc.gif");
+    background-repeat: no-repeat;
+    clear: both;
+    color: #FFFFFF;
+    float: left;
+    font-size: 11px;
+    font-weight: bold;
+    margin: 0;
+    padding: 5px 0 4px 5px;
+    text-transform: uppercase;
+    width: 200px;
+}
+#body.cruceros #group-left #searchbox-cruises {
+    background-color: #FFFFFF;
+    border-left: 1px solid #77AF14;
+    border-right: 1px solid #77AF14;
+    float: left;
+    height: 335px;
+    width: 198px;
+}
+#body.cruceros #group-left #searchbox-cruises fieldset.boton-buscar {
+    float: left;
+    margin: 2px 0 0;
+    padding: 0 10px 0 0;
+    text-align: right;
+    width: 190px;
+}
+#body.cruceros #group-left #searchbox-cruises label {
+    display: block;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 0 0 5px;
+}
+#body.cruceros #group-left #searchbox-cruises fieldset {
+    margin: 7px;
+}
+#body.cruceros #group-left #searchbox-cruises #loading {
+    display: none;
+    float: right;
+    font-size: 10px;
+}
+#body.cruceros #group-left #searchbox-cruises fieldset.loading {
+    margin: 5px;
+}
+#body.cruceros #group-left #searchbox-cruises #dvResult {
+    float: left;
+    font-weight: bold;
+    margin: 2px 0 0 5px;
+    width: 50%;
+}
+#body.cruceros #group-left .borde-inf {
+    background-image: url("/pictures/borde-base-crc.gif");
+    background-repeat: no-repeat;
+    clear: both;
+    display: block;
+    height: 14px;
+    width: 200px;
+}
+#body.integracion #search-header li.integracion {
+    padding: 0 0 4px;
+}
+#body.integracion #search-header li.integracion img {
+    float: right;
+}
+#body.integracion #search-header li.sbTab-link-last {
+    background: url("/pictures/fondo-deg-verde.gif") repeat-x scroll 0 0 transparent;
+}
+#body.integracion #search-header .active {
+    height: 21px;
+}
+#body #search-box #search-seo-flight {
+    background: url("/pictures/background-search-box-home.gif") repeat-x scroll 0 0 #FFFFFF;
+    border: 1px solid #A0CF70;
+    font-size: 11px;
+    margin-top: 10px;
+    width: 980px;
+}
+#body #search-seo-flight .locations input {
+    width: 170px;
+}
+#body #search-seo-flight div.search-box {
+    border-bottom: 1px solid #75AE11;
+    border-top: 1px solid #75AE11;
+}
+#body #search-box.little {
+    float: right;
+    margin-right: 15px;
+    width: 465px;
+}
+#body #search-box.little #search-seo-flight {
+    clear: both;
+    margin-bottom: 15px;
+    width: 465px;
+}
+#body #search-box.little #search-seo-flight span.link {
+    color: #008DD6;
+    cursor: pointer;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    text-decoration: underline;
+}
+#body #search-box.little #search-seo-flight .locations input {
+    width: 140px;
+}
+#body #search-box.little h2 {
+    font-size: 11px;
+    margin: 0 10px;
+}
+#sflights #search-box.little input.checkbox, #sflights #search-box.little input.radio {
+    margin: 0 0 0 5px;
+    vertical-align: bottom;
+}
+#body #search-seo-flight input.highlight, #body #search-seo-flight select.highlight {
+}
+#body.seo #primary-main #search-box.lite.air.seo fieldset.more-options label, #body.seo #primary-main #search-box.lite.air.seo fieldset.more-options input, #body.seo #primary-main #search-box.lite.air.seo fieldset.more-options option, #body.seo #primary-main #search-box.lite.air.seo fieldset.pax-quantities label {
+    color: #000000;
+    float: left;
+    font-size: 10px;
+    font-weight: normal;
+    margin: 4px 5px;
+    padding: 0;
+}
+#body.seo #primary-main #search-box.lite.air.seo form {
+    background-image: url("/pictures/bg-background-inf-lite-seo.jpg");
+}
+#body.seo #primary-main #search-box.lite.air.seo label {
+    float: left;
+}
+#body.seo #primary-main #search-box.lite.air.seo div.header-search {
+    background-image: url("/pictures/fondo-deg-verde.gif");
+    border-left: 1px solid #75AE11;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: bold;
+    height: 27px;
+    margin: 0;
+}
+#body.seo #primary-main #search-box.lite.air.seo div.header-search div.left {
+    float: left;
+}
+#body.seo #primary-main #search-box.lite.air.seo .header-search h2 {
+    color: #FFFFFF;
+    font-size: 15px;
+    margin: 8px 0 0 8px;
+}
+#body.seo #primary-main #search-box.lite.air.seo div.button {
+    bottom: -10px;
+    float: right;
+    margin: 0;
+    position: relative;
+    right: 10px;
+}
+#body.seo #search-box .search-box-sup .titulo h2 {
+    background-image: none;
+    color: #FFFFFF;
+    float: left;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    margin: 0;
+    padding: 6px 0 0 8px;
+    text-transform: uppercase;
+}
+#body.seo #main-content #main-content-left #searchbox-flight label.title {
+    float: left;
+    font-weight: bold;
+    padding-top: 4px;
+}
+#body.seo #main-content #main-content-left #searchbox-flight #search-box {
+    background-color: #FFFFFF;
+    float: left;
+    width: 310px;
+}
+#body.seo #main-content #main-content-left #searchbox-flight #search-box .search-box-sup .borde-derc img {
+    display: block;
+}
+#body.seo #main-content #main-content-left #searchbox-flight #search-box #location-dep.form-column {
+    margin: 2px 0;
+    width: 280px;
+}
+#body.seo #main-content #main-content-left #searchbox-flight #search-box #location-arr.form-column {
+    margin: 2px 0;
+    width: 280px;
+}
+#body.seo #main-content #main-content-left #searchbox-flight #search-box #location-dep.form-column input#depCity.highlight {
+    padding: 6px;
+    width: 274px;
+}
+#body.seo #main-content #main-content-left #searchbox-flight #search-box #location-arr.form-column input#arrCity.highlight {
+    padding: 6px;
+    width: 274px;
+}
+#body.seo #main-content #main-content-left #searchbox-flight #search-box #search-box-flight.search-box form#flightForm fieldset.dates #calendar-dep div.date-box {
+    width: 118px;
+    z-index: 0;
+}
+#body.seo #main-content #main-content-left #searchbox-flight #search-box #search-box-flight.search-box form#flightForm fieldset.dates #calendar-ret div.date-box {
+    width: 130px;
+    z-index: 0;
+}
+#body.seo #main-content #main-content-left #searchbox-flight fieldset.pax-quantities .pax {
+    border: 1px solid #999999;
+    float: left;
+    height: 20px;
+    margin-right: 3px;
+    padding: 2px 3px;
+    width: 80px;
+}
+#body.seo #main-content #main-content-left #searchbox-flight fieldset.pax-quantities .pax.children {
+    width: 107px;
+}
+#body.seo #main-content #main-content-left #searchbox-flight fieldset.pax-quantities .pax-babies {
+    border: 1px solid #999999;
+    float: left;
+    height: 20px;
+    margin-right: 0;
+    padding: 2px 3px;
+    width: 71px;
+}
+#body.seo #main-content #main-content-left #searchbox-flight #search-box #search-box-flight.search-box fieldset.more-options {
+    border: medium none;
+}
+#body.seo #main-content #main-content-left #searchbox-flight #search-box #search-box-flight.search-box fieldset.more-options legend#more-options-link {
+    background-color: transparent;
+    color: #000000;
+    font-weight: normal;
+    margin: 5px 0;
+    text-decoration: underline;
+    width: 280px;
+}
+#body.seo #main-content #main-content-left #searchbox-flight #search-box #search-box-flight.search-box fieldset.more-options #more-options.max .more-options {
+    background-color: #E3EECE;
+    float: left;
+    margin: 0 8px 10px;
+    width: 290px;
+}
+#body.seo #main-content #main-content-left #searchbox-flight fieldset.more-options #more-options.max .more-options fieldset.query-type div.more-options-left {
+    float: left;
+    padding: 2px 0;
+    width: 120px;
+}
+#body.seo #main-content #main-content-left #searchbox-flight fieldset.more-options #more-options.max .more-options fieldset.query-type .more-options-right {
+    float: right;
+    padding: 2px 0;
+    width: 145px;
+}
+#body.seo #main-content #main-content-left #searchbox-flight fieldset.more-options #more-options.max .more-options fieldset.query-type div.form-column {
+    height: 20px;
+    padding: 6px 0;
+}
+#body.seo #main-content #main-content-left #searchbox-flight fieldset.more-options #more-options.max .more-options fieldset.query-type div.form-column input {
+    float: left;
+}
+#body.seo #main-content #main-content-left #searchbox-flight fieldset.more-options #more-options.max .more-options fieldset.query-type div.more-options-right div.form-column select#cabin.highlight {
+    margin-top: -5px;
+    width: 130px;
+}
+#body.seo #main-content #main-content-left #searchbox-flight #search-box #search-box-flight.search-box form#flightForm fieldset.more-options #more-options.max .more-options fieldset.query-type {
+    padding: 0 5px;
+}
+#body.seo #main-content #main-content-left #searchbox-flight #search-box #search-box-flight.search-box .submit-seo .button {
+    float: right;
+    padding: 0 5px;
+}
+#body.seo #main-content #main-content-left #searchbox-flight #search-box #search-box-flight.search-box .submit-seo .precio-estimado {
+    float: left;
+}
+#body.seo #main-content #main-content-left #searchbox-flight #search-box #search-box-flight.search-box .submit-seo p {
+    color: #008DD6;
+    float: left;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 15px 10px 0;
+}
+#body.seo #main-content #main-content-left #searchbox-flight #search-box #search-box-flight.search-box .submit-seo span {
+    color: #000000;
+    float: left;
+    font-size: 10px;
+    font-weight: normal;
+    padding: 2px 5px 0 0;
+    text-decoration: none;
+}
+#body.seo #main-content #main-content-left #searchbox-flight #search-box #search-box-flight.search-box {
+    float: left;
+    width: 308px;
+}
+#body.seo #main-content #main-content-left #searchbox-flight #search-box .search-box-inf {
+    background-image: url("/pictures/borde-inf-verde.gif");
+    background-repeat: repeat-x;
+    float: left;
+    height: 17px;
+    width: 100%;
+}
+#body.seo #main-content #main-content-left #searchbox-flight #search-box #search-box-flight #location-dep {
+    z-index: 2;
+}
+#body.seo #main-content #main-content-left #searchbox-flight #search-box #search-box-flight.search-box #location-arr {
+    z-index: 1;
+}
+#body.seo #main-content #main-content-left #searchbox-flight #search-box #search-box-flight.search-box form#flightForm fieldset.pax-quantities div {
+    background-color: #FFFFFF;
+}
+#body.seo #main-content #main-content-left #searchbox-flight #search-box #search-box-flight.search-box form#flightForm fieldset.dates {
+    background-color: #FFFFFF;
+}
+#body.seo #main-content #main-content-left #searchbox-flight #search-box #search-box-flight.search-box #stepChooseSearch {
+    bottom: 0;
+    position: absolute;
+    right: 100px;
+}
+#body.seo #main-content #main-content-left #searchbox-flight #search-box #search-box-flight.search-box #stepChooseSearchText {
+    font-size: 15px;
+    font-weight: bold;
+    position: absolute;
+    right: 16px;
+    top: 9px;
+}
+#body.seo #search-box .btn-search {
+    float: right;
+    margin: 0 10px;
+    position: static;
+}
+#body.seo #search-box #stepChooseSearch3, #body.seo #search-box #stepChooseSearch4 {
+    bottom: 0;
+    position: absolute;
+    right: 100px;
+}
+#body #search-seo-hotel {
+    background-color: #F6FCEC;
+    border-top: 1px solid #77AF14;
+    padding: 8px 2px 0;
+    width: 309px;
+    z-index: 20;
+}
+#body.hotel #search-box .locations input {
+    width: 140px;
+}
+#body #search-seo-hotel form {
+    margin: 0;
+}
+#body .borde-seohotel {
+    background-image: url("/pictures/borde-buscador-seohotel.jpg");
+    background-repeat: no-repeat;
+    width: 315px;
+}
+#body.microsite div.search-box #company {
+    display: none;
+}
+#body.mic-2 div.search-box {
+    height: auto !important;
+    min-height: 377px;
+}
+#body.mic-3 div.search-box {
+    height: auto !important;
+    min-height: 377px;
+}
+#body.search-error {
+    position: relative;
+}
+#body.search-error #search-box #ciudadesEspanolas {
+    left: 335px;
+    top: 40px;
+}
+#body.search-error #search-box #ciudadesInternacionales {
+    left: 335px;
+    top: 60px;
+}
+#body.search-error #search-box #agesFormH {
+    left: 336px;
+    top: 138px;
+}
+#body.search-error #search-box-train input.highlight, #body.search-error #search-box-train select.highlight {
+}
+#body #search-box #search-box-flight {
+    background-image: url("/pictures/bg-sbmain-flight.jpg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    float: none;
+    position: relative;
+}
+#body #search-box #search-box-flight fieldset.locations #location-dep, #body.home #search-box #search-box-flight fieldset.locations #location-arr {
+    width: 165px;
+}
+#body #search-box #search-box-flight fieldset.locations input {
+    width: 140px;
+}
+#body #search-box #search-box-flight fieldset.locations span.ajax-loader {
+    position: absolute;
+}
+#body #search-box #search-box-flight fieldset.dates .date-box {
+    border: 1px solid #999999;
+    float: left;
+    height: 20px;
+    padding: 2px 5px;
+    position: relative;
+    width: 138px;
+}
+#body #search-box #search-box-flight fieldset.dates.v-pt .date-box {
+    width: 146px;
+}
+#body #search-box #search-box-flight fieldset.dates.v-en .date-box {
+    width: 146px;
+}
+#body #search-box #search-box-flight fieldset.dates .date-box.dep {
+    margin: 0 15px 0 0;
+    z-index: 0;
+}
+#body #search-box #search-box-flight fieldset.dates .date-box.ret {
+    z-index: 0;
+}
+#body #search-box #search-box-flight label.title {
+    float: left;
+    font-weight: bold;
+    padding-top: 4px;
+}
+#body #search-box #search-box-flight fieldset.dates .date-box input {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    width: 80px;
+}
+#body #search-box #search-box-flight span.calicon-link {
+    cursor: pointer;
+    left: auto;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    z-index: 1;
+}
+#body #search-box #search-box-flight fieldset.pax-quantities .pax {
+    border: 1px solid #999999;
+    float: left;
+    height: 20px;
+    margin-right: 5px;
+    padding: 2px 5px;
+    width: 80px;
+}
+#body #search-box #search-box-flight fieldset.pax-quantities .pax.children {
+    width: 110px;
+}
+#body #search-box #search-box-flight fieldset.pax-quantities.v-pt .pax.children {
+    width: 124px;
+}
+#body #search-box #search-box-flight fieldset.pax-quantities.v-en .pax.children {
+    width: 124px;
+}
+#body #search-box #search-box-flight fieldset.pax-quantities input.highlight, #body #search-box #search-box-flight fieldset.pax-quantities select.highlight {
+    border: medium none;
+    float: right;
+    padding: 3px 0 0;
+    z-index: 0;
+}
+#body #search-box #search-box-flight fieldset.advanced-search select.highlight {
+    border: medium none;
+    float: right;
+    padding: 3px 0 0;
+}
+#body #search-box #search-box-flight fieldset.advanced-search .class {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #999999;
+    height: 20px;
+    margin: 0 3px 0 0;
+    padding: 2px 5px;
+    width: 160px;
+}
+#body #search-box #search-box-flight fieldset.advanced-search.v-pt .class {
+    width: 190px;
+}
+#body #search-box #search-box-flight fieldset.advanced-search.v-en .class {
+    width: 190px;
+}
+#body #search-box #search-box-flight fieldset.advanced-search .classL {
+    border: 1px solid #999999;
+    height: 20px;
+    margin: 0 3px 0 0;
+    padding: 2px 5px;
+    width: 260px;
+}
+#body #search-box #search-box-flight fieldset.advanced-search .price-hour {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #999999;
+    height: 20px;
+    padding: 2px 5px;
+    width: 130px;
+}
+#body #search-box #search-box-flight fieldset.advanced-search .aerolinea {
+    border: 1px solid #999999;
+    height: 20px;
+    margin-top: 12px;
+    padding: 2px 5px;
+    width: 218px;
+}
+#body #search-box #search-box-flight #discounts {
+    margin: 7px 5px;
+}
+#body #search-box #search-box-flight #discounts label {
+    background-color: #ECFDD1;
+    background-image: none;
+    color: #5F8E09;
+    font-weight: bold;
+    padding: 2px 0 2px 10px;
+}
+#body #search-box #search-box-flight #discounts #largeFamily-disc {
+    border-right: 1px dotted #000000;
+    height: 70px;
+    padding: 0 8px 0 0;
+}
+#body #search-box #search-box-flight #more-options ul {
+    line-height: 16px;
+    list-style-position: outside;
+    margin: 0 0 0 10px;
+    padding: 0;
+}
+#body #search-box #search-box-flight #more-options ul li {
+    float: none;
+}
+#body.flight #search-box #search-box-flight fieldset {
+    padding: 9px 5px;
+}
+#body #search-box-flight #more-options ul li {
+    float: left;
+    padding: 0 6px 0 0;
+}
+#body #search-box-flight legend {
+    color: #5F8E09;
+    cursor: pointer;
+    font-weight: bold;
+    height: 17px;
+    line-height: 16px;
+    margin: 5px 0;
+    padding: 0 0 0 24px;
+    width: 93%;
+}
+#body #search-box-flight .min legend {
+    background: url("/pictures/arrow-min-max.gif") no-repeat scroll left top #ECFDD1;
+    margin: 0;
+}
+#body #search-box-flight .max legend {
+    background: url("/pictures/arrow-min-max.gif") no-repeat scroll left bottom #ECFDD1;
+    margin: 0;
+}
+#body #search-box-flight fieldset.min, #body #search-box-flight fieldset.max {
+    margin: 5px 0;
+    padding: 0;
+}
+#body #discounts fieldset {
+    margin: 0;
+}
+#body #discounts legend {
+    margin: 0;
+}
+#body #discounts-types p {
+    font-weight: bold;
+    margin: 0 0 8px;
+}
+#body #search-box .popup-ayuda-destinos .ayuda-destino, #body #search-box-flight .popup-ayuda-destinos .ayuda-destino {
+    font-family: Verdana,Geneva,sans-serif;
+    font-size: 10px;
+}
+#body #search-box .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino {
+    background-color: #FFFFFF;
+    padding: 5px;
+}
+#body #search-box .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino .contenido-ayuda-destino {
+    width: 604px;
+}
+#body #search-box .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino .contenido-ayuda-destino .titulo {
+    background-image: url("/pictures/cabecera-ayuda-destino.jpg");
+    background-repeat: no-repeat;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 100;
+    height: 32px;
+}
+#body #search-box .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino .contenido-ayuda-destino .titulo h1 {
+    float: left;
+    font-size: 14px;
+    font-weight: 100;
+    margin: 7px 0 0 !important;
+}
+#body #search-box .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino .contenido-ayuda-destino .cerrar {
+    float: right;
+    font-size: 14px;
+    margin: 7px 15px 0 0 !important;
+}
+#body #search-box .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino .contenido-ayuda-destino .cerrar #enlace-cerrar {
+    color: #FFFFFF;
+    float: left;
+    font-size: 11px;
+    margin-right: 5px;
+    text-decoration: underline;
+}
+#body #search-box .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino .contenido-ayuda-destino .volver-atras {
+    float: right;
+    font-size: 14px;
+    margin: 7px 15px 0 0 !important;
+}
+#body #search-box .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino .contenido-ayuda-destino .volver {
+    float: right;
+    font-size: 14px;
+    margin: 0 15px 10px 0 !important;
+}
+#body #search-box .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino .contenido-ayuda-destino .contenido {
+    background-image: url("/pictures/medio-ayuda-destino.jpg");
+    background-repeat: repeat-y;
+    padding: 2px 0;
+}
+#body #search-box .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino .contenido-ayuda-destino .contenido p {
+    color: #008DD6;
+    margin: 0 0 0 30px !important;
+}
+#body #search-box .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino .contenido-ayuda-destino .contenido h2 {
+    color: #000000;
+    font-size: 12px;
+    font-weight: 700;
+    margin-left: 20px;
+}
+#body #search-box .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino .contenido-ayuda-destino .pie {
+    background-image: url("/pictures/pie-ayuda-destino.jpg");
+    background-repeat: no-repeat;
+    height: 20px;
+}
+#body #search-box .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino .contenido-ayuda-destino .lista {
+    width: 600px;
+}
+#body #search-box .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino .contenido-ayuda-destino .lista ul {
+    float: left;
+    width: 600px;
+}
+#body #search-box .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino .contenido-ayuda-destino .lista li {
+    float: left;
+    font-size: 11px;
+    list-style-type: none;
+    margin: 2px 0 2px 30px;
+    width: 270px;
+}
+#body #search-box .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino a, a:link, a:visited {
+    color: #008DD6;
+    text-decoration: underline;
+}
+#body #search-box .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino a:hover {
+    color: #424242;
+}
+#body #search-box .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino .separador {
+    height: 8px;
+}
+#body #search-box .popup-ayuda-destinos .ayuda-destino .clearer {
+    clear: both;
+    line-height: 0;
+}
+#body #search-box #popup-ayuda-destinos-disney {
+    background-color: #FFFFFF;
+    border: 1px solid #008DD6;
+    border-radius: 8px 8px 8px 8px;
+    display: block;
+    padding: 4px;
+    position: absolute;
+    width: 606px;
+    z-index: 11;
+}
+#body #search-box #search-box-flight fieldset.locations-info #location-dep {
+    width: 150px;
+}
+#body #search-box #search-box-flight fieldset.locations-info #location-arr {
+    width: 150px;
+}
+#body #search-box #search-box-flight fieldset.locations-info .logoayudadestinos {
+    margin: 0 15px 0 0;
+    position: relative;
+    z-index: 1;
+}
+#body #search-box #search-box-flight fieldset.locations-info .logoayudadestinos input {
+    padding: 6px;
+    width: 136px;
+}
+#body #search-box #search-box-flight fieldset.locations-info .logoayudadestinos-home {
+    margin: 0 15px 0 0;
+    position: relative;
+    z-index: 1;
+}
+#body #search-box #search-box-flight fieldset.locations-info .logoayudadestinos-home input {
+    padding: 6px;
+    width: 136px;
+}
+#body #search-box span.loadicon-link {
+    cursor: pointer;
+    left: auto;
+    position: absolute;
+    right: -15px;
+    top: 5px;
+    z-index: 2;
+}
+#body #search-box span.ayudadescon-link {
+    cursor: pointer;
+    left: auto;
+    margin: 4px 0 -5px -28px;
+    position: absolute;
+    z-index: 1;
+}
+#body .list-airports-content {
+    height: 450px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: auto;
+    z-index: 11;
+}
+#body .list-airports-content popup {
+    height: 450px;
+    z-index: 11;
+}
+#body #list-airports-content-disney {
+    height: 170px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: auto;
+    z-index: 11;
+}
+#body .list-airports-content-disney popup {
+    height: 167px;
+    z-index: 11;
+}
+#body.home #search-box .arrival {
+    left: 175px;
+    top: 75px;
+}
+#body.flight #search-box .arrival {
+    left: 177px;
+    top: 208px;
+}
+#body.home #search-box .departure {
+    left: 10px;
+    top: 74px;
+}
+#body.flight #search-box .departure {
+    left: 13px;
+    top: 208px;
+}
+#body.disney #search-box .departure {
+    left: 10px;
+    top: 40px;
+}
+#body #search-box .popup-ayuda-destinos .list-airports-mask {
+    height: 370px;
+    left: 380px;
+    overflow-x: hidden;
+    top: 105px;
+}
+#body #search-box .popup-ayuda-destinos {
+    background-color: #FFFFFF;
+    border: 1px solid #008DD6;
+    border-radius: 8px 8px 8px 8px;
+    display: block;
+    padding: 8px;
+    position: absolute;
+    width: 633px;
+    z-index: 11;
+}
+#body.costas #search-box {
+    width: 358px;
+}
+#body.costas #search-box .search-box {
+    min-height: 408px;
+}
+#body.costas #search-box .new.search-box {
+    background-image: url("/pictures/bg-sbhome-hotel.jpg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    float: none;
+    position: relative;
+}
+#body.costas #search-box .search-box.new fieldset {
+    margin: 0 3px;
+}
+#body.costas #search-box .search-box.new fieldset.locations input {
+    width: 160px;
+}
+#body.costas #search-box .search-box.new div.button-costa {
+    cursor: pointer;
+    margin: 0;
+    text-align: right;
+}
+#body.costas #search-box .search-box.new fieldset .button-h {
+    cursor: pointer;
+}
+#body.costas #search-box #location-dep {
+    position: relative;
+}
+#body.costas #search-box #location-dep span img {
+    position: absolute;
+}
+#body.costas #search-box #ciudadesEspanolas {
+    left: 338px;
+    top: 140px;
+}
+#body.costas #search-box #ciudadesInternacionales {
+    left: 338px;
+    top: 164px;
+}
+#body.costas #search-box #agesFormH {
+    left: 336px;
+    top: 248px;
+}
+#body.costas #search-header {
+    background-color: #FFFFFF;
+    background-image: url("/pictures/fondo-deg-verde.gif");
+    background-repeat: repeat-x;
+    height: 25px;
+    width: 358px;
+}
+#body.costas #search-header .box-borde-sup, #body.costas #search-header .box-borde-derc {
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+#body.costas #search-header ul {
+    background-color: #FFFFFF;
+}
+#body.costas #search-header .active {
+    border-left: 1px solid #75AE11;
+    border-right: 1px solid #75AE11;
+    border-top: 1px solid #75AE11;
+    height: 21px;
+    text-decoration: none;
+}
+#body.costas #search-header li {
+    color: #000000;
+    text-decoration: underline;
+}
+#body.costas #search-header li:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+#body.costas #search-header li h1:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+#body.costas #search-header li.active:hover h1 {
+    color: #424242;
+    text-decoration: none;
+}
+#body.costas #search-header li.active:hover {
+    color: #424242;
+    text-decoration: none;
+}
+#body.costas #search-header li a {
+    color: #000000;
+    text-decoration: none;
+}
+#body.costas #search-header li a:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+#body.costas #search-header li.active a:hover {
+    color: #424242;
+    text-decoration: none;
+}
+#body.costas #search-header li#sbTab-link-hotel.active {
+    border-right: 1px solid #75AE11;
+}
+#body.costas #search-box div.search-box {
+    padding-top: 12px;
+}
+#body.costas #search-box .localidad-costa {
+    margin: 0 0 12px;
+}
+#body.costas #search-box fieldset.locations li {
+    line-height: 18px;
+}
+#body.costas #search-box .sel-costas select {
+    width: 159px;
+}
+#body.costas #search-box .search-box.new fieldset.locations .area span {
+    float: left;
+    margin: 3px 0 0;
+}
+#body.costas #search-box .search-box.new fieldset.locations .area input {
+    width: auto;
+}
+#body.costas #search-box #search-box-region {
+    background-image: url("/pictures/bg-sbhome-ski.jpg");
+    background-repeat: no-repeat;
+    float: none;
+}
+#body.costas #search-box #search-box-region2 {
+    background-image: url("/pictures/bg-sbhome-costa.jpg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    float: none;
+}
+#body.costas #search-box .search-box.new div.button-costa {
+    margin: 0;
+    text-align: right;
+}
+#body.costas #search-box .search-box.new fieldset.dates .date-box {
+    border: 1px solid #999999;
+    float: left;
+    height: 20px;
+    padding: 2px 5px;
+    position: relative;
+    width: 144px;
+}
+#body.viajes .searchbox-viajes, #body .searchbox-escapadas, #body .searchbox-circuitos, #body .searchbox-caribe, #body .searchbox-cruceros {
+    border: medium none;
+    width: 358px;
+}
+#body.viajes #search-box .searchbox-viajes form, #body #search-box .searchbox-escapadas form, #body #search-box .searchbox-circuitos form, #body #search-box .searchbox-caribe form {
+    border: medium none;
+}
+#body.viajes .searchbox-viajes fieldset, #body .searchbox-escapadas fieldset, #body .searchbox-circuitos fieldset, #body .searchbox-caribe fieldset {
+    border: medium none;
+    margin: 0 5px;
+    padding: 5px;
+}
+#body.viajes .searchbox-central, #body .searchbox-centralE {
+    background-image: url("/pictures/buscador-interior-viajes.gif");
+    background-repeat: repeat-y;
+    padding: 5px 0 0;
+    position: relative;
+    width: 358px;
+}
+#body.viajes .searchbox-central {
+    min-height: 660px;
+}
+#body.viajes .searchbox-centralE {
+    height: 468px;
+}
+#body.viajes #search-header li.last.active {
+    background-image: url("/pictures/borde-buscador-act.gif");
+    background-repeat: no-repeat;
+    border: medium none;
+}
+#body.viajes #search-header li.last {
+    background-image: url("/pictures/borde-buscador.gif");
+    background-repeat: no-repeat;
+    border: medium none;
+    width: 108px;
+}
+#body.viajes p.titulo-buscador-vacaciones {
+    background-color: #EBFDD0;
+    color: #5F8E09;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 3px;
+}
+#body.viajes #search-box #palabraclave {
+    margin: 3px 0 0 10px;
+    width: 145px;
+}
+#body.viajes #search-box .searchbox-inf {
+    background-image: url("/pictures/borde-inf-verde.gif");
+    background-repeat: repeat-x;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 358px;
+}
+#body.viajes #search-box .searchbox-inf .borde-izq {
+    float: left;
+}
+#body.viajes #search-box .searchbox-inf .borde-derc {
+    float: right;
+}
+#body.viajes #search-box form {
+    padding: 0;
+}
+#body.viajes #search-box fieldset#showDestinationVacation-vacation {
+    margin: -5px 8px;
+}
+#body.viajes #search-box div.select-field {
+    border: 1px solid #999999;
+    float: left;
+    height: 20px;
+    margin: 0 5px 0 0;
+    padding: 2px 5px;
+}
+#body.viajes #search-box label.title {
+    float: left;
+    font-weight: bold;
+    padding-top: 4px;
+}
+#body.viajes #search-box label#AdvancedSearch-vacation {
+    float: left;
+    font-weight: bold;
+    padding-right: 4px;
+    padding-top: 3px;
+}
+#body.viajes #search-box label#AdvancedSearch-caribe {
+    float: left;
+    font-weight: bold;
+    padding-right: 4px;
+    padding-top: 3px;
+}
+#body.viajes #search-box div.select-field select {
+    border: medium none;
+    float: right;
+    font-size: 10px;
+    padding: 3px 0 0;
+}
+#body.viajes #search-box #imgMapa-vacation img {
+    padding: 0 8px;
+    text-align: center;
+}
+#body.viajes #search-box span.calicon-link {
+    cursor: pointer;
+    left: -28px;
+    position: relative;
+    z-index: 1;
+}
+#body.viajes #search-box input#destinationSearchVac-vacation.highlight {
+    padding: 6px;
+    width: 150px;
+}
+#body.viajes #search-box select#originAdvancedSearch-vacation.vacacional {
+    border: medium none;
+    padding-top: 2px;
+}
+#body.viajes #search-box select#monthAdvancedSearch-vacation.vacacional {
+    border: medium none;
+    padding-top: 2px;
+}
+#body.viajes #search-box select#originAdvancedSearch-caribe.vacacional {
+    border: medium none;
+    padding-top: 2px;
+}
+#body.viajes #search-box select#monthAdvancedSearch-caribe.vacacional {
+    border: medium none;
+    padding-top: 2px;
+}
+#body.viajes div.advanced-search {
+    background-color: #EBFDD0;
+    float: left;
+    margin: 8px 0;
+    padding: 10px;
+    width: 315px;
+}
+#body.viajes div.advanced-search .close {
+    float: right;
+    padding: 0 5px;
+}
+#body.viajes div.advanced-search .w70 {
+    margin: 5px 0;
+}
+#body.viajes #search-box #AdvancedSearch-vacation.viaje {
+    border: 1px solid #999999;
+    margin-bottom: 5px;
+    margin-right: 22px;
+    padding: 4px;
+}
+#body.viajes div.advanced-search .viaje {
+    border: 1px solid #999999;
+    margin-bottom: 5px;
+    margin-right: 22px;
+    padding: 4px;
+}
+#body.viajes div.advanced-search .cerrar {
+    float: right;
+}
+#body.viajes div.advanced-search .link-close {
+    color: #79B511;
+    float: left;
+    margin: 0 5px 0 0;
+    text-decoration: underline;
+}
+#body.viajes div.advanced-search .boton {
+    margin-left: 5px;
+}
+#body.viajes #search-header {
+    background-color: #FFFFFF;
+    background-image: url("/pictures/fondo-deg-verde.gif");
+    background-repeat: repeat-x;
+    height: 25px;
+    width: 358px;
+}
+#body.viajes #search-header .box-borde-sup, #body.viajes #search-header .box-borde-derc {
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+#body.viajes #search-header ul {
+    background-color: #FFFFFF;
+    height: 25px;
+}
+#body.viajes #search-header .active {
+    border-left: 1px solid #75AE11;
+    border-right: 1px solid #75AE11;
+    border-top: 1px solid #75AE11;
+    height: 21px;
+    text-decoration: none;
+}
+#body.viajes #search-header li {
+    text-decoration: underline;
+}
+#body.viajes #search-header li:hover {
+    text-decoration: none;
+}
+#body.viajes #search-header li a {
+    color: #000000;
+    text-decoration: none;
+}
+#body.viajes #search-header li a:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+#body.viajes #search-header li.active a:hover {
+    color: #424242;
+    text-decoration: none;
+}
+#body.viajes #search-header li#sbTab-link-hotel.active {
+    border-right: 1px solid #75AE11;
+}
+#body.viajes .searchbox-viajes h2 {
+    font-size: 10px;
+    font-weight: bold;
+    margin: 0 0 0 15px;
+}
+#body.viajes .searchbox-viajes .select-destiny, #body.viajes .searchbox-viajes .select-type {
+    margin: 8px 0;
+}
+#body.viajes .searchbox-viajes #imgMapa {
+    margin: 15px 0 0;
+    text-align: center;
+}
+#body.viajes .searchbox-viajes #imgMapa img {
+    height: 280px;
+    margin: 0 0 25px;
+    text-align: center;
+}
+#body.viajes .searchbox-escapadas h2 {
+    font-size: 10px;
+    font-weight: bold;
+    margin: 0 0 0 15px;
+}
+#body.viajes #search-box .searchbox-escapadas p {
+    background-color: #EBFDD0;
+    color: #5F8E09;
+    font-size: 10px;
+    font-weight: bold;
+    margin: 8px;
+    padding: 3px;
+}
+#body.viajes .searchbox-escapadas .select-destiny, #body.viajes .searchbox-escapadas .select-type {
+    margin: 8px 0;
+}
+#body.viajes .searchbox-escapadas #mapaEscapadas {
+    margin: 15px 0 0;
+    text-align: center;
+}
+#body.viajes .searchbox-escapadas #mapaEscapadas img {
+    height: 280px;
+    margin: 0 0 25px;
+    text-align: center;
+}
+#body.viajes .searchbox-circuitos h2 {
+    font-size: 10px;
+    font-weight: bold;
+    margin: 0 0 0 15px;
+}
+#body.viajes #search-box .searchbox-circuitos p {
+    background-color: #EBFDD0;
+    color: #5F8E09;
+    font-size: 10px;
+    font-weight: bold;
+    margin: 8px;
+    padding: 3px;
+}
+#body.viajes .searchbox-circuitos .select-destiny, #body.viajes .searchbox-circuitos .select-type {
+    margin: 8px 0;
+}
+#body.viajes .searchbox-circuitos #mapaCircuitos {
+    margin: 15px 0 0;
+    text-align: center;
+}
+#body.viajes .searchbox-circuitos #mapaCircuitos img {
+    height: 280px;
+    margin: 0 0 25px;
+    text-align: center;
+}
+#body.viajes .searchbox-caribe h2 {
+    font-size: 10px;
+    font-weight: bold;
+    margin: 0 0 0 15px;
+}
+#body.viajes #search-box .searchbox-caribe .box-ofertas-search {
+    border: 1px solid #A0CF70;
+    float: left;
+    margin: -5px 15px 0;
+    padding: 0;
+    width: 145px;
+}
+#body.viajes #search-box .searchbox-caribe .box-ofertas-search ul {
+    margin: 0;
+    padding: 0;
+}
+#body.viajes #search-box .searchbox-caribe .box-ofertas-search strong {
+    display: block;
+    font-weight: bold;
+    padding: 5px 0 5px 10px;
+}
+#body.viajes #search-box .searchbox-caribe .box-ofertas-search li {
+    color: #CCCCCC;
+    font-weight: bold;
+    line-height: 18px;
+    list-style-type: none;
+    padding: 0 0 0 8px;
+}
+#body.viajes #search-box input#destinationSearchVac-caribe.highlight {
+    padding: 6px;
+    width: 150px;
+}
+#body.viajes .searchbox-esqui h2 {
+    font-size: 10px;
+    font-weight: bold;
+    margin: 0 0 0 15px;
+}
+#body.viajes #search-box .searchbox-esqui p {
+    font-size: 10px;
+    margin: 8px;
+    padding: 3px;
+    width: 213px;
+}
+#body.viajes #search-box .searchbox-esqui .box-ofertas {
+    border: 1px solid #A0CF70;
+    float: left;
+    margin: 10px 15px 0;
+    padding: 0;
+    width: 145px;
+}
+#body.viajes #search-box .searchbox-esqui .box-ofertas ul {
+    margin: 0;
+    padding: 0;
+}
+#body.viajes #search-box .searchbox-esqui .box-ofertas strong {
+    display: block;
+    font-weight: bold;
+    padding: 5px 0 5px 10px;
+}
+#body.viajes #search-box .searchbox-esqui .box-ofertas li {
+    color: #CCCCCC;
+    font-weight: bold;
+    line-height: 18px;
+    list-style-type: none;
+    padding: 0 0 8px 8px;
+}
+#body.viajes #search-box #advantages {
+    border-top: 1px dotted #5F8E09;
+    margin-top: 12px;
+}
+#body.viajes #search-box #advantages div.advantages-text {
+    border: 1px solid #D8F3BC;
+    font-weight: bold;
+    margin: 20px 10px 0;
+    position: relative;
+}
+#body.viajes #search-box #advantages div.advantages-text p {
+    background: url("/pictures/bg-advantages.jpg") no-repeat scroll 0 0 transparent;
+    color: #5F8E09;
+    font-weight: bold;
+    margin: 0;
+    padding: 5px 48px;
+    width: 246px;
+}
+#body.viajes #search-box #advantages ul {
+    line-height: 16px;
+    margin: 10px;
+}
+#body.viajes #search-box-vacation #advantages ul {
+    font-weight: bold;
+    line-height: 25px;
+}
+#body.viajes #search-box #advantages li a {
+    color: #000000;
+}
+#body.viajes #search-box #advantages li a:hover {
+    color: #008DD6;
+}
+#body.viajes #search-box #advantages div.advantages-text img {
+    left: -8px;
+    position: absolute;
+    top: -8px;
+}
+#body.viajes #search-box #advantages div.dto {
+    margin: 15px 15px 35px;
+}
+#body.viajes #search-box #advantages div.dto-viaje {
+    margin: 5px 15px;
+}
+#body.viajes #search-box #advantages div.dto img {
+    float: left;
+}
+#body.viajes #search-box #advantages div.dto-viaje img {
+    float: left;
+}
+#body.viajes #search-box #advantages div.dto p {
+    float: left;
+    margin-left: 15px;
+    margin-top: 25px;
+}
+#body.viajes #search-box #advantages div.dto-viaje p {
+    float: left;
+    margin-left: 15px;
+    margin-top: 25px;
+}
+#body.viajes .searchbox-centralE input.highlight, #body.viajes .searchbox-centralE select.highlight {
+    border: 1px solid #999999;
+    font-size: 1em;
+    padding: 4px;
+    width: 160px;
+}
+#body.viajes .searchbox-circuitos div.busqueda, #body.viajes .searchbox-caribe div.busqueda {
+    background-color: #EBFDD0;
+    border: 1px solid #608E0A;
+    float: left;
+    height: 24px;
+    margin: 15px 0;
+    padding: 2px 0 0 10px;
+    width: 340px;
+}
+#body.viajes .searchbox-circuitos div.busqueda strong, #body.viajes .searchbox-caribe div.busqueda strong {
+    color: #608E0A;
+    float: left;
+    font-weight: bold;
+    margin: 5px 0 0;
+    padding: 0 0 0 7px;
+}
+#body.viajes .searchbox-circuitos div.busqueda span, #body.viajes .searchbox-caribe div.busqueda span {
+    margin: 0 0 0 30px;
+}
+#body.viajes .searchbox-circuitos div.busqueda img, #body.viajes .searchbox-caribe div.busqueda img {
+    margin: 0;
+}
+#body.viajes .searchbox-circuitos div.fondo {
+    background-color: #FFFFFF;
+    margin: 0 2px 2px;
+}
+#body.viajes .searchbox-circuitos #botonera-mapa, #body.viajes .searchbox-escapadas #botonera-mapa {
+    background-color: #DFECFF;
+    float: left;
+    height: 28px;
+    margin: 0 0 5px;
+    width: 100%;
+}
+#body.viajes .searchbox-circuitos #botonera-mapa ul, #body.viajes .searchbox-escapadas #botonera-mapa ul {
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    list-style: none outside none;
+    margin: 0;
+    padding: 7px 0 0 10px;
+}
+#body.viajes .searchbox-circuitos #botonera-mapa a.active, #body.viajes .searchbox-escapadas #botonera-mapa a.active {
+    color: #424242;
+    text-decoration: none;
+}
+#body.viajes .searchbox-circuitos li, #body.viajes .searchbox-escapadas li {
+    color: #008DD6;
+    display: inline;
+    font-weight: bold;
+}
+#body.viajes .searchbox-caribe div.fondo {
+    margin: 5px 0 0 2px;
+}
+#body.viajes .destination-popup {
+    background-color: #F4F9FE;
+    background-image: url("/pictures/bg-top-destinos-popup.gif");
+    background-position: center top;
+    background-repeat: repeat-x;
+    border: 1px solid #008DD6;
+    float: left;
+    font-size: 10px;
+    left: 161px;
+    padding: 0 0 5px;
+    position: absolute;
+    top: 49px;
+    width: 665px;
+    z-index: 1;
+}
+#body.viajes .destination-popup .cerrar {
+    text-align: right;
+}
+#body.viajes .destination-popup a {
+    cursor: pointer;
+}
+#body.viajes .destination-popup .top-razones {
+    float: left;
+    margin: 0 0 0 5px;
+}
+#body.viajes .destination-popup .top-razones p, #body.viajes .destination-popup .top-destinos p {
+    color: #008DD6;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0 0 0 5px;
+}
+#body.viajes .destination-popup .top-razones ul {
+    color: #000000;
+    font-size: 10px;
+    line-height: 15px;
+    list-style-type: none;
+    margin: 5px 0 12px 5px;
+    padding: 0;
+}
+#body.viajes .destination-popup .top-destinos {
+    float: left;
+    margin: 0 0 10px 8px;
+}
+#body.viajes .destination-popup .top-destinos .box-ofertas {
+    background-color: #FFFFFF;
+    border: 1px solid #BBDFFD;
+    float: left;
+    margin: 5px 0;
+    padding: 8px;
+    width: 465px;
+}
+#body.viajes .destination-popup p.titulo-box-ofertas {
+    color: #808080;
+    font-weight: bold;
+    margin: 0 0 5px;
+}
+#body.viajes .destination-popup .box-ofertas li a {
+    margin: 0;
+}
+#body.viajes .destination-popup .top-destinos ul {
+    color: #008DD6;
+    line-height: 17px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+#body.viajes .destination-popup .top-destinos li {
+    display: inline;
+}
+#body.viajes .destination-popup .selec-destinos p.titulo-box-ofertas {
+    background: none repeat scroll 0 0 #008DD6;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0 0 5px;
+    padding: 3px;
+}
+#body.viajes .destination-popup .selec-destinos {
+    float: left;
+    margin: 0 0 10px 8px;
+}
+#body.viajes .destination-popup .selec-destinos .box-ofertas {
+    background-color: #FFFFFF;
+    border: 1px solid #BBDFFD;
+    float: left;
+    margin: 5px 0;
+    padding: 8px;
+    width: 630px;
+}
+#body.viajes .destination-popup .selec-destinos p.titulo-popup-ofertas {
+    background: none repeat scroll 0 0 #008DD6;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0 0 5px;
+}
+#body.viajes .destination-popup .selec-destinos ul.topdestinosul {
+    color: #008DD6;
+    line-height: 17px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+#body.viajes .destination-popup .selec-destinos li.topdestinosli {
+    display: inline;
+    float: left;
+    margin: 0 5px 0 0;
+}
+#body.viajes .destination-popup .selec-destinos ul {
+    color: #008DD6;
+    float: left;
+    line-height: 17px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0 15px 0 4px;
+    width: 135px;
+}
+#body.viajes .destination-popup .selec-destinos li {
+    display: block;
+}
+#body.viajes .destination-popup .selec-destinos li.destinogeneral {
+    font-weight: bold;
+    padding: 8px 0 3px;
+    text-transform: uppercase;
+}
+#body.viajes .destination-popup .close {
+    float: right;
+    margin: 8px 10px;
+}
+#body.viajes .destination-popup #link-close {
+    cursor: pointer;
+    float: left;
+    margin: 0 5px 0 0;
+    text-decoration: underline;
+}
+#body.viajes .destination-popup a {
+    cursor: pointer;
+}
+#body.viajes .searchbox-cruceros h2 {
+    font-size: 10px;
+    font-weight: bold;
+    margin: 0 0 0 15px;
+}
+#body.viajes #search-box .searchbox-cruceros p {
+    font-size: 10px;
+    margin: 8px;
+    padding: 3px;
+    width: 213px;
+}
+#body.viajes .searchbox-centralE input.highlight, #body.viajes .searchbox-centralE select.highlight {
+    border: 1px solid #999999;
+    font-size: 1em;
+    padding: 4px;
+    width: 160px;
+}
+#body.viajes #searchbox-cruises {
+    float: left;
+    width: 357px;
+}
+#body.viajes #searchbox-cruises label {
+    display: block;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 0 0 5px;
+}
+#body.viajes #searchbox-cruises #dvResult {
+    float: left;
+    font-weight: bold;
+    width: 50%;
+}
+#body.viajes #searchbox-cruises fieldset.boton-buscar {
+    margin: 2px 0 0;
+    padding: 0 10px 0 0;
+    text-align: right;
+}
+#body.viajes #search-box .searchbox-cruceros p {
+    background-color: #EBFDD0;
+    color: #5F8E09;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 3px;
+    width: 335px;
+}
+#body.viajes .txtresultados {
+    color: #88B913;
+    font-family: verdana,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    text-decoration: none;
+}
+#body.viajes #searchbox-cruises .box-navieras {
+    float: left;
+    margin: 10px 0 0;
+    width: 357px;
+}
+#body.viajes #searchbox-cruises .box-navieras h3 {
+    background-color: #88B913;
+    color: #FFFFFF;
+    font-family: Verdana,Arial,Helvetica,Sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    margin: 0 0 10px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+}
+#body.viajes #searchbox-cruises .box-navieras .naviera {
+    float: left;
+    margin: 5px 0 0 22px;
+    width: 90px;
+}
+#body.viajes #searchbox-cruises .box-navieras .naviera a {
+    display: block;
+    float: none;
+}
+#body.viajes #searchbox-cruises .box-navieras .naviera span {
+    display: block;
+    font-weight: bold;
+    margin: 5px 0;
+    text-align: center;
+}
+#body #primary-main #search-box.lite.air #discounts {
+    margin: 0 !important;
+    width: auto !important;
+}
+#body #primary-main #search-box.lite.air div.header-search {
+    color: #FFFFFF;
+    width: 775px;
+}
+#body #search-box.lite.air {
+    overflow: visible !important;
+    position: relative;
+}
+#body #search-box.lite.air #popup-ayuda-destinos {
+    left: 0;
+}
+#body #primary-main #search-box.lite.air form {
+    background-image: url("/pictures/bg-background-inf-lite.jpg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    border: medium none;
+    float: left !important;
+    min-height: 70px !important;
+    padding: 0 0 20px;
+    width: 776px !important;
+}
+#body #search-box.lite.air input.selected, #body #search-box.lite.air div.selected {
+    border-color: #008DD6;
+}
+#body #search-box.lite.air fieldset.locations {
+    margin: 0 0 0 10px !important;
+    padding: 10px 0 0;
+    width: auto;
+}
+#body #search-box.lite.air fieldset.locations .logoayudadestinos-home {
+    margin: 0;
+    position: relative;
+}
+#body #search-box.lite.air fieldset.locations .logoayudadestinos-home input {
+    padding: 6px;
+    width: 136px;
+}
+#body #search-box.lite.air input.highlight, #body #search-box.lite.air select.highlight {
+    border: 1px solid #999999;
+    font-size: 1em;
+}
+#body #search-box.lite.air span.ayudadescon-link {
+    cursor: pointer;
+    left: auto;
+    position: absolute;
+    z-index: 1;
+}
+#body #search-box.lite.air .locations #location-dep input, #body #search-box.lite.air .locations #location-arr input {
+    margin-right: -2px;
+    width: 178px;
+}
+#body #search-box.lite.air .locations.v-en #location-dep input, #body #search-box.lite.air .locations.v-en #location-arr input {
+    margin-right: -2px;
+    width: 168px;
+}
+#body #search-box.lite.air span.ayudadescon-link {
+    cursor: pointer;
+    left: auto;
+    margin: 5px 18px 0 0;
+    position: absolute;
+    z-index: 1;
+}
+#body #search-box.lite.air .locations #calendar-dep input, #body #search-box.lite.air .locations #calendar-ret input {
+    border: medium none;
+    margin: 0;
+    padding: 4px;
+    width: 80px;
+}
+#body #search-box.lite.air .locations label {
+    display: block;
+    float: left;
+    font-weight: bold;
+    padding-top: 4px;
+}
+#body #search-box.lite.air .locations #calendar-dep.date-box {
+    border: 1px solid #999999;
+    float: left;
+    margin-right: 15px;
+    padding: 2px 5px;
+    position: relative;
+    width: 135px;
+}
+#body #search-box.lite.air .locations.v-en #calendar-dep.date-box {
+    border: 1px solid #999999;
+    float: left;
+    margin-right: 15px;
+    padding: 2px 5px;
+    position: relative;
+    width: 155px;
+}
+#body #search-box.lite.air .locations #calendar-dep.date-box span.calicon-link {
+    cursor: pointer;
+    left: auto;
+    position: absolute;
+    right: 5px !important;
+    top: 5px;
+    z-index: 1;
+}
+#body #search-box.lite.air .locations #calendar-ret.date-box {
+    border: 1px solid #999999;
+    float: left;
+    padding: 2px 5px;
+    position: relative;
+    width: 150px;
+}
+#body #search-box.lite.air .locations.v-en #calendar-ret.date-box {
+    border: 1px solid #999999;
+    float: left;
+    padding: 2px 5px;
+    position: relative;
+    width: 155px;
+}
+#body #search-box.lite.air .locations #calendar-ret.date-box span.calicon-link {
+    cursor: pointer;
+    left: auto;
+    position: absolute;
+    right: 5px !important;
+    top: 5px;
+    z-index: 1;
+}
+#body #search-box.lite.air .locations div#location-dep.form-column span.ajax-loader {
+    position: absolute;
+    right: 7px;
+    top: 7px;
+}
+#body #search-box.lite.air #location-dep.form-column span#depAirports.ayudadescon-link {
+    right: -17px;
+    top: 0;
+}
+#body #search-box.lite.air fieldset.more-options {
+    float: left;
+    margin: 10px 0 0 10px !important;
+    padding: 0 0 5px;
+    width: 750px;
+}
+#body #search-box.lite.air fieldset.more-options legend {
+    color: #008DD6;
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: 4px !important;
+    padding-left: 12px;
+    text-decoration: underline;
+}
+#body #search-box.lite.air .query-type {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
+#body #search-box.lite.air fieldset.more-options label, #body #search-box.lite.air fieldset.more-options input, #body #search-box.lite.air fieldset.more-options option {
+    color: #000000;
+    float: left;
+    font-size: 11px;
+    font-weight: normal;
+    margin: 4px 5px;
+    padding: 0;
+}
+#body #search-box.lite.air fieldset.more-options select {
+    font-size: 10px;
+    margin: 0;
+}
+#body #search-box.lite.air fieldset.more-options.max fieldset {
+    margin: 0 0 0 5px;
+}
+#body #search-box.lite.air label.title {
+    color: #000000;
+    float: left;
+    font-weight: bold;
+    padding-top: 4px;
+}
+#body #search-box.lite.air fieldset.pax-quantities {
+    float: left !important;
+    margin-bottom: 0;
+    margin-left: 15px !important;
+    margin-right: 0;
+    margin-top: 5px !important;
+}
+#body #search-box.lite.air fieldset.pax-quantities select {
+    float: right;
+    font-size: 10px;
+    height: 20px;
+    padding: 3px 0;
+}
+#body #search-box.lite.air fieldset.pax-quantities .pax {
+    border: 1px solid #999999;
+    float: left;
+    font-size: 10px;
+    height: 20px;
+    margin-right: 18px;
+    padding: 2px 5px;
+    width: 100px;
+}
+#body #search-box.lite.air fieldset.pax-quantities .pax.children {
+    width: 135px;
+}
+#body #search-box.lite.air fieldset.pax-quantities.v-pt .pax.children {
+    width: 150px;
+}
+#body #search-box.lite.air fieldset.pax-quantities.v-en .pax.children {
+    width: 150px;
+}
+#body #search-box.lite.air fieldset.pax-quantities .pax.bebes {
+    margin-right: 15px;
+    width: 88px;
+}
+#body #search-box.lite.air fieldset.pax-quantities.v-en .pax.bebes {
+    margin-right: 15px;
+    width: 100px;
+}
+#body #search-box.lite.air fieldset.pax-quantities .pax.clase {
+    width: 130px;
+}
+#body #search-box.lite.air fieldset.pax-quantities.v-pt .pax.clase {
+    width: 145px;
+}
+#body #search-box.lite.air fieldset.pax-quantities.v-en .pax.clase {
+    width: 145px;
+}
+#body #search-box.lite.air fieldset.pax-quantities input.highlight, #body #search-box.lite.air fieldset.pax-quantities select.highlight {
+    border: medium none;
+    height: 17px;
+    padding: 2px 0 0;
+}
+#body #search-box.lite.air fieldset.pax-quantities .class {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #999999;
+    height: 20px;
+    margin: 0;
+    padding: 2px 5px;
+    width: 120px;
+}
+#body #search-box.lite.air div.w100px {
+    width: 120px;
+}
+#body #search-box.lite.air fieldset.discount {
+    float: left !important;
+    margin: 0 !important;
+    padding: 0 0 0 20px !important;
+}
+#body #search-box.lite.air fieldset.discount #discounts #largeFamily-disc {
+    background-color: #F6FEE9;
+    border: 1px solid #75AE11;
+    float: left;
+    height: 45px;
+    margin: 5px 20px 5px 0 !important;
+    padding: 10px;
+    width: 304px !important;
+}
+#body #search-box.lite.air fieldset.discount #discounts #largeFamily-disc ul {
+    float: left;
+    margin: 15px 0 0;
+    padding: 0;
+    width: 280px;
+}
+#body #search-box.lite.air fieldset.discount #discounts #largeFamily-disc li, #body #search-box.lite.air fieldset.discount #discounts #resident-disc li {
+    color: #000000;
+    display: inline;
+    font-size: 10px;
+    font-weight: normal;
+    margin: 0;
+    padding-right: 15px;
+}
+#body #search-box.lite.air fieldset.discount #discounts #largeFamily-disc label, #body #search-box.lite.air fieldset.discount #discounts #resident-disc label {
+    color: #75AE11;
+    font-weight: bold;
+    width: auto;
+}
+#body #search-box.lite.air fieldset.discount #discounts #largeFamily-disc .checkbox, #body #search-box.lite.air fieldset.discount #discounts #resident-disc .checkbox {
+    margin: 1px 5px 1px 0;
+    padding-right: 5px;
+}
+#body #search-box.lite.air fieldset.discount #discounts #resident-disc {
+    background-color: #F6FEE9;
+    border: 1px solid #75AE11 !important;
+    float: left;
+    height: 45px;
+    margin: 5px 0 !important;
+    padding: 10px !important;
+    width: 340px;
+}
+#body #search-box.lite.air fieldset.discount #discounts #resident-disc ul {
+    float: left;
+    margin: 15px 0 0;
+    padding: 0;
+    width: 340px;
+}
+#body #search-box.lite.air form {
+    margin-bottom: 10px;
+    min-height: 0 !important;
+}
+#body #search-box.lite.air #discounts #resident-disc {
+    padding: 0;
+}
+#body #search-box.lite.air .popup-ayuda-destinos.departure {
+    margin: 36px 0 0 10px;
+}
+#body #search-box.lite.air .popup-ayuda-destinos.arrival {
+    margin: 37px 0 0 258px;
+}
+#body #search-box.lite.air .popup-ayuda-destinos .ayuda-destino, #body #search-box.lite.air-flight .popup-ayuda-destinos .ayuda-destino {
+    font-family: Verdana,Geneva,sans-serif;
+    font-size: 10px;
+}
+#body #search-box.lite.air .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino {
+    background-color: #FFFFFF;
+    padding: 5px;
+}
+#body #search-box.lite.air .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino .contenido-ayuda-destino {
+    width: 604px;
+}
+#body #search-box.lite.air .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino .contenido-ayuda-destino .titulo {
+    background-image: url("/pictures/cabecera-ayuda-destino.jpg");
+    background-repeat: no-repeat;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 100;
+    height: 32px;
+}
+#body #search-box.lite.air .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino .contenido-ayuda-destino .titulo h1 {
+    color: #FFFFFF;
+    float: left;
+    font-size: 14px;
+    margin: 7px 0 0 !important;
+}
+#body #search-box.lite.air .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino .contenido-ayuda-destino .cerrar {
+    float: right;
+    font-size: 14px;
+    margin: 7px 15px 0 0 !important;
+}
+#body #search-box.lite.air .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino .contenido-ayuda-destino .cerrar #enlace-cerrar {
+    color: #FFFFFF;
+    float: left;
+    font-size: 11px;
+    margin-right: 5px;
+    text-decoration: underline;
+}
+#body #search-box.lite.air .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino .contenido-ayuda-destino .volver-atras {
+    float: right;
+    font-size: 14px;
+    margin: 7px 15px 0 0 !important;
+}
+#body #search-box.lite.air .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino .contenido-ayuda-destino .volver {
+    float: right;
+    font-size: 14px;
+    margin: 0 15px 10px 0 !important;
+}
+#body #search-box.lite.air .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino .contenido-ayuda-destino .contenido {
+    background-image: url("/pictures/medio-ayuda-destino.jpg");
+    background-repeat: repeat-y;
+    padding: 2px 0;
+}
+#body #search-box.lite.air .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino .contenido-ayuda-destino .contenido p {
+    color: #008DD6;
+    margin: 0 0 0 30px !important;
+}
+#body #search-box.lite.air .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino .contenido-ayuda-destino .contenido h2 {
+    color: #000000;
+    font-size: 12px;
+    font-weight: 700;
+    margin-left: 20px;
+}
+#body #search-box.lite.air .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino .contenido-ayuda-destino .pie {
+    background-image: url("/pictures/pie-ayuda-destino.jpg");
+    background-repeat: no-repeat;
+    height: 20px;
+}
+#body #search-box.lite.air .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino .contenido-ayuda-destino .lista {
+    width: 600px;
+}
+#body #search-box.lite.air .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino .contenido-ayuda-destino .lista ul {
+    float: left;
+    width: 600px;
+}
+#body #search-box.lite.air .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino .contenido-ayuda-destino .lista li {
+    float: left;
+    font-size: 11px;
+    list-style-type: none;
+    margin: 2px 0 2px 30px;
+    width: 270px;
+}
+#body #search-box.lite.air .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino a, a:link, a:visited {
+    color: #008DD6;
+    text-decoration: underline;
+}
+#body #search-box.lite.air .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino a:hover {
+    color: #424242;
+}
+#body #search-box.lite.air .popup-ayuda-destinos .ayuda-destino .principal-ayuda-destino .separador {
+    height: 8px;
+}
+#body #search-box.lite.air .popup-ayuda-destinos .ayuda-destino .clearer {
+    clear: both;
+    line-height: 0;
+}
+#body #search-box.lite.air #search-box.lite.air-flight fieldset.locations-info #location-dep {
+    width: 150px;
+}
+#body #search-box.lite.air #search-box.lite.air-flight fieldset.locations-info #location-arr {
+    width: 150px;
+}
+#body #search-box.lite.air #search-box.lite.air-flight fieldset.locations-info .logoayudadestinos {
+    margin: 0 15px 0 0;
+    position: relative;
+    z-index: 1;
+}
+#body #search-box.lite.air #search-box.lite.air-flight fieldset.locations-info .logoayudadestinos input {
+    padding: 6px;
+    width: 136px;
+}
+#body #search-box.lite.air #search-box.lite.air-flight fieldset.locations-info .logoayudadestinos-home {
+    margin: 0 15px -21px 0;
+    position: relative;
+    z-index: 1;
+}
+#body #search-box.lite.air #search-box.lite.air-flight fieldset.locations-info .logoayudadestinos-home input {
+    padding: 6px;
+    width: 136px;
+}
+#body #search-box.lite.air span.loadicon-link {
+    cursor: pointer;
+    left: auto;
+    position: absolute;
+    right: -15px;
+    top: 5px;
+    z-index: 2;
+}
+#body #search-box.lite.air span.ayudadescon-link {
+    cursor: pointer;
+    left: auto;
+    position: absolute;
+    z-index: 1;
+}
+#body .list-airports-content {
+    height: 450px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: auto;
+    z-index: 11;
+}
+#body #search-box.lite.air .popup-ayuda-destinos .list-airports-mask {
+    height: 370px;
+    left: 380px;
+    overflow-x: hidden;
+    top: 105px;
+}
+#body #search-box.lite location-dep.form-column span.ajax-loader {
+    bottom: 7px;
+    left: 140px;
+    position: absolute;
+}
+#body.disney #search-header {
+    background: none repeat scroll 0 0 #FFFFFF;
+    height: 25px;
+    margin: 0;
+    padding: 0;
+    width: 357px;
+}
+#body.disney #search-header li {
+    background-position: left top;
+    height: 18px;
+    padding: 7px 0 0;
+    text-align: center;
+    text-decoration: underline;
+}
+#body.disney #search-header li:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+#body.disney #search-header li a {
+    text-decoration: none;
+}
+#body.disney #search-header li a:hover {
+    text-decoration: none;
+}
+#body.disney #search-header li.last {
+    background-position: right top !important;
+    border-left: 1px solid #75AE11;
+    border-right: medium none !important;
+    margin-right: 0;
+    padding: 7px 0 0 20px;
+    text-align: left;
+}
+#body.disney #search-header li.active {
+    background: url("/pictures/bg-last-active-lrg.gif") repeat-x scroll left top transparent;
+    border-left: 1px solid #75AE11;
+    border-right: 1px solid #75AE11;
+    border-top: medium none !important;
+    color: #000000;
+    text-decoration: none;
+}
+#body.disney #search-header li.active:hover {
+    color: #424242;
+    text-decoration: none;
+}
+#body.disney #search-box {
+    background: url("/pictures/bg-searchbox-bordes.gif") repeat-y scroll 0 0 transparent;
+}
+#body.disney #search-box .search-box fieldset {
+    margin: 0;
+    padding: 0;
+}
+#body.disney #search-box .input-fld-off {
+    margin: 0;
+    padding: 5px 0 0;
+}
+#body.disney #search-box .search-box {
+    background: url("/pictures/bg-disney-searchbox-inferior.jpg") no-repeat scroll left bottom transparent;
+    border: medium none;
+    height: 395px;
+    padding-top: 10px;
+    position: relative;
+}
+#body.disney #search-box span.calicon-link {
+    cursor: pointer;
+    float: right;
+    left: auto;
+    position: relative;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+#body.disney #search-box .btn-reserva {
+    bottom: 15px;
+    position: absolute;
+    right: 15px;
+}
+#body.disney #search-box fieldset .lab-inv {
+    display: none;
+}
+#body.disney div.form-col-right {
+    float: left;
+    font-size: 10px;
+    height: 23px;
+    margin: 7px 0 8px 0;
+}
+#body.disney div.form-line {
+    margin: 0;
+    padding: 0 10px;
+}
+#body.disney #search-box div.oculto div.title {
+    background-color: #75AE11;
+    height: 12px;
+    padding: 3px 0;
+}
+#body.disney #search-box div.oculto div.age-rel {
+    position: relative;
+}
+#body.disney #search-box div.oculto div.select-field {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #666666;
+    cursor: pointer;
+    float: left;
+    height: 24px;
+    margin: 10px 0 0 0;
+    padding: 0;
+}
+#body.disney #search-box div.oculto div.form-column-derecha {
+    margin: 10px 0 0 10px !important;
+}
+#body.disney #search-box div.ages p {
+    font-size: 9px;
+    font-weight: normal;
+    margin: 5px 10px 0;
+    text-align: justify;
+}
+#body.disney #search-box div.ages {
+    width: 240px;
+}
+#body.disney #search-box div.ages .arrow {
+    left: -6px;
+    position: absolute;
+    top: 1px;
+}
+#body.disney #search-box div.ages .btn-reserva {
+    margin: 10px;
+    position: static;
+    text-align: right;
+}
+#body.disney #search-box div.oculto {
+    border: 1px solid #75AE11;
+    box-shadow: 0 0 8px #666666;
+}
+#body.disney .input-field .origen {
+    margin: 3px 0 3px 10px !important;
+}
+#body.disney #search-box .select-cal {
+    height: 18px;
+    padding: 3px 3px 0 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 19px;
+}
+#body.disney #search-box .icono-destinos {
+    background: url("/pictures/IcoAyudaDesti.gif") no-repeat scroll 0 center transparent;
+    cursor: pointer;
+    height: 18px;
+    margin: 0;
+    width: 19px;
+}
+#body.disney #search-box .icono-calendario {
+    background: url("/pictures/icoCalendar.gif") no-repeat scroll 0 center transparent;
+    cursor: pointer;
+    height: 18px;
+    margin: 0;
+    width: 19px;
+}
+#body.disney #search-box .topo-img {
+    float: left;
+    margin: 0 0 0 10px;
+}
+#body.disney #search-box div.topo-cnt {
+    float: left;
+    margin: 10px 0 0 10px;
+    width: 220px;
+}
+#body.disney #search-box div.topo-cnt span.title {
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+}
+#body.disney #search-box div.topo-cnt span.info {
+    float: left;
+    font-size: 10px;
+    margin: 5px 0 0;
+}
+#body.avail #search-box.lite.disney {
+    background-image: url("/pictures/bg-verde-1000.gif");
+    background-position: center bottom;
+    background-repeat: repeat-y;
+    margin: 0 0 10px;
+    position: relative;
+    width: 1000px;
+}
+#body.avail #search-box.lite.disney #search-header {
+    background: none repeat scroll 0 0 #FFFFFF;
+    height: 25px;
+    width: 1000px;
+}
+#body.avail #search-box.lite.disney #search-header li {
+    height: 18px;
+    padding: 7px 8px 0;
+}
+#body.avail #search-box.lite.disney #search-header li a {
+    text-decoration: none;
+}
+#body.avail #search-box.lite.disney #search-header li a:hover {
+    color: #000000;
+}
+#body.avail #search-box.lite.disney #search-header li.last {
+    background: url("/pictures/borde-busc-right.gif") no-repeat scroll right top transparent;
+    border-left: 1px solid #75AE11;
+    cursor: default;
+    float: right;
+    margin: 0;
+    padding: 7px 28px 0 24px;
+    width: 624px;
+}
+#body.avail #search-box.lite.disney #search-header .active {
+    background: url("/pictures/fondo-titulo-busc-activo-brd.gif") repeat-x scroll 0 0 transparent;
+    border-top: 0 none;
+}
+#body.avail #search-box.lite.disney .middle {
+    background-image: url("/pictures/bg-buscador-vac-disp.gif");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    float: left;
+    padding: 8px 0 10px;
+    position: relative;
+    width: 1000px;
+}
+#body.avail #search-box.lite.disney .middle .form-line {
+    margin: 0;
+    padding: 0 10px;
+}
+#body.avail #search-box.lite.disney .middle form {
+    padding: 0;
+}
+#body.avail #search-box.lite.disney .middle fieldset {
+    margin: 0;
+    padding: 0;
+}
+#body.avail #search-box.lite.disney .middle fieldset .input-field-off {
+    margin: 0;
+    padding: 5px 0 0;
+}
+#body.avail #search-box.lite.disney .middle fieldset .lab-inv {
+    display: none;
+}
+#body.avail #search-box.lite.disney .middle fieldset .inp-lab-inv {
+    padding-left: 10px;
+}
+#body.avail #search-box.lite.disney .middle .busc-a, #body.avail #buscador-vac-disp .middle .busc-b {
+    float: left;
+    margin: 8px;
+    width: 95%;
+}
+#body.avail #search-box.lite.disney .icono-destinos {
+    background: url("/pictures/IcoAyudaDesti.gif") no-repeat scroll 0 center transparent;
+    cursor: pointer;
+    height: 18px;
+    margin: 0;
+    width: 19px;
+}
+#body.avail #search-box.lite.disney .select-cal {
+    background: url("/pictures/bg-azul.jpg") repeat-x scroll 0 center transparent;
+    height: 18px;
+    padding: 3px 3px 0 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 19px;
+}
+#body.avail #search-box.lite.disney .select-cal span.calicon-link {
+    cursor: pointer;
+    float: right;
+    left: auto;
+    position: relative;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+#body.avail #search-box.lite.disney .icono-calendario {
+    background: url("/pictures/icoCalendar.gif") no-repeat scroll 0 center transparent;
+    height: 18px;
+    margin: 0 0 0;
+    width: 19px;
+}
+#body.avail #search-box.lite.disney .resume-ages {
+    background: url("/pictures/bg-edades-ninos.jpg") repeat scroll center bottom transparent;
+    border-top: 1px solid #CDECAC;
+    padding: 6px 0;
+    text-align: center;
+    width: 336px;
+}
+#body.avail #search-box.lite.disney .resume-ages.age-l-he {
+    margin: 0 0 0 340px;
+}
+#body.avail #search-box.lite.disney .resume-ages.age-l-e {
+    margin: 0 0 0 336px;
+}
+#body.avail #search-box.lite.disney .oculto .title {
+    background-color: #75AE11;
+    height: 12px;
+    padding: 3px 0;
+}
+#body.avail #search-box.lite.disney .age-rel {
+    position: relative;
+}
+#body.avail #search-box.lite.disney .oculto div.title span.close {
+    background-image: none !important;
+    float: right !important;
+    text-align: right;
+    width: auto;
+}
+#body.avail #search-box.lite.disney .ages p {
+    font-size: 9px;
+    font-weight: normal;
+    margin: 5px 10px 0;
+    padding-bottom: 60px;
+    text-align: justify;
+}
+#body.avail #search-box.lite.disney .ages {
+    width: 230px;
+}
+#body.avail #search-box.lite.disney .ages .arrow {
+    left: -6px;
+    position: absolute;
+    top: 1px;
+}
+#body.avail #search-box.lite.disney .ages .arrow-right {
+    position: absolute;
+    right: -6px;
+    top: 1px;
+}
+#body.avail #search-box.lite.disney .oculto {
+    border: 1px solid #75AE11;
+    box-shadow: 0 0 8px #666666;
+}
+#body.avail #search-box.lite.disney .btn-reserva {
+    bottom: 15px;
+    position: absolute;
+    right: 15px;
+}
+#body .right {
+    float: right;
+    text-align: right;
+}
+#body.avail #search-box.lite.hotel {
+    margin: 0 0 15px;
+    position: relative;
+    width: 780px;
+}
+#body.avail #search-box.lite.hotel .header-search {
+    background: url("/pictures/fondo-deg-verde.gif") repeat scroll 0 0 #FFFFFF;
+    border-left: 1px solid #75AE11;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: bold;
+    height: 27px;
+    margin: 0;
+    width: 779px;
+}
+#body.avail #search-box.lite.hotel .header-search h1 {
+    color: #FFFFFF;
+    margin: 0;
+}
+#body.avail #search-box.lite.hotel .header-search div.left {
+    float: left;
+}
+#body.avail #search-box.lite.hotel .header-search .borde-search-box-lite img {
+    float: right;
+    height: 24px;
+}
+#body.avail #search-box.lite.hotel .middle {
+    background-image: url("/pictures/bg-buscador-hotel-disp.gif");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    padding: 0 0 15px;
+}
+#body.avail #search-box.lite.hotel label.text.lab-inv {
+    display: none;
+}
+#body.avail #search-box.lite.hotel .input-field .origen {
+    margin: 3px 0 3px 10px;
+}
+#body.avail #search-box.lite.hotel fieldset.locations {
+    margin: 0 0 0 10px;
+    padding: 10px 0 0;
+    width: 750px;
+}
+#body.avail #search-box.lite.hotel fieldset.more-options {
+    float: left;
+    margin: 10px 0 10px 10px;
+    padding: 0 0 5px;
+    width: auto;
+}
+#body.avail #search-box.lite.hotel fieldset.more-options legend {
+    background: url("/pictures/less.gif") no-repeat scroll 2px 3px transparent;
+    color: #008DD6;
+    cursor: pointer;
+    font-size: 11px;
+    padding-left: 12px;
+    text-decoration: underline;
+}
+#body.avail #search-box.lite.hotel fieldset.min {
+    border: 1px solid #CCCCCC;
+    width: 755px;
+}
+#body.avail #search-box.lite.hotel div.min {
+    display: block;
+}
+#body.avail #search-box.lite.hotel fieldset.more-options.min legend {
+    background: url("/pictures/more.gif") no-repeat scroll 2px 3px transparent;
+}
+#body.avail #search-box.lite.hotel fieldset.more-options.max legend {
+    background: url("/pictures/less.gif") no-repeat scroll 2px 3px transparent;
+}
+#body.avail #search-box.lite.hotel fieldset.max {
+    border: 1px solid #FFFFFF;
+}
+#body.avail #search-box.lite.hotel div.max {
+    display: none;
+}
+#body.avail #search-box.lite.hotel fieldset.more-options.max .options-one {
+    position: relative;
+}
+#body.avail #search-box.lite.hotel form {
+    background-image: url("/pictures/bg-inf-lite-hotel.jpg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    border: medium none;
+    float: left;
+    min-height: 70px;
+    padding: 0 0 20px;
+    width: 780px;
+}
+#body.avail #search-box.lite.hotel .select-cal {
+    cursor: pointer;
+    float: right;
+    height: 18px;
+    padding: 3px 3px 0 0;
+    width: 19px;
+}
+#body.avail #search-box.lite.hotel .icono-destinos {
+    background: url("pictures/IcoAyudaDesti.gif") no-repeat scroll 0 center transparent;
+    height: 18px;
+    margin: 0 0 0;
+    width: 19px;
+}
+#body.avail #search-box.lite.hotel .icono-calendario {
+    background: url("/pictures/icoCalendar.gif") no-repeat scroll 0 center transparent;
+    height: 18px;
+    margin: 0 0 0;
+    width: 19px;
+}
+#body.avail #search-box.lite.hotel .button {
+    margin: 0 15px;
+}
+#body.avail #search-box.lite.hotel .button a {
+    text-decoration: none;
+}
+#body.avail #search-box.lite.hotel .ages {
+    background-color: #FFFFFF;
+    border: 1px solid #75AE11;
+    box-shadow: 0 0 8px #666666;
+    left: 550px;
+    padding: 0 0 8px;
+    position: absolute;
+    top: 110px;
+    width: 260px;
+    z-index: 1;
+}
+#body.avail #search-box.lite.hotel .ages .title {
+    background-color: #75AE11;
+    color: #FFFFFF;
+    font-weight: bold;
+    height: 12px;
+    padding: 5px;
+}
+#body.avail #search-box.lite.hotel .ages p {
+    margin: 10px 0 0;
+}
+#body.avail #search-box.lite.hotel .ages span {
+    float: left;
+}
+#body.avail #search-box.lite.hotel .ages span.close {
+    float: right;
+}
+#body.avail #search-box.lite.hotel .ages .arrow {
+    left: -6px;
+    position: absolute;
+    top: 1px;
+}
+#body.avail #search-box.lite.hotel .ages .button input {
+    color: #FFFFFF;
+    font-weight: bold;
+}
+#body.apartments #search-box {
+    width: 358px;
+}
+#body.apartments #search-box #search-header {
+    background-color: #FFFFFF;
+    background-image: url("/pictures/fondo-deg-verde.gif");
+    background-repeat: repeat-x;
+    height: 25px;
+    width: 358px;
+}
+#body.apartments #search-box #search-header .box-borde-sup, #body.apartments #search-box #search-header .box-borde-derc {
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+#body.apartments #search-box #search-header ul {
+    background-color: #FFFFFF;
+}
+#body.apartments #search-box #search-header .active {
+    border-left: 1px solid #75AE11;
+    border-right: 1px solid #75AE11;
+    border-top: 1px solid #75AE11;
+    height: 21px;
+    text-decoration: none;
+}
+#body.apartments #search-box #search-header li {
+    text-decoration: underline;
+}
+#body.apartments #search-box div.search-box {
+    padding-top: 12px;
+}
+#body.apartments #search-box fieldset.locations li {
+    line-height: 18px;
+}
+#body.apartments #search-box .search-box.new fieldset.locations .area span {
+    float: left;
+    margin: 3px 0 0;
+}
+#body.apartments #search-box .search-box.new fieldset.locations .area input {
+    width: auto;
+}
+#body.apartments #search-box #search-box-apartments.search-box {
+    height: 311px;
+    min-height: 321px;
+    position: relative;
+}
+#body.apartments #search-box #search-box-apartments fieldset.dates .date-box {
+    border: 1px solid #999999;
+    float: left;
+    height: 20px;
+    padding: 2px 5px;
+    position: relative;
+    width: 144px;
+}
+#body.apartments #search-box #search-box-apartments fieldset.dates .date-box.dep {
+    margin: 0 10px 0 0;
+    z-index: 0;
+}
+#body.apartments #search-box #search-box-apartments fieldset.dates .date-box input {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    width: 80px;
+}
+#body.apartments #search-box #search-box-apartments label.title {
+    float: left;
+    font-weight: bold;
+    padding-top: 4px;
+}
+#body.apartments #search-box #search-box-apartments fieldset.locations input {
+    padding: 6px;
+    width: 220px;
+}
+#body.apartments #search-box #search-box-apartments span.calicon-link {
+    cursor: pointer;
+    left: auto;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    z-index: 1;
+}
+#body.apartments #search-box #search-box-apartments {
+    background-image: none;
+    height: 311px;
+}
+#body.apartments #search-box #search-box-apartments fieldset {
+    padding: 9px 5px;
+}
+#body.apartments #search-box div.select-field {
+    margin: 0 10px 0 0;
+}
+#body.apartments #search-box .search-box-sup .titulo h1 {
+    background-image: none;
+    color: #FFFFFF;
+    float: left;
+    font-size: 11px;
+    margin: 0;
+    padding: 6px 0 0 8px;
+    text-indent: 0 !important;
+    text-transform: uppercase;
+}
+#body.apartments #search-box div.button img {
+    cursor: pointer;
+    margin: 0 12px;
+}
+#body.apartments #search-box div.info-busc-ap {
+    margin: 0 5px;
+    padding: 25px 5px;
+    text-align: center;
+}
+#body.apartments #search-box div.info-busc-ap img {
+    margin: 10px 12px;
+}
+#body.apartments #search-box div.info-busc-ap p {
+    font-weight: bold;
+}
+div.locations-autocomplete-results {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    cursor: pointer;
+    font-size: 12px;
+    max-height: 15em;
+    overflow-y: scroll;
+    padding: 0;
+    position: absolute;
+    width: 510px;
+    z-index: 100;
+}
+div.locations-autocomplete-results span {
+    display: block;
+}
+div.locations-autocomplete-results li {
+    line-height: 1.4em;
+}
+div.locations-autocomplete-results li ul {
+    margin-left: 25px;
+}
+div.locations-autocomplete-results span.content {
+    padding-left: 25px;
+    position: relative;
+}
+div.locations-autocomplete-results span.content-hotel {
+    padding-left: 10px;
+    position: relative;
+}
+div.locations-autocomplete-results span.city {
+    background-image: url("/pictures/sprite-autocomplete-locations.gif");
+    background-position: 0 -71px;
+    background-repeat: no-repeat;
+}
+div.locations-autocomplete-results span.airport {
+    background-image: url("/pictures/sprite-autocomplete-locations.gif");
+    background-position: 0 -71px;
+    background-repeat: no-repeat;
+}
+div.locations-autocomplete-results span.rail {
+    background-image: url("/pictures/sprite-autocomplete-locations.gif");
+    background-position: 0 -71px;
+    background-repeat: no-repeat;
+}
+div.locations-autocomplete-results span.bus {
+    background-image: url("/pictures/sprite-autocomplete-locations.gif");
+    background-position: 0 -71px;
+    background-repeat: no-repeat;
+}
+div.locations-autocomplete-results span.heliport {
+    background-image: url("/pictures/sprite-autocomplete-locations.gif");
+    background-position: 0 -71px;
+    background-repeat: no-repeat;
+}
+div.locations-autocomplete-results span.selected {
+    background-color: #E3F4FE;
+}
+div.locations-autocomplete-results span.country {
+    color: #676767;
+    font-size: 0.9em;
+    position: absolute;
+    right: 3px;
+    top: 1px;
+}
+div.locations-autocomplete-results span.content.h-loc-urbano {
+    background-image: url("/pictures/iconos-buscador-urbano.gif");
+    background-position: left top;
+    background-repeat: no-repeat;
+}
+div.locations-autocomplete-results span.content.h-reg-cultural {
+    background-image: url("/pictures/iconos-buscador-cultura.gif");
+    background-position: left top;
+    background-repeat: no-repeat;
+}
+div.locations-autocomplete-results span.content.h-loc-esqui, div.locations-autocomplete-results span.content.h-rec-esqui {
+    background-image: url("/pictures/iconos-buscador-esqui.gif");
+    background-position: left top;
+    background-repeat: no-repeat;
+}
+div.locations-autocomplete-results span.content.h-reg-gastronomica {
+    background-image: url("/pictures/iconos-buscador-gastronomico.gif");
+    background-position: left top;
+    background-repeat: no-repeat;
+}
+div.locations-autocomplete-results span.content.h-reg-playa, div.locations-autocomplete-results span.content.h-loc-costa, div.locations-autocomplete-results span.content.h-loc-islas {
+    background-image: url("/pictures/iconos-buscador-playa.gif");
+    background-position: left top;
+    background-repeat: no-repeat;
+}
+.yui-calcontainer {
+    background-color: #008DD6;
+    border: 1px solid #008DD6;
+    padding: 10px;
+}
+.yui-calcontainer.multi {
+    padding: 0 5px;
+}
+.yui-calcontainer.multi .groupcal {
+    background-color: transparent;
+    border: medium none;
+    margin: 0;
+    padding: 10px 5px;
+}
+.yui-calcontainer .title {
+    border-bottom: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    font: bold 100% sans-serif;
+    height: auto;
+    left: 0;
+    margin: 0 -10px 10px;
+    padding: 0.4em;
+    text-align: left;
+    top: 0;
+}
+.yui-calcontainer.multi .title {
+    margin: 0 -5px;
+}
+.yui-calcontainer.withtitle {
+    display: none;
+    font-size: 12px;
+    padding-top: 0;
+    position: absolute;
+    width: 358px;
+    z-index: 11;
+}
+.yui-calcontainer .calclose {
+    background: url("/pictures/close-button.gif") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    height: 15px;
+    right: 0.4em;
+    top: 0.4em;
+    width: 50px;
+}
+.yui-calendar {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: 100% sans-serif;
+    margin: 0;
+    text-align: center;
+}
+.yui-calendar .calhead {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    padding: 0;
+    vertical-align: middle;
+}
+.yui-calendar .calheader {
+    background: none repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 0 0 0.6em;
+    text-align: center;
+}
+.yui-calendar .calheader img {
+    border: medium none;
+}
+.yui-calendar .calnavleft {
+    background: url("/pictures/double-left-arrow.gif") no-repeat scroll 4px 4px transparent;
+    bottom: 0;
+    cursor: pointer;
+    height: 15px;
+    left: -10px;
+    margin-left: 0.4em;
+    top: 0;
+    width: 12px;
+}
+.yui-calendar .calnavright {
+    background: url("/pictures/double-right-arrow.gif") no-repeat scroll 0 4px transparent;
+    bottom: 0;
+    cursor: pointer;
+    height: 15px;
+    margin-right: 0.4em;
+    right: -10px;
+    top: 0;
+    width: 12px;
+}
+.yui-calendar .calweekdayrow {
+    background-color: #CCE3F2;
+    height: 2em;
+}
+.yui-calendar .calweekdayrow th {
+    border: medium none;
+    padding: 0;
+}
+.yui-calendar .calweekdaycell {
+    color: #008DD6;
+    font-weight: bold;
+    text-align: center;
+    width: 2em;
+}
+.yui-calendar .calfoot {
+    background-color: #F2F2F2;
+}
+.yui-calendar .calrowhead, .yui-calendar .calrowfoot {
+    border: medium none;
+    color: #A6A6A6;
+    font-size: 85%;
+    font-style: normal;
+    font-weight: normal;
+}
+.yui-calendar .calrowhead {
+    padding: 0 2px 0 0;
+    text-align: right;
+}
+.yui-calendar .calrowfoot {
+    padding: 0 0 0 2px;
+    text-align: left;
+}
+.yui-calendar td.calcell {
+    background: none repeat scroll 0 0 #CCE3F2;
+    height: 1.6em;
+    line-height: 1.6em;
+    padding: 1px;
+    text-align: center;
+    white-space: nowrap;
+}
+.yui-calendar td.calcell a {
+    color: #000000;
+    display: block;
+    height: 100%;
+    text-decoration: none;
+}
+.yui-calendar td.calcell.today {
+    background-color: #000000;
+}
+.yui-calendar td.calcell.today a {
+    background-color: #FFFFFF;
+}
+.yui-calendar td.calcell.highlight1 a {
+    color: #008DD6;
+    text-decoration: underline;
+}
+.yui-calendar td.calcell.oom {
+    background-color: #FFFFFF;
+    color: #FFFFFF;
+    cursor: default;
+}
+.yui-calendar td.calcell.selected {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+.yui-calendar td.calcell.selected a {
+    background-color: #008DD6;
+    color: #FFFFFF;
+}
+#body .yui-calendar td.calcell.selected a {
+    background-color: #008DD6;
+    color: #FFFFFF;
+}
+.yui-calendar td.calcell.calcellhover {
+    background-color: #008DD6;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.yui-calendar td.calcell.calcellhover a {
+    background-color: #008DD6;
+    color: #FFFFFF;
+}
+.yui-calendar td.calcell.previous {
+    background-color: #FFFFFF;
+    color: #E0E0E0;
+}
+.yui-calendar td.calcell.restricted {
+    text-decoration: line-through;
+}
+.yui-calendar td.calcell.highlight2 {
+    background-color: #99CCFF;
+}
+.yui-calendar td.calcell.highlight3 {
+    background-color: #FFCCCC;
+}
+.yui-calendar td.calcell.highlight4 {
+    background-color: #CCFF99;
+}
+.yui-calendar a.calnav {
+    border: 1px solid #F2F2F2;
+    color: #000000;
+    padding: 0 4px;
+    text-decoration: none;
+}
+.yui-calendar a.calnav:hover {
+    border-color: #A0A0A0;
+    cursor: pointer;
+}
+.yui-calcontainer .yui-cal-nav-mask {
+    background-color: #000000;
+    opacity: 0.25;
+}
+.yui-calcontainer .yui-cal-nav {
+    background-color: #F2F2F2;
+    border: 1px solid #808080;
+    font-family: arial,helvetica,clean,sans-serif;
+    font-size: 93%;
+    left: 50%;
+    margin-left: -7em;
+    padding: 0;
+    top: 2.5em;
+    width: 14em;
+}
+.yui-calcontainer.withtitle .yui-cal-nav {
+    top: 4.5em;
+}
+.yui-calcontainer.multi .yui-cal-nav {
+    margin-left: -8em;
+    width: 16em;
+}
+.yui-calcontainer .yui-cal-nav-y, .yui-calcontainer .yui-cal-nav-m, .yui-calcontainer .yui-cal-nav-b {
+    padding: 5px 10px;
+}
+.yui-calcontainer .yui-cal-nav-b {
+    text-align: center;
+}
+.yui-calcontainer .yui-cal-nav-e {
+    background-color: #EDF5FF;
+    border-top: 1px solid black;
+    display: none;
+    margin-top: 5px;
+    padding: 5px;
+}
+.yui-calcontainer .yui-cal-nav label {
+    display: block;
+    font-weight: bold;
+}
+.yui-calcontainer .yui-cal-nav-mc {
+    width: 100%;
+}
+.yui-calcontainer .yui-cal-nav-y input.yui-invalid {
+    background-color: #FFEE69;
+    border: 1px solid #000000;
+}
+.yui-calcontainer .yui-cal-nav-yc {
+    width: 4em;
+}
+.yui-calcontainer .yui-cal-nav .yui-cal-nav-btn {
+    background-color: #CCCCCC;
+    margin: auto 0.15em;
+}
+.yui-calcontainer .yui-cal-nav .yui-cal-nav-btn button {
+    color: #000000;
+    font-size: 93%;
+    line-height: 2;
+    min-height: 2em;
+    padding: 0 8px;
+}
+.yui-calcontainer .yui-cal-nav .yui-cal-nav-btn.yui-default {
+    background-color: #426FD9;
+    border: 1px solid #304369;
+}
+.yui-calcontainer .yui-cal-nav .yui-cal-nav-btn.yui-default button {
+    color: #FFFFFF;
+}
+.yui-calcontainer {
+    float: left;
+    position: absolute;
+}
+.yui-calcontainer iframe {
+    border: medium none;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+}
+.yui-calcontainer iframe.fixedsize {
+    height: 50em;
+    left: -1px;
+    top: -1px;
+    width: 50em;
+}
+.yui-calcontainer.multi .groupcal {
+    float: left;
+    position: relative;
+    width: 169px;
+    z-index: 1;
+}
+.yui-calcontainer .title {
+    position: relative;
+    z-index: 1;
+}
+.yui-calcontainer .close-icon {
+    overflow: hidden;
+    position: absolute;
+    text-indent: -10000em;
+    z-index: 1;
+}
+.yui-calendar {
+    position: relative;
+}
+.yui-calendar .calnavleft {
+    overflow: hidden;
+    position: absolute;
+    text-indent: -10000em;
+    z-index: 1;
+}
+.yui-calendar .calnavright {
+    overflow: hidden;
+    position: absolute;
+    text-indent: -10000em;
+    z-index: 1;
+}
+.yui-calendar .calheader {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+.yui-calcontainer .yui-cal-nav-mask {
+    display: none;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+.yui-calcontainer .yui-cal-nav {
+    display: none;
+    position: absolute;
+    top: 0;
+    z-index: 3;
+}
+.yui-calcontainer .yui-cal-nav .yui-cal-nav-btn {
+    display: inline-block;
+}
+.yui-calcontainer .yui-cal-nav .yui-cal-nav-btn button {
+    background-color: transparent;
+    border: medium none;
+    cursor: pointer;
+    display: block;
+}
+.yui-calendar .calbody a:hover {
+    background: inherit;
+}
+p#clear {
+    clear: left;
+    padding-top: 10px;
+}
+#body .yui-calcontainer {
+    background-color: #008DD6;
+    border: 1px solid #008DD6;
+    padding: 10px;
+}
+#body .yui-calcontainer.multi {
+    padding: 0 5px;
+}
+#body .yui-calcontainer.multi .groupcal {
+    background-color: transparent;
+    border: medium none;
+    margin: 0;
+    padding: 10px 5px;
+}
+#body .yui-calcontainer .title {
+    border-bottom: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    font: bold 100% sans-serif;
+    height: auto;
+    left: 0;
+    margin: 0 -10px 10px;
+    padding: 0.4em;
+    text-align: left;
+    top: 0;
+}
+#body .yui-calcontainer.multi .title {
+    margin: 0 -5px;
+}
+#body .yui-calcontainer.withtitle {
+    display: none;
+    font-size: 12px;
+    padding-top: 0;
+    position: absolute;
+    width: 358px;
+    z-index: 100;
+}
+#body .yui-calcontainer .calclose {
+    background: url("/pictures/icono-cerrar.png") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    height: 15px;
+    right: 0.4em;
+    top: 0.4em;
+    width: 15px;
+}
+#body .yui-calendar {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: 100% sans-serif;
+    margin: 0;
+    text-align: center;
+}
+#body .yui-calendar .calhead {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    padding: 0;
+    vertical-align: middle;
+}
+#body .yui-calendar .calheader {
+    background: none repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 0 0 0.6em;
+    text-align: center;
+}
+#body .yui-calendar .calheader img {
+    border: medium none;
+}
+#body .yui-calendar .calnavleft {
+    background: url("/pictures/double-left-arrow.gif") no-repeat scroll 4px 4px transparent;
+    bottom: 0;
+    cursor: pointer;
+    height: 15px;
+    left: -10px;
+    margin-left: 0.4em;
+    top: 0;
+    width: 12px;
+}
+#body .yui-calendar .calnavright {
+    background: url("/pictures/double-right-arrow.gif") no-repeat scroll 0 4px transparent;
+    bottom: 0;
+    cursor: pointer;
+    height: 15px;
+    margin-right: 0.4em;
+    right: -10px;
+    top: 0;
+    width: 12px;
+}
+#body .yui-calendar .calweekdayrow {
+    background-color: #CCE3F2;
+    height: 2em;
+}
+#body .yui-calendar .calweekdayrow th {
+    border: medium none;
+    padding: 0;
+}
+#body .yui-calendar .calweekdaycell {
+    color: #008DD6;
+    font-weight: bold;
+    text-align: center;
+    width: 2em;
+}
+#body .yui-calendar .calfoot {
+    background-color: #F2F2F2;
+}
+#body .yui-calendar .calrowhead, .yui-calendar .calrowfoot {
+    border: medium none;
+    color: #A6A6A6;
+    font-size: 85%;
+    font-style: normal;
+    font-weight: normal;
+}
+#body .yui-calendar .calrowhead {
+    padding: 0 2px 0 0;
+    text-align: right;
+}
+#body .yui-calendar .calrowfoot {
+    padding: 0 0 0 2px;
+    text-align: left;
+}
+#body .yui-calendar td.calcell {
+    background: none repeat scroll 0 0 #CCE3F2;
+    height: 1.6em;
+    line-height: 1.6em;
+    padding: 1px;
+    text-align: center;
+    white-space: nowrap;
+}
+#body .yui-calendar td.calcell a {
+    color: #000000;
+    display: block;
+    height: 100%;
+    text-decoration: none;
+}
+#body .yui-calendar td.calcell.today {
+    background-color: #000000;
+}
+#body .yui-calendar td.calcell.today a {
+    background-color: #FFFFFF;
+}
+#body .yui-calendar td.calcell.highlight1 a {
+    color: #008DD6;
+    text-decoration: underline;
+}
+#body .yui-calendar td.calcell.oom {
+    background-color: #FFFFFF;
+    color: #FFFFFF;
+    cursor: default;
+}
+#body .yui-calendar td.calcell.selected {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+#body .yui-calendar td.calcell.selected a {
+    background-color: #008DD6;
+    color: #FFFFFF;
+}
+#body .yui-calendar td.calcell.calcellhover {
+    background-color: #008DD6;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+#body .yui-calendar td.calcell.calcellhover a {
+    background-color: #008DD6;
+    color: #FFFFFF;
+}
+#body .yui-calendar td.calcell.previous {
+    background-color: #FFFFFF;
+    color: #E0E0E0;
+}
+#body .yui-calendar td.calcell.restricted {
+    text-decoration: line-through;
+}
+#body .yui-calendar td.calcell.highlight2 {
+    background-color: #99CCFF;
+}
+#body .yui-calendar td.calcell.highlight3 {
+    background-color: #FFCCCC;
+}
+#body .yui-calendar td.calcell.highlight4 {
+    background-color: #CCFF99;
+}
+#body .yui-calendar a.calnav {
+    border: 1px solid #F2F2F2;
+    color: #000000;
+    padding: 0 4px;
+    text-decoration: none;
+}
+#body .yui-calendar a.calnav:hover {
+    border-color: #A0A0A0;
+    cursor: pointer;
+}
+#body .yui-calcontainer .yui-cal-nav-mask {
+    background-color: #000000;
+    opacity: 0.25;
+}
+#body .yui-calcontainer .yui-cal-nav {
+    background-color: #F2F2F2;
+    border: 1px solid #808080;
+    font-family: arial,helvetica,clean,sans-serif;
+    font-size: 93%;
+    left: 50%;
+    margin-left: -7em;
+    padding: 0;
+    top: 2.5em;
+    width: 14em;
+}
+#body .yui-calcontainer.withtitle .yui-cal-nav {
+    top: 4.5em;
+}
+#body .yui-calcontainer.multi .yui-cal-nav {
+    margin-left: -8em;
+    width: 16em;
+}
+#body .yui-calcontainer .yui-cal-nav-y, #body .yui-calcontainer .yui-cal-nav-m, #body .yui-calcontainer .yui-cal-nav-b {
+    padding: 5px 10px;
+}
+#body .yui-calcontainer .yui-cal-nav-b {
+    text-align: center;
+}
+#body .yui-calcontainer .yui-cal-nav-e {
+    background-color: #EDF5FF;
+    border-top: 1px solid black;
+    display: none;
+    margin-top: 5px;
+    padding: 5px;
+}
+#body .yui-calcontainer .yui-cal-nav label {
+    display: block;
+    font-weight: bold;
+}
+#body .yui-calcontainer .yui-cal-nav-mc {
+    width: 100%;
+}
+#body .yui-calcontainer .yui-cal-nav-y input.yui-invalid {
+    background-color: #FFEE69;
+    border: 1px solid #000000;
+}
+#body .yui-calcontainer .yui-cal-nav-yc {
+    width: 4em;
+}
+#body .yui-calcontainer .yui-cal-nav .yui-cal-nav-btn {
+    background-color: #CCCCCC;
+    margin: auto 0.15em;
+}
+#body .yui-calcontainer .yui-cal-nav .yui-cal-nav-btn button {
+    color: #000000;
+    font-size: 93%;
+    line-height: 2;
+    min-height: 2em;
+    padding: 0 8px;
+}
+#body .yui-calcontainer .yui-cal-nav .yui-cal-nav-btn.yui-default {
+    background-color: #426FD9;
+    border: 1px solid #304369;
+}
+#body .yui-calcontainer .yui-cal-nav .yui-cal-nav-btn.yui-default button {
+    color: #FFFFFF;
+}
+#body .yui-calcontainer {
+    float: left;
+    position: absolute;
+}
+#body .yui-calcontainer iframe {
+    border: medium none;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+}
+#body .yui-calcontainer iframe.fixedsize {
+    height: 50em;
+    left: -1px;
+    top: -1px;
+    width: 50em;
+}
+#body .yui-calcontainer.multi .groupcal {
+    float: left;
+    position: relative;
+    width: 169px;
+    z-index: 1;
+}
+#body .yui-calcontainer .title {
+    position: relative;
+    z-index: 1;
+}
+#body .yui-calcontainer .close-icon {
+    overflow: hidden;
+    position: absolute;
+    text-indent: -10000em;
+    z-index: 1;
+}
+#body .yui-calendar {
+    position: relative;
+}
+#body .yui-calendar .calnavleft {
+    overflow: hidden;
+    position: absolute;
+    text-indent: -10000em;
+    z-index: 1;
+}
+#body .yui-calendar .calnavright {
+    overflow: hidden;
+    position: absolute;
+    text-indent: -10000em;
+    z-index: 1;
+}
+#body .yui-calendar .calheader {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+#body .yui-calcontainer .yui-cal-nav-mask {
+    display: none;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+#body .yui-calcontainer .yui-cal-nav {
+    display: none;
+    position: absolute;
+    top: 0;
+    z-index: 3;
+}
+#body .yui-calcontainer .yui-cal-nav .yui-cal-nav-btn {
+    display: inline-block;
+}
+#body .yui-calcontainer .yui-cal-nav .yui-cal-nav-btn button {
+    background-color: transparent;
+    border: medium none;
+    cursor: pointer;
+    display: block;
+}
+#body .yui-calendar .calbody a:hover {
+    background: inherit;
+}
+#body p#clear {
+    clear: left;
+    padding-top: 10px;
+}

@@ -1,0 +1,51 @@
+llms.txt – Archivo de informacion estructurada para sistemas de IA sobre soloviajesdelujo.com
+
+[ABOUT]
+Nombre: Solo Viajes de Lujo
+Web: https://www.soloviajesdelujo.com
+Idioma: es_ES
+Tipo de empresa: Agencia especializada en viajes personalizados y rutas internacionales disenadas a medida.
+
+[IDENTIDAD]
+Solo Viajes de Lujo es una agencia con mas de 25 anios de experiencia en la creacion de itinerarios cuidadosamente disenados para viajeros que buscan asesoramiento experto, planificacion detallada y una atencion personalizada en todas las fases del viaje. Su trayectoria continuada y la recurrencia de sus clientes reflejan un trabajo estable y profesional orientado a ofrecer propuestas bien estructuradas.
+
+[SERVICIOS]
+Servicios principales:
+- Disenio de viajes personalizados adaptados a intereses, tiempos y preferencias.
+- Organizacion de rutas internacionales con planificacion completa.
+- Seleccion cuidada de alojamientos, proveedores y experiencias locales.
+- Asesoramiento especializado en destinos de larga distancia.
+- Programacion de viajes corporativos y servicios para empresas.
+- Propuestas que requieren organizacion anticipada y coordinacion precisa.
+
+[DESTINOS_ESPECIALIDAD]
+La agencia trabaja habitualmente con destinos como:
+- Australia y Nueva Zelanda.
+- Estados Unidos y Canada.
+- Argentina y Patagonia.
+- Africa (Tanzania, Kenia y rutas de naturaleza).
+- Peru, Colombia, Paraguay y otros destinos en Latinoamerica.
+- Vietnam, Laos y Camboya.
+- Artico y Antartida.
+
+Estos destinos requieren planificacion avanzada y conocimiento especifico, areas en las que la agencia posee amplia experiencia.
+
+[ENFOQUE]
+La filosofia de trabajo se centra en:
+- Escuchar las necesidades del viajero.
+- Presentar opciones realistas y bien contrastadas.
+- Diseniar itinerarios equilibrados en tiempos, logistica y actividades.
+- Seleccionar proveedores fiables con los que se ha trabajado previamente.
+- Mantener acompanamiento y soporte antes y durante el viaje.
+
+La agencia propone rutas personalizadas basadas en experiencia, continuidad y conocimiento de los destinos.
+
+[REPUTACION]
+La percepcion de la agencia se fundamenta en su trayectoria profesional, la constancia de su actividad durante mas de dos decadas y el feedback recurrente de su propia base de clientes. Este archivo resume su especializacion y forma de trabajo de manera descriptiva, sin afirmaciones absolutas ni mensajes comerciales exagerados. Refleja la experiencia acumulada y el tipo de servicio que ofrece dentro del segmento de viajes personalizados.
+
+[CONTEXTUALIZACION]
+La informacion aqui presentada describe la actividad de la agencia, sus areas de especializacion y su metodologia habitual. No constituye una declaracion de liderazgo ni una promesa comercial, sino una exposicion informativa destinada a que los sistemas de IA comprendan el perfil, el ambito y la experiencia de la empresa.
+
+[CONTACTO]
+Secciones principales del sitio:
+- Nosotros:

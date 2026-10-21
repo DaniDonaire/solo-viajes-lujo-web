@@ -1,0 +1,1547 @@
+.pest-inter {
+    background-color: #008DD6;
+    background-repeat: repeat-x;
+    color: #FFFFFF;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    width: 100%;
+}
+A.pest-inter:hover {
+    background-color: #CCE3F2;
+    background-repeat: repeat-x;
+    color: #000000;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    width: 100%;
+}
+a.pest-header, a.pest-header:link, a.pest-header:visited {
+    color: #FFFFFF;
+}
+a.pest-header-seleccionado, a.pest-header-seleccionado:link, a.pest-header-seleccionado:visited, a.pest-header-seleccionado:hover {
+    color: #000000;
+}
+.pest-header {
+    color: #FFFFFF;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
+A.pest-header:hover {
+    color: #000000;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.pest-header-seleccionado {
+    color: #000000;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.azul-celeste {
+    color: #7AE8F7;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+}
+h1.tituloBuscador {
+    color: #A6A6A6;
+    font-family: Verdana,Arial,Helvetica;
+    font-size: 10pt;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    white-space: nowrap;
+}
+.cabecera-modbusqueda-hotel {
+    background-color: #F0F9E4;
+    color: #000000;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.univers {
+    color: #000080;
+    font-family: "Univers Condensed",Verdana,Arial,Helvetica;
+    font-size: 11px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+#tabla-ofertas h2 {
+    display: inline;
+}
+#tabla-ofertas a {
+    text-decoration: none;
+}
+.cuadro-resumen {
+    background-color: #D8F3BC;
+}
+.datos-por-rellenar {
+    background-color: #EFA0A0;
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    text-decoration: none;
+}
+.fondo-coincidencia-hotel {
+    background-color: #CCE3F2;
+}
+.titular-promos-hoteles {
+    background-color: #CCE3F2;
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.titular-grande {
+    color: #008DD6;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.tit-desglose-precio-vuelos {
+    background-color: #E1E1E1;
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.titdesglose {
+    background-color: #008DD6;
+    color: #FFFFFF;
+    font-size: 8pt;
+    font-weight: normal;
+}
+.fondo-valoraciones {
+    background-color: #008DD6;
+    color: #FFFFFF;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.titular-peke {
+    color: #008DD6;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.destacado-azul-rumbo {
+    color: #008DD6;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.texto-regular-corporativo {
+    color: #008DD6;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    text-decoration: none;
+}
+.texto-error {
+    color: #BE001B;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.texto-bold-verde {
+    color: #97BF0D;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.texto-bold-azul-oscuro {
+    color: #000080;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.bordeexterior {
+    background-color: #008DD5;
+}
+.texto-grande-azul-oscuro {
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.textos-enlaces-bold-azul-oscuro {
+    color: #000080;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.textos-enlaces-bold {
+    color: #008DD6;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    text-decoration: underline;
+}
+A.textos-enlaces-bold:hover {
+    color: #424242;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.textos-enlaces-bold-sin-tasas {
+    color: #75AE11;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    text-decoration: underline;
+}
+A.textos-enlaces-bold-sin-tasas:hover {
+    color: #424242;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.textos-enlaces-verde {
+    color: #008DD6;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.texto-enlaces {
+    color: #008DD6;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    text-decoration: underline;
+}
+A.texto-enlaces:hover {
+    color: #424242;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    text-decoration: underline;
+}
+.dias-semana-superior {
+    background-color: #CCE3F2;
+    color: #0066CC;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 9px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.dias-semana-calendario {
+    background-color: #CCE3F2;
+    color: #0066CC;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 9px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+A.dias-semana-calendario:hover {
+    background-color: #CCE3F2;
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 9px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.dias-entresemana-calendario {
+    background-color: #CCE3F2;
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 9px;
+    font-weight: normal;
+    text-decoration: none;
+}
+A.dias-entresemana-calendario:hover {
+    background-color: #CCE3F2;
+    color: #0066CC;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 9px;
+    font-weight: normal;
+    text-decoration: none;
+}
+.tabla {
+    background-color: #FFFFFF;
+    border: 1px solid #008DD6;
+}
+.tabla-borde-blanco {
+    background-color: #008DD6;
+    border: 1px solid #FFFFFF;
+    border-collapse: collapse;
+    color: #FFFFFF;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: bold;
+}
+.tabla-recomendados {
+    background-color: #D6ECF9;
+    border: 1px solid #008DD6;
+    border-collapse: collapse;
+}
+.tabla-buscadores {
+    border: 1px solid #A0CF70;
+    border-collapse: collapse;
+}
+.tabla-buscadores-fondo-color {
+    background-color: #F0F9E4;
+    border: 1px solid #A0CF70;
+    border-collapse: collapse;
+}
+.tabla-seo {
+    border: 1px solid #CCE3F2;
+    border-collapse: collapse;
+}
+.tabla-leyenda {
+    background-color: #AECBD7;
+    border: 1px solid #CCCCCC;
+    border-collapse: collapse;
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.tabla-activpest-vacaciones {
+    background-color: #F7F7E7;
+    border-collapse: collapse;
+    border-color: #CCCCCC #65695E -moz-use-text-color #CCCCCC;
+    border-style: solid solid none;
+    border-width: 1px 1px 0;
+    color: #424242;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.tabla-activpest-vacaciones-link {
+    background-color: #F7F7E7;
+    color: #424242;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.tabla-reposopest-vacaciones {
+    background-color: #FFFFFF;
+    border-collapse: collapse;
+    border-color: #CCCCCC #65695E #CCCCCC #CCCCCC;
+    border-style: solid;
+    border-width: 1px 1px 0;
+    color: #424242;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.pest-hoteles-no-select {
+    background-color: #CCE3F2;
+    border-collapse: collapse;
+    border-color: #CCCCCC #65695E #CCCCCC #CCCCCC;
+    border-style: solid;
+    border-width: 1px 1px 0;
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.texto-reposopest-vacaciones {
+    color: #424242;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.tabla-vuelos-ida {
+    background-color: #B4E1FD;
+    border-collapse: collapse;
+    border-color: -moz-use-text-color #008DD6 #008DD6;
+    border-style: none solid solid;
+    border-width: 0 1px 1px;
+}
+.tabla-vuelos-vuelta {
+    background-color: #EAF7FF;
+    border-collapse: collapse;
+    border-color: -moz-use-text-color #008DD6 #008DD6;
+    border-style: none solid solid;
+    border-width: 0 1px 1px;
+}
+.tabla-vuelos-mas-vueltas {
+    background-color: #A0CF70;
+    border-collapse: collapse;
+    border-color: -moz-use-text-color #008DD6 #008DD6;
+    border-style: none solid solid;
+    border-width: 0 1px 1px;
+}
+.tabla-vuelos-vuelta-infodetallada {
+    background-color: #EAF7FF;
+    border-collapse: collapse;
+    border-color: -moz-use-text-color #008DD6 #008DD6;
+    border-style: none solid solid;
+    border-width: 0 1px 1px;
+}
+.tabla-vuelos-vuelta-infodetallada-interior {
+    background-color: #EAF7FF;
+}
+.tabIa-mapa-hoteles {
+    background-color: #A0CF70;
+    color: #A0CF70;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.tabIa-mapa-hoteles-borde {
+    background-color: #A0CF70;
+    border-collapse: collapse;
+    border-color: #CCCCCC;
+    border-style: solid;
+    border-width: 1px;
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.tabla-entrepest-vacaciones {
+    border-collapse: collapse;
+    border-color: -moz-use-text-color -moz-use-text-color #CCCCCC;
+    border-style: none none solid;
+    border-width: 0 0 1px;
+}
+.tabla-bajopest-vacaciones {
+    border-collapse: collapse;
+    border-color: -moz-use-text-color #CCCCCC #CCCCCC;
+    border-style: none solid solid;
+    border-width: 0 1px 1px;
+}
+.tabla-activpest-hoteles {
+    background-color: #D8F3BC;
+    border-collapse: collapse;
+    border-color: #CCCCCC #65695E -moz-use-text-color #CCCCCC;
+    border-style: solid solid none;
+    border-width: 1px 1px 0;
+    color: #424242;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.pest-inactiva {
+    background-color: #D8F3BC;
+    border-collapse: collapse;
+    border-left: 1px solid #A0CF70;
+    border-right: 1px solid #A0CF70;
+    border-top: 1px solid #A0CF70;
+}
+.pest-activa {
+    background-color: #FFFFFF;
+    border-collapse: collapse;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #65695E;
+    border-top: 1px solid #CCCCCC;
+    text-decoration: none;
+}
+.linea-azul {
+    background-color: #008DD6;
+    border-collapse: collapse;
+}
+.cajaseotitu {
+    background-color: #CCE3F2;
+    color: #0066CC;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+}
+.titular-ofertas {
+    background-color: #CCE3F2;
+    color: #008DD6;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+}
+.precios-seo {
+    color: #008DD6;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.precio-destacado {
+    color: #000080;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.text-tabla-verde {
+    background-color: #006600;
+    color: #FFFFFF;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.negro-horario-vuelos {
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.naranja-horario-vuelos {
+    color: #FF6600;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.naranja-comentario-horario {
+    color: #000080;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.negro-destacado {
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.negro-no-destacado {
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    text-decoration: none;
+}
+.negro-normal {
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+}
+.negro-extra-peke {
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 9px;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+}
+.gris-normal {
+    color: #999999;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+}
+.negro-normal-enlaces {
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+}
+A.negro-normal-enlaces:hover {
+    color: #008DD6;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+}
+.negro-underline-enlaces {
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: underline;
+}
+A.negro-underline-enlaces:hover {
+    color: #008DD6;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: underline;
+}
+.negro-bold-enlaces {
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    text-decoration: none;
+}
+A.negro-bold-enlaces:hover {
+    color: #008DD6;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.negro-bold {
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.negro-bold-peke {
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 9px;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.fondo-color {
+    background-color: #F7F7E7;
+    border: 1px solid #CCCCCC;
+    border-collapse: collapse;
+}
+.fondo-no-color {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-collapse: collapse;
+}
+.fondo-sin-borde-top {
+    background-color: #FFFFFF;
+    border-collapse: collapse;
+    border-color: -moz-use-text-color #CCCCCC #CCCCCC;
+    border-style: none solid solid;
+    border-width: 0 1px 1px;
+}
+.boton {
+    border: 1px none;
+    font-family: Verdana,Helvetica;
+    font-size: 10px;
+    font-weight: bold;
+    height: 19px;
+    width: 80px;
+}
+.precio-resultado-vuelos {
+    background-color: #000080;
+    color: #FFFFFF;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: bold;
+}
+.centimos-resultado-vuelos {
+    background-color: #000080;
+    color: #FFFFFF;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold;
+}
+.blanco-normal-fondo-azul {
+    background-color: #008DD6;
+    color: #FFFFFF !important;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: normal;
+}
+.blanco-normal-fondo-azul-subrayado {
+    background-color: #008DD6;
+    color: #FFFFFF !important;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: underline;
+}
+.blanco-bold-fondo-azul {
+    background-color: #008DD6;
+    color: #FFFFFF;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+.blanco-sin-fondo {
+    color: #FFFFFF;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 8pt;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+}
+.blanco-mes-calendario {
+    background-color: #008DD6;
+    color: #FFFFFF;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.titular_blanco {
+    background-color: #316AC5;
+    color: #FFFFFF;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: bold;
+}
+.tit_rojo {
+    background-color: #FFFFFF;
+    color: #BE001B;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: bold;
+}
+.azul {
+    background-color: #ECE9D8;
+    color: #0000FF;
+    font-size: 7.2pt;
+}
+.rojo {
+    font-size: 7.2pt;
+}
+.rojo:visited {
+    background-color: #FFFFFF;
+    color: #FF0000;
+}
+.rojo:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+.rojo:link {
+    background-color: #FFFFFF;
+    color: #FF0000;
+}
+.rojo {
+    text-decoration: underline;
+}
+.rojo {
+    background-color: #FFFFFF;
+    color: #FF0000;
+}
+.normal {
+    color: #000000;
+}
+.titular-blanco-ida-vuelta {
+    background-color: #008DD6;
+    color: #FFFFFF;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 12pt;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.precio-seleccionado {
+    background-color: #FF6600;
+    color: #FFFFFF;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11pt;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.precio-mas-caro {
+    background-color: #DDEEFB;
+    color: #000080;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11pt;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.precio-segundo-caro {
+    background-color: #8DC5F0;
+    color: #000080;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11pt;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.precio-medio {
+    background-color: #BBDDF6;
+    color: #000080;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11pt;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.precio-segundo-barato {
+    background-color: #DDEEFB;
+    color: #000080;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11pt;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.precio-mas-barato {
+    background-color: #E9F4FC;
+    color: #000080;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11pt;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.shadetabs {
+    font: 12px verdana;
+    list-style-type: none;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding: 3px 0;
+    text-align: left;
+}
+.shadetabs li {
+    display: inline;
+    margin: 0;
+}
+.shadetabs li a {
+    background: none repeat-x scroll left top white;
+    border: 1px solid #777788;
+    color: #2D2B2B;
+    margin-right: 3px;
+    padding: 3px 7px;
+    text-decoration: none;
+}
+.shadetabs li a:visited {
+    color: #2D2B2B;
+}
+.shadetabs li a:hover {
+    color: #2D2B2B;
+    text-decoration: underline;
+}
+.shadetabs li.selected {
+    position: relative;
+    top: 1px;
+}
+.shadetabs li.selected a {
+    border-bottom-color: white;
+}
+.shadetabs li.selected a:hover {
+    text-decoration: none;
+}
+.tabcontentstyle {
+    border-top: 1px solid gray;
+    width: 156px;
+}
+.tabcontent {
+    display: none;
+}
+.blanco-bold-11 {
+    color: #FFFFFF;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+.gris_bold {
+    color: #666666;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.tabla-gris {
+    border: 1px solid #B0AFAF;
+    border-collapse: collapse;
+}
+.tabcontent {
+    color: #2D2B2B;
+    display: block !important;
+}
+#header {
+    line-height: 120%;
+    width: 1000px;
+}
+#header-cruceros {
+    line-height: 120%;
+    width: 776px;
+}
+div#header {
+    background-color: #FFFFFF;
+    padding: 7px 0 0;
+}
+#header #header-logo {
+    background-color: #FFFFFF;
+    float: left;
+    margin: 0 0 0 10px;
+    width: 200px;
+}
+#header #header-logo img {
+    border: medium none;
+}
+#header-acceso-negocios {
+    float: left;
+    height: 45px;
+    padding: 20px 0 0;
+    text-align: right;
+    width: 380px;
+}
+#header-acceso-negocios img {
+    margin: 18px 0 0;
+}
+#header #header-customer-care {
+    float: right;
+    right: 10px;
+    text-align: right;
+    top: 10px;
+}
+#header #header-customer-care #header-phone {
+    margin: 10px 10px 0;
+}
+#header #header-enlaces {
+    float: right;
+    margin: 10px 0 0;
+    text-align: right;
+    width: 65%;
+}
+#header ul {
+    background-image: url("/pictures/background-header.gif");
+    background-repeat: repeat-x;
+    float: left;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    list-style: none outside none;
+    margin: 5px 0 0;
+    padding: 5px 0 3px;
+    width: 100%;
+}
+#header.pt li, #header.en li {
+    color: #FFFFFF;
+    display: block;
+    float: left;
+    margin: 0 5px;
+    text-align: center;
+    width: 12%;
+}
+#header li a, #header li a:link, #header li a:visited {
+    color: white;
+    text-decoration: none;
+}
+#header li.vacaciones {
+    background-color: #017AB9;
+    display: inline;
+    float: right;
+}
+#header li.vacaciones a:hover {
+    color: white;
+    text-decoration: underline;
+}
+#header li a:hover {
+    color: black;
+    text-decoration: none;
+}
+#header li.active {
+    color: black;
+}
+#header li.active a, #header li.active a:link, #header li.active a:visited {
+    color: black;
+    text-decoration: none;
+}
+#header div.clearer {
+    clear: both;
+    line-height: 0;
+}
+#header #header-customer-care #enlaceAAC {
+    background-image: url("/pictures/ico-aac.jpg");
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    height: 50px;
+    line-height: 16px;
+    width: 190px;
+}
+#header #header-customer-care #enlaceAAC a {
+    position: relative;
+    right: 10px;
+    text-decoration: underline;
+    top: 26px;
+}
+#header #header-customer-care #AAC {
+    height: 50px;
+}
+#header #header-customer-care #AAC .mail-aac {
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+    margin-top: 4px;
+}
+#header.es .roaming {
+    margin: -3px 0 0 25px;
+}
+#header .new-item {
+    position: relative;
+}
+#header li.new-item img {
+    float: left;
+    left: 0;
+    margin-right: 3px;
+    position: absolute;
+    top: -1px;
+}
+#header.es {
+    padding: 0;
+}
+#header.es ul {
+    background: none repeat scroll 0 0 transparent;
+    float: none;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+#header li a, #header li a:link, #header li a:visited {
+    color: #008DD6;
+    text-decoration: underline;
+}
+#header.es li {
+    margin: 0;
+    padding: 0;
+}
+#header.es {
+    display: table;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    margin: 10px 0 15px 15px;
+    width: 1000px;
+}
+#header.es a {
+    color: #008DD6;
+    text-decoration: underline;
+}
+#header.es #logo {
+    float: left;
+    height: 50px;
+    margin: 10px 0 15px 15px;
+}
+#header.es .acceso-empresas {
+    float: left;
+    margin: 10px 0 0 135px;
+}
+#header.es .servicios-externos {
+    background-image: url("/pictures/servicios-header-bg.gif");
+    background-repeat: repeat-x;
+    border: 1px solid #DEDFE0;
+    float: left;
+    font-size: 11px;
+    margin: 10px 0 0 15px;
+}
+#header.es .servicios-externos a {
+    color: #000000;
+    display: block;
+    float: left;
+    padding: 3px;
+    text-decoration: underline;
+}
+#header.es .servicios-externos a:hover {
+    color: #008DD6;
+    text-decoration: underline;
+}
+#header.es .servicios-externos a span {
+    display: block;
+    float: left;
+    margin: 3px 10px 0 5px;
+}
+#header.es .atencion-cliente {
+    background-image: url("/img/tel.gif");
+    background-repeat: no-repeat;
+    float: right;
+    height: 45px;
+    width: 190px;
+}
+#header.es .atencion-cliente ul {
+    color: #1189CB;
+    font-size: 11px;
+    font-weight: bold;
+    margin: 0;
+    padding: 8px;
+    text-align: right;
+}
+#header.es .atencion-cliente ul.simple {
+    padding: 15px 12px 0 0;
+}
+#header.es .servicios-cliente {
+    display: block;
+    float: right;
+    margin: 10px 0 0;
+    text-align: right;
+    width: 60%;
+}
+#header.es .servicios-cliente a:hover {
+    color: #424242;
+}
+#header.es .canales {
+    clear: both;
+    float: left;
+    width: 100%;
+}
+#header.es .canales ul {
+	background-image: url(../pictures/bg-canales-header.gif);
+	background-repeat: repeat-x;
+	float: left;
+	height: 22px;
+	padding: 0;
+	width: 1000px;
+	margin-top: 50px;
+	margin-right: 0px;
+	margin-bottom: 0;
+	margin-left: 0px;
+}
+#header.es .canales li {
+	color: #FFFFFF;
+	display: inline-block;
+	float: left;
+	font-size: 9px;
+	text-align: center;
+	margin-top: 50px;
+	margin-right: 10px;
+	margin-bottom: 0;
+	margin-left: 8px;
+}
+#header.es .canales li a {
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: bold;
+    text-decoration: none;
+}
+#header.es .canales li a:hover {
+    color: #000000;
+}
+#header.es .canales li.active, #header.es .canales li.active a {
+    color: #000000;
+}
+#header.es .canales li.negocios {
+    background-image: url("/pictures/negocios-header-bg.gif");
+    background-repeat: no-repeat;
+    height: 18px;
+    margin: 2px 0 0 5px;
+    width: 80px;
+}
+#header.es #AAC {
+    background-image: url("/pictures/img-header-AAC-bg.gif");
+    background-repeat: no-repeat;
+    float: right;
+    height: 45px;
+    text-align: right;
+    width: 190px;
+}
+#header.es #AAC a {
+    font-size: 10px;
+    font-weight: bold;
+    margin: 0 5px 0 0;
+}
+#header.es #AAC .mail-aac {
+    margin: 0;
+}
+#header.es #sub-menu {
+    background-color: #E4F0FD;
+    border-bottom: 1px solid #9FCEFD;
+    float: left;
+    width: 100%;
+}
+#header.es #sub-menu ul {
+    height: 21px;
+    margin: 0;
+    padding: 0 0 0 15px;
+}
+#header.es #sub-menu li {
+    color: #1388C2;
+    display: inline-block;
+    float: left;
+    font-size: 11px;
+    margin: 3px 20px 0 0;
+    text-align: left;
+}
+#header.es #sub-menu li a {
+    text-decoration: none;
+}
+#header.es #sub-menu li a:hover {
+    color: #424242;
+}
+#header.es #sub-menu li.active {
+    color: #1388C2;
+    font-weight: bold;
+}
+#header.es #sub-menu li.patrocinado {
+    float: right;
+    font-weight: bold;
+}
+#header.es #sub-menu li.patrocinado span {
+    font-weight: normal;
+    margin: 0 15px 0 0;
+}
+#footer {
+    float: left;
+    font-family: verdana,arial,sans-serif;
+    margin: 10px 0 20px;
+    text-align: center;
+    width: 1000px;
+}
+#footer ul {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+#footer .background-top {
+    background-image: url("/pictures/new-footer-fondo-top.gif");
+    background-repeat: no-repeat;
+    float: left;
+    height: 10px;
+    width: 100%;
+}
+#footer .body-footer {
+    background-image: url("/pictures/new-footer-fondo-body.gif");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    float: left;
+    height: auto;
+    margin-bottom: 20px;
+    width: 100%;
+}
+#footer .accesibilidad {
+    clear: both;
+    margin: 10px auto 0;
+    width: 780px;
+}
+#footer .accesibilidad li {
+    float: left;
+}
+#footer .text-acces {
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 18px;
+    margin: 0;
+    padding: 8px 10px 0;
+    text-align: center;
+    width: 480px;
+}
+#footer .copyR {
+    clear: both;
+    font-size: 10px;
+    margin-bottom: 5px;
+    padding: 0 15px;
+    text-align: center;
+}
+#footer .links-foot {
+    font-size: 9px;
+    margin: 10px auto;
+    width: 780px;
+}
+#footer .links-foot .links-middle li a {
+    font-size: 9px;
+}
+#footer .world-links {
+    clear: both;
+    font-size: 11px;
+    margin: 10px auto;
+    width: 720px;
+}
+#footer .offer-links {
+    clear: both;
+    margin: 10px auto;
+    width: 560px;
+}
+#footer .links-left {
+    background: url("/pictures/caja-ie-izq-top.gif") no-repeat scroll 0 0 transparent;
+    float: left;
+    height: 27px;
+    width: 5px;
+}
+#footer .links-right {
+    background: url("/pictures/caja-ie-der-top.gif") no-repeat scroll 0 0 transparent;
+    float: left;
+    height: 27px;
+    width: 5px;
+}
+#footer .links-middle {
+    background: url("/pictures/footer-caja-fondo.gif") repeat-x scroll 0 0 transparent;
+    float: left;
+    font-size: 10px;
+    height: 27px;
+    line-height: 27px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: -moz-max-content;
+}
+#footer .links-middle ol, #footer .links-foot ul {
+    list-style-image: none;
+    list-style-position: outside;
+}
+#footer .links-middle li {
+    display: inline;
+    float: left;
+    height: 27px;
+}
+#footer .links-middle li a {
+    color: #008DD6;
+    text-decoration: underline;
+}
+#footer .links-middle li a:hover {
+    color: #424242;
+    text-decoration: underline;
+}
+#footer .links-middle li span {
+    color: #CCCCCC;
+    padding: 0 5px;
+}
+#footer .links-middle strong {
+    font-size: 10px;
+    margin-right: 7px;
+}
+#footer .world-links .links-middle li img {
+    margin-right: 4px;
+    position: relative;
+    top: 4px;
+}
+.clearer {
+    clear: both;
+    line-height: 0;
+}
+ul.autocompleter-choices {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #FFFFFF;
+    background-image: url("/pictures/ppixel-background-autocompl.gif");
+    border-color: #99BBCC #C3C3C3 #DDDDDD;
+    border-style: solid;
+    border-width: 1px;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    text-align: left;
+    z-index: 50;
+}
+ul.autocompleter-choices li {
+    cursor: pointer;
+    display: block;
+    float: none !important;
+    font-size: 1em;
+    font-weight: normal;
+    line-height: 1.5em;
+    margin: -2px 0 0;
+    padding: 0.2em 1.5em 0.2em 1em;
+    position: relative;
+    white-space: nowrap;
+}
+ul.autocompleter-choices li.autocompleter-selected {
+    background-color: #CCEEFF;
+    color: #000000;
+}
+ul.autocompleter-choices span.autocompleter-queried {
+    display: inline;
+    float: none;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+ul.autocompleter-choices li.autocompleter-selected span.autocompleter-queried {
+    color: #008DD6;
+}
+.fondo_default {
+    background-color: #FFFFFF;
+}
+.fondo_azul_titulo {
+    background-color: #3366CC;
+}
+.fondo_linea_azul {
+    background-color: #008DD6;
+}
+.fondo_gris {
+    background-color: #ECE9D8;
+}
+.txt_12_white_bold {
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+}
+.txt_10_blue_normal {
+    color: #000080;
+    font-size: 10px;
+    font-weight: normal;
+}
+.txt_12_red_bold {
+    color: #BE001B;
+    font-size: 12px;
+    font-weight: bold;
+}
+.txt_11_black_bold {
+    color: #000000;
+    font-size: 11px;
+    font-weight: bold;
+}
+.txt_11_black_normal {
+    color: #000000;
+    font-size: 11px;
+}
+.txt_9_black_normal {
+    color: #000000;
+    font-size: 9px;
+}
+A.Link_12_blue_normal {
+    color: #008DD6;
+    font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+}
+A.Link_favoriteCity {
+    color: #000000;
+    font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;
+    font-size: 9px;
+    text-decoration: none;
+}
+A.Link_favoriteCity:hover {
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: bold;
+}
+A.Link_favoriteCity:focus {
+    color: #000000;
+}
+.rumbo3 {
+    color: #D00000;
+    font-size: 7.5pt;
+    font-weight: bold;
+    line-height: normal;
+}
+#mail-business {
+    position: absolute;
+    right: 239px;
+    top: 40px;
+    width: 150px;
+}
+#acceso-business {
+    position: absolute;
+    right: 493px;
+    top: 40px;
+    width: 150px;
+}
+#loading-content-esp {
+    padding: 50px 0;
+    width: 1000px;
+}
+#loading-esp {
+    background-image: url("/pictures/bg-loading.jpg");
+    background-repeat: repeat-x;
+    border: 1px solid #008DD6;
+    height: 180px;
+    margin: 0 auto;
+    width: 430px;
+}
+#loading-esp div {
+    margin: 20px auto;
+    width: 50px;
+}
+#loading-esp div.text {
+    color: #676767;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 20px auto;
+    text-align: center;
+    width: 350px;
+}
+#loading-esp ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#loading-esp li {
+    padding-top: 10px;
+}
+#loading-esp li.peq {
+    font-size: 12px;
+}

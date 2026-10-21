@@ -1,0 +1,27 @@
+Buenos días $nombre,
+
+Le agradecemos su confianza
+Un consultor de entre3mundos se pondrá en contacto con usted
+He aquí la información que nos transmitieron:
+
+Nombre : $nombre
+1° Apellido : $apellido_1
+2° Apellido : $apellido_2
+email : $email
+Téléfono : $phone
+Ciudad inicial : $ciudad
+Hora a la que desean les contactemos : $hora_recordatorio
+Muchos pasajeros : $adulto Adulto(s), $ninos Niño(s)
+Comentarios : $comentarios
+
+Viaje : $crucero
+Comenzando fecha : $comenzando_fecha
+Categoría Hotel :$tarifas_nombre
+Vuelo incluido : $vuelo
+Proveedor : $compania
+Estancia o Circuito : $buque
+
+He aquí nuestros datos :
+www.entre3mundos.com
+Tél : 902-10-63-59
+Email : info@entre3mundos.com

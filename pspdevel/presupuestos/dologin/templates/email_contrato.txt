@@ -1,0 +1,24 @@
+Contrato Número : $id_presupuesto.
+
+ENTRE3MUNDOS
+Calle Rector Ubach 16,
+Barcelona 08021
+Teléfono : 93 362 13 51
+Fax : 93 200 62 74
+Web : www.entre3mundos.com
+E-mail : info@entre3mundos.com
+
+En relación a su petición de viaje procedemos a remitirle el contrato y la ficha pasajeros para la salida el $comenzando_fecha.
+
+- Para visualizar e imprimir su contrato puede dirigirse a:
+http://www.soloviajesdelujo.com/pspdevel/presupuestos/contrato.php?id_rand=$id_rand
+
+- Para completar la Ficha de Pasajeros puede dirigirse a:
+http://www.soloviajesdelujo.com/pspdevel/presupuestos/ficha_pasajeros/index.php?id_rand=$id_rand
+
+- Para visualizar e imprimirle nuestras Condiciones de Venta puede dirigirse a:
+http://www.soloviajesdelujo.com/pspdevel/conditiones/worldcruceros.pdf
+
+Para reservas o aclaraciones de cualquier tipo pueden contactar en el teléfono 93 362 13 51 o escribirnos a la siguiente dirección de e mail $maild les agradeceríamos nos indicaran su número de expediente.
+
+Gracias por haber elegido a Entre3mundos.

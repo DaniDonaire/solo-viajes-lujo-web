@@ -1,0 +1,14 @@
+User-agent:  *
+Disallow:  /templates/ 
+Disallow:  /assets/ 
+Disallow:  /pspdevel/ 
+Disallow:  /include/
+Disallow:  /newsletter/
+Disallow:  /img/ 
+Disallow:  /js/
+Disallow:  /css/
+Disallow:  /lists/
+Disallow:  /rev-slider-files/
+Disallow:  /eslogin/
+Disallow:  /contacto.php
+Sitemap: https://www.soloviajesdelujo.com/sitemap.xml

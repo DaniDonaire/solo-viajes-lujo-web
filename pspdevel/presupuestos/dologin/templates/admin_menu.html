@@ -1,0 +1,56 @@
+<html>
+<head>
+	<title>Menu amministrativo</title>
+	<link href="presupuestos.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" language="JavaScript">
+	<!--
+		function validateForm(f) {
+			if(f.email.value == "")
+				alert("Insertar el correo electrónico de dirección del cliente a buscar.");
+			else
+				return true;
+			return false;
+		}
+		function popup(url, width, height) {
+			window.open(url, "formulaire", "toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=yes,copyhistory=no,menuBar=no,width=" + width + ",height=" + height + ",left=100,top=50");
+		}
+	//-->
+	</script>
+</head>
+<body>
+
+<table width="500" border="0" align="center">
+	<tr>
+		<td>
+			<table width="500" height="286" border="0" align="center">
+				<tr>
+					<td width="51" align="center" valign="top">
+						<img name="agent" src="../images/staff/$pseudo.jpg" alt="$pseudo"><br/><br/>
+						<p><a href="salida.php">Salir</a></p>
+						<p><a href="JavaScript:popup('calculator.html', 210, 200)"><img src="images/calculator.gif" border="0" alt="Calculadora" title="Calculadora"></a></p>
+						<p><a href="list/calendario_ritardo.php"><img src="images/calendar.png" border="0" alt="Calendario" title="Voci di calendario in ritardo"></a></p>
+					</td>
+					<td width="445">
+						<table width="500" height="301" border="0" align="center" cellspacing="0" cellpadding="0" background="images/back_ground1.jpg"><tr><td align="center">
+							<p class="title">Insertar el correo electrónico de dirección del cliente que desea<br/>
+							verificar o asignar de nuevo a otro vendedor:</p>
+							<form action="emailcontact/index.php" method="post" onSubmit="return validateForm(this)">
+								<div align="center"><input type="text" size="34" name="recherche">&nbsp;<input type="submit" value="Busqueda"></div>
+							</form>
+							<hr width="95%"/>
+							<p><a href="clasification/sommario_dia.php" class="title">Clasificaci&oacute;n de Presupuestos por dia</a><br/>
+							<a href="clasification/sommario_vendedor.php" class="title">Clasificaci&oacute;n de Presupuestos por vendedor</a><br/>
+							<a href="clasification/sommario_estado.php" class="title">Clasificaci&oacute;n de Presupuestos por estado</a></p>
+							<hr width="95%"/>
+							<p><a href="vendedores/index.php" class="title">Administraci&oacute;n de los vendedores</a></p>
+							<hr/>
+							<p align="center"><a href="salida.php" class="title">Salida</a></p>
+						</td></tr></table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

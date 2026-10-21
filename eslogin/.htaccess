@@ -1,0 +1,18 @@
+###INI HTDINA###
+
+###INICIO PROTECCIONES DE CARPETA###
+
+
+##############################################################
+#Proteccion por USUARIO, realizar cambios en panel           #
+##############################################################
+AuthUserFile /home/soloviajesdelujo/www/eslogin/.htpasswd
+AuthGroupFile /dev/null
+AuthName ByPassword
+AuthType Basic
+require valid-user
+
+###FIN DE PROTECCIONES DE CARPETA###
+
+###FIN HTDINA###
+

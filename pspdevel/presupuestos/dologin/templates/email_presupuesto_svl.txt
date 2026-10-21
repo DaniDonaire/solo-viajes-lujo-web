@@ -1,0 +1,18 @@
+Presupuesto Número : $id_presupuesto.
+SOLOVIAJESDELUJO.COM
+Calle Rector Ubach 16,
+Barcelona 08021
+Teléfono : 93 362 13 51
+Fax : 93 200 62 74
+Web : www.soloviajesdelujo.com
+E-mail : info@soloviajesdelujo.com
+
+En relación a su petición de viaje procedemos a remitirle el presupuesto para la salida el $comenzando_fecha.
+
+Para visualizar e imprimir nuestros presupuesto puede dirigirse a
+
+http://www.soloviajesdelujo.com/pspdevel/presupuestos/presupuesto.php?id_rand=$id_rand
+
+Para reservas o aclaraciones de cualquier tipo pueden contactar en el teléfono 93 362 13 51 o escribirnos a la siguiente dirección de e mail $maild les agradeceríamos nos indicaran su número de expediente.
+
+Gracias por haber elegido a soloviajesdelujo.

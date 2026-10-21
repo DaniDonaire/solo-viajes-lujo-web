@@ -1,0 +1,38 @@
+# Operating system and editor files
+.DS_Store
+._*
+Thumbs.db
+/.fseventsd/
+.ftpquota
+.idea/
+.vscode/
+*~
+
+# Private configuration and authentication
+.env
+.env.*
+!.env.example
+/config/local.php
+/config.php
+/lists/config/config.php
+/lists/config/config-original.php
+/lists/config/config-before-*.php
+.htpasswd
+.htpasswd.*
+
+# Production backups, database exports and runtime data
+*.bak
+*.bak.*
+/.htaccess-old
+*.sql.gz
+*.sql.bz2
+*.sql.xz
+*.log
+/eslogin/log/
+/include/log/
+/pspdevel/include/log/
+/lists/base/var/cache/
+/lists/base/var/logs/
+/lists/base/var/sessions/
+
+# Required source schemas, media and bundled dependencies stay versioned.

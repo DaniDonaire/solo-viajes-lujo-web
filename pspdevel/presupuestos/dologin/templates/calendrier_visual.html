@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Visualiza voz de calendario</title>
+	<link href="../presupuestos.css" rel="stylesheet" type="text/css"/>
+	<script language="JavaScript" type="text/javascript" src="date.js"></script>
+	<script language="JavaScript" type="text/javascript" src="calendar.js"></script>
+	<script language="JavaScript" type="text/javascript">
+	<!--
+		var effacer = false;
+		function validateForm(f) {
+			if(effacer) {
+				if(confirm("Desideri veramente cancellare questa nota?"))
+					return true;
+				effacer = false;
+				return false;
+			}
+			if(f.fecha_recordatorio.value == "")
+				alert("La fecha de rellamada debe ser especificada.");
+			else if(!isValidDate(f.fecha_recordatorio.value))
+				alert("La fecha de rellamada debe ser valida.");
+			else if(f.hora_recordatorio.value != "" && !isValidHour(f.hora_recordatorio.value))
+				alert("La hora de rellamada debe ser especificada, debe ser valida.");
+			else
+				return true;
+			return false;
+		}
+	//-->
+	</script>
+</head>
+<body>
+
+<table width="600" border="0" class="login1">
+	<tr>
+		<td colspan="4">
+			<img name="agent" src="../images/top.jpg" alt="$pseudo"/>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="4" bgcolor="#D7D7FF">Voz de calendario$devisnum</td>
+	</tr>
+</table>
+<table width="600" border="0" class="login1">
+	<tr>
+		<td colspan="4" class="header1">Informaciones del cliente</td>
+	</tr>
+	<tr>
+		<td class="data">Apellido</td>
+		<td class="data">$nom</td>
+		<td class="data">Tel&eacute;fono</td>
+		<td class="data">$phone</td>
+	</tr>
+	<tr>
+		<td class="data">Nombre</td>
+		<td class="data">$nombre</td>
+		<td class="data">E mail</td>
+		<td class="data">$email</td>
+	</tr>
+</table>
+<form action="calendario_valide.php" method="post" onSubmit="return validateForm(this)">
+<input type="hidden" name="id" value="$id">
+<table width="600" border="0" class="login1">
+	<tr>
+		<td colspan="4" class="header1">Detalles del calendario</td>
+	</tr>
+	<tr>
+		<td class="data">Llamar il</td>
+		<td class="data"><input type="text" name="fecha_recordatorio" size="11" maxlength="10" value="$fecha_recordatorio"></td>
+		<td class="data">a las</td>
+		<td class="data"><input type="text" name="hora_recordatorio" size="6" maxlength="5" value="$hora_recordatorio"></td>
+	</tr>
+	<tr>
+		<td colspan="4" class="header3">Notas</td>
+	</tr>
+	<tr>
+		<td colspan="4" class="data"><textarea name="notas" cols="70" rows="12" id="notas">$notas</textarea></td>
+	</tr>
+	<tr>
+		<td colspan="4" align="center">
+			<input type="submit" name="retour" value="Memorizar" onClick="this.form.action='calendario_valide.php'"/>
+			<input type="submit" name="retour" value="Cancelar" onClick="effacer=true;this.form.action='calendario_borrar.php'"/>
+$dossierbutton
+			<input type="submit" name="retour" value="Salir" onClick="window.close()"/>
+		</td>
+	</tr>
+</table>
+</form>
+
+</body>
+</html>

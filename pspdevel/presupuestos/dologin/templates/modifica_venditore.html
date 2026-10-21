@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Modifica Vendedor</title>
+		<link href="../presupuestos.css" rel="stylesheet" type="text/css"/>
+		<script language="JavaScript">
+			<!--
+				function validateForm(f) {
+					if(f.passe.value != f.passe2.value)
+						alert("Inserta de nuevo el password por favor.");
+					else
+						return true;
+					return false;
+				}
+			//-->
+		</script>
+	</head>
+	<body class="commandebody">
+		<form id="form" name="form" method="post" action="memorizza.php" onsubmit="return validateForm(this)">
+			<input type="hidden" name="id" value="$id"/>
+			<table class="login1" cellpadding="6" cellspacing="2">
+				<tr>
+					<td class="header1">Modifica Vendedor</td>
+				</tr>
+				<tr>
+					<td class="data" nowrap>
+						Nome:&nbsp;<input type="text" name="nombre" id="nombre" size="20" maxlength="50" value="$nombre"/>&nbsp;
+						Pseudo:&nbsp;<input type="text" name="pseudo" id="pseudo" size="16" maxlength="32" value="$pseudo"/>&nbsp;
+					</td>
+				</tr>
+				<tr>
+					<td class="data" nowrap>
+						Email:&nbsp;<input type="text" name="email" id="email" size="24" maxlength="50" value="$email"/>
+						Telefono:&nbsp;<input type="text" name="telephone" id="telephone" size="24" maxlength="50" value="$telephone"/>
+					</td>
+				</tr>
+				<tr>
+					<td class="data" nowrap>
+						Password:&nbsp;<input type="password" name="passe" id="passe" size="14" maxlength="32"/>&nbsp;
+						Repitela:&nbsp;<input type="password" name="passe2" id="passe2" size="14" maxlength="32"/>&nbsp;
+						Nivel:&nbsp;<select name="level"><option$selectedA>A</option><option$selectedB>B</option><option$selectedC>C</option><option$selectedD>D</option></select>
+					</td>
+				</tr>
+			</table>
+			<p style="text-align:center">
+				<input type="button" name="annuler" value="Anula" onClick="if(confirm('Quieres anular y perder las modificaciones?')) window.close()"/>
+				<input type="submit" name="sauvegarder" value="Salva"/>
+			</p>
+		</form>
+	</body>
+</html>

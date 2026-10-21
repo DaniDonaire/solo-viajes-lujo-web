@@ -1,0 +1,28 @@
+#logo-vp {
+    background-image: url("/images/localized/es/header_logo.gif");
+}
+#top-menu li {
+    margin-left: 100px;
+}
+#compte-menu #compte-title {
+    background-image: url("/images/localized/es/title_compte.gif");
+}
+#aide-contact-form #aide-contact-form-head {
+    background-image: url("/images/localized/es/contactform/contactform_head.gif");
+}
+#page-mon-compte #aide-contact-form #aide-contact-form-head {
+    background-image: url("/images/localized/es/contactform/contactform_head2.gif");
+}
+#page-footer {
+    background-image: url("/images/header_fond.gif");
+}
+#fancybox-close {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    background-image: url("/images/localized/es/fancybox/fermer.png");
+    background-origin: padding-box;
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+}

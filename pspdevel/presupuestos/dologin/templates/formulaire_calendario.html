@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Modifica voz de calendario</title>
+	<link href="presupuestos.css" rel="stylesheet" type="text/css"/>
+	<script language="JavaScript" type="text/javascript" src="date.js"></script>
+	<script language="JavaScript" src="../../calendario/CalendarPopup.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="../../calendario/CalendarStyle.css" type="text/css"/>
+	<script language="JavaScript" type="text/javascript">
+	<!--
+		var annuler = false;
+		function validateForm(f) {
+			if(annuler)
+				return true;
+			if(f.fecha_recordatorio.value == "")
+				alert("La fecha de rellamada debe ser especificada.");
+			else if(!isValidDate(f.fecha_recordatorio.value))
+				alert("La fecha de rellamada debe ser valida.");
+			else if(f.hora_recordatorio.value != "" && !isValidHour(f.hora_recordatorio.value))
+				alert("La hora de rellamada debe ser especificada, debe ser valida.");
+			else
+				return true;
+			return false;
+		}
+		var calendar = new CalendarPopup("calendardiv");
+		calendar.setCssPrefix("CALENDAR");
+		calendar.showYearNavigation();
+		calendar.showYearNavigationInput();
+	//-->
+	</script>
+</head>
+<body>
+
+<form id="form1" name="form1" method="post" action="../calendario_valide.php" onSubmit="return validateForm(this)">
+$fields
+	<input type="hidden" name="backurl" value="$backurl">
+	<table width="600" border="0" class="login1">
+		<tr>
+			<td colspan="4">
+				<img name="agent" src="../images/top.jpg" alt="$pseudo"/>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" bgcolor="#D7D7FF">Voz del calendario$devisnum</td>
+		</tr>
+	</table>
+	<table width="600" border="0" class="login1">
+		<tr>
+			<td colspan="4" class="header1">Informaciones del cliente</td>
+		</tr>
+		<tr>
+			<td class="data">Apellido</td>
+			<td class="data"><input name="apellido" type="text" size="20" id="apellido" value="$apellido"/></td>
+			<td class="data">Nombre</td>
+			<td class="data"><input name="nombre" type="text" size="20" id="nombre" value="$nombre"/></td>
+		</tr>
+		<tr>
+			<td class="data">Tel&eacute;fono</td>
+			<td class="data"><input name="phone" type="text" size="20" id="phone" value="$phone"/></td>
+			<td class="data">E mail</td>
+			<td class="data">
+				<input name="email" type="text" size="20" maxlength="60" id="email" value="$email"/>
+			</td>
+		</tr>
+	</table>
+	<table width="600" border="0" class="login1">
+		<tr>
+			<td colspan="4" class="header1">Informacion</td>
+		</tr>
+		<tr>
+			<td class="data">Fecha recordatorio</td>
+			<td class="data" nowrap><input name="fecha_recordatorio" type="text" size="11" maxlength="10" id="fecha_recordatorio"/>&nbsp;<a href="#" onclick="calendar.select(document.forms[0].fecha_recordatorio,'fecha_recordatorio_button','dd/MM/yyyy');return false;" name="fecha_recordatorio_button" id="fecha_recordatorio_button"><img src="../../presupuestos/calendario/calendario.png" border="0" style="vertical-align:middle"/></a>
+			</td>
+			<td class="data">Hora recordatorio</td>
+			<td class="data"><input name="hora_recordatorio" type="text" size="6" maxlength="5" id="hora_recordatorio"/></td>
+		</tr>
+		<tr>
+			<td colspan="4" class="header2">
+				Adjuntar al calendario de
+				<select name="seguimiento">
+					<option value="todos">(todos)</option>
+					$vendors
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" class="header3">Notas</td>
+		</tr>
+		<tr>
+			<td colspan="4" class="data"><textarea name="notas" cols="70" rows="12" id="notas">$notas</textarea></td>
+		</tr>
+		<tr>
+			<td colspan="4" align="center">
+				<input type="submit" name="retour" value="Atr&aacute;s" onClick="annuler=true;this.form.action='$backurl'"/>
+				<input type="submit" name="sauvegarder" value="Memorizar" onClick="annuler=false;this.form.action='calendario_valide.php'"/>
+			</td>
+		</tr>
+	</table>
+</form>
+<div id="calendardiv" style="position:absolute;visibility:hidden;background-color:white;layer-background-color:white"></div>
+</body>
+</html>

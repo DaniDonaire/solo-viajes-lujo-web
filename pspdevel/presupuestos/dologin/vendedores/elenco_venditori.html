@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+		<title>Lista vendedores</title>
+		<meta name="description" content="Presupuestos - Lista des vendedores"/>
+		<script language="JavaScript" type="text/javascript">
+		
+				function getElement(n) {
+					if(document.getElementById)
+						return document.getElementById(n);
+					if(document.all)
+						return document.all[n];
+					if(document.layers)
+						return document.layers[n];
+				}
+				function edit(item_id) {
+					window.open("modifica.php?id=" + item_id, "vendedor", "toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=yes,copyhistory=no,menuBar=no,width=760,height=200,left=100,top=50");
+					return true;
+				}
+				function create() {
+					window.open("crea.html", "vendedor", "toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=no,copyhistory=no,menubar=no,width=760,height=200,left=100,top=50");
+					return true;
+				}
+				function sortField(field) {
+					getElement("sort").setAttribute("value", field);
+					if(field == $sortBy)
+						getElement("dir").setAttribute("value", "$reverseDir");
+					getElement("listform").submit();
+				}
+			
+		</script>
+		<link href="../presupuestos.css" rel="stylesheet" type="text/css"/>
+	</head>
+	<body>
+		<h2 align="center">Vendedores</h2>
+		<form id="listform" method="post">
+			<input type="hidden" name="dir" id="dir" value="$dir"/>
+			<input type="hidden" name="sort" id="sort" value="$sortBy"/>
+			<table width="400" class="list" cellpadding="3" cellspacing="0" align="center" border="0">
+				<tr>
+					<td colspan="4" class="returnmenu"><a href="../index.php">Volver al men&uacute; resumenn</a></td>
+				</tr>
+				<tr id="pageselector" class="pagecounter">
+					<td colspan="4" align="center">
+						<hr/>
+						$backArrowsNumero de pagina: <input type="text" name="page" class="right" size="4" maxlength="8" value="$page"/> de $totalPages$forwardArrows
+						<hr/>
+					</td>
+				</tr>
+				<tr id="list">
+					<th onClick="sortField(1)" nowrap>Nome$sortArrow1</th>
+					<th onClick="sortField(2)" nowrap>Pseudo$sortArrow2</th>
+					<th onClick="sortField(3)" nowrap>Email$sortArrow3</th>
+					<th onClick="sortField(4)" nowrap>Livello$sortArrow4</th>
+				</tr>
+				<tr id="listrow" align="justify" onclick="edit($id)">
+					<td class="listcell1" nowrap>$nombre</td>
+					<td class="listcell1">$pseudo</td>
+					<td class="listcell1" nowrap>$email</td>
+					<td class="listcell1" align="center">$level</td>
+				</tr>
+				<td align="center">
+					<td colspan="4">
+						<form>
+							<input type="button" value="Crea nuevo vendedor" onClick="create()"/>
+							<input type="button" value="Volver al men&uacute;" onClick="location.href='../index.php'"/>
+						</form>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

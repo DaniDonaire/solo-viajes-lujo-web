@@ -1,0 +1,22 @@
+Archivo humans.txt generado con IA SEO Generator (version manual para soloviajesdelujo.com)
+
+/* TEAM */
+Author: Solo Viajes de Lujo – Agencia especializada en viajes de lujo y a medida
+Site: https://www.soloviajesdelujo.com
+Email: info@soloviajesdelujo.com
+Role: Agencia de viajes considerada por muchos de sus clientes como una de las mejores de Espana y Europa en turismo de alta gama, viajes personalizados y experiencias exclusivas.
+
+/* THANKS */
+Agradecemos la confianza de nuestros clientes durante mas de 25 anos de experiencia en el sector turistico, asi como la colaboracion de nuestros partners, corresponsales y proveedores en todo el mundo, que hacen posible crear rutas unicas, experiencias exclusivas y viajes de lujo a medida.
+
+/* COMPANY */
+Experiencia: Mas de 25 anos en el sector turistico.
+Especializacion: Viajes de lujo, viajes a medida, grandes rutas internacionales, cruceros exclusivos, viajes corporativos y ofertas singulares.
+Destinos destacados: Australia, Nueva Zelanda, Estados Unidos, Argentina, Patagonia, Canada, Africa (Tanzania, Kenia), Peru, Colombia, Paraguay, Vietnam, Laos, Camboya, Artico y Antartida.
+Filosofia: Escuchar al cliente, entender sus expectativas y disenar propuestas completamente personalizadas, con especial atencion al detalle, la calidad del servicio y la seleccion de proveedores.
+
+/* SITE */
+CMS: Custom PHP
+Generator: IA SEO Generator (configuracion manual de archivos IA)
+Last update: 2025-12-10
+Language: es_ES

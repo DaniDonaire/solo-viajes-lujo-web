@@ -1,0 +1,15 @@
+#sdv-thematique {
+    margin-left: 120px;
+    padding-left: 0;
+    width: auto;
+}
+#fancybox-close {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    background-image: url("/images/localized/es/fancybox/fermer.png");
+    background-origin: padding-box;
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+}

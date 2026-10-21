@@ -1,0 +1,4 @@
+							<li>Para visualizar e imprimir le Condiciones Generales de venta de la Compa&ntilde;ia puede dirigirse <a href="http://www.soloviajesdelujo.com/pspdevel/conditiones/$conditionsPage.pdf">aqui</a></li>
+
+- Para visualizar e imprimir le Condiciones Generales de venta de la Compania puede dirigirse a:
+http://www.soloviajesdelujo.com/pspdevel/conditiones/$conditionsPage.pdf

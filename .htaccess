@@ -1,0 +1,17 @@
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^\.well-known/acme-challenge/ - [L]
+    RewriteRule (^|/)\. - [F,L]
+    RewriteRule ^(?:config|tools)(?:/|$) - [F,L,NC]
+    RewriteRule \.(?:log|sql(?:\.(?:gz|bz2|xz))?|bak(?:\..*)?)$ - [F,L,NC]
+</IfModule>
+
+<FilesMatch "^(?:config(?:\.example)?\.php|info\.php)$">
+    Require all denied
+</FilesMatch>
+
+<IfModule php_module>
+    php_flag short_open_tag On
+</IfModule>

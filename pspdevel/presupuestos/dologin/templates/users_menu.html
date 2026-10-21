@@ -1,0 +1,148 @@
+<html>
+<head>
+	<title>Menu Presupuestos</title>
+	<link href="presupuestos.css" rel="stylesheet" type="text/css" />
+	<script language="JavaScript" type="text/javascript">
+	<!--
+		function popup(url, width, height) {
+			window.open(url, "formulaire", "toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=yes,copyhistory=no,menuBar=no,width=" + width + ",height=" + height + ",left=100,top=50");
+		}
+	//-->
+	</script>
+</head>
+<body>
+
+<table width="500" height="286" border="0" align="center">
+	<tr>
+		<td width="51" align="center" valign="top">
+			<img name="agent" src="../images/staff/$pseudo.jpg" alt="$pseudo"><br/><br/>
+			<p><a href="salida.php">Salir</a></p>
+			<p><a href="JavaScript:popup('calculator.html', 210, 200)"><img src="images/calculator.gif" border="0" alt="Calculadora" title="Calculadora"></a></p>
+			<p><a href="list/calendario.php"><img src="images/calendar.png" border="0" alt="Calendario" title="Calendario"></a></p>
+		</td>
+		<td width="445">
+			<table width="500" height="301" border="0" align="center" cellspacing="0" cellpadding="0" background="images/back_ground1.jpg"><tr><td align="center"><table height="272" cellspacing="0" cellpadding="0">
+				<tr>
+					<td nowrap>
+						<a href="list/presupuestos_espera_vos_clientes.php" class="title">Presupuestos en espera de vuestros clientes</a>
+					</td>
+					<td width="50" align="right"><a href="list/presupuestos_espera_vos_clientes.php" class="title">$devisVosClients</a></td>
+				</tr>
+				<tr>
+					<td nowrap>
+						<a href="list/presupuestos_espera_otros_clientes.php" class="title">Presupuestos en espera de otros clientes</a>
+					</td>
+					<td align="right"><a href="list/presupuestos_espera_otros_clientes.php" class="title">$devisAutresClients</a></td>
+				</tr>
+				<tr>
+					<td colspan="2" nowrap>
+						<a href="JavaScript:popup('formulaire_presupuesto.php?devis_creer=1', 640, 700)" class="title">Crear manualmente un presupuesto</a>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2"><hr/></td>
+				</tr>
+				<tr>
+					<td nowrap>
+						<a href="list/presupuestos_memorizados.php" class="title">Presupuestos memorizados</a>
+					</td>
+					<td align="right"><a href="list/presupuestos_memorizados.php" class="title">$devisSauvegardes</a></td>
+				</tr>
+				<tr>
+					<td nowrap>
+						<a href="list/presupuestos_para_reenviar.php" class="title">Presupuestos para reenviar</a>
+					</td>
+					<td align="right"><a href="list/presupuestos_para_reenviar.php" class="title">$devisARelancer</a></td>
+				</tr>
+				<tr>
+					<td nowrap>
+						<a href="list/presupuestos_enviados.php" class="title">Presupuestos enviados</a>
+					</td>
+					<td align="right"><a href="list/presupuestos_enviados.php" class="title">$devisEnvoyes</a></td>
+				</tr>
+				<tr>
+					<td colspan="2"><hr/></td>
+				</tr>
+				<tr>
+					<td nowrap>
+						<a href="list/contratos_memorizados.php" class="title">Contratos memorizados</a>
+					</td>
+					<td align="right"><a href="list/contratos_memorizados.php" class="title">$contratsSauvegardes</a></td>
+				</tr>
+				<tr>
+					<td nowrap>
+						<a href="list/contratos_para_reenviar.php" class="title">Contratos para reenviar</a>
+					</td>
+					<td align="right"><a href="list/contratos_para_reenviar.php" class="title">$contratsARelancer</a></td>
+				</tr>
+				<tr>
+					<td nowrap>
+						<a href="list/contratos_enviados.php" class="title">Contratos enviados</a>
+					</td>
+					<td align="right"><a href="list/contratos_enviados.php" class="title">$contratsEnvoyes</a></td>
+				</tr>
+				<tr>
+					<td nowrap>
+						<a href="list/contratos_vendidos.php" class="title">Contratos Vendidos</a>
+					</td>
+					<td align="right"><a href="list/contratos_vendidos.php" class="title">$contratsViernesdu</a></td>
+				</tr>
+				<tr>
+					<td colspan="2" nowrap>
+						<a href="JavaScript:popup('formulaire_contrato.php?contrat_creer=1', 640, 700)" class="title">Crea manualmente un contrato</a>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2"><hr width="100%"/></td>
+				</tr>
+				<tr>
+					<td nowrap>
+						<a href="list/email_remitidos.php" class="title">Emails remitidos</a>
+					</td>
+					<td align="right"><a href="list/email_remitidos.php" class="title">$emailEnvoyes</a></td>
+				</tr>
+				<tr>
+					<td nowrap>
+						<a href="list/presupuestos_cancelados.php" class="title">Presupuestos Cancelados</a>
+					</td>
+					<td align="right"><a href="list/presupuestos_cancelados.php" class="title">$devisArchives</a></td>
+				</tr>
+			</table></td></tr></table>
+		</td>
+	</tr>
+	<tr>
+		<td width="45">&nbsp;</td>
+		<td>
+			<table border="0" align="right" bgcolor="#006599">
+				<tr>
+					<td class="login">Motor de b&uacute;squeda</td>
+				</tr>
+				<tr>
+					<td class="login1">Insertar el nombre o el apellido de b&uacute;squeda o el n&uacute;mero de expediente o e mail</td>
+				</tr>
+				<tr>
+					<td class="error">
+						<form id="busqueda" name="busqueda" method="post" action="list/busqueda.php">
+							<table width="100%" border="0">
+								<tr>
+									<td align="right">
+										<input type="text" size="30" name="busqueda"/>
+									</td>
+									<td><input type="submit" name="Submit" value="Busqueda"/></td>
+								</tr>
+							</table>
+						</form>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td width="45"></td>
+		<td align="center">
+			$calendarsummary
+		</td>
+	</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,14 @@
+*~
+*.bak
+/.idea/
+/.project
+/.web-server-pid
+/.webprj
+/composer.lock
+/config/bundles.yml
+/config/config_modules.yml
+/config/parameters.yml
+/config/routing_modules.yml
+/nbproject
+/var/
+/vendor/

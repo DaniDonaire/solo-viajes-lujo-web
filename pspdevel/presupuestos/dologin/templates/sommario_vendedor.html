@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Clasificaci&oacute;n por vendedor: $pseudo</title>
+	<link href="../presupuestos.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+<table width="500" border="0" align="center">
+	<tr>
+		<td>
+			<table width="500" height="286" border="0" align="center">
+				<tr>
+					<td></td>
+					<td><h2 align="center">Clasificaci&oacute;n por vendedor: $pseudo</h2></td>
+				</tr>
+				<tr>
+					<td width="51" align="center" valign="top">
+						<img name="agent" src="../../images/staff/$pseudo.jpg" alt="$pseudo"><br/><br/>
+						<form action="sommario_vendedor.php" method="post">
+						$vendorsList
+						</form>
+					</td>
+					<td width="445" valign="top">
+						<table width="500" height="301" border="0" align="center" cellspacing="0" cellpadding="0" background="../images/back_ground1.jpg"><tr><td align="center"><table height="272" cellspacing="0" cellpadding="0">
+							<tr>
+								<td nowrap>
+									<span class="title"><a href="../list/presupuestos_en_espera.php" class="title">Presupuestos en espera de clientes</a></span>
+								</td>
+								<td width="50" align="right"><span class="title"><a href="../list/presupuestos_en_espera.php" class="title">$devisVosClients</a></span></td>
+							</tr>
+							<tr>
+								<td nowrap>
+									<span class="title"><a href="../list/presupuestos_espera_otros_clientes.php" class="title">Presupuestos en espera de otros clientes</a></span>
+								</td>
+								<td align="right"><span class="title"><a href="../list/presupuestos_espera_otros_clientes.php" class="title">$devisAutresClients</a></span></td>
+							</tr>
+							<tr>
+								<td colspan="2"><hr/></td>
+							</tr>
+							<tr>
+								<td nowrap>
+									<span class="title"><a href="../list/presupuestos_memorizados.php" class="title">Presupuestos memorizados</a></span>
+								</td>
+								<td align="right"><span class="title"><a href="../list/presupuestos_memorizados.php" class="title">$devisSauvegardes</a></span></td>
+							</tr>
+							<tr>
+								<td nowrap>
+									<span class="title"><a href="../list/presupuestos_para_reenviar.php" class="title">Presupuestos para reenviar</a></span>
+								</td>
+								<td align="right"><span class="title"><a href="../list/presupuestos_para_reenviar.php" class="title">$devisARelancer</a></span></td>
+							</tr>
+							<tr>
+								<td nowrap>
+									<span class="title"><a href="../list/presupuestos_enviados.php" class="title">Presupuestos enviados</a></span>
+								</td>
+								<td align="right"><span class="title"><a href="../list/presupuestos_enviados.php" class="title">$devisEnvoyes</a></span></td>
+							</tr>
+							<tr>
+								<td colspan="2"><hr/></td>
+							</tr>
+							<tr>
+								<td nowrap>
+									<span class="title"><a href="../list/contratos_memorizados.php" class="title">Contratos memorizados</a></span>
+								</td>
+								<td align="right"><span class="title"><a href="../list/contratos_memorizados.php" class="title">$contratsSauvegardes</a></span></td>
+							</tr>
+							<tr>
+								<td nowrap>
+									<span class="title"><a href="../list/contratos_para_reenviar.php" class="title">Contratos para reenviar</a></span>
+								</td>
+								<td align="right"><span class="title"><a href="../list/contratos_para_reenviar.php" class="title">$contratsARelancer</a></span></td>
+							</tr>
+							<tr>
+								<td nowrap>
+									<span class="title"><a href="../list/contratos_enviados.php" class="title">Contratos enviados</a></span>
+								</td>
+								<td align="right"><span class="title"><a href="../list/contratos_enviados.php" class="title">$contratsEnvoyes</a></span></td>
+							</tr>
+							<tr>
+								<td nowrap>
+									<span class="title"><a href="../list/contratos_vendidos.php" class="title">Contratos Vendidos</a></span>
+								</td>
+								<td align="right"><span class="title"><a href="../list/contratos_vendidos.php" class="title">$contratsViernesdu</a></span></td>
+							</tr>
+							<tr>
+								<td colspan="2"><hr width="100%"/></td>
+							</tr>
+							<tr>
+								<td nowrap>
+									<span class="title"><a href="../list/email_remitidos.php" class="title">E mail enviados</a></span>
+								</td>
+								<td align="right"><span class="title"><a href="../list/email_remitidos.php" class="title">$emailEnvoyes</a></span></td>
+							</tr>
+							<tr>
+								<td nowrap>
+									<span class="title"><a href="../list/presupuestos_cancelados.php" class="title">Presupuestos Cancelados</a></span>
+								</td>
+								<td align="right"><span class="title"><a href="../list/presupuestos_cancelados.php" class="title">$devisArchives</a></span></td>
+							</tr>
+							<tr>
+								<td>
+									<a href="../index.php" class="title">Atr&aacute;s</a>
+								</td>
+								<td></td>
+							</tr>
+						</table></td></tr></table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

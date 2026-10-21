@@ -1,0 +1,343 @@
+#body {
+    float: left;
+    margin: 2px 0 0;
+    width: 1000px;
+}
+#wrap-homes {
+    background-color: #FFFFFF;
+    margin: 0 auto;
+    width: 1000px;
+}
+#body .promo728x90 {
+    float: left;
+    width: 728px;
+}
+#body .promo262x90 {
+    float: right;
+    width: 262px;
+}
+#body a.link-searchbox:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+#body #PubMiddle1, #body #PubMiddle2 {
+    border: 0 none;
+}
+#body .box-inf-verde {
+    background-image: url("/pictures/borde-inf-verde.gif");
+    background-repeat: repeat-x;
+    float: left;
+    width: 100%;
+}
+#body .box-sup-verde {
+    background-image: url("/pictures/fondo-deg-verde.gif");
+    background-repeat: repeat-x;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: bold;
+    height: 26px;
+    margin: 0;
+    text-transform: uppercase;
+    width: 100%;
+}
+#body .box-borde-verde {
+    background-color: #72AC0E;
+    float: left;
+    height: 100%;
+    width: 1px;
+}
+#body .box-borde-izq {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+#body .box-borde-sup, #body .box-borde-derc {
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+#body .box-titulo {
+    float: left;
+    padding: 6px 0 0 8px;
+}
+#body #group-left {
+    float: left;
+    width: 356px;
+}
+#body #group-middle {
+    float: left;
+    margin: 10px 0 15px;
+    position: relative;
+}
+#body #group-seo {
+    float: left;
+    margin: 0 0 15px;
+    width: 100%;
+}
+#body #group-bottom {
+    float: left;
+    margin: 0 0 20px;
+    width: 100%;
+}
+#body #group-left .hm1 {
+    float: left;
+}
+#body .promo-destacado {
+    float: right;
+    margin: 0 0 8px;
+}
+#body .hm2 {
+    float: left;
+    margin: 0 0 0 15px;
+    width: 320px;
+}
+#body .hm2 .servicios {
+    background-color: #FFFFFF;
+    width: 320px;
+}
+#body .hm2 .promo {
+    margin: 0 0 10px;
+}
+#body .box-central-servicios {
+    border-left: 1px solid #75AE11;
+    border-right: 1px solid #75AE11;
+    float: none;
+}
+#body .box-central-servicios ul {
+    line-height: 25px;
+    list-style-type: none;
+    margin: 0;
+    width: 45%;
+}
+#body .servicios1 {
+    float: left;
+    padding: 5px 0 0 15px;
+}
+#body .servicios2 {
+    float: right;
+    padding: 5px 0 0 15px;
+}
+#body #mega {
+    float: right;
+    width: 300px;
+}
+#body #mega .hm3 {
+    border: 1px solid #9DCBE2;
+    float: left;
+    width: 300px;
+}
+#body #mega .hm4 {
+    border: 1px solid #9DCBE2;
+    float: left;
+    margin: 5px 0 0;
+    width: 300px;
+}
+#body #boletin .box-central-boletin {
+    background-image: url("/pictures/borde-interior-boletin.gif");
+    background-repeat: repeat-y;
+    height: 80px;
+    padding: 5px 0 0;
+    width: 356px;
+}
+#body #boletin #boletin-sup, #body #boletin-inf {
+    text-align: center;
+    width: 100%;
+}
+#body #boletin #formulario {
+    background-color: #E0F797;
+    border-left: 1px solid #8FB31B;
+    border-right: 1px solid #8FB31B;
+    color: #000000;
+    height: 73px;
+    margin: 0 10px;
+    padding: 0 0 0 10px;
+    text-align: left;
+}
+#body #boletin .mail {
+    padding: 5px 0 0;
+}
+#body #boletin #opCorrecta {
+    background-color: #E0F797;
+    border-left: 1px solid #AFCA55;
+    border-right: 1px solid #AFCA55;
+    line-height: 13px;
+    margin: 0 10px;
+    padding: 0 10px;
+}
+#body #boletin #cargando .ajax-loader {
+    left: 140px;
+    position: absolute;
+    top: 5px;
+}
+#body #boletin .sign-in {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+#body #group-middle .publicidad-video {
+    float: left;
+}
+#body #group-middle .publicidad-video-middle {
+    float: left;
+    height: 266px;
+    width: 695px;
+}
+#body #group-middle .publicidad-video-middle.recomienda1 {
+    background-image: url("/pictures/recomienda1.jpg");
+    background-repeat: no-repeat;
+}
+#body #group-middle .publicidad-video-middle.recomienda2 {
+    background-image: url("/pictures/recomienda2.jpg");
+    background-repeat: no-repeat;
+}
+#body #group-middle .publicidad-video-middle.recomienda3 {
+    background-image: url("/pictures/recomienda3.jpg");
+    background-repeat: no-repeat;
+}
+#body #group-middle .publicidad-video-middle .video {
+    float: left;
+    padding: 55px 0 0 13px;
+}
+#body #group-middle .publicidad-video-middle .titulo-link {
+    float: left;
+    margin: 0;
+    padding-top: 20px;
+}
+#body #group-middle .publicidad-video-middle .titulo-link a {
+    float: right;
+    height: 50px;
+    text-indent: -9999px;
+    width: 393px;
+}
+#body #group-middle .publicidad-video-middle .ofertas {
+    float: left;
+    margin: 46px 0 0 15px;
+    width: 330px;
+}
+#body #group-middle .publicidad-video-middle .ofertas ul {
+    float: left;
+    line-height: 20px;
+    list-style-type: none;
+    padding-left: 14px;
+}
+#body #group-middle .publicidad-video-middle .rumbo-red {
+    float: left;
+    height: 0;
+    line-height: 10px;
+    margin: 0 0 0 12px;
+    width: 40px;
+}
+#body #group-middle .publicidad-video-middle .rumbo-red ul {
+    float: left;
+    list-style-type: none;
+    width: auto;
+}
+#body #group-middle .publicidad-video-middle .rumbo-red li {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 40px;
+}
+#body #group-middle .publicidad-video-middle .rumbo-red li span {
+    padding: 0 4px 0 0;
+}
+#body #group-middle .buttons-container {
+    bottom: 15px;
+    left: 290px;
+    position: absolute;
+}
+#body #group-middle .buttons-container ul {
+    font-size: 17px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+#body #group-middle .buttons-container li {
+    background-image: url("/pictures/button-blue.gif");
+    background-repeat: no-repeat;
+    color: #FFFFFF;
+    float: left;
+    height: 30px;
+    margin: 0 5px 0 0;
+    padding: 4px 0 0;
+    width: 30px;
+}
+#body #group-middle .buttons-container li:hover {
+    background-image: url("/pictures/button-blue-hover.gif");
+    background-repeat: no-repeat;
+    color: #008DD6;
+    cursor: pointer;
+}
+#body #group-middle .buttons-container li.selected {
+    background-image: url("/pictures/button-blue-selected.gif");
+    color: #FFFFFF;
+}
+#body.home #search-box-vacacional #top-destinos-popup {
+    background-color: #F4F9FE;
+    background-image: url("/pictures/bg-top-destinos-popup.gif");
+    background-position: center top;
+    background-repeat: repeat-x;
+    border: 1px solid #008DD6;
+    float: left;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    padding: 0 0 5px;
+    position: absolute;
+    width: 430px;
+    z-index: 1;
+}
+#body.home #search-box-vacacional #top-destinos-popup .cerrar {
+    text-align: right;
+}
+#body.home #search-box-vacacional #top-destinos-popup .top-razones {
+    float: left;
+    margin: 0 0 0 5px;
+}
+#body.home #search-box-vacacional.search-box #top-destinos-popup .top-razones p, #body.home #search-box-vacacional.search-box #top-destinos-popup .top-destinos p {
+    background: none repeat scroll 0 0 transparent;
+    color: #008DD6;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0 0 0 5px;
+}
+#body.home #search-box-vacacional #top-destinos-popup .top-razones ul {
+    color: #000000;
+    font-size: 10px;
+    line-height: 15px;
+    list-style-type: none;
+    margin: 5px 0 12px 5px;
+    padding: 0;
+}
+#body.home #search-box-vacacional #top-destinos-popup .top-destinos {
+    float: left;
+    margin: 0 0 10px 8px;
+}
+#body.home #search-box-vacacional #top-destinos-popup .top-destinos .box-ofertas {
+    background-color: #FFFFFF;
+    border: 1px solid #BBDFFD;
+    float: left;
+    margin: 5px 0;
+    padding: 8px;
+    width: 390px;
+}
+#body.home #search-box-vacacional #top-destinos-popup p.titulo-box-ofertas {
+    background: none repeat scroll 0 0 transparent;
+    color: #808080;
+    font-weight: bold;
+    margin: 0 0 5px;
+}
+#body.home #search-box-vacacional #top-destinos-popup .box-ofertas li a {
+    margin: 0;
+}
+#body.home #search-box-vacacional #top-destinos-popup .top-destinos ul {
+    color: #008DD6;
+    line-height: 17px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+#body.home #search-box-vacacional #top-destinos-popup .top-destinos li {
+    display: inline;
+}
