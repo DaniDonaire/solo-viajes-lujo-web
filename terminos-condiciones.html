@@ -4,6 +4,8 @@
 <html lang="en">
 
 <head>
+	<script src="js/newsletter.js" defer></script>
+	<script src="js/google-analytics.js"></script>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -836,7 +838,8 @@ formulario electr&oacute;nico:&nbsp;<A HREF="http://ec.europa.eu/consumers/odr/"
 					<h3>Newsletter</h3>
 					<p>Suscríbete a las mejores ofertas.</p>
 					<div id="message-newsletter_2"></div>
-					<form method="post" action="registro.php" name="newsletter_2" id="newsletter_2">
+					<form method="post" action="registro.php" name="newsletter_2" id="newsletter_2" data-newsletter-form>
+						<div style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label>Dejar este campo vacío<input type="text" name="website" value="" tabindex="-1" autocomplete="off"></label></div>
 						<div class="form-group">
 							<input name="email_newsletter_2" id="email_newsletter_2" type="email" value="" placeholder="Correo" class="form-control" required>
 						</div>

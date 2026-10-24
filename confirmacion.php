@@ -1,127 +1,28 @@
-<?php		
-if ($_POST["g-recaptcha-response"] == "" or $_POST["g-recaptcha-response"] == " " or is_null($_POST["g-recaptcha-response"])){
-	header('Location:https://www.soloviajesdelujo.com');
-	exit();
+<?php
+require_once __DIR__.'/include/forms.php';
+try {
+    svl_form_request_guard('contact');
+    $data = svl_form_contact_data($_POST);
+    $connection = svl_forms_connection();
+    $saved = svl_store_contact($connection, $data);
+    $connection->close();
+} catch (Throwable $error) {
+    svl_form_fail($error);
 }
-
-include ("include/sql.php");
-include ("include/execute_sql.php");
-  
-$id = "";
-$nombre = "";
-$email = "";
-$destino = "";
-$fecha = "";
-$ciudad_inicial = "";
-$lastname_contact = "";
-$lastname_contact2 = "";
-$phone_contact = "";
-$message_contact = "";
-$adultos = "";
-$ninos = "";
-$hora_recordatorio = "";
-$vuelo = "";
-$vuelo = "";
-$ip_address = get_ip();
-
-if ($_POST["id"] != ""){
-	$id = $_POST["id"];
+$message = 'Tu solicitud se ha guardado correctamente. Nuestro equipo se pondrá en contacto contigo.';
+if (svl_form_wants_json()) {
+    svl_form_reply_json($saved, $message);
 }
-if ($_POST["name_contact"] != ""){
-	$nombre = $_POST["name_contact"];
-}
-if ($_POST["email_contact"] != ""){
-	$email = $_POST["email_contact"];
-}
-if ($_POST["destino"] != ""){
-	$destino = $_POST["destino"];
-}
-if ($_POST["fecha-viaje"] != ""){
-	$fecha = $_POST["fecha-viaje"];
-}
-if ($_POST["ciudad_inicial"] != ""){
-	$ciudad_inicial = $_POST["ciudad_inicial"];
-}
-if ($_POST["lastname_contact"] != ""){
-	$lastname_contact = $_POST["lastname_contact"];
-}
-if ($_POST["lastname_contact2"] != ""){
-	$lastname_contact2 = $_POST["lastname_contact2"];
-}
-if ($_POST["phone_contact"] != ""){
-	$phone_contact = $_POST["phone_contact"];
-}
-if ($_POST["message_contact"] != ""){
-	$message_contact = $_POST["message_contact"];
-}
-if ($_POST["exampleSelect1"] != ""){
-	$adultos = $_POST["exampleSelect1"];
-}
-if ($_POST["exampleSelect2"] != ""){
-	$ninos = $_POST["exampleSelect2"];
-}
-if ($_POST["exampleSelect3"] != ""){
-	$hora_recordatorio = $_POST["exampleSelect3"];
-}
-if ($_POST["inlineRadio1"] != ""){
-	$vuelo = $_POST["inlineRadio1"];
-}
-else if ($_POST["inlineRadio2"] != ""){
-	$vuelo = $_POST["inlineRadio2"];
-}
-
-function get_ip() {
-	if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
-		$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-	elseif(isset($_SERVER['HTTP_CLIENT_IP']))
-		$ip  = $_SERVER['HTTP_CLIENT_IP'];
-	else
-		$ip = $_SERVER['REMOTE_ADDR'];
-	return $ip;
-}
-
-
-$fecha_sistema = date('Y-m-d H:i:s');
-
-$sql_insert_presupuesto = sql_insert_presupuesto($id,$destino,$fecha,$adultos,$ninos,$vuelo,$ciudad_inicial,$nombre,$lastname_contact,$lastname_contact2,$phone_contact,$email,$hora_recordatorio,$message_contact,$fecha_sistema,$ip_address);
-$idPrep= execute_insert_sql($sql_insert_presupuesto);
-
-$sql_insert_peticion = sql_insert_peticion($idPrep ,$fecha_sistema ,md5($email) ,$ip_address);
-execute_sql($sql_insert_peticion);
-
-// Traitement de la date
-setlocale(LC_TIME, 'es_ES');
-$form_vuelo = '';
-if ($vuelo == '1')
-	$form_vuelo = 'si';
-else
-	$form_vuelo = 'no';
-
-$search = array('$nombre', '$email', '$destino','$comenzando_fecha', '$ciudad', '$apellido_1','$apellido_2', '$phone', '$message_contact','$hora_recordatorio','$adulto','$ninos','$tarifas_nombre','$vuelo','$compania','$buque');
-$replace = array( $nombre, $email, $destino, $fecha, $ciudad_inicial, $lastname_contact, $lastname_contact2, $phone_contact, $message_contact, $hora_recordatorio, $adultos, $ninos, ' ', $form_vuelo, ' ', '');
-
-// *****************************
-// Envoye du mail pour le client
-// *****************************
-
-$html = file_get_contents('templates/email_presupuesto_client.html');
-$html = str_replace($search, $replace, $html);
-
-$sujet_client = 'Demanda de presupuesto personalizado';
-
-$message = $message_client_html;
-$titulo = "Demanda de presupuesto personalizado";
-
-$cabeceras  = 'MIME-Version: 1.0' . "\r\n";
-$cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-
-// Cabeceras adicionales
-$cabeceras .= 'To: <$email>' . "\r\n";
-$cabeceras .= 'From: Soloviajesdelujo.com <info@soloviajesdelujo.com>' . "\r\n";
-$cabeceras .= 'Cc:  Soloviajesdelujo <info@soloviajesdelujo.com>' . "\r\n";
-
-mail($email, $titulo, $html, $cabeceras);
-	
+header('Cache-Control: no-store');
+header('Content-Type: text/html; charset=UTF-8');
+// The legacy confirmation markup receives only escaped display values.
+$nombre = svl_form_mail_escape($data['name']);
+$email = svl_form_mail_escape($data['email']);
+$destino = svl_form_mail_escape($data['destination']);
+$fecha = svl_form_mail_escape($data['travel_date']);
+$lastname_contact = svl_form_mail_escape($data['last_name']);
+$lastname_contact2 = svl_form_mail_escape($data['last_name_2']);
+$phone_contact = svl_form_mail_escape($data['phone']);
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]><html class="ie ie8"> <![endif]-->
@@ -129,6 +30,8 @@ mail($email, $titulo, $html, $cabeceras);
 <html lang="en">
 
 <head>
+	<script src="js/newsletter.js" defer></script>
+	<script src="js/google-analytics.js"></script>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -270,7 +173,7 @@ mail($email, $titulo, $html, $cabeceras);
 				<div class="col-md-8 add_bottom_15">
 
 					<div class="form_title">
-						<h3><strong><i class="icon-ok"></i></strong>Gracias por su pedido de viaje!</h3>
+						<h3><strong><i class="icon-ok"></i></strong>Solicitud guardada correctamente!</h3>
 					</div>
 					<div class="step">
 						<p>
@@ -298,7 +201,7 @@ mail($email, $titulo, $html, $cabeceras);
 										<strong>Destino</strong>
 									</td>
 									<td>
-										<? echo "$destino"; ?>
+										<?php echo "$destino"; ?>
 									</td>
 								</tr>
 								<tr>
@@ -306,7 +209,7 @@ mail($email, $titulo, $html, $cabeceras);
 										<strong>Fecha salida</strong>
 									</td>
 									<td>
-										<? echo "$fecha"; ?>
+										<?php echo "$fecha"; ?>
 									</td>
 								</tr>
 								<tr>
@@ -314,7 +217,7 @@ mail($email, $titulo, $html, $cabeceras);
 										<strong>Viajero</strong>
 									</td>
 									<td>
-										<? echo "$nombre".' '."$lastname_contact".' '."$lastname_contact2"; ?>
+										<?php echo "$nombre".' '."$lastname_contact".' '."$lastname_contact2"; ?>
 									</td>
 								</tr>
 								<tr>
@@ -322,7 +225,7 @@ mail($email, $titulo, $html, $cabeceras);
 										<strong>Email</strong>
 									</td>
 									<td>
-										<? echo "$email"; ?>
+										<?php echo "$email"; ?>
 									</td>
 								</tr>
 								<tr>
@@ -330,7 +233,7 @@ mail($email, $titulo, $html, $cabeceras);
 										<strong>Telefono</strong>
 									</td>
 									<td>
-										<? echo "$phone_contact"; ?>
+										<?php echo "$phone_contact"; ?>
 									</td>
 								</tr>								
 							</tbody>
@@ -433,7 +336,8 @@ mail($email, $titulo, $html, $cabeceras);
 					<h3>Newsletter</h3>
 					<p>Suscríbete a las mejores ofertas.</p>
 					<div id="message-newsletter_2"></div>
-					<form method="post" action="registro.php" name="newsletter_2" id="newsletter_2">
+					<form method="post" action="registro.php" name="newsletter_2" id="newsletter_2" data-newsletter-form>
+                        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-10000px">
 						<div class="form-group">
 							<input name="email_newsletter_2" id="email_newsletter_2" type="email" value="" placeholder="Correo" class="form-control" required>
 						</div>

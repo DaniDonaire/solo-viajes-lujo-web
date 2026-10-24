@@ -4,7 +4,12 @@ include('includes/sql_admin.php');
 include('includes/execute_sql_admin.php');
 
 // Récupération des parametres
-$id = $_GET[id];
+$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT, array('options' => array('min_range' => 1)));
+if ($id === null || $id === false) {
+	http_response_code(404);
+	exit('Registro no encontrado.');
+}
+
 
 // Création des requettes sql
 $sql_lanza_id = sql_lanza_id($id);
@@ -13,9 +18,18 @@ $sql_lanza_id = sql_lanza_id($id);
 $result_news = execute_sql($sql_lanza_id);
 
 // Initialisation des variables
+if (!($result_news instanceof mysqli_result)) {
+	http_response_code(404);
+	exit('Registro no encontrado.');
+}
 $RS = mysqli_fetch_array($result_news);
-$id_lanza = $RS[id_lanzamiento];
-$titulo = $RS[nombre];
+if (!$RS) {
+	http_response_code(404);
+	exit('Registro no encontrado.');
+}
+
+$id_lanza = $RS['id_lanzamiento'];
+$titulo = $RS['nombre'];
 
 $texto_click = $RS["texto_click"];
 $logo = $RS["logo"];

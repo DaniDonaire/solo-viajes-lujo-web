@@ -1,6 +1,7 @@
 <?php
 include ("../../include/sql.php");
 include ("../../include/execute_sql.php");
+require_once __DIR__.'/../include/site-path.php';
 
 if ($_GET["id"] != ""){
 	$id = $_GET["id"];
@@ -27,12 +28,14 @@ if($RS){
 <html lang="en">
 
 <head>
+	<script src="../../js/newsletter.js" defer></script>
+	<script src="../../js/google-analytics.js"></script>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<meta name="description" content="Viajes <? echo "$destino"; ?>">
-    <title>Viajes <? echo "$destino"; ?></title>
+	<meta name="description" content="Viajes <?php echo "$destino"; ?>">
+    <title>Viajes <?php echo "$destino"; ?></title>
 
 
 	<!-- Favicons-->
@@ -193,12 +196,12 @@ if($RS){
         </div><!-- container -->
     </header><!-- End Header -->
 
-	<section class="parallax-window" data-parallax="scroll" data-image-src="img/<? echo "$imagen_destino"; ?>" data-natural-width="1400" data-natural-height="470">
+	<section class="parallax-window" data-parallax="scroll" data-image-src="img/<?php echo "$imagen_destino"; ?>" data-natural-width="1400" data-natural-height="470">
 		<div class="parallax-content-2">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-sm-8">
-						<h1>Los mejores viajes por <? echo "$destino"; ?></h1>
+						<h1>Los mejores viajes por <?php echo "$destino"; ?></h1>
 					</div>
 
 				</div>
@@ -216,11 +219,11 @@ if($RS){
 					</li>
 					
 					<li>
-					<a href="../../destinos/<? echo "$nombre_pagina_pais"; ?>/destinos-<? echo "$nombre_pagina_pais"; ?>.php?id=<? echo "$id_pais"; ?>">
-					<? echo "$nombre_pais"; ?></a>
+					<a href="../../destinos/<?php echo "$nombre_pagina_pais"; ?>/destinos-<?php echo "$nombre_pagina_pais"; ?>.php?id=<?php echo "$id_pais"; ?>">
+					<?php echo "$nombre_pais"; ?></a>
 					</li>
 					
-					<li><? echo "$destino"; ?></li>
+					<li><?php echo "$destino"; ?></li>
 				</ul>
 			</div>
 		</div>
@@ -243,7 +246,7 @@ if($RS){
 					<!--End filters col-->
 					<div class="box_style_2">
 						<i class="icon_set_1_icon-57"></i>
-						<h4>Ayuda <span>para tu Viaje a </span> <? echo "$destino"; ?> ?</h4>
+						<h4>Ayuda <span>para tu Viaje a </span> <?php echo "$destino"; ?> ?</h4>
 						<a href="tel:+34610461529">+ 34 610461529</a><br>
 						<small> lunes a viernes <br> 
 						9:30h - 14:30h. 15:45h - 19:00h </small>
@@ -252,6 +255,31 @@ if($RS){
 				<!--End aside -->
 				
 				<div class="col-lg-9 col-md-9">
+				<?php if ((int) $id === 27 && $destino === 'Egipto'): ?>
+					<div class="strip_all_tour_list wow fadeIn" data-wow-delay="0.1s">
+						<div class="row">
+							<div class="col-lg-4 col-md-4 col-sm-4">
+								<div class="img_list">
+									<a href="<?php echo htmlspecialchars(svl_site_path('/viajes/Egipto/viajes-egipto-desde-barcelona.php'), ENT_QUOTES, 'UTF-8'); ?>"><img src="<?php echo htmlspecialchars(svl_site_path('/viajes/Egipto/img/giza-atardecer.jpg'), ENT_QUOTES, 'UTF-8'); ?>" alt="Pirámides de Giza al atardecer, Egipto"></a>
+								</div>
+							</div>
+							<div class="clearfix visible-xs-block"></div>
+							<div class="col-lg-6 col-md-6 col-sm-6">
+								<div class="tour_list_desc">
+									<h3><strong>Viajes a Egipto desde Barcelona</strong></h3>
+									<p>Organiza tu viaje a medida con salida desde Barcelona: El Cairo, crucero por el Nilo, circuitos en español y opciones privadas, según el programa elegido.</p>
+								</div>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-2">
+								<div class="price_list">
+									<div>
+										<p><a href="<?php echo htmlspecialchars(svl_site_path('/viajes/Egipto/viajes-egipto-desde-barcelona.php'), ENT_QUOTES, 'UTF-8'); ?>" class="btn_1">Detalles</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				<?php endif; ?>
 				
 			<?php
 			$sql_viajes = sql_viajes($id);
@@ -271,7 +299,7 @@ if($RS){
 						<div class="row">
 							<div class="col-lg-4 col-md-4 col-sm-4">
 								<div class="img_list">
-									<a href="viaje-<? echo "$nombre_pagina_destino"; ?>.php?id_viaje=<? echo "$id_viaje"; ?>"><img src="../../newsletter/images/<? echo "$id_lanzamiento_imagen"; ?>/<? echo "$imagen"; ?>" alt="<? echo "$titulo"; ?>">
+									<a href="viaje-<?php echo "$nombre_pagina_destino"; ?>.php?id_viaje=<?php echo "$id_viaje"; ?>"><img src="../../newsletter/images/<?php echo "$id_lanzamiento_imagen"; ?>/<?php echo "$imagen"; ?>" alt="<?php echo "$titulo"; ?>">
 										<!-- <div class="short_info"><i class="icon_set_1_icon-4"></i>Museums </div> -->
 									</a>
 								</div>
@@ -279,16 +307,16 @@ if($RS){
 							<div class="clearfix visible-xs-block"></div>
 							<div class="col-lg-6 col-md-6 col-sm-6">
 								<div class="tour_list_desc">
-									<h3><strong>Viaje <? echo "$destino"; ?></strong></h3>
-									<h3><strong><? echo "$titulo"; ?></strong></h3>
-									<p><? echo "$texto"; ?></p>
+									<h3><strong>Viaje <?php echo "$destino"; ?></strong></h3>
+									<h3><strong><?php echo "$titulo"; ?></strong></h3>
+									<p><?php echo "$texto"; ?></p>
 					
 								</div>
 							</div>
 							<div class="col-lg-2 col-md-2 col-sm-2">
 								<div class="price_list">
 									<div>
-										<p><a href="viaje-<? echo "$nombre_pagina_destino"; ?>.php?id_viaje=<? echo "$id_viaje"; ?>" class="btn_1">Detalles</a>
+										<p><a href="viaje-<?php echo "$nombre_pagina_destino"; ?>.php?id_viaje=<?php echo "$id_viaje"; ?>" class="btn_1">Detalles</a>
 										</p>
 									</div>
 
@@ -349,7 +377,7 @@ if($RS){
                         <li><a href="../../ofertas-exclusivas.php">Ofertas exclusivas</a></li>
 						<li><a href="viajes-empresas.html">Viajes empresas</a></li>
 						<li><a href="buques-exclusiva.html">Fullcharter</a></li>
-                        <li><a href="../../confirmacion.php">Contacto</a></li>
+                        <li><a href="../../contacto.php">Contacto</a></li>
 						<li><a href="../../terminos-condiciones.html">Términos y condiciones</a></li>
 						<li><a href="../../politica-privacidad.html">Política de privacidad</a></li>
                     </ul>
@@ -358,7 +386,8 @@ if($RS){
 					<h3>Newsletter</h3>
 					<p>Suscríbete a las mejores ofertas.</p>
 					<div id="message-newsletter_2"></div>
-					<form method="post" action="registro.php" name="newsletter_2" id="newsletter_2">
+					<form method="post" action="../../registro.php" name="newsletter_2" id="newsletter_2" data-newsletter-form>
+						<div style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label>Dejar este campo vacío<input type="text" name="website" value="" tabindex="-1" autocomplete="off"></label></div>
 						<div class="form-group">
 							<input name="email_newsletter_2" id="email_newsletter_2" type="email" value="" placeholder="Correo" class="form-control" required>
 						</div>
@@ -392,7 +421,7 @@ if($RS){
                             <li><a href="#"><i class="icon-linkedin"></i></a></li> -->
                         </ul>
                         <p>© Solo Viajes de Lujo 2018</p>
-						<p>Viajes a <? echo "$destino"; ?></p>
+						<p>Viajes a <?php echo "$destino"; ?></p>
 						
                     </div>
                 </div>

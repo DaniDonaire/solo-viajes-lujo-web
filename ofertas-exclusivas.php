@@ -9,6 +9,8 @@ include ("include/execute_sql.php");
 <html lang="en">
 
 <head>
+	<script src="js/newsletter.js" defer></script>
+	<script src="js/google-analytics.js"></script>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -159,14 +161,14 @@ include ("include/execute_sql.php");
 					?>
 						<div class="box_style_1">
 							<div class="post">
-								<a href="viajes/<? echo "$nombre_pagina_destino"; ?>/viaje-<? echo "$nombre_pagina_destino"; ?>.php?id_viaje=<? echo "$id_viaje"; ?>" title="<? echo "$titulo"; ?>"><img src="newsletter/images/<? echo "$id_lanzamiento"; ?>/<? echo "$imagen"; ?>" alt="<? echo "$nombre_pagina_destino"; ?>" class="img-responsive"></a>
-								<h2><? echo "$titulo"; ?></h2>
+								<a href="viajes/<?php echo "$nombre_pagina_destino"; ?>/viaje-<?php echo "$nombre_pagina_destino"; ?>.php?id_viaje=<?php echo "$id_viaje"; ?>" title="<?php echo "$titulo"; ?>"><img src="newsletter/images/<?php echo "$id_lanzamiento"; ?>/<?php echo "$imagen"; ?>" alt="<?php echo "$nombre_pagina_destino"; ?>" class="img-responsive"></a>
+								<h2><?php echo "$titulo"; ?></h2>
 								<p>
-									<? echo "$texto"; ?>
+									<?php echo "$texto"; ?>
 								</p>
 								<div class="container">
-									<a href="viajes/<? echo "$nombre_pagina_destino"; ?>/viaje-<? echo "$nombre_pagina_destino"; ?>.php?id_viaje=<? echo "$id_viaje"; ?>" class="btn_1">Ver Descripción</a>
-									<a href="contacto.php?id=<? echo "$id_viaje"; ?>" class="btn_1">Acceder a la Venta</a>
+									<a href="viajes/<?php echo "$nombre_pagina_destino"; ?>/viaje-<?php echo "$nombre_pagina_destino"; ?>.php?id_viaje=<?php echo "$id_viaje"; ?>" class="btn_1">Ver Descripción</a>
+									<a href="contacto.php?id=<?php echo "$id_viaje"; ?>" class="btn_1">Acceder a la Venta</a>
 								</div>
 							</div>
 							<hr>
@@ -218,7 +220,7 @@ include ("include/execute_sql.php");
                         <li><a href="ofertas-exclusivas.php">Ofertas exclusivas</a></li>
 						<li><a href="viajes-empresas.html">Viajes empresas</a></li>
 						<li><a href="buques-exclusiva.html">Fullcharter</a></li>
-                        <li><a href="confirmacion.php">Contacto</a></li>
+                        <li><a href="contacto.php">Contacto</a></li>
 						<li><a href="terminos-condiciones.html">Términos y condiciones</a></li>
 						<li><a href="politica-privacidad.html">Política de privacidad</a></li>
                     </ul>
@@ -227,7 +229,8 @@ include ("include/execute_sql.php");
 					<h3>Newsletter</h3>
 					<p>Suscríbete a las mejores ofertas.</p>
 					<div id="message-newsletter_2"></div>
-					<form method="post" action="registro.php" name="newsletter_2" id="newsletter_2">
+					<form method="post" action="registro.php" name="newsletter_2" id="newsletter_2" data-newsletter-form>
+						<div style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label>Dejar este campo vacío<input type="text" name="website" value="" tabindex="-1" autocomplete="off"></label></div>
 						<div class="form-group">
 							<input name="email_newsletter_2" id="email_newsletter_2" type="email" value="" placeholder="Correo" class="form-control" required>
 						</div>

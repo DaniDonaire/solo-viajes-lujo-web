@@ -1,38 +1,5 @@
 /* <![CDATA[ */
-/// Jquery validate newsletter
-jQuery(document).ready(function(){
-
-	$('#newsletter_2').submit(function(){
-
-		var action = $(this).attr('action');
-
-		$("#message-newsletter_2").slideUp(750,function() {
-		$('#message-newsletter_2').hide();
-		
-		$('#submit-newsletter_2')
-			.after('<i class="icon-spin4 animate-spin loader"></i>')
-			.attr('disabled','disabled');
-
-		$.post(action, {
-			email_newsletter_2: $('#email_newsletter_2').val()
-		},
-			function(data){
-				document.getElementById('message-newsletter_2').innerHTML = data;
-				$('#message-newsletter_2').slideDown('slow');
-				$('#newsletter_2 .loader').fadeOut('slow',function(){$(this).remove()});
-				$('#submit-newsletter_2').removeAttr('disabled');
-				if(data.match('success') != null) $('#newsletter_2').slideUp('slow');
-
-			}
-		);
-
-		});
-
-		return false;
-
-	});
-
-});
+// Newsletter forms are handled by js/newsletter.js.
 // Jquery validate form contact
 jQuery(document).ready(function(){
 

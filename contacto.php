@@ -2,120 +2,37 @@
 include ("include/sql.php");
 include ("include/execute_sql.php");
 
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
-
-//if ($_GET["id"] != ""){
-$valor = ( empty ($_GET["id"] ) ? NULL : $_GET["id"]);
-if ($valor){
-	$id = $_GET["id"];
-	
-	$sql_detalle_viaje = sql_detalle_viaje($id);
-	$result_detalle_viaje = execute_sql($sql_detalle_viaje);
-
-	while($RS = mysqli_fetch_array($result_detalle_viaje))
-	{
-		$id_new = $RS["id_news"];
-		$titulo = $RS["titulo"];
-		
-	}
-
+$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT, array('options' => array('min_range' => 1))) ?: 0;
+$titulo = '';
+$svlContactLocal = svl_is_test_environment();
+if ($id > 0) {
+    $result_detalle_viaje = execute_sql(sql_detalle_viaje($id));
+    if ($result_detalle_viaje instanceof mysqli_result) {
+        while ($RS = mysqli_fetch_array($result_detalle_viaje)) {
+            $titulo = $RS['titulo'];
+        }
+    }
 }
-else {
-	//header('Location:https://www.soloviajesdelujo.com');
-	$id = 0;
-	$titulo = '';
-}
-
-
 
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]><html class="ie ie8"> <![endif]-->
 <!--[if IE 9]><html class="ie ie9"> <![endif]-->
 <html lang="es">
-<script language="JavaScript" type="text/JavaScript">
-	// Fonction qui permet de controler le formulaire avant de l'envoyer
-	function controle()
-	{
-		formulario=document.forms[0];
-		if (formulario.name_contact.value == "")
-		{
-			alert("Informar Nombre !");
-			formulario.name_contact.focus();
-			return false;
-		}
-		if (formulario.email_contact.value == "")
-		{
-			alert("Informar Email !");
-			formulario.email_contact.focus();
-			return false;
-		}
-		else {
-			if (formulario.email_contact.value.indexOf("@") == "-1" || formulario.email_contact.value.indexOf(".") == "-1" ){
-				alert("Informar Email correcto!");
-				formulario.email_contact.focus();
-				return false;
-			}
-		}
-		//enviarEmail();
-		formulario.submit();
-	}
-
-	function enabledSubmit() {
-		
-		//document.getElemenstByName('enviar')[0].disabled = false;
-		//formulario=document.forms[0];
-		//formulario.submit-contact.disabled = false;
-		document.getElementById("submit-contact").disabled = false;
-	}
-	/*
-	function enviarEmail(){
-		var nombre = formulario.name_contact.value;
-		var id = formulario.id.value;
-		var email = formulario.email_contact.value;
-		var destino = formulario.destino.value;
-		//alert(new Date(formulario.date.value));
-		var fecha = formulario.date.value;
-		var ciudad_inicial = formulario.ciudad_inicial.value;
-		var lastname_contact = formulario.lastname_contact.value;
-		var lastname_contact2 = formulario.lastname_contact2.value;
-		var phone_contact = formulario.phone_contact.value;
-		var message_contact = formulario.message_contact.value;
-	
-		var dataString = 'id='+ id + '&nombre='+ nombre + '&email=' + email + '&destino=' + destino + '&fecha='+ fecha + '&ciudad_inicial=' + ciudad_inicial + '&lastname_contact=' + lastname_contact + '&lastname_contact2='+ lastname_contact2 + '&phone_contact=' + phone_contact + '&message_contact=' + message_contact;
-		//alert(dataString);
-		//var retorno=false;
-		//if(destino != '0')
-		//{
-			$.ajax({
-				async:true,
-				data: dataString,
-				url:   'enviar-mail.php',
-				type:  'POST',
-				dataType: 'json',
-				success:  function (data) 
-				{
-					if (data.success){
-						alert('Informacion enviada correctamente');
-					} else {
-						alert('No se ha podido enviar, intentalo de nuevo');
-					}
-				},
-				error: function()
-				{
-					alert('Ocurrio un error en el servidor .. intentalo de nuevo');
-					//alert(data.message);
-					//alert(error);
-					//retorno=true;
-				}
-			});
-		//}
-		//return retorno;
-	}*/
+<script>
+function controle() {
+    return document.getElementById('contact-request').reportValidity();
+}
+function enabledSubmit() {
+    document.getElementById('submit-contact').disabled = false;
+}
 </script>
-<script src='https://www.google.com/recaptcha/api.js?hl=es'></script>
+<?php if (!$svlContactLocal): ?>
+<script src="https://www.google.com/recaptcha/api.js?hl=es" async defer></script>
+<?php endif; ?>
 <head>
+	<script src="js/newsletter.js" defer></script>
+	<script src="js/google-analytics.js"></script>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -247,7 +164,7 @@ else {
 			<div class="row">
 				<div class="col-md-8 col-sm-8">
 					<div class="form_title">
-						<h3><strong><i class="icon-pencil"></i></strong>Contáctanos a través de nuestro formunlario</h3>
+						<h3><strong><i class="icon-pencil"></i></strong>Contáctanos a través de nuestro formulario</h3>
 						<p>
 							Complete la información siguiente con el fin de recibir un presupuesto personalizado por parte de un consejero: Los campos indicados con un asterisco (*) son obligatorios.
 						</p>
@@ -255,8 +172,9 @@ else {
 					<div class="step">
 
 						<div id="message-contact"></div>
-						<form method="post" action="confirmacion.php" onSubmit="return controle();" id="">
-						<input type="hidden" name="id" value="<? echo "$id"; ?>">						
+						<form method="post" action="confirmacion.php" onSubmit="return controle();" id="contact-request">
+                        <div style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label>Dejar este campo vacío<input type="text" name="website" value="" tabindex="-1" autocomplete="off"></label></div>
+						<input type="hidden" name="id" value="<?php echo (int) $id; ?>">
 						<div class="row">
 								<div class="col-md-6 col-sm-6">
 									<div class="form-group">
@@ -267,7 +185,7 @@ else {
 								<div class="col-md-6 col-sm-6">
 									<div class="form-group">
 										<label>Destino</label>
-										<input type="text" class="form-control" id="destino" name="destino" value="<? echo "$titulo"; ?>">
+										<input type="text" class="form-control" id="destino" name="destino" value="<?php echo htmlspecialchars($titulo, ENT_QUOTES, 'UTF-8'); ?>">
 									</div>
 								</div>
 							</div>
@@ -275,7 +193,7 @@ else {
 							<div class="row">
 								<div class="col-md-2 col-sm-2">
 									<label for="exampleSelect1">Adultos</label>
-										<select class="form-control" id="exampleSelect1">
+										<select class="form-control" id="exampleSelect1" name="exampleSelect1">
 											<option value="1">1</option>
 											<option value="2">2</option>
 											<option value="3">3</option>
@@ -290,7 +208,7 @@ else {
 								</div>
 								<div class="col-md-2 col-sm-2">
 									<label for="exampleSelect2">Niños</label>
-										<select class="form-control" id="exampleSelect2">
+										<select class="form-control" id="exampleSelect2" name="exampleSelect2">
 											<option value="0">0</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
@@ -311,7 +229,7 @@ else {
 									<div class="form-check form-check-inline">
 										<label class="form-check-label">
 											<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1"> Si
-											<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="0"> No
+											<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="0" checked> No
 										</label>
 									</div>
 								</div>
@@ -326,7 +244,7 @@ else {
 								<div class="col-md-4 col-sm-4">
 									<div class="form-group">
 										<label>Nombre</label>
-										<input type="text" class="form-control" id="name_contact" name="name_contact"  maxlength="30">
+										<input type="text" class="form-control" id="name_contact" name="name_contact" maxlength="120" autocomplete="given-name" required>
 									</div>
 								</div>	
 								<div class="col-md-4 col-sm-4">	
@@ -346,19 +264,19 @@ else {
 								<div class="col-md-4 col-sm-4">
 									<div class="form-group">
 										<label>Teléfono</label>
-										<input type="text" class="form-control" id="phone_contact" name="phone_contact" placeholder="">
+										<input type="tel" class="form-control" id="phone_contact" name="phone_contact" autocomplete="tel">
 									</div>
 								</div>	
 								<div class="col-md-4 col-sm-4">	
 									<div class="form-group">
 										<label>Email</label>
-										<input type="text" class="form-control" id="email_contact" name="email_contact" placeholder="">
+										<input type="email" class="form-control" id="email_contact" name="email_contact" autocomplete="email" required>
 									</div>
 								</div>
 								<div class="col-md-4 col-sm-4">	
 									<div class="form-group">
 										<label for="exampleSelect3">Hora que desea le contactemos:</label>
-										<select class="form-control" id="exampleSelect3">
+										<select class="form-control" id="exampleSelect3" name="exampleSelect3">
 											<option value="mañana(9-12)">9H a mediodía</option>
 											<option value="mediodía(12-14)">De mediodía a 14H</option>
 											<option value="tarde(14-18)">De 14H a 18H</option>
@@ -389,11 +307,11 @@ else {
 									
 								
 									<div class="form_title2">
-										<div class="g-recaptcha" data-sitekey="6LeUddUUAAAAAFl8kcpUvMH1QySg_qYAA__8_ukq" data-callback="enabledSubmit"></div>
+										<?php if (!$svlContactLocal): ?><div class="g-recaptcha" data-sitekey="6LeUddUUAAAAAFl8kcpUvMH1QySg_qYAA__8_ukq" data-callback="enabledSubmit"></div><?php endif; ?>
 									</div>
 									
 									
-									<input type="submit" value="Enviar" class="btn_1" id="submit-contact" disabled>
+									<input type="submit" value="Enviar" class="btn_1" id="submit-contact" <?php echo $svlContactLocal ? '' : 'disabled'; ?>>
 								</div>
 								
 							</div>
@@ -493,7 +411,8 @@ else {
 					<h3>Newsletter</h3>
 					<p>Suscríbete a las mejores ofertas.</p>
 					<div id="message-newsletter_2"></div>
-					<form method="post" action="registro.php" name="newsletter_2" id="newsletter_2">
+					<form method="post" action="registro.php" name="newsletter_2" id="newsletter_2" data-newsletter-form>
+						<div style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label>Dejar este campo vacío<input type="text" name="website" value="" tabindex="-1" autocomplete="off"></label></div>
 						<div class="form-group">
 							<input name="email_newsletter_2" id="email_newsletter_2" type="email" value="" placeholder="Correo" class="form-control" required>
 						</div>

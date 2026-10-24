@@ -36,13 +36,15 @@ else {
 <html lang="en">
 
 <head>
+	<script src="../../js/newsletter.js" defer></script>
+	<script src="../../js/google-analytics.js"></script>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<meta name="description" content="Viajes <? echo "$nombre_pais"; ?> : <? echo "$destinos"; ?>">
-	<meta name="keywords" content="viajes,<? echo "$nombre_pais"; ?> ,<? echo "$destinos"; ?>" />
-    <title>Viajes <? echo "$nombre_pais"; ?> los mejores destinos</title>
+	<meta name="description" content="Viajes <?php echo "$nombre_pais"; ?> : <?php echo "$destinos"; ?>">
+	<meta name="keywords" content="viajes,<?php echo "$nombre_pais"; ?> ,<?php echo "$destinos"; ?>" />
+    <title>Viajes <?php echo "$nombre_pais"; ?> los mejores destinos</title>
 
 
 	<!-- Favicons-->
@@ -174,10 +176,10 @@ else {
         </div><!-- container -->
     </header><!-- End Header -->
 	
-	<section class="parallax-window" data-parallax="scroll" data-image-src="../../destinos/img/<? echo "$imagen_pais"; ?>" data-natural-width="1400" data-natural-height="470" alt="<? echo "$nombre_pais"; ?>">
+	<section class="parallax-window" data-parallax="scroll" data-image-src="../../destinos/img/<?php echo "$imagen_pais"; ?>" data-natural-width="1400" data-natural-height="470" alt="<?php echo "$nombre_pais"; ?>">
 		<div class="parallax-content-1">
 			<div class="animated fadeInDown">
-				<h1>Los mejores Destinos en <? echo "$nombre_pais"; ?></h1>
+				<h1>Los mejores Destinos en <?php echo "$nombre_pais"; ?></h1>
 				<p>Solo Viajes de Lujo</p>
 			</div>
 		</div>
@@ -201,9 +203,9 @@ else {
 		<div class="container margin_60">
 
 			<div class="main_title">
-				<h2> <span><? echo "$nombre_pais"; ?></span></h2>
+				<h2> <span><?php echo "$nombre_pais"; ?></span></h2>
 				<br>
-				<p>En Solo Viajes de Lujo somos especialista en viajes a <strong><? echo "$destinos"; ?></strong>. Con todo tipo de opciones: circuitos regulares, auto-rutas, viajes a medida.</p>
+				<p>En Solo Viajes de Lujo somos especialista en viajes a <strong><?php echo "$destinos"; ?></strong>. Con todo tipo de opciones: circuitos regulares, auto-rutas, viajes a medida.</p>
 			    <br>
 			</div>
 			
@@ -222,12 +224,12 @@ else {
 				<div class="col-md-4 col-sm-6 wow zoomIn" data-wow-delay="0.1s">
 					<div class="hotel_container">
 								<div class="img_container">
-									<a href="../../viajes/<? echo "$nombre_pagina_destino"; ?>/viajes-<? echo "$nombre_pagina_destino"; ?>.php?id=<? echo "$id_destino"; ?>">
-										<img src="../../viajes/<? echo "$nombre_pagina_destino"; ?>/img/<? echo "$imagen"; ?>" class="img-responsive" alt="viajes <? echo "$destino"; ?>" style="width:380px;height:250px;" alt="<? echo "$destino"; ?>">
+									<a href="../../viajes/<?php echo "$nombre_pagina_destino"; ?>/viajes-<?php echo "$nombre_pagina_destino"; ?>.php?id=<?php echo "$id_destino"; ?>">
+										<img src="../../viajes/<?php echo "$nombre_pagina_destino"; ?>/img/<?php echo "$imagen"; ?>" class="img-responsive" alt="viajes <?php echo "$destino"; ?>" style="width:380px;height:250px;" alt="<?php echo "$destino"; ?>">
 									</a>
 								</div>
 								<div class="hotel_title">
-									<h3><strong><? echo "$destino"; ?></strong></h3>
+									<h3><strong><?php echo "$destino"; ?></strong></h3>
 									<!--div class="wishlist">
 										<a class="tooltip_flip tooltip-effect-1" href="#">+<span class="tooltip-content-flip"><span class="tooltip-back">Lista de Deseos</span></span></a>
 									</div-->
@@ -285,9 +287,10 @@ else {
 					<h3>Newsletter</h3>
 					<p>Suscríbete a las mejores ofertas.</p>
 					<div id="message-newsletter_2"></div>
-					<form method="post" action="registro.php" name="newsletter_2" id="newsletter_2">
+					<form method="post" action="../../registro.php" name="newsletter_2" id="newsletter_2" data-newsletter-form>
+						<div style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label>Dejar este campo vacío<input type="text" name="website" value="" tabindex="-1" autocomplete="off"></label></div>
 						<div class="form-group">
-							<input name="email_newsletter_2" id="email_newsletter_2" type="email" value="" placeholder="Correo" class="form-control">
+							<input name="email_newsletter_2" id="email_newsletter_2" type="email" value="" placeholder="Correo" class="form-control" autocomplete="email" required>
 						</div>
 						<input type="submit" value="Suscribirme	" class="btn_1" id="submit-newsletter_2">
 					</form>
@@ -319,7 +322,7 @@ else {
                             <li><a href="#"><i class="icon-linkedin"></i></a></li> -->
                         </ul>
                         <p>© Solo Viajes de Lujo 2018</p>
-						<p>Los mejores destinos en <? echo "$nombre_pais"; ?> : <? echo "$destinos"; ?></p>
+						<p>Los mejores destinos en <?php echo "$nombre_pais"; ?> : <?php echo "$destinos"; ?></p>
 						
                     </div>
                 </div>

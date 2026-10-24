@@ -45,13 +45,15 @@ while($RS = mysqli_fetch_array($result_detalle_viaje))
 <html lang="en">
 
 <head>
+	<script src="../../js/newsletter.js" defer></script>
+	<script src="../../js/google-analytics.js"></script>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<meta name="description" content="Viaje <? echo "$destino"; ?> : <? echo "$titulo"; ?>">
+	<meta name="description" content="Viaje <?php echo "$destino"; ?> : <?php echo "$titulo"; ?>">
     
-    <title>Viaje <? echo "$destino"; ?> - <? echo "$titulo"; ?></title>
+    <title>Viaje <?php echo "$destino"; ?> - <?php echo "$titulo"; ?></title>
 
 	<!-- Favicons-->
 	<link rel="shortcut icon" href="../../img/favicon.ico" type="../../image/x-icon">
@@ -156,12 +158,12 @@ while($RS = mysqli_fetch_array($result_detalle_viaje))
         </div><!-- container -->
     </header><!-- End Header -->
 
-	<section class="parallax-window" data-parallax="scroll" data-image-src="../../newsletter/images/<? echo "$id_lanzamiento_imagen"; ?>/<? echo "$imagen"; ?>" data-natural-width="1400" data-natural-height="470">
+	<section class="parallax-window" data-parallax="scroll" data-image-src="../../newsletter/images/<?php echo "$id_lanzamiento_imagen"; ?>/<?php echo "$imagen"; ?>" data-natural-width="1400" data-natural-height="470">
 		<div class="parallax-content-2">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-sm-8">
-						<h1>VIAJE <? echo "$destino"; ?> : <? echo "$titulo"; ?></h1>
+						<h1>VIAJE <?php echo "$destino"; ?> : <?php echo "$titulo"; ?></h1>
 						<!--span> CON DESAYUNOS AMERICANOS.</span-->
 					</div>
 					<!-- <div class="col-md-4 col-sm-4">
@@ -182,14 +184,14 @@ while($RS = mysqli_fetch_array($result_detalle_viaje))
 					<li><a href="../../index.php">Home</a>
 					</li>
 				
-					<li><a href="../../destinos/<? echo "$nombre_pagina_pais"; ?>/destinos-<? echo "$nombre_pagina_pais"; ?>.php?id=<? echo "$id_pais"; ?>"><? echo "$nombre_pais"; ?></a>
+					<li><a href="../../destinos/<?php echo "$nombre_pagina_pais"; ?>/destinos-<?php echo "$nombre_pagina_pais"; ?>.php?id=<?php echo "$id_pais"; ?>"><?php echo "$nombre_pais"; ?></a>
 					</li>	
 					
 					<li>
-					<a href="viajes-<? echo "$nombre_pagina_destino"; ?>.php?id=<? echo "$id_destino"; ?>"><? echo "$destino"; ?></a></li>
+					<a href="viajes-<?php echo "$nombre_pagina_destino"; ?>.php?id=<?php echo "$id_destino"; ?>"><?php echo "$destino"; ?></a></li>
 					
 			
-					<li><? echo "$titulo"; ?></li>
+					<li><?php echo "$titulo"; ?></li>
 				</ul>
 			</div>
 		</div>
@@ -215,10 +217,10 @@ while($RS = mysqli_fetch_array($result_detalle_viaje))
 					<time class="cbp_tmtime"><span>Día 1</span></time>
 					<!--div class="cbp_tmicon timeline_icon_point"></div-->
 					<div class="cbp_tmlabel">
-						<h2>VIAJES <? echo "$nombre_pagina_destino"; ?><h2>
-						<h2>VIAJE <? echo "$titulo"; ?><h2>
-						<h3><span></span><? echo "$texto"; ?><h3>
-						<p><? echo "$textoAmp"; ?></p>
+						<h2>VIAJES <?php echo "$nombre_pagina_destino"; ?><h2>
+						<h2>VIAJE <?php echo "$titulo"; ?><h2>
+						<h3><span></span><?php echo "$texto"; ?><h3>
+						<p><?php echo "$textoAmp"; ?></p>
 					</div>
 				</li>
 
@@ -237,7 +239,7 @@ while($RS = mysqli_fetch_array($result_detalle_viaje))
 
 						<br-->
 	
-						<a class="btn_full" href="../../contacto.php?id=<? echo "$id_viaje"; ?>">Solicitar informacion viaje <? echo "$nombre_pagina_destino"; ?> - <? echo "$titulo"; ?> </a>
+						<a class="btn_full" href="../../contacto.php?id=<?php echo "$id_viaje"; ?>">Solicitar informacion viaje <?php echo "$nombre_pagina_destino"; ?> - <?php echo "$titulo"; ?> </a>
 						<!--a class="btn_full_outline" href="#"><i class=" icon-heart"></i>Agregar a Mi lista</a-->
 					</div>
 					<!--/box_style_1 -->
@@ -278,7 +280,7 @@ while($RS = mysqli_fetch_array($result_detalle_viaje))
                         <li><a href="../../ofertas-exclusivas.php">Ofertas exclusivas</a></li>
 						<li><a href="#">Viajes empresas</a></li>
 						<li><a href="#">Fullcharter</a></li>
-                        <li><a href="../../confirmacion.php">Contacto</a></li>
+                        <li><a href="../../contacto.php">Contacto</a></li>
 						<li><a href="../../terminos-condiciones.html">Términos y condiciones</a></li>
 						<li><a href="../../politica-privacidad.html">Política de privacidad</a></li>
                     </ul>
@@ -287,7 +289,8 @@ while($RS = mysqli_fetch_array($result_detalle_viaje))
 					<h3>Newsletter</h3>
 					<p>Suscríbete a las mejores ofertas.</p>
 					<div id="message-newsletter_2"></div>
-					<form method="post" action="registro.php" name="newsletter_2" id="newsletter_2">
+					<form method="post" action="../../registro.php" name="newsletter_2" id="newsletter_2" data-newsletter-form>
+						<div style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label>Dejar este campo vacío<input type="text" name="website" value="" tabindex="-1" autocomplete="off"></label></div>
 						<div class="form-group">
 							<input name="email_newsletter_2" id="email_newsletter_2" type="email" value="" placeholder="Correo" class="form-control" required>
 						</div>
@@ -321,7 +324,7 @@ while($RS = mysqli_fetch_array($result_detalle_viaje))
                             <li><a href="#"><i class="icon-linkedin"></i></a></li> -->
                         </ul>
                         <p>© Solo Viajes de Lujo 2018</p>
-						<p>Viajes <? echo "$destino"; ?> - <? echo "$titulo"; ?></p>
+						<p>Viajes <?php echo "$destino"; ?> - <?php echo "$titulo"; ?></p>
 						
                     </div>
                 </div>

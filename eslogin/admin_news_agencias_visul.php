@@ -3,15 +3,15 @@
 include('includes/sql_admin.php');
 include('includes/execute_sql_admin.php');
 
-$id_lanzamiento_selec = $_POST["id_lanzamiento"];
+$id_lanzamiento_selec = filter_input(INPUT_POST, 'id_lanzamiento', FILTER_VALIDATE_INT, array('options' => array('min_range' => 1))) ?: 0;
 //echo 'a : '.$id_lanzamiento_selec;
-if ($id_lanzamiento_selec == '' || $id_lanzamiento_selec == ' '){
+if ($id_lanzamiento_selec === 0){
 	//echo 'b : ';
 	$sql_last_lanzamiento = sql_last_lanzamiento();
 	//echo $sql_last_lanzamiento;
 	$last_lanzamiento = execute_sql($sql_last_lanzamiento);
-	$RS = mysqli_fetch_array($last_lanzamiento);
-	$id_lanzamiento_selec = $RS[max_id_lanzamiento];
+	$RS = $last_lanzamiento instanceof mysqli_result ? mysqli_fetch_array($last_lanzamiento) : array();
+	$id_lanzamiento_selec = (int) ($RS['max_id_lanzamiento'] ?? 0);
 	//echo 'c : '.$id_lanzamiento_selec;
 }
 // Requette pour prendre tout les armateurs
@@ -72,7 +72,7 @@ if ($id_lanzamiento_selec == '' || $id_lanzamiento_selec == ' '){
 					</tr>
 					
 <?php
-		if ($id_lanzamiento != '' || $id_lanzamiento != ' ') {
+		if ($id_lanzamiento_selec > 0) {
 			$sql_all_news = sql_all_news_lanza($id_lanzamiento_selec);
 			$resul_all_news = execute_sql($sql_all_news);
 			//echo $sql_all_news;

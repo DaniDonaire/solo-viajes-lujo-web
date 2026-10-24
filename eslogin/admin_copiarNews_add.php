@@ -3,8 +3,8 @@
 include('includes/sql_admin.php');
 include('includes/execute_sql_admin.php');
 
-$id_lanzamiento_1 = $_POST["id_lanzamiento_1"];
-$id_lanzamiento_2 = $_POST["id_lanzamiento_2"];
+$id_lanzamiento_1 = filter_input(INPUT_POST, 'id_lanzamiento_1', FILTER_VALIDATE_INT, array('options' => array('min_range' => 1))) ?: 0;
+$id_lanzamiento_2 = filter_input(INPUT_POST, 'id_lanzamiento_2', FILTER_VALIDATE_INT, array('options' => array('min_range' => 1))) ?: 0;
 
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">

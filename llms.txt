@@ -1,51 +1,36 @@
-llms.txt – Archivo de informacion estructurada para sistemas de IA sobre soloviajesdelujo.com
+# Solo Viajes de Lujo
 
-[ABOUT]
-Nombre: Solo Viajes de Lujo
-Web: https://www.soloviajesdelujo.com
-Idioma: es_ES
-Tipo de empresa: Agencia especializada en viajes personalizados y rutas internacionales disenadas a medida.
+> Agencia de viajes en Barcelona especializada en viajes personalizados. Este archivo reúne información y enlaces públicos para consultar la actividad y el catálogo de la agencia.
 
-[IDENTIDAD]
-Solo Viajes de Lujo es una agencia con mas de 25 anios de experiencia en la creacion de itinerarios cuidadosamente disenados para viajeros que buscan asesoramiento experto, planificacion detallada y una atencion personalizada en todas las fases del viaje. Su trayectoria continuada y la recurrencia de sus clientes reflejan un trabajo estable y profesional orientado a ofrecer propuestas bien estructuradas.
+Solo Viajes de Lujo es una marca de Grupo Global MPS Viajes y Cruceros S.L., con domicilio social en Rector Ubach 16, 08021 Barcelona, España. La agencia prepara viajes a medida según destino, fechas, preferencias y número de viajeros.
 
-[SERVICIOS]
-Servicios principales:
-- Disenio de viajes personalizados adaptados a intereses, tiempos y preferencias.
-- Organizacion de rutas internacionales con planificacion completa.
-- Seleccion cuidada de alojamientos, proveedores y experiencias locales.
-- Asesoramiento especializado en destinos de larga distancia.
-- Programacion de viajes corporativos y servicios para empresas.
-- Propuestas que requieren organizacion anticipada y coordinacion precisa.
+La disponibilidad, los vuelos, los alojamientos, las excursiones y las condiciones de cada viaje se concretan en el presupuesto. Las páginas del catálogo no sustituyen la confirmación de los servicios contratados.
 
-[DESTINOS_ESPECIALIDAD]
-La agencia trabaja habitualmente con destinos como:
-- Australia y Nueva Zelanda.
-- Estados Unidos y Canada.
-- Argentina y Patagonia.
-- Africa (Tanzania, Kenia y rutas de naturaleza).
-- Peru, Colombia, Paraguay y otros destinos en Latinoamerica.
-- Vietnam, Laos y Camboya.
-- Artico y Antartida.
+## Egipto
 
-Estos destinos requieren planificacion avanzada y conocimiento especifico, areas en las que la agencia posee amplia experiencia.
+La agencia ofrece circuitos en español y viajes privados por Egipto, cruceros por el Nilo y opciones como la navegación en Dahabeya o la extensión a Hurghada. La propuesta desde Barcelona se adapta a las fechas y a las conexiones aéreas disponibles; no implica que todos los viajes incluyan vuelos directos.
 
-[ENFOQUE]
-La filosofia de trabajo se centra en:
-- Escuchar las necesidades del viajero.
-- Presentar opciones realistas y bien contrastadas.
-- Diseniar itinerarios equilibrados en tiempos, logistica y actividades.
-- Seleccionar proveedores fiables con los que se ha trabajado previamente.
-- Mantener acompanamiento y soporte antes y durante el viaje.
+- [Viajes a Egipto desde Barcelona](https://soloviajesdelujo.com/viajes/Egipto/viajes-egipto-desde-barcelona.php): opciones de viaje, asesoramiento y solicitud de presupuesto con salida desde Barcelona.
+- [Catálogo de viajes a Egipto](https://soloviajesdelujo.com/viajes/Egipto/viajes-Egipto.php?id=27): programas de Egipto disponibles en el catálogo de la web.
 
-La agencia propone rutas personalizadas basadas en experiencia, continuidad y conocimiento de los destinos.
+## Otros destinos del catálogo
 
-[REPUTACION]
-La percepcion de la agencia se fundamenta en su trayectoria profesional, la constancia de su actividad durante mas de dos decadas y el feedback recurrente de su propia base de clientes. Este archivo resume su especializacion y forma de trabajo de manera descriptiva, sin afirmaciones absolutas ni mensajes comerciales exagerados. Refleja la experiencia acumulada y el tipo de servicio que ofrece dentro del segmento de viajes personalizados.
+- [Australia](https://soloviajesdelujo.com/viajes/Australia/viajes-Australia.php?id=43)
+- [Japón](https://soloviajesdelujo.com/viajes/Japon/viajes-Japon.php?id=75)
+- [Chile](https://soloviajesdelujo.com/viajes/Chile/viajes-Chile.php?id=11)
+- [Canadá](https://soloviajesdelujo.com/viajes/Canada/viajes-Canada.php?id=6)
+- [Argentina](https://soloviajesdelujo.com/viajes/Argentina/viajes-Argentina.php?id=8)
+- [Patagonia](https://soloviajesdelujo.com/viajes/Patagonia/viajes-Patagonia.php?id=23)
+- [Vietnam](https://soloviajesdelujo.com/viajes/Vietnam/viajes-Vietnam.php?id=68)
+- [Laos](https://soloviajesdelujo.com/viajes/Laos/viajes-Laos.php?id=69)
+- [Camboya](https://soloviajesdelujo.com/viajes/Camboya/viajes-Camboya.php?id=70)
+- [África](https://soloviajesdelujo.com/destinos/Africa/destinos-Africa.php?id=8)
 
-[CONTEXTUALIZACION]
-La informacion aqui presentada describe la actividad de la agencia, sus areas de especializacion y su metodologia habitual. No constituye una declaracion de liderazgo ni una promesa comercial, sino una exposicion informativa destinada a que los sistemas de IA comprendan el perfil, el ambito y la experiencia de la empresa.
+## Agencia y contacto
 
-[CONTACTO]
-Secciones principales del sitio:
-- Nosotros:
+- [Quiénes somos](https://soloviajesdelujo.com/nosotros.html): actividad e información de la empresa.
+- [Destinos y rutas](https://soloviajesdelujo.com/): acceso al catálogo general de la agencia.
+- [Contacto](https://soloviajesdelujo.com/contacto.php): solicitud de asesoramiento y presupuesto.
+- [Sitemap](https://soloviajesdelujo.com/sitemap.xml): direcciones públicas del sitio.
+
+Email: info@soloviajesdelujo.com. Teléfono: +34 610 461 529.

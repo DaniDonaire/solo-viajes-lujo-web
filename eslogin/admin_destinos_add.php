@@ -75,7 +75,7 @@ include('includes/execute_sql_admin.php');
 	</tr>
 	<tr>
 		<td valign="top" width="200">
-
+<?php include("includes/menu.php"); ?>
 		</td>
 		<td align="center" width="600">
 			<strong><font color="#CC0000" size="2" face="Arial, Helvetica, sans-serif">Anadir Destino</font></strong>

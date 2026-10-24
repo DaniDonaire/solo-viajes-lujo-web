@@ -1,3 +1,11 @@
 @charset "UTF-8";
 /* CSS Document */
+/* Keep the existing public-site family available without external font requests. */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url('fonts/montserrat/montserrat-latin.woff2') format('woff2');
+}
 

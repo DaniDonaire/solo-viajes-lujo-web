@@ -4,7 +4,12 @@ include('includes/sql_admin.php');
 include('includes/execute_sql_admin.php');
 
 // Récupération des parametres
-$id = $_GET[id];
+$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT, array('options' => array('min_range' => 1)));
+if ($id === null || $id === false) {
+	http_response_code(404);
+	exit('Registro no encontrado.');
+}
+
 
 $sql_all_paises = sql_paises_svl();
 $result_all_paises = execute_sql($sql_all_paises);	
@@ -16,14 +21,23 @@ $sql_especialidad_id = sql_especialidad_id($id);
 $result_especialidad = execute_sql($sql_especialidad_id);
 
 // Initialisation des variables
+if (!($result_especialidad instanceof mysqli_result)) {
+	http_response_code(404);
+	exit('Registro no encontrado.');
+}
 $RS = mysqli_fetch_array($result_especialidad);
+if (!$RS) {
+	http_response_code(404);
+	exit('Registro no encontrado.');
+}
 
-$id_destino = $RS[id_destino];
-$id_pais = $RS[id_pais];
-$destino = $RS[destino];
-$imagen = $RS[imagen_destino];
-$nombre_pagina_destino = $RS[nombre_pagina_destino];
-$activo = $RS[activo];
+
+$id_destino = $RS['id_destino'];
+$id_pais = $RS['id_pais'];
+$destino = $RS['destino'];
+$imagen = $RS['imagen_destino'];
+$nombre_pagina_destino = $RS['nombre_pagina_destino'];
+$activo = $RS['activo'];
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">

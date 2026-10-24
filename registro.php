@@ -1,62 +1,25 @@
-<?php	
-require_once __DIR__ . '/config/database.php';
-$svlPrivateConfiguration = svl_configuration();
-$svlRegistrationToken = isset($svlPrivateConfiguration['registration_token']) ? (string) $svlPrivateConfiguration['registration_token'] : '';
-
-if ($svlRegistrationToken === '' || !isset($_POST["clau"]) || !is_string($_POST["clau"]) || !hash_equals($svlRegistrationToken, $_POST["clau"])) {
-	header('Location:https://www.soloviajesdelujo.com');
-	exit();
+<?php
+require_once __DIR__.'/include/forms.php';
+try {
+    svl_form_request_guard('newsletter');
+    $rawEmail = svl_form_input($_POST, 'email_newsletter_1', 254);
+    if ($rawEmail === '') {
+        $rawEmail = svl_form_input($_POST, 'email_newsletter_2', 254);
+    }
+    $email = svl_form_email($rawEmail);
+    $connection = svl_forms_connection();
+    $saved = svl_store_newsletter($connection, $email);
+    $connection->close();
+} catch (Throwable $error) {
+    svl_form_fail($error);
 }
-
-include ("include/sql.php");
-include ("include/execute_sql.php");
-
-$message=""; 
-if ($_POST["email_newsletter_1"] != ""){
-	$email = $_POST["email_newsletter_1"];
+$message = 'Tu suscripción se ha guardado correctamente. Gracias por tu confianza.';
+if (svl_form_wants_json()) {
+    svl_form_reply_json($saved, $message);
 }
-else if ($_POST["email_newsletter_2"] != ""){
-	$email = $_POST["email_newsletter_2"];
-}
-
-$sql_existe_mail = sql_existe_mail($email);
-$result= execute_sql($sql_existe_mail);
-$row = $result->num_rows;
-
-if ($row == 0 && !empty($email)){
-	$sql_insert_mail = sql_insert_mail($email);
-	$idPrep= execute_sql($sql_insert_mail);
-	$message="Gracias por su confianza!";
-	
-	$search = array('$email');
-	$replace = array( $email);
-		
-	// *****************************
-	// Envoye du mail pour le client
-	// *****************************
-
-	$html = file_get_contents('templates/email_registro_client.html');
-	$html = str_replace($search, $replace, $html);
-
-	//$sujet_client = 'Demanda de presupuesto personalizado';
-
-	$message = $message_client_html;
-	$titulo = "Registro realizado";
-
-	$cabeceras  = 'MIME-Version: 1.0' . "\r\n";
-	$cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-
-	// Cabeceras adicionales
-	$cabeceras .= 'To: <$email>' . "\r\n";
-	$cabeceras .= 'From: Soloviajesdelujo.com <info@soloviajesdelujo.com>' . "\r\n";
-	$cabeceras .= 'Cc:  Soloviajesdelujo <info@soloviajesdelujo.com>' . "\r\n";
-
-	mail($email, $titulo, $html, $cabeceras);
-}
-else{
-	$message=" Ya estabas registrado";
-}
-	
+header('Cache-Control: no-store');
+header('Content-Type: text/html; charset=UTF-8');
+$email = svl_form_mail_escape($email);
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]><html class="ie ie8"> <![endif]-->
@@ -64,6 +27,8 @@ else{
 <html lang="en">
 
 <head>
+	<script src="js/newsletter.js" defer></script>
+	<script src="js/google-analytics.js"></script>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -205,7 +170,7 @@ else{
 				<div class="col-md-8 add_bottom_15">
 
 					<div class="form_title">
-						<h3><strong><i class="icon-ok"></i></strong><? echo "$email"; ?> <? echo "$message"; ?></h3>
+						<h3><strong><i class="icon-ok"></i></strong><?php echo "$email"; ?> <?php echo "$message"; ?></h3>
 					</div>
 					<div class="step">
 						<p>
@@ -269,7 +234,8 @@ else{
 					<h3>Newsletter</h3>
 					<p>Suscríbete a las mejores ofertas.</p>
 					<div id="message-newsletter_2"></div>
-					<form method="post" action="registro.php" name="newsletter_2" id="newsletter_2">
+					<form method="post" action="registro.php" name="newsletter_2" id="newsletter_2" data-newsletter-form>
+                        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-10000px">
 						<div class="form-group">
 							<input name="email_newsletter_2" id="email_newsletter_2" type="email" value="" placeholder="Correo" class="form-control" required>
 						</div>

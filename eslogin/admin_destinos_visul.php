@@ -50,8 +50,8 @@ include('includes/execute_sql_admin.php');
 
 			while($RS = mysqli_fetch_array($result_all_paises))
 			{
-				$id_pais = $RS[id_pais];
-				$nombre_pais = $RS[nombre_pais];
+				$id_pais = $RS['id_pais'];
+				$nombre_pais = $RS['nombre_pais'];
 
 ?>
 				<tr>

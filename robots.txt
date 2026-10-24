@@ -1,14 +1,11 @@
-User-agent:  *
-Disallow:  /templates/ 
-Disallow:  /assets/ 
-Disallow:  /pspdevel/ 
-Disallow:  /include/
-Disallow:  /newsletter/
-Disallow:  /img/ 
-Disallow:  /js/
-Disallow:  /css/
-Disallow:  /lists/
-Disallow:  /rev-slider-files/
-Disallow:  /eslogin/
-Disallow:  /contacto.php
-Sitemap: https://www.soloviajesdelujo.com/sitemap.xml
+User-agent: *
+Disallow: /templates/
+Disallow: /pspdevel/
+Disallow: /include/
+Disallow: /newsletter/
+Disallow: /lists/
+Disallow: /eslogin/
+Disallow: /contacto.php
+
+# Public CSS, JavaScript and images may be crawled to render the pages.
+Sitemap: https://soloviajesdelujo.com/sitemap.xml

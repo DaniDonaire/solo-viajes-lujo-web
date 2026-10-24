@@ -1,7 +1,4 @@
 <?php
-require_once __DIR__ . '/config/database.php';
-$svlPrivateConfiguration = svl_configuration();
-$svlRegistrationToken = isset($svlPrivateConfiguration['registration_token']) ? (string) $svlPrivateConfiguration['registration_token'] : '';
 include ("include/sql.php");
 include ("include/execute_sql.php");
 
@@ -16,54 +13,9 @@ $result_sql_rutas = execute_sql($sql_rutas);
 <!--[if IE 8]><html class="ie ie8"> <![endif]-->
 <!--[if IE 9]><html class="ie ie9"> <![endif]-->
 <html lang="es">
-<script language="JavaScript" type="text/JavaScript">
-	// Fonction qui permet de controler le formulaire avant de l'envoyer
-	function controle1()
-	{
-		//alert(document.forms[0].email_newsletter_1.value);
-		if (document.forms[0].email_newsletter_1.value != '')
-		{
-			enviarEmail(document.forms[0].email_newsletter_1.value);
-		} else {
-			return;
-		}
-	}
-	function controle2()
-	{
-		//alert(document.newsletter_2.email_newsletter_2.value);
-		if(document.newsletter_2.email_newsletter_2.value != '' ){
-			enviarEmail(document.newsletter_2.email_newsletter_2.value);
-		} else {
-			return;
-		}
-	}
-	
-	function enviarEmail(email){
-		//var email = formulario.email_contact.value;
-		//alert(email);
-		var dataString = 'email=' + email ;
-			$.ajax({
-				async:true,
-				data: dataString,
-				url:   'registro.php',
-				type:  'POST',
-				dataType: 'json',
-				success:  function (data) 
-				{
-					if (data.success){
-						alert('Registro completado.Muchas Gracias');
-					} else {
-						alert('No se ha podido enviar, intentalo de nuevo');
-					}
-				},
-				error: function()
-				{
-					alert('Ocurrio un error en el servidor .. intentalo de nuevo');
-				}
-			});
-	}
-</script>
 <head>
+	<script src="js/newsletter.js" defer></script>
+	<script src="js/google-analytics.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
@@ -309,25 +261,10 @@ $result_sql_rutas = execute_sql($sql_rutas);
 </script>
 
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-366659895"></script>
+<!-- Google Ads uses the shared Google tag initialized in the head. -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
   gtag('config', 'AW-366659895');
 </script>
-
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-197221152-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	  gtag('config', 'UA-197221152-1');
-	</script>
 <!-- Event snippet for Vista de una página conversion page
 In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
 <script>
@@ -495,15 +432,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						<!-- LAYER NR. 5 -->
 						<div class="tp-caption NotGeneric-CallToAction tp-static-layer" id="slide-134-layer-11" data-x="['center','center','center','center']" data-hoffset="['0','0','0','-1']" data-y="['top','top','top','top']" data-voffset="['394','336','350','350']" data-fontsize="['15','15','15','12']" data-fontweight="['400','500','500','400']" data-width="none" data-height="none" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-responsive="off" data-startslide="0" data-endslide="6" data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"frame":"999","to":"opacity:0;","ease":"Power2.easeInOut"}]' data-textAlign="['left','center','center','center']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 12; white-space: nowrap; font-weight: 400;font-family:Open sans;cursor:default;">
 							<div id="mc_embed_signup">
-								<form action="contacto.php" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate">
-									<input type="hidden" name="clau" value="<?php echo htmlspecialchars($svlRegistrationToken, ENT_QUOTES, 'UTF-8'); ?>">
-									<label for="formGroupExampleInput">Para acceder a nuestros mejores viajes !apúntate ya!</label>
+								<form action="registro.php" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" data-newsletter-form>
+						<div style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label>Dejar este campo vacío<input type="text" name="website" value="" tabindex="-1" autocomplete="off"></label></div>
+									<label for="email_newsletter_1">Para acceder a nuestros mejores viajes !apúntate ya!</label>
 									<div id="mc_embed_signup_scroll">
-										<!--input type="email" value="" name="email_newsletter_1" id="email_newsletter_1" class="email" placeholder="Tu correo electrónico" required-->
-										<!--input type="email" value="" name="email_newsletter_1" class="email" id="email_newsletter_1" placeholder="Tu correo electrónico" required>
-										<div style="position: absolute; left: -5000px;">
-											<input type="text" name="b_a5738148e5ec630766e28de16_3e718acc63" tabindex="-1" value="">
-										</div-->
+										<input type="email" value="" name="email_newsletter_1" id="email_newsletter_1" class="email" placeholder="Tu correo electrónico" autocomplete="email" required>
 										<input type="submit" value="Recibir ofertas" name="subscribe" id="mc-embedded-subscribe" class="button">
 									</div>
 									<!--div class="form-check">
@@ -543,19 +476,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						$nombre_pagina_pais = $RS["nombre_pagina_pais"];
 						$cont++;	
 				?>
-				<div class="col-md-4 col-sm-6 wow zoomIn" data-wow-delay="0.<? echo "$cont"; ?>s">
+				<div class="col-md-4 col-sm-6 wow zoomIn" data-wow-delay="0.<?php echo "$cont"; ?>s">
 					<div class="tour_container">
 						
 						<div class="img_container">
-							<a href="destinos/<? echo "$nombre_pagina_pais"; ?>/destinos-<? echo "$nombre_pagina_pais"; ?>.php?id=<? echo "$id_pais"; ?>">
-								<img src="destinos/img/<? echo "$imagen_pais"; ?>" class="img-responsive" alt="<? echo "$nombre_pais"; ?>" style="width:400px;height:250px;">
+							<a href="destinos/<?php echo "$nombre_pagina_pais"; ?>/destinos-<?php echo "$nombre_pagina_pais"; ?>.php?id=<?php echo "$id_pais"; ?>">
+								<img src="destinos/img/<?php echo "$imagen_pais"; ?>" class="img-responsive" alt="<?php echo "$nombre_pais"; ?>" style="width:400px;height:250px;">
 								<div class="short_info">
-									<i class="icon_set_1_icon-44"></i><? echo "$nombre_pais"; ?><span class="price"><sup></sup></span>
+									<i class="icon_set_1_icon-44"></i><?php echo "$nombre_pais"; ?><span class="price"><sup></sup></span>
 								</div>
 							</a>
 						</div>
 						<div class="tour_title">
-							<h3><strong><? echo "$nombre_pais"; ?></strong></h3>
+							<h3><strong><?php echo "$nombre_pais"; ?></strong></h3>
 							<!-- end rating -->
 							<!--div class="wishlist">
 								<a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Lista de Deseos</span></span></a>
@@ -593,17 +526,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						$destino = $RS["nombre_pagina_destino"];
 						$cont++;	
 				?>
-				<div class="col-md-4 col-sm-6 wow zoomIn" data-wow-delay="0.<? echo "$cont"; ?>s">
+				<div class="col-md-4 col-sm-6 wow zoomIn" data-wow-delay="0.<?php echo "$cont"; ?>s">
 					<div class="hotel_container">
 						<div class="img_container">
-							<a href="viajes/<? echo "$destino"; ?>/viaje-<? echo "$destino"; ?>.php?id_viaje=<? echo "$id_news"; ?>">
-								<img src="newsletter/images/<? echo "$id_lanzamiento"; ?>/<? echo "$imagen"; ?>" width="800" height="533" class="img-responsive" alt="<? echo "$destino"; ?>" style="width:400px;height:250px;">
+							<a href="viajes/<?php echo "$destino"; ?>/viaje-<?php echo "$destino"; ?>.php?id_viaje=<?php echo "$id_news"; ?>">
+								<img src="newsletter/images/<?php echo "$id_lanzamiento"; ?>/<?php echo "$imagen"; ?>" width="800" height="533" class="img-responsive" alt="<?php echo "$destino"; ?>" style="width:400px;height:250px;">
 								<div class="short_info hotel">
 								</div>
 							</a>
 						</div>
 						<div class="hotel_title">
-							<h4><strong><? echo "$titulo"; ?></strong> </h4>
+							<h4><strong><?php echo "$titulo"; ?></strong> </h4>
 							<!--div class="rating">
 								<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i>
 							</div-->
@@ -837,13 +770,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<h3>Newsletter</h3>
 					<p>Suscríbete a las mejores ofertas.</p>
 					<div id="message-newsletter_2"></div>
-					<form method="post" action="contacto.php" name="newsletter_2" id="newsletter_2" >
-						<input type="hidden" name="clau" value="<?php echo htmlspecialchars($svlRegistrationToken, ENT_QUOTES, 'UTF-8'); ?>">	
+					<form method="post" action="registro.php" name="newsletter_2" id="newsletter_2"  data-newsletter-form>
+						<div style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label>Dejar este campo vacío<input type="text" name="website" value="" tabindex="-1" autocomplete="off"></label></div>
 						<div class="form-group">
-							<!--input name="email_newsletter_2" id="email_newsletter_2" type="email" value="" class="form-control" placeholder="Tu correo electrónico" required-->
+							<input name="email_newsletter_2" id="email_newsletter_2" type="email" value="" class="form-control" placeholder="Tu correo electrónico" autocomplete="email" required>
 						</div>
-						<!--input type="submit" value="Suscribirme	" class="btn_1" id="submit-newsletter_2"-->
-						<input type="submit" value="Suscribirme	" class="btn_1" id="">
+
+						<input type="submit" value="Suscribirme" class="btn_1" id="submit-newsletter_2">
 					</form>
 				</div>
                 <div class="col-md-3 col-sm-3">
