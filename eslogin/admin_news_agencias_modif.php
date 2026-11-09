@@ -90,7 +90,7 @@ $result_all_paises = execute_sql($sql_all_paises);
 		}
 
 		// Si tout les test sont OK, envoye du formulaire au fichier 'admin_banners_modif_script.php'
-		document.formulaire.submit();
+		return window.svlSubmitAdminForm(document.formulaire);
 	}
 
 </script>
@@ -110,7 +110,8 @@ $result_all_paises = execute_sql($sql_all_paises);
 		</td>
 		<td align="center" width="600">
 			<strong><font color="#CC0000" size="2" face="Arial, Helvetica, sans-serif">Modificar la oferta</font></strong>
-			<form name="formulaire" method="post" action="admin_news_modif_script.php" onSubmit="return controle();" enctype="multipart/form-data">
+			<form name="formulaire" method="post" accept-charset="UTF-8" action="admin_news_modif_script.php" onSubmit="return controle();" enctype="multipart/form-data">
+				<input type="hidden" name="admin_section" value="agencias">
 				<input type="hidden" name="form_id_new" value="<? echo "$id_new"; ?>">
 				<input type="hidden" name="imagen_ant" value="<? echo "$imagen"; ?>">
 				<table width="100%" border="0" cellspacing="5" cellpadding="5" align="left">

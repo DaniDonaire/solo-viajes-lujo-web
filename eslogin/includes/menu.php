@@ -15,7 +15,8 @@ if ($svlNavPage === 'formularios.php' && isset($view) && in_array($view, array('
 $svlNavSpecialties = $svlNavPage === 'admin_especialidad_visul.php'
     && (($_GET['seccion'] ?? '') === 'especialidades'
         || isset($_GET['id_destino']) || isset($_POST['id_destino']));
-$svlNavLocal = svl_configuration()['env'] === 'local';
+$svlNavEnvironment = svl_configuration()['env'];
+$svlNavLocal = $svlNavEnvironment === 'local';
 $svlNavGroups = array(
     array('label' => 'Contactos', 'links' => array(
         array('Consultar contactos', 'formularios.php?view=contacts', array('formularios.php'), 'contacts'),
@@ -52,6 +53,9 @@ $svlNavIsActive = static function (array $link) use ($svlNavPage, $svlNavView, $
 };
 ?>
 <link rel="stylesheet" href="assets/admin.css">
+<?php if (preg_match('/^admin_(?:(?:destinos|especialidad|news(?:_agencias)?|lanza)_(?:add|modif)|copiarNews_add)\.php$/D', $svlNavPage)): ?>
+<script src="assets/form-submit.js" data-read-only="<?php echo $svlNavEnvironment === 'production' ? 'false' : 'true'; ?>" defer></script>
+<?php endif; ?>
 <aside class="svl-admin-sidebar" aria-label="Administraci&oacute;n">
     <a class="svl-admin-brand" href="admin_especialidad_visul.php">
         <span>Solo Viajes de Lujo<small>Administraci&oacute;n</small></span>

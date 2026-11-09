@@ -46,7 +46,7 @@ include('includes/execute_sql_admin.php');
 		}
 
 		// Si tout les test sont OK, envoye du formulaire au fichier 'admin_banners_add_script.php'
-		document.formulaire.submit();
+		return window.svlSubmitAdminForm(document.formulaire);
 	}
 
 </script>
@@ -72,7 +72,8 @@ include('includes/execute_sql_admin.php');
 		</td>
 		<td align="center" width="600">
 			<strong><font color="#CC0000" size="2" face="Arial, Helvetica, sans-serif">Anadir oferta</font></strong>
-			<form name="formulaire" method="post" action="admin_news_add_script.php" onSubmit="return controle();" enctype="multipart/form-data">				
+			<form name="formulaire" method="post" accept-charset="UTF-8" action="admin_news_add_script.php" onSubmit="return controle();" enctype="multipart/form-data">
+				<input type="hidden" name="admin_section" value="agencias">
 				<table width="100%" border="0" cellspacing="5" cellpadding="5" align="left">
 										
 					<tr>

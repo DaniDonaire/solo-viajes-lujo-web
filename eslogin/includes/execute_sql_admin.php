@@ -1,14 +1,15 @@
 <?php
 require_once __DIR__ . '/../../config/database.php';
 
-function seConnecter() {
+function seConnecter($flags = 0) {
 	$svlDb = svl_database_configuration('web');
 	$host_db = $svlDb['host'];
 	$db_name = $svlDb['database'];
 	$user_db = $svlDb['user'];
 	$pass_db = $svlDb['password'];
 	$socket = isset($svlDb['socket']) && $svlDb['socket'] !== '' ? $svlDb['socket'] : null;
-	$link = new mysqli($host_db, $user_db, $pass_db, $db_name, 0, $socket);
+	$link = mysqli_init();
+	$link->real_connect($host_db, $user_db, $pass_db, $db_name, 0, $socket, $flags);
 
 	if ($link->connect_error) {
 		die('Error de Conexiónnn (' . $link->connect_errno . ') '. $link->connect_error);

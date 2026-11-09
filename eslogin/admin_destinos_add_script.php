@@ -1,62 +1,27 @@
 <?php
-// Importation des fichiers
-include('includes/sql_admin.php');
-include('includes/execute_sql_admin.php');
+require __DIR__.'/includes/form-submit.php';
 
-$message ='Init';
-
-// Récupération des parametres
-$nombre_destino = $_POST["nombre_destino"];
-$pagina_destino = $_POST["nombre_destino"];
-
-//$pagina_destino = preg_replace("/[^a-zA-Z0-9\_\-]+/", "", $pagina_destino);
-//$imagen = $_POST["imagen"];
-//$imagenDestino = $_POST["nombre_destino"].".jpg";
-$imagenDestino = $pagina_destino.".jpg";
-$activo = $_POST["activo"];
-$activo = checkbox_bd($activo);
-
-setlocale(LC_CTYPE, 'es_ES');
-//$charset='ISO-8859-1'; // o 'UTF-8'
-$charset='UTF-8'; // o 'UTF-8'
-$pagina_destino = iconv($charset, 'ASCII//TRANSLIT', $pagina_destino);
-
-$pagina_destino = str_replace(' ','-',$pagina_destino);
-
-//$imagenDestino = str_replace(' ','-',$imagenDestino);
-$imagenDestino = $pagina_destino.".jpg";
-
-// Création de la requette
-$sql_insert_destino = sql_insert_destino($nombre_destino ,$pagina_destino, $imagenDestino, $activo);
-execute_sql($sql_insert_destino);
-
-$fileTmpPath = $_FILES['imagen']['tmp_name'];
-$uploadFileDir = '../destinos/img/';
-$dest_path = $uploadFileDir . $pagina_destino . '.jpg';
- 
-if(move_uploaded_file($fileTmpPath, $dest_path))
-{
-  $message ='Destino añadido e Imagen subida';
-}
-else
-{
-  $message = 'Destino añadido NO se ha podido subir la Imagen ';
-}
-
-// crear directorio y pagina
-$directorioDestino = "../destinos/".$pagina_destino;
-if(!is_dir($directorioDestino)) {
-	try {
-		mkdir($directorioDestino,0777);
-
-		$fitxerCopiar="../destinos/Africa/destinos-Africa.php";
-		$fitxerNew=$directorioDestino."/destinos-".$pagina_destino.".php";
-		copy($fitxerCopiar,$fitxerNew);
-
-	} catch (Exception $e) {
-		$message ='Error en la pagina de la nueva especialidad';
-	}
-}
+$message = svl_admin_form('admin_destinos_visul.php', static function () {
+    $name = svl_admin_text('nombre_destino', 'Nombre del destino', true);
+    $slug = svl_admin_slug($name);
+    $image = svl_admin_image(true);
+    $active = svl_admin_text('activo', 'Activo') === 'on' ? 1 : 0;
+    $root = dirname(__DIR__).'/destinos';
+    $filename = $slug.'.jpg';
+    svl_admin_save(
+        'INSERT INTO paises_svl (nombre_pais, nombre_pagina_pais, imagen_pais, activo) VALUES (?, ?, ?, ?)',
+        array($name, $slug, $filename, $active),
+        static function () use ($root, $slug, $filename, $image) {
+            $directory = $root.'/'.$slug;
+            svl_admin_directory($directory);
+            svl_admin_template($root.'/Africa/destinos-Africa.php', $directory.'/destinos-'.$slug.'.php');
+            if ($image !== null) {
+                svl_admin_store_image($image, $root.'/img/'.$filename);
+            }
+        }
+    );
+    return 'Destino creado correctamente.';
+});
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML>
@@ -76,7 +41,7 @@ if(!is_dir($directorioDestino)) {
  ?>
  		</td>
 		<td width="600">
-			<?php echo $message; ?>
+			<?php echo htmlspecialchars($message, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); ?>
 		</td>
 	</tr>
 </table>

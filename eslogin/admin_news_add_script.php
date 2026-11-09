@@ -1,67 +1,29 @@
 <?php
- try {
-	// Importation des fichiers
-	include('includes/sql_admin.php');
-	include('includes/execute_sql_admin.php');
+require __DIR__.'/includes/form-submit.php';
 
-	// Récupération des parametres
-	$titulo = $_POST["titulo"];
-		$titulo = addslashes($titulo);
-	$id_lanzamiento = $_POST["id_lanzamiento"];
-	$imagen = $_POST["imagen"];
-	$texto = $_POST["texto"];
-		$texto = addslashes($texto);
-	$textoAmp = $_POST["textoAmp"];
-	  $textoAmp = addslashes($textoAmp);
-	$orden = $_POST["orden"];
-	$visible = $_POST["visible"];
-	$descuento = $_POST["descuento"];
-	if ($descuento == '') $descuento=0;
-	$esbanner = $_POST["esbanner"];
-	$esbanner = checkbox_bd($esbanner);
-	$esbanner_eventos = $_POST["esbanner_eventos"];
-	$esbanner_eventos = checkbox_bd($esbanner_eventos);
-	$id_pais = $_POST["id_pais"];
-	$id_destino = $_POST["destinos"];
-				
-	// Taitement pour les Descripcions
-	//$texto = string_bd ($texto);
-	
-	if ($_FILES["imagen"]["name"] != "") {
-		$imagen = basename($_FILES["imagen"]["name"]);
-	}
-
-	$sql_insert_news = sql_insert_news($titulo, $id_lanzamiento, $imagen ,$texto,$textoAmp,$orden,$visible,$descuento,$esbanner,$id_pais,$esbanner_eventos,$id_destino);
-	execute_sql($sql_insert_news);
-	
-	$message = "news insertada sin imagen";
-	if ($_FILES["imagen"]["name"] != "") {
-
-		$uploadFileDir = "../newsletter/images/".$id_lanzamiento."/";
-		if(!is_dir($uploadFileDir)) {
-			try {
-				mkdir($uploadFileDir,0777);
-				//$message ='creado directorio '.$uploadFileDir;
-				
-			} catch (Exception $e) {
-				$message ='Error en la alta de la news';
-			}
-		}
-		
-		$fileTmpPath = $_FILES['imagen']['tmp_name'];
-		$dest_path = $uploadFileDir . $imagen;
-		if(move_uploaded_file($fileTmpPath, $dest_path))
-		{
-		  $message ='news insertada y Imagen subida correctamente';
-		}
-		else
-		{
-		  $message = 'news insertada. NO se ha podido subir la imagen al servidor';
-		}
-	}
-} catch (Exception $e) {
-	$message = "Excepción capturada : $e->getMessage()"; 
-}
+$list = ($_POST['admin_section'] ?? '') === 'agencias' ? 'admin_news_agencias_visul.php' : 'admin_news_visul.php';
+$message = svl_admin_form($list, static function () {
+    $launch = svl_admin_number('id_lanzamiento', 'Lanzamiento');
+    $image = svl_admin_image(true);
+    $visible = svl_admin_text('visible', 'Visible', true);
+    if (!in_array($visible, array('S', 'N'), true)) {
+        throw new SvlAdminFormError('Revisa el campo Â«VisibleÂ».');
+    }
+    $values = array(svl_admin_text('titulo', 'TÃ­tulo', true), $launch, $image['name'],
+        svl_admin_text('texto', 'Texto', true), svl_admin_text('textoAmp', 'Texto ampliado'),
+        svl_admin_number('orden', 'Orden', 0), $visible, svl_admin_number('descuento', 'Descuento', 0, 0),
+        svl_admin_text('esbanner', 'Banner') === 'on' ? 1 : 0, svl_admin_number('id_pais', 'PaÃ­s'),
+        svl_admin_text('esbanner_eventos', 'Banner de eventos') === 'on' ? 1 : 0,
+        svl_admin_number('destinos', 'Destino', 0, 0), $launch);
+    svl_admin_save(
+        'INSERT INTO newsletter (titulo, id_lanzamiento, imagen, texto, textoAmp, orden, visible, descuento, esbanner, id_pais_espe, esbanner_eventos, id_destino, id_lanzamiento_imagen) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+        $values,
+        $image === null ? null : static function () use ($image, $launch) {
+            svl_admin_store_image($image, dirname(__DIR__).'/newsletter/images/'.$launch.'/'.$image['name']);
+        }
+    );
+    return 'Oferta creada correctamente.';
+});
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML>
@@ -81,7 +43,7 @@
  ?>
  		</td>
 		<td width="600">
-			<?php echo $message; ?>
+			<?php echo htmlspecialchars($message, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); ?>
 		</td>
 	</tr>
 </table>

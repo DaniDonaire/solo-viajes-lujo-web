@@ -1,19 +1,18 @@
 <?php
-// Importation des fichiers
-include('includes/sql_admin.php');
-include('includes/execute_sql_admin.php');
-// Récupération des parametres
-$id_lanzamiento_1 = $_POST["id_lanzamiento_1"];
-$id_news = $_POST["id_news"];	
-	
-// Création de la requette
-$sql_insert_copiarNews = sql_insert_copiarNews($id_lanzamiento_1,$id_news);
-// Insert a la base de donnée
-$resul=execute_sql($sql_insert_copiarNews);
+require __DIR__.'/includes/form-submit.php';
 
-//echo $sql_insert_prepNews;
-
-$message = "News copiada!";
+$message = svl_admin_form('admin_copiarNews_add.php', static function () {
+    svl_admin_save(
+        'INSERT INTO newsletter (id_lanzamiento, titulo, imagen, texto, orden, visible, descuento, textoAmp, esbanner, id_pais_espe, id_lanzamiento_imagen, id_destino, esbanner_eventos)
+        SELECT l.id_lanzamiento, n.titulo, n.imagen, n.texto, n.orden, n.visible, n.descuento, n.textoAmp,
+            n.esbanner, n.id_pais_espe, n.id_lanzamiento_imagen, n.id_destino, n.esbanner_eventos
+        FROM newsletter n JOIN lanzamientos l ON l.id_lanzamiento=? WHERE n.id_news=?',
+        array(svl_admin_number('id_lanzamiento_1', 'Lanzamiento de destino'), svl_admin_number('id_news', 'Oferta')),
+        null,
+        true
+    );
+    return 'Oferta copiada correctamente.';
+});
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML>
@@ -33,7 +32,7 @@ $message = "News copiada!";
  ?>
  		</td>
 		<td width="600">
-			<?php echo $message; ?>
+			<?php echo htmlspecialchars($message, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); ?>
 		</td>
 	</tr>
 </table>

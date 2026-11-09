@@ -41,7 +41,7 @@ $result_all_paises = execute_sql($sql_all_paises);
 			return false;
 		  }
 		  else {
-			document.formulaire.submit();
+			return window.svlSubmitAdminForm(document.formulaire);
 		  }
 		}	
 	}
@@ -89,7 +89,7 @@ $result_all_paises = execute_sql($sql_all_paises);
 		</td>
 		<td align="center" width="600">
 			<strong><font color="#CC0000" size="2" face="Arial, Helvetica, sans-serif">Anadir Especialidad</font></strong>
-			<form name="formulaire" method="post" action="admin_especialidad_add_script.php" onSubmit="return controle();" enctype="multipart/form-data">				
+			<form name="formulaire" method="post" accept-charset="UTF-8" action="admin_especialidad_add_script.php" onSubmit="return controle();" enctype="multipart/form-data">
 				<table width="100%" border="0" cellspacing="5" cellpadding="5" align="left">
 															
 					<tr>

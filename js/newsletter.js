@@ -44,10 +44,9 @@
 
                 function finish(message, isError) {
                     form.removeAttribute('aria-busy');
-                    if (button) {
-                        button.disabled = false;
-                    }
+                    if (button) button.disabled = false;
                     showMessage(form, message, isError);
+                    if (isError) window.alert(message);
                 }
 
                 request.onload = function () {
@@ -55,18 +54,18 @@
                     try {
                         result = JSON.parse(request.responseText);
                     } catch (error) {
-                        finish('No hemos podido confirmar el registro. Inténtalo de nuevo.', true);
+                        finish('El servidor no ha confirmado si se ha guardado la suscripción.', true);
                         return;
                     }
-                    if (request.status >= 200 && request.status < 300 && result.success) {
+                    if (request.status >= 200 && request.status < 300 && result && result.success === true && result.saved === true) {
                         finish(result.message || 'Tu suscripción ha quedado guardada.', false);
                         form.reset();
                     } else {
-                        finish(result.message || 'No hemos podido guardar la suscripción.', true);
+                        finish(result && typeof result.message === 'string' ? result.message : 'No hemos podido confirmar la suscripción.', true);
                     }
                 };
                 request.onerror = request.ontimeout = function () {
-                    finish('No hemos podido confirmar el registro. Comprueba tu conexión e inténtalo de nuevo.', true);
+                    finish('No hemos podido confirmar el registro. Comprueba tu conexión antes de volver a enviarlo.', true);
                 };
                 request.send(new FormData(form));
             });

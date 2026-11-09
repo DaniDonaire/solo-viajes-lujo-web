@@ -31,9 +31,10 @@
             method: 'POST', body: new FormData(form), credentials: 'same-origin',
             headers: { 'Accept': 'application/json' }
         }).then(function (response) {
-            return response.json().then(function (data) {
-                if (!response.ok || data.success !== true || data.saved !== true) {
-                    throw new Error(data.message || 'No hemos podido guardar tu solicitud. Revisa los datos e inténtalo de nuevo.');
+            return response.json().catch(function () { return null; }).then(function (data) {
+                if (!response.ok || !data || data.success !== true || data.saved !== true) {
+                    throw new Error(data && typeof data.message === 'string' ? data.message
+                        : 'El servidor no ha confirmado si se ha guardado la solicitud. Puedes contactar con nosotros antes de repetir el envío.');
                 }
                 saved = true;
                 form.hidden = true;
@@ -57,6 +58,7 @@
             result.classList.add('is-error');
             result.hidden = false;
             result.focus();
+            window.alert(result.textContent);
             if (needsCaptcha && window.grecaptcha) {
                 window.grecaptcha.reset();
                 captchaReady = false;

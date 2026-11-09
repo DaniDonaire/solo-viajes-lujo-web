@@ -1,82 +1,29 @@
 <?php
-// Importation des fichiers
-include('includes/sql_admin.php');
-include('includes/execute_sql_admin.php');
+require __DIR__.'/includes/form-submit.php';
 
-$message ='Init';
-
-$nombre_especialidad = $_POST["nombre_especialidad"];
-$nombre_pagina=$nombre_especialidad;
-//$nombre_pagina = preg_replace("/[^a-zA-Z0-9\_\-]+/", "", $nombre_pagina);
-//$nombre_pagina = preg_replace("/^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/", "", $nombre_pagina);
-//$nombre_pagina = preg_replace("/[^a-zA-Z0-9\_\-]+/", "", $nombre_especialidad);
-
-setlocale(LC_CTYPE, 'es_ES');
-//$charset='ISO-8859-1'; // o 'UTF-8'
-$charset='UTF-8'; // o 'UTF-8'
-$nombre_pagina = iconv($charset, 'ASCII//TRANSLIT', $nombre_pagina);
-
-$id_pais = $_POST["id_pais"];
-$imagenDestino=null;
-$activo = $_POST["activo"];
-$activo = checkbox_bd($activo);
-
-$nombre_pagina = str_replace(' ','-',$nombre_pagina);
-
-if ($_FILES["imagen"]["name"] != "") {
-	$imagenDestino = $nombre_pagina.".jpg";
-}
-
-$sql_insert_especialidad = sql_insert_especialidad($nombre_especialidad,$nombre_pagina, $id_pais , $imagenDestino, $activo);
-execute_sql($sql_insert_especialidad);
-
-$message = "Especialidad insertada sin imagen";
-if ($_FILES["imagen"]["name"] != "") {
-
-	$fileTmpPath = $_FILES['imagen']['tmp_name'];
-	$uploadFileDir = "../viajes/".$nombre_pagina;
-	$uploadFileDir2 = "../viajes/".$nombre_pagina."/img/";
-
-	if(!is_dir($uploadFileDir)) {
-		try {
-			mkdir($uploadFileDir,0777);
-			
-			$uploadFileDir2 = "../viajes/".$nombre_pagina."/img/";
-			$fitxerCopiar="../viajes/Alaska/viajes-Alaska.php";
-			$fitxerCopiar2="../viajes/Alaska/viaje-Alaska.php";
-			$fitxerNew=$uploadFileDir."/viajes-".$nombre_pagina.".php";
-			$fitxerNew2=$uploadFileDir."/viaje-".$nombre_pagina.".php";
-			copy($fitxerCopiar,$fitxerNew);
-			copy($fitxerCopiar2,$fitxerNew2);
-			if(!is_dir($uploadFileDir2)) {
-				mkdir($uploadFileDir2,0777);
-			}
-		} catch (Exception $e) {
-			$message ='Error en la alta de la especialidad';
-		}
-	}
-	else {
-		//$message ='creado directorio '.$uploadFileDir;
-		if(!is_dir($uploadFileDir2)) {
-			try {
-				mkdir($uploadFileDir2,0777);
-			} catch (Exception $e) {
-				$message ='Error en la alta de la especialidad';
-			}
-		}
-	}
-	
-	$dest_path = $uploadFileDir2 . $nombre_pagina . '.jpg';
-	if(move_uploaded_file($fileTmpPath, $dest_path))
-	{
-	  $message ='Especialidad insertada y Imagen subida correctamente';
-	}
-	else
-	{
-	  $message = 'Especialidad insertada. NO se ha podido subir la imagen al servidor';
-	}
-}
-
+$message = svl_admin_form('admin_especialidad_visul.php?seccion=especialidades', static function () {
+    $name = svl_admin_text('nombre_especialidad', 'Nombre de la especialidad', true);
+    $slug = svl_admin_slug($name);
+    $country = svl_admin_number('id_pais', 'Destino');
+    $image = svl_admin_image();
+    $active = svl_admin_text('activo', 'Activo') === 'on' ? 1 : 0;
+    $root = dirname(__DIR__).'/viajes';
+    $filename = $image === null ? '' : $slug.'.jpg';
+    svl_admin_save(
+        'INSERT INTO destinos_svl (id_pais, destino, nombre_pagina_destino, imagen_destino, activo) VALUES (?, ?, ?, ?, ?)',
+        array($country, $name, $slug, $filename, $active),
+        static function () use ($root, $slug, $filename, $image) {
+            $directory = $root.'/'.$slug;
+            svl_admin_directory($directory);
+            svl_admin_template($root.'/Alaska/viajes-Alaska.php', $directory.'/viajes-'.$slug.'.php');
+            svl_admin_template($root.'/Alaska/viaje-Alaska.php', $directory.'/viaje-'.$slug.'.php');
+            if ($image !== null) {
+                svl_admin_store_image($image, $directory.'/img/'.$filename);
+            }
+        }
+    );
+    return 'Especialidad creada correctamente.';
+});
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML>
@@ -96,7 +43,7 @@ if ($_FILES["imagen"]["name"] != "") {
  ?>
  		</td>
 		<td width="600">
-			<?php echo $message; ?>
+			<?php echo htmlspecialchars($message, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); ?>
 			<br>
 		</td>
 	</tr>

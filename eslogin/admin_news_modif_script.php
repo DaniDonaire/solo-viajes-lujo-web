@@ -1,70 +1,30 @@
 <?php
- try {
-	// Importation des fichiers
-	include('includes/sql_admin.php');
-	include('includes/execute_sql_admin.php');
+require __DIR__.'/includes/form-submit.php';
 
-	// Récupération des parametres
-	$id_new= $_POST["form_id_new"];
-	$titulo = $_POST["titulo"];
-		$titulo = addslashes($titulo);
-	$id_lanzamiento = $_POST["id_lanzamiento"];
-	$imagen = $_POST["imagen"];
-	$imagen_ant = $_POST["imagen_ant"];
-	$texto = $_POST["texto"];
-		$texto = addslashes($texto);
-	$textoAmp = $_POST[textoAmp];
-	  $textoAmp = addslashes($textoAmp);
-	$orden = $_POST["orden"];
-	$visible = $_POST["visible"];
-	$descuento = $_POST["descuento"];
-	$esbanner = $_POST["esbanner"];
-	$id_pais = $_POST["id_pais"];
-	//echo $esbanner;
-	$esbanner = checkbox_bd($esbanner);
-	//echo $esbanner;
-	$esbanner_eventos = $_POST["esbanner_eventos"];
-	$esbanner_eventos = checkbox_bd($esbanner_eventos);
-	$id_lanzamiento_imagen = $_POST["id_lanzamiento_imagen"];
-
-	// Taitement pour les Descripcions
-	//$form_descripcion = string_bd ($form_descripcion);
-	//$texto = string_bd ($texto);
-	//$textoAmp = string_bd ($textoAmp);
-	$id_destino = $_POST["destinos"];
-
-	// Création de la requette
-	if ($_FILES["imagen"]["name"] != "") {
-		$imagenMasDir = basename($_FILES["imagen"]["name"]);
-		$sql_update_news = sql_update_news($id_new, $titulo, $id_lanzamiento, $imagenMasDir , $texto,$textoAmp,$orden,$visible,$descuento,$esbanner,$id_pais,$esbanner_eventos,$id_destino, $id_lanzamiento);
-	} else {
-			$sql_update_news = sql_update_news($id_new, $titulo, $id_lanzamiento, $imagen_ant, $texto,$textoAmp,$orden,$visible,$descuento,$esbanner,$id_pais,$esbanner_eventos,$id_destino,$id_lanzamiento_imagen);
-	}
-
-	//echo $sql_update_news;
-	// Insert a la base de donnée
-	execute_sql($sql_update_news);
-
-	// upload imatge
-	$message = "news modificada sin imagen";
-	if ($_FILES["imagen"]["name"] != "") {
-
-		$uploadFileDir = "../newsletter/images/".$id_lanzamiento."/";
-		$fileTmpPath = $_FILES['imagen']['tmp_name'];
-		$dest_path = $uploadFileDir . $imagenMasDir;
-		if(move_uploaded_file($fileTmpPath, $dest_path))
-		{
-		  $message ='news modificada e Imagen subida correctamente';
-		}
-		else
-		{
-		  $message = 'news modificada. NO se ha podido subir la imagen al servidor';
-		}
-	}
-// fi upload imatge
-} catch (Exception $e) {
-	$message = "Excepción capturada : ". $e;
-}
+$list = ($_POST['admin_section'] ?? '') === 'agencias' ? 'admin_news_agencias_visul.php' : 'admin_news_visul.php';
+$message = svl_admin_form($list, static function () {
+    $launch = svl_admin_number('id_lanzamiento', 'Lanzamiento');
+    $image = svl_admin_image(false);
+    $visible = svl_admin_text('visible', 'Visible', true);
+    if (!in_array($visible, array('S', 'N'), true)) {
+        throw new SvlAdminFormError('Revisa el campo Â«VisibleÂ».');
+    }
+    $values = array(svl_admin_text('titulo', 'TÃ­tulo', true), $launch, $image['name'] ?? null,
+        svl_admin_text('texto', 'Texto', true), svl_admin_text('textoAmp', 'Texto ampliado'),
+        svl_admin_number('orden', 'Orden', 0), $visible, svl_admin_number('descuento', 'Descuento', 0, 0),
+        svl_admin_text('esbanner', 'Banner') === 'on' ? 1 : 0, svl_admin_number('id_pais', 'PaÃ­s'),
+        svl_admin_text('esbanner_eventos', 'Banner de eventos') === 'on' ? 1 : 0,
+        isset($_POST['destinos']) ? svl_admin_number('destinos', 'Destino', 0) : null, $image === null ? null : $launch);
+    $values[] = svl_admin_number('form_id_new', 'Oferta');
+    svl_admin_save(
+        'UPDATE newsletter SET titulo=?, id_lanzamiento=?, imagen=COALESCE(?, imagen), texto=?, textoAmp=?, orden=?, visible=?, descuento=?, esbanner=?, id_pais_espe=?, esbanner_eventos=?, id_destino=COALESCE(?, id_destino), id_lanzamiento_imagen=COALESCE(?, id_lanzamiento_imagen) WHERE id_news=?',
+        $values,
+        $image === null ? null : static function () use ($image, $launch) {
+            svl_admin_store_image($image, dirname(__DIR__).'/newsletter/images/'.$launch.'/'.$image['name']);
+        }
+    );
+    return 'Oferta modificada correctamente.';
+});
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML>
@@ -84,7 +44,7 @@
  ?>
  		</td>
 		<td width="600">
-			<?php echo $message; ?>
+			<?php echo htmlspecialchars($message, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); ?>
 		</td>
 	</tr>
 </table>

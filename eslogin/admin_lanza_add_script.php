@@ -1,30 +1,18 @@
 <?php
-// Importation des fichiers
-include('includes/sql_admin.php');
-include('includes/execute_sql_admin.php');
+require __DIR__.'/includes/form-submit.php';
 
-// Récupération des parametres
-$nombre = $_POST["nombre"];
-
-$texto_click = $_POST["texto_click"];
-$logo = $_POST["logo_cab"];
-$texto_cabecera = $_POST["texto_cabecera"];
-$logo_pie_wrld = $_POST["logo_pie_wrld"];
-$logo_pie_svl = $_POST["logo_pie_svl"];
-$logo_pie_eve = $_POST["logo_pie_eve"];
-$logo_pie_cru = $_POST["logo_pie_cru"];
-
-$logo_pie_wrld = checkbox_bd($logo_pie_wrld);
-$logo_pie_svl = checkbox_bd($logo_pie_svl);
-$logo_pie_eve = checkbox_bd($logo_pie_eve);
-$logo_pie_cru = checkbox_bd($logo_pie_cru);
-
-// Création de la requette
-$sql_insert_lanza = sql_insert_lanza($nombre,$texto_click,$logo,$texto_cabecera,$logo_pie_wrld,$logo_pie_svl,$logo_pie_eve,$logo_pie_cru);
-// Insert a la base de donnée
-execute_sql($sql_insert_lanza);
-
-$message = "Creado el lanzamiento !";
+$message = svl_admin_form('admin_lanza_visul.php', static function () {
+    svl_admin_save(
+        'INSERT INTO lanzamientos (nombre, texto_click, logo, texto_cabecera, logo_pie_wrld, logo_pie_svl, logo_pie_eve, logo_pie_cru) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+        array(svl_admin_text('nombre', 'Nombre', true), svl_admin_text('texto_click', 'Texto del enlace'),
+            svl_admin_text('logo_cab', 'Logo'), svl_admin_text('texto_cabecera', 'Texto de cabecera'),
+            svl_admin_text('logo_pie_wrld', 'Logo WorldCruceros') === 'on' ? 1 : 0,
+            svl_admin_text('logo_pie_svl', 'Logo Solo Viajes') === 'on' ? 1 : 0,
+            svl_admin_text('logo_pie_eve', 'Logo Eventos') === 'on' ? 1 : 0,
+            svl_admin_text('logo_pie_cru', 'Logo Cruceros') === 'on' ? 1 : 0)
+    );
+    return 'Lanzamiento creado correctamente.';
+});
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML>
@@ -44,7 +32,7 @@ $message = "Creado el lanzamiento !";
  ?>
  		</td>
 		<td width="600">
-			<?php echo $message; ?>
+			<?php echo htmlspecialchars($message, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); ?>
 		</td>
 	</tr>
 </table>

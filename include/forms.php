@@ -2,6 +2,7 @@
 /** Public contact/newsletter intake. Commit data before attempting email delivery. */
 require_once __DIR__.'/../config/database.php';
 require_once __DIR__.'/form-mail.php';
+require_once __DIR__.'/form-error.php';
 
 function svl_forms_connection()
 {
@@ -297,15 +298,15 @@ function svl_form_fail(Throwable $error)
     $message = $validation ? $error->getMessage() : 'No hemos podido guardar los datos. Inténtalo de nuevo o contacta con nosotros.';
     if (!$validation) {
         error_log('SVL form could not be saved ('.get_class($error).', code '.(int) $error->getCode().').');
+        if ($error instanceof mysqli_sql_exception && in_array($error->getCode(), array(1044, 1045, 2002, 2003), true)) {
+            $message = 'No hemos podido conectar con el servicio que guarda el formulario. Conserva tus datos e inténtalo más tarde.';
+        }
     }
     if (svl_form_wants_json()) {
         header('Content-Type: application/json; charset=UTF-8');
         echo json_encode(array('success' => false, 'saved' => false, 'message' => $message), JSON_UNESCAPED_UNICODE);
     } else {
-        header('Content-Type: text/html; charset=UTF-8');
-        echo '<!doctype html><html lang="es"><meta charset="UTF-8"><title>Revisar formulario</title>'
-            .'<h1>No se ha guardado el formulario</h1><p>'.svl_form_mail_escape($message).'</p>'
-            .'<p><a href="contacto.php">Volver a contacto</a></p></html>';
+        svl_render_form_error($message, $validation ? 422 : 503, 'contacto.php');
     }
     exit;
 }

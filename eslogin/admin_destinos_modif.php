@@ -59,7 +59,7 @@ $activo = $RS['activo'];
 			return false;
 		}
 		// Si tout les test sont OK, envoye du formulaire au fichier 'admin_banners_add_script.php'
-		document.formulaire.submit();
+		return window.svlSubmitAdminForm(document.formulaire);
 	}
 
 	
@@ -80,7 +80,7 @@ $activo = $RS['activo'];
 		</td>
 		<td align="center" width="600">
 			<strong><font color="#CC0000" size="2" face="Arial, Helvetica, sans-serif">Modificar Destino</font></strong>
-			<form name="formulaire" method="post" action="admin_destinos_modif_script.php" onSubmit="return controle();" enctype="multipart/form-data">
+			<form name="formulaire" method="post" accept-charset="UTF-8" action="admin_destinos_modif_script.php" onSubmit="return controle();" enctype="multipart/form-data">
 				<input type="hidden" name="id_pais" value="<? echo "$id_pais"; ?>">
 				<input type="hidden" name="imagen_ant" value="<? echo "$imagen"; ?>">
 				<table width="100%" border="0" cellspacing="5" cellpadding="5" align="left">

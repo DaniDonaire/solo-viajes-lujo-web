@@ -25,15 +25,8 @@ $id_lanzamiento_2 = filter_input(INPUT_POST, 'id_lanzamiento_2', FILTER_VALIDATE
 			return false;
 		}
 
-		if (document.formulaire.nombre.value == "")
-		{
-			alert("informar para quien es !");
-			document.formulaire.nombre.focus();
-			return false;
-		}
-		
 		// Si tout les test sont OK, envoye du formulaire au fichier 'admin_banners_add_script.php'
-		document.formulaire.submit();
+		return window.svlSubmitAdminForm(document.formulaire);
 	}
 	function recargar()
 	{
@@ -73,7 +66,7 @@ $id_lanzamiento_2 = filter_input(INPUT_POST, 'id_lanzamiento_2', FILTER_VALIDATE
 		</td>
 		<td align="center" width="600">
 			<strong><font color="#CC0000" size="2" face="Arial, Helvetica, sans-serif">Copiar News</font></strong>
-			<form name="formulaire" method="post" action="admin_copiarNews_add_script.php" onSubmit="return controle();" enctype="multipart/form-data">				
+			<form name="formulaire" method="post" accept-charset="UTF-8" action="admin_copiarNews_add_script.php" onSubmit="return controle();" enctype="multipart/form-data">
 				<table width="100%" border="0" cellspacing="5" cellpadding="5" align="left">
 
 					<tr>

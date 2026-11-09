@@ -62,7 +62,7 @@ $result_all_lanzamientos = execute_sql($sql_all_lanzamientos);
 		}
 
 		// Si tout les test sont OK, envoye du formulaire au fichier 'admin_banners_modif_script.php'
-		document.formulaire.submit();
+		return window.svlSubmitAdminForm(document.formulaire);
 	}
 
 </script>
@@ -87,7 +87,7 @@ $result_all_lanzamientos = execute_sql($sql_all_lanzamientos);
 				<strong><font color="#CC0000" size="2" face="Arial, Helvetica, sans-serif">Modificar titulo lanzamiento</font></strong>
 			</td>
 			</tr>
-			<form name="formulaire" method="post" action="admin_lanza_modif_script.php" onSubmit="return controle();" enctype="multipart/form-data">
+			<form name="formulaire" method="post" accept-charset="UTF-8" action="admin_lanza_modif_script.php" onSubmit="return controle();" enctype="multipart/form-data">
 				<input type="hidden" name="id_lanza" value="<? echo "$id_lanza"; ?>">
 				
 											

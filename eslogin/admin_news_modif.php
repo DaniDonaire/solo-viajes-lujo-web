@@ -116,7 +116,7 @@ $result_destinos = execute_sql($sql_destinos);
 		}
 
 		// Si tout les test sont OK, envoye du formulaire au fichier 'admin_banners_modif_script.php'
-		document.formulaire.submit();
+		return window.svlSubmitAdminForm(document.formulaire);
 	}
 
 		function buscarDestinos(){
@@ -167,7 +167,7 @@ $result_destinos = execute_sql($sql_destinos);
 		</td>
 		<td align="center" width="600">
 			<strong><font color="#CC0000" size="2" face="Arial, Helvetica, sans-serif">Modificar la oferta</font></strong>
-			<form name="formulaire" method="post" action="admin_news_modif_script.php" onSubmit="return controle();" enctype="multipart/form-data">
+			<form name="formulaire" method="post" accept-charset="UTF-8" action="admin_news_modif_script.php" onSubmit="return controle();" enctype="multipart/form-data">
 				<input type="hidden" name="form_id_new" value="<? echo "$id_new"; ?>">
 				<input type="hidden" name="imagen_ant" value="<? echo "$imagen"; ?>">
 				<input type="hidden" name="id_destino_2" value="">

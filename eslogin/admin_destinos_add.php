@@ -32,7 +32,7 @@ include('includes/execute_sql_admin.php');
 			return false;
 		  }
 		  else {
-			document.formulaire.submit();
+			return window.svlSubmitAdminForm(document.formulaire);
 		  }
 		}		
 	}
@@ -79,7 +79,7 @@ include('includes/execute_sql_admin.php');
 		</td>
 		<td align="center" width="600">
 			<strong><font color="#CC0000" size="2" face="Arial, Helvetica, sans-serif">Anadir Destino</font></strong>
-			<form name="formulaire" method="post" action="admin_destinos_add_script.php" onSubmit="return controle();" enctype="multipart/form-data">				
+			<form name="formulaire" method="post" accept-charset="UTF-8" action="admin_destinos_add_script.php" onSubmit="return controle();" enctype="multipart/form-data">
 				<table width="100%" border="0" cellspacing="5" cellpadding="5" align="left">
 															
 					<tr>
