@@ -24,7 +24,7 @@ if ($id_lanzamiento_selec === 0){
 </HEAD>
 <body>
 <table width="800px"  border="0" cellspacing="0" cellpadding="0">
-<form name="formulaire" method="post" action="admin_news_visul.php" enctype="multipart/form-data">
+<form name="formulaire" method="post" action="admin_news_agencias_visul.php" enctype="multipart/form-data">
 	<tr>
 		<td colspan="2"><img src="top.jpg" width="800" height="120" ></td>
 	</tr>
@@ -193,7 +193,7 @@ if ($id_lanzamiento_selec === 0){
 						<table cellpadding="0" cellspacing="0" width="100%">
 							<tr>
 								<td width="40%">&nbsp;</td>
-								<td width="30%" align="center"><a href="admin_news_modif.php?id=<? echo "$id_new"; ?>">Visualizar</a></td>
+								<td width="30%" align="center"><a href="admin_news_agencias_modif.php?id=<? echo "$id_new"; ?>">Visualizar</a></td>
 								<td width="30%" align="center"><a href="admin_news_supp.php?id=<? echo "$id_new"; ?>">Quitar</a></td>
 							</tr>
 						</table>

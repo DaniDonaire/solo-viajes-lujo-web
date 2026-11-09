@@ -68,7 +68,7 @@ $result_all_paises = execute_sql($sql_all_paises);
 		}
 
 
-		if (document.formulaire.imagen.value == "" && document.formulaire.imagen_ant.value == ""))
+		if (document.formulaire.imagen.value == "" && document.formulaire.imagen_ant.value == "")
 		{
 	  		alert("informar imagen !");
 			document.formulaire.imagen.focus();

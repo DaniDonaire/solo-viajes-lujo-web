@@ -1,31 +1,16 @@
 <?php
-include('includes/sql_admin.php');
-include('includes/execute_sql_admin.php');
-
-$arr = array();
-
-if ($_POST["id_pais"] != ""){
-	$id_pais = $_POST["id_pais"];
-}
-else {
-	$id_pais = '0';
+header('Content-Type: application/json; charset=UTF-8');
+$valor = $_POST['id_pais'] ?? '';
+$idPais = filter_var($valor === '' ? '0' : $valor, FILTER_VALIDATE_INT, array('options' => array('min_range' => 0)));
+if ($idPais === false) {
+    echo '[]';
+    return;
 }
 
- if ($id_pais != '0'){
-	$sql = "select id_destino,destino from destinos_svl where id_pais = '$id_pais'";
- }
- else {
-	$sql = "select id_destino,destino from destinos_svl";
- }
+require_once __DIR__.'/includes/execute_sql_admin.php';
 
-$result = execute_sql($sql);
-	
-	while( $RS = mysqli_fetch_array($result) ) {
-		$arr[] = $RS;
-	}		
-
-echo json_encode($arr);
-?>
-
-
-
+$connection = seConnecter();
+$statement = $connection->prepare('SELECT CAST(id_destino AS CHAR) AS id_destino, destino FROM destinos_svl WHERE ? = 0 OR id_pais = ?');
+$statement->bind_param('ii', $idPais, $idPais);
+$statement->execute();
+echo json_encode($statement->get_result()->fetch_all(MYSQLI_BOTH), JSON_INVALID_UTF8_SUBSTITUTE);

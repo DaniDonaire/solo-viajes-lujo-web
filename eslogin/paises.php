@@ -1,29 +1,15 @@
 <?php
-include('includes/sql_admin.php');
-include('includes/execute_sql_admin.php');
-
-$arr = array();
-
-if ($_POST["nombre_pais"] != ""){
-	$nombre_pais = $_POST["nombre_pais"];
+header('Content-Type: application/json; charset=UTF-8');
+$nombre = $_POST['nombre_pais'] ?? '';
+if (!is_string($nombre) || $nombre === '' || $nombre === '0') {
+    echo '[]';
+    return;
 }
 
+require_once __DIR__.'/includes/execute_sql_admin.php';
 
- if ($nombre_pais != '0'){
-	$sql = "select id_pais,nombre_pais from paises_svl where nombre_pais = '$nombre_pais'";
- }
- else {
-	$sql = "select id_pais,nombre_pais from destinos_svl";
- }
-
-$result = execute_sql($sql);
-	
-	while( $RS = mysqli_fetch_array($result) ) {
-		$arr[] = $RS;
-	}		
-
-echo json_encode($arr);
-?>
-
-
-
+$connection = seConnecter();
+$statement = $connection->prepare('SELECT CAST(id_pais AS CHAR) AS id_pais, nombre_pais FROM paises_svl WHERE nombre_pais = ?');
+$statement->bind_param('s', $nombre);
+$statement->execute();
+echo json_encode($statement->get_result()->fetch_all(MYSQLI_BOTH), JSON_INVALID_UTF8_SUBSTITUTE);

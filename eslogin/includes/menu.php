@@ -56,7 +56,7 @@ $svlNavIsActive = static function (array $link) use ($svlNavPage, $svlNavView, $
     <a class="svl-admin-brand" href="admin_especialidad_visul.php">
         <span>Solo Viajes de Lujo<small>Administraci&oacute;n</small></span>
     </a>
-    <?php if ($svlNavLocal): ?><span class="svl-admin-local">Local</span><?php endif; ?>
+    <?php if ($svlNavLocal): ?><span class="svl-admin-local">Local &middot; Los cambios del cat&aacute;logo est&aacute;n desactivados</span><?php endif; ?>
     <details class="svl-admin-navigation" open>
         <summary>Men&uacute; del administrador</summary>
         <nav class="svl-admin-nav-content" aria-label="Navegaci&oacute;n principal">

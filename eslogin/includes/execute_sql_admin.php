@@ -26,27 +26,33 @@ function seDeconnecter($link) {
 }
 
 function execute_sql($sql) {
- 
- try {
-  $nom="log/logg-".date("Y-m-d").".log";
-  //$ddf = fopen('error.log','a'); 
-  $ddf = fopen($nom,'a'); 
-  fwrite($ddf,"[".date("r")."] Sql : $sql \r\n"); 
-
-	$mysqli = seConnecter();
-	$query = $mysqli -> query ($sql);
-	
-	seDeconnecter($mysqli);
-
-  //$ddf = fopen('error.log','a'); 
-  fwrite($ddf,mysqli_num_rows($query) ); 
-  //fwrite($ddf,"[".date("r")."] Result: $sql \r\n"); 
-
-	return $query;
-} catch (Exception $e) {
-	fwrite($ddf,"[".date("r")."] Excepción capturada : $e->getMessage() \r\n"); 
-}
-  //fclose($ddf); 
+	$log = false;
+	if (svl_configuration()['env'] !== 'local') {
+		$log = @fopen(__DIR__.'/../log/logg-'.date('Y-m-d').'.log', 'a');
+	}
+	$connection = null;
+	try {
+		if ($log !== false) {
+			@fwrite($log, '['.date('r')."] Sql : $sql\r\n");
+		}
+		$connection = seConnecter();
+		$result = $connection->query($sql);
+		if ($log !== false && $result !== false) {
+			$rows = $result instanceof mysqli_result ? $result->num_rows : $connection->affected_rows;
+			@fwrite($log, $rows."\r\n");
+		}
+		return $result;
+	} catch (mysqli_sql_exception $exception) {
+		error_log('SVL admin query failed (code '.(int) $exception->getCode().').');
+		return false;
+	} finally {
+		if ($connection instanceof mysqli) {
+			seDeconnecter($connection);
+		}
+		if ($log !== false) {
+			fclose($log);
+		}
+	}
 }
 
 function num_rows($result) {

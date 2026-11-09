@@ -37,7 +37,15 @@ $adminPages = array('index.php', 'formularios.php', 'admin_destinos_add.php',
     'admin_news_visul.php', 'admin_news_modif.php', 'admin_news_agencias_add.php',
     'admin_news_agencias_visul.php', 'admin_news_agencias_modif.php', 'admin_lanza_add.php',
     'admin_lanza_visul.php', 'admin_lanza_modif.php', 'admin_copiarNews_add.php');
-$adminPage = in_array($path, array_map(function ($page) { return '/eslogin/'.$page; }, $adminPages), true);
+// The legacy catalogue forms use POST for these read-only JSON lookups.
+$adminLookup = in_array($path, array('/eslogin/paises.php', '/eslogin/destinos.php',
+    '/eslogin/especialidades.php'), true);
+if ($adminLookup && $method !== 'POST') {
+    http_response_code(405);
+    header('Allow: POST');
+    exit('This lookup requires POST.');
+}
+$adminPage = $adminLookup || in_array($path, array_map(function ($page) { return '/eslogin/'.$page; }, $adminPages), true);
 $adminAsset = preg_match('~^/eslogin/(?:assets|js|jquery)/[^?]+\.(?:css|js|png|gif|jpg|jpeg|svg|woff2?|ttf|eot)$~i', $path)
     || $path === '/eslogin/top.jpg';
 // These existing POST actions only change catalogue filters, never records.
@@ -45,7 +53,7 @@ $adminFilter = in_array($path, array('/eslogin/admin_especialidad_visul.php',
     '/eslogin/admin_news_visul.php', '/eslogin/admin_news_agencias_visul.php',
     '/eslogin/admin_copiarNews_add.php'), true);
 if (!in_array($method, array('GET', 'HEAD'), true)
-    && !($method === 'POST' && ($formEndpoint || $adminFilter))) {
+    && !($method === 'POST' && ($formEndpoint || $adminFilter || $adminLookup))) {
     http_response_code(405);
     header('Allow: GET, HEAD');
     exit('This route is read-only in the local preview.');

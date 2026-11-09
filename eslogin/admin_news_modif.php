@@ -170,7 +170,7 @@ $result_destinos = execute_sql($sql_destinos);
 			<form name="formulaire" method="post" action="admin_news_modif_script.php" onSubmit="return controle();" enctype="multipart/form-data">
 				<input type="hidden" name="form_id_new" value="<? echo "$id_new"; ?>">
 				<input type="hidden" name="imagen_ant" value="<? echo "$imagen"; ?>">
-				<input type="hidden" name="id_destino_2" value="<? echo "$id_destino_2"; ?>">
+				<input type="hidden" name="id_destino_2" value="">
 				<input type="hidden" name="id_lanzamiento_imagen" value="<? echo "$id_lanzamiento_imagen"; ?>">
 				<table width="100%" border="0" cellspacing="5" cellpadding="5" align="left">
 				

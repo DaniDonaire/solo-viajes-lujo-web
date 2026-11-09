@@ -258,7 +258,7 @@ include('includes/execute_sql_admin.php');
 							<font color="#000099" size="2" face="Arial, Helvetica, sans-serif">orden :</font>
 							</strong>
 							<br>
-							<input name="orden" type="text" size="2" maxlength="2" value="<? echo "$orden"; ?>">
+							<input name="orden" type="text" size="2" maxlength="2">
 						</td>
 						
 						<td>
@@ -279,7 +279,7 @@ include('includes/execute_sql_admin.php');
 							</strong>
 
 							<br>
-								<input name="descuento" type="text" size="2" maxlength="2" value="<? echo "$descuento"; ?>">
+								<input name="descuento" type="text" size="2" maxlength="2">
       				</tr>	
 					
 					<tr>
