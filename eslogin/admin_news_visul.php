@@ -1,20 +1,6 @@
 <?php
-// Importation des fichiers
-include('includes/sql_admin.php');
-include('includes/execute_sql_admin.php');
-
-$id_lanzamiento_selec = filter_input(INPUT_POST, 'id_lanzamiento', FILTER_VALIDATE_INT, array('options' => array('min_range' => 1))) ?: 0;
-//echo 'a : '.$id_lanzamiento_selec;
-if ($id_lanzamiento_selec === 0){
-	//echo 'b : ';
-	$sql_last_lanzamiento = sql_last_lanzamiento();
-	//echo $sql_last_lanzamiento;
-	$last_lanzamiento = execute_sql($sql_last_lanzamiento);
-	$RS = $last_lanzamiento instanceof mysqli_result ? mysqli_fetch_array($last_lanzamiento) : array();
-	$id_lanzamiento_selec = (int) ($RS['max_id_lanzamiento'] ?? 0);
-	//echo 'c : '.$id_lanzamiento_selec;
-}
-// Requette pour prendre tout les armateurs
+$listPath = 'admin_news_visul.php';
+require __DIR__.'/includes/news-list.php';
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML>
@@ -24,7 +10,6 @@ if ($id_lanzamiento_selec === 0){
 </HEAD>
 <body>
 <table width="800px"  border="0" cellspacing="0" cellpadding="0">
-<form name="formulaire" method="post" action="admin_news_visul.php" enctype="multipart/form-data">
 	<tr>
 		<td colspan="2"><img src="top.jpg" width="800" height="120" ></td>
 	</tr>
@@ -32,52 +17,29 @@ if ($id_lanzamiento_selec === 0){
 		<td valign="top" width="200">
 <?php
 		include("includes/menu.php");
-		$sql_all_lanzamientos = sql_all_lanzamientos();
-		$result_all_lanzamientos = execute_sql($sql_all_lanzamientos);	
-
  ?>
  		</td>
 		<td width="600">
+            <form class="svl-list-filter" method="get" action="<?= svl_list_escape($listPath) ?>">
+                <label>Lanzamiento
+                    <select name="id_lanzamiento">
+                        <?php foreach ($launches as $launch): ?>
+                            <option value="<?= (int) $launch['id_lanzamiento'] ?>"<?= $selectedLaunch === (int) $launch['id_lanzamiento'] ? ' selected' : '' ?>><?= svl_list_escape($launch['nombre']) ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </label>
+                <?php svl_list_selects($listOptions, $sortColumns); ?>
+                <button class="svl-admin-button" type="submit">Aplicar</button>
+                <span class="svl-admin-muted"><?= number_format($pagination['total'], 0, ',', '.') ?> resultados</span>
+            </form>
+            <?php if ($listError !== ''): ?>
+                <p class="svl-admin-note svl-admin-error" role="alert"><?= svl_list_escape($listError) ?></p>
+            <?php elseif (!$listRows): ?>
+                <p>No hay registros en este listado.</p>
+            <?php endif; ?>
+            <?php svl_list_pager($listPath, $listParameters, $pagination); ?>
 			<table cellpadding="0" cellspacing="0" width="100%">
-			
-					<tr>
-						<td bgcolor="#EBEBEB" align="left">
-							<strong>
-								<font color="#000099" size="2" face="Arial, Helvetica, sans-serif">Lanzamiento : </font>
-							</strong>
-				
-							<select name="id_lanzamiento" onchange="document.formulaire.submit()">
-<?php
-											// Afficher tout les armateurs pour le choix
-											while( $RS = mysqli_fetch_array($result_all_lanzamientos) )
-											{
-												$id_lanzamiento = $RS["id_lanzamiento"];
-												$nombre = $RS["nombre"];
-												
-												if ($id_lanzamiento_selec == $id_lanzamiento)
-												{
-?>
-											<option value="<?php echo "$id_lanzamiento"; ?>" selected="selected"> <?php echo "$nombre"; ?> </option>
-<?php
-												} else {
-?>
-											<option value="<?php echo "$id_lanzamiento"; ?>"> <?php echo "$nombre"; ?> </option>
-<?php
-												}
-											}
-?>
-							</select>
-						</td>
-
-					</tr>
-					
-<?php
-		if ($id_lanzamiento_selec > 0) {
-			$sql_all_news = sql_all_news_lanza($id_lanzamiento_selec);
-			$resul_all_news = execute_sql($sql_all_news);
-			//echo $sql_all_news;
-			while($RS = mysqli_fetch_array($resul_all_news))
-			{
+<?php foreach ($listRows as $RS) {
 				$id_new = $RS["id_news"];
 				$titulo = $RS["titulo"];
 				$imagen = $RS["imagen"];
@@ -208,14 +170,10 @@ if ($id_lanzamiento_selec === 0){
 				<tr>
 					<td>&nbsp;</td>
 				</tr>
-<?php
-			}
-		}
-?>
+<?php } ?>
 			</table>
 		</td>
 	</tr>
-	</form>
 </table>
 </body>
 </HTML>

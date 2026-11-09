@@ -1,6 +1,7 @@
 <?php
 /** Read-only unified contact and newsletter lists. Never copies or rewrites records. */
 require_once __DIR__.'/../../include/forms.php';
+require_once __DIR__.'/list-controls.php';
 
 function svl_inbox_escape($value)
 {
@@ -53,19 +54,23 @@ function svl_inbox_value($key, $value)
     return $value === null || $value === '' ? 'No indicado' : (string) $value;
 }
 
-function svl_inbox_url(array $changes = array())
+function svl_inbox_filters()
 {
-    global $view, $search, $mailFilter, $dateFrom, $dateTo, $destination, $origin, $listFilter, $page;
+    global $view, $search, $mailFilter, $dateFrom, $dateTo, $destination, $origin, $listFilter, $listOptions;
     $query = array('view' => $view, 'q' => $search, 'mail' => $mailFilter,
-        'date_from' => $dateFrom, 'date_to' => $dateTo, 'page' => $page);
+        'date_from' => $dateFrom, 'date_to' => $dateTo) + $listOptions;
     if ($view === 'contacts') {
         $query['destination'] = $destination;
         $query['origin'] = $origin;
     } else {
         $query['list'] = $listFilter;
     }
-    $query = array_merge($query, $changes);
-    return 'formularios.php?'.http_build_query($query, '', '&', PHP_QUERY_RFC3986);
+    return $query;
+}
+
+function svl_inbox_url(array $changes = array())
+{
+    return svl_list_url('formularios.php', array_replace(svl_inbox_filters(), $changes));
 }
 
 function svl_inbox_parameter($name, $maximum)
@@ -102,13 +107,12 @@ $view = in_array($requestedView, array('newsletter', 'newsletter_history'), true
     || (in_array($requestedView, array('', 'new'), true) && ($_GET['kind'] ?? '') === 'newsletter')
     ? 'newsletter' : 'contacts';
 $search = $mailFilter = $dateFrom = $dateTo = $destination = $origin = $listFilter = '';
-$page = 1;
 $id = $submissionId = null;
 $error = '';
 $rows = $counts = $destinations = $origins = $lists = array();
 $counts = array('contact' => 0, 'newsletter' => 0);
 $detail = null;
-$ready = $hasNext = false;
+$ready = false;
 $filteredCount = 0;
 $connection = null;
 
@@ -122,12 +126,6 @@ try {
     $dateTo = svl_inbox_date('date_to');
     if ($dateFrom !== '' && $dateTo !== '' && $dateFrom > $dateTo) {
         throw new InvalidArgumentException('La fecha inicial no puede ser posterior a la final.');
-    }
-    $page = filter_var($_GET['page'] ?? 1, FILTER_VALIDATE_INT,
-        array('options' => array('min_range' => 1, 'max_range' => 100000)));
-    if ($page === false) {
-        $page = 1;
-        throw new InvalidArgumentException('La página solicitada no es válida.');
     }
     foreach (array('id' => 'id', 'submission' => 'submissionId') as $parameter => $variable) {
         if (isset($_GET[$parameter])) {
@@ -184,7 +182,15 @@ try {
         }
         $dateColumn = 'p.date_last_added';
         $searchColumn = "CONCAT_WS(' ', p.nombre, p.apellido_1, p.apellido_2, p.email, p.phone)";
-        $order = ' ORDER BY p.date_last_added DESC, p.id_presupuesto DESC';
+        $sortColumns = array(
+            'date' => array('Fecha', array('p.date_last_added')),
+            'contact' => array('Contacto', array('p.nombre', 'p.apellido_1', 'p.apellido_2', 'p.email')),
+            'destination' => array('Destino', array('p.destino')),
+            'travellers' => array('Adultos / niños', array('p.adulto', 'p.ninos')),
+            'flight' => array('Vuelo', array('p.vuelo')),
+            'mail' => array('Correo', array('mail_status')),
+        );
+        $tieBreaker = 'p.id_presupuesto DESC';
         if ($id !== null && $error === '') {
             $selected = svl_inbox_rows($connection, 'SELECT '.$columns.$from.' WHERE p.id_presupuesto=?', array($id));
             $detail = $selected[0] ?? null;
@@ -206,7 +212,13 @@ try {
         }
         $dateColumn = 'm.fecha';
         $searchColumn = 'm.email';
-        $order = ' ORDER BY m.fecha DESC, m.email, m.lista';
+        $sortColumns = array(
+            'date' => array('Fecha', array('m.fecha')),
+            'email' => array('Email', array('m.email')),
+            'list' => array('Lista', array('m.lista')),
+            'mail' => array('Último correo', array('mail_status')),
+        );
+        $tieBreaker = 'm.email ASC, BINARY m.email ASC, m.lista ASC, m.fecha DESC';
         if ($submissionId !== null && $error === '' && $ready) {
             $selected = svl_inbox_rows($connection,
                 "SELECT s.email, 5 AS lista, s.created_at AS fecha, s.id AS submission_id, s.mail_status, s.mail_subject, s.mail_html, s.mail_text, s.mail_headers, s.payload, s.created_at FROM svl_form_submissions s WHERE s.id=? AND s.kind='newsletter'",
@@ -214,6 +226,7 @@ try {
             $detail = $selected[0] ?? null;
         }
     }
+    $listOptions = svl_list_options($sortColumns, 'date', 'desc');
     if (($id !== null || $submissionId !== null) && $detail === null && $error === '') {
         http_response_code(404);
         $error = 'No se ha encontrado esta solicitud.';
@@ -254,10 +267,12 @@ try {
         $filterSql = $where ? ' WHERE '.implode(' AND ', $where) : '';
         $filteredCount = (int) svl_inbox_rows($connection,
             'SELECT COUNT(*) AS total'.$from.$filterSql, $parameters)[0]['total'];
-        $parameters[] = 50;
-        $parameters[] = ($page - 1) * 50;
+        $pagination = svl_list_pagination($listOptions, $filteredCount);
+        $listOptions['page'] = $pagination['page'];
+        $order = svl_list_order($listOptions, $sortColumns, $tieBreaker);
+        $parameters[] = $listOptions['per_page'];
+        $parameters[] = $pagination['offset'];
         $rows = svl_inbox_rows($connection, 'SELECT '.$columns.$from.$filterSql.$order.' LIMIT ? OFFSET ?', $parameters);
-        $hasNext = $page * 50 < $filteredCount;
     }
 } catch (Throwable $exception) {
     if ($exception instanceof InvalidArgumentException) {

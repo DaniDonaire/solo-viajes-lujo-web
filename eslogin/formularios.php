@@ -40,7 +40,7 @@ $mailOptions = array('' => 'Todos', 'review' => 'Pendientes o fallidos', 'pendin
         .panel{background:#fff;border:1px solid #ddd;padding:18px;margin:16px 0}.muted{color:#777}.notice{background:#eee;padding:10px 14px;border-left:3px solid #c29b4d}
         .error{background:#fff0ed;border-left-color:#a33;color:#922}form{display:flex;align-items:end;gap:12px;flex-wrap:wrap}label{display:block;font-weight:bold;font-size:13px;margin-bottom:4px}input,select,button{font:inherit;padding:8px;border:1px solid #bbb;border-radius:0}input[type=search]{min-width:240px}input[type=date]{width:155px}select{max-width:270px}button{background:#c29b4d;color:#222;cursor:pointer;border-color:#b18b42}
         .results-count{margin:14px 0 0;color:#777;font-size:13px}.scroll{overflow:auto}table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;vertical-align:top;padding:11px 10px;border-bottom:1px solid #ddd}th{background:#eee;white-space:nowrap}.status{display:inline-block;font-size:12px;padding:3px 6px;background:#eee;white-space:nowrap}.status.failed{background:#fff0ed;color:#922}.status.captured{background:#f4eddf;color:#78591f}.status.accepted{background:#edf4eb;color:#315c27}small{display:block;margin-top:3px;color:#777}
-        dl{display:grid;grid-template-columns:minmax(140px,220px) 1fr;gap:0;margin:0}dt,dd{margin:0;padding:9px 0;border-bottom:1px solid #eee;overflow-wrap:anywhere}dt{font-weight:bold}dd{white-space:pre-wrap}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 Arial,sans-serif}.pager{display:flex;gap:20px;align-items:center}.back{display:inline-block;margin-bottom:5px}h2{font-size:17px;margin:0 0 14px}.empty{padding:24px;text-align:center;color:#777}
+        dl{display:grid;grid-template-columns:minmax(140px,220px) 1fr;gap:0;margin:0}dt,dd{margin:0;padding:9px 0;border-bottom:1px solid #eee;overflow-wrap:anywhere}dt{font-weight:bold}dd{white-space:pre-wrap}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 Arial,sans-serif}.back{display:inline-block;margin-bottom:5px}h2{font-size:17px;margin:0 0 14px}.empty{padding:24px;text-align:center;color:#777}
         @media(max-width:600px){main{padding:0 10px}header{padding:16px}h1{font-size:22px}.panel{padding:14px}dl{grid-template-columns:1fr}dt{border-bottom:0;padding-bottom:0}dd{padding-top:2px}form>div{width:100%}input[type=search],input[type=date],select{min-width:0;width:100%;max-width:none}}
     </style>
 </head>
@@ -99,9 +99,10 @@ $mailOptions = array('' => 'Todos', 'review' => 'Pendientes o fallidos', 'pendin
             </section>
         <?php endif; ?>
     <?php else: ?>
+        <?php $listParameters = svl_inbox_filters(); ?>
         <section class="panel">
             <h2>Buscar y filtrar</h2>
-            <form method="get" action="formularios.php">
+            <form class="svl-list-filter" method="get" action="formularios.php">
                 <input type="hidden" name="view" value="<?php echo svl_inbox_escape($view); ?>">
                 <div><label for="search"><?php echo $view === 'contacts' ? 'Nombre, email o teléfono' : 'Email'; ?></label><input id="search" name="q" value="<?php echo svl_inbox_escape($search); ?>" maxlength="254" type="search" autocomplete="off"></div>
                 <div><label for="date-from">Desde</label><input id="date-from" name="date_from" value="<?php echo svl_inbox_escape($dateFrom); ?>" type="date"></div>
@@ -113,25 +114,30 @@ $mailOptions = array('' => 'Todos', 'review' => 'Pendientes o fallidos', 'pendin
                     <div><label for="list">Lista</label><select id="list" name="list"><option value="">Todas</option><?php foreach ($lists as $option): ?><option value="<?php echo svl_inbox_escape($option); ?>"<?php echo $listFilter === (string) $option ? ' selected' : ''; ?>><?php echo svl_inbox_escape($option); ?></option><?php endforeach; ?></select></div>
                 <?php endif; ?>
                 <div><label for="mail">Correo</label><select id="mail" name="mail"><?php foreach ($mailOptions as $statusValue => $statusLabel): ?><option value="<?php echo svl_inbox_escape($statusValue); ?>"<?php echo $mailFilter === $statusValue ? ' selected' : ''; ?>><?php echo svl_inbox_escape($statusLabel); ?></option><?php endforeach; ?></select></div>
-                <button type="submit">Filtrar</button><a href="formularios.php?view=<?php echo svl_inbox_escape($view); ?>">Limpiar</a>
+                <?php svl_list_selects($listOptions, $sortColumns); ?>
+                <button class="svl-admin-button" type="submit">Aplicar</button><a href="formularios.php?view=<?php echo svl_inbox_escape($view); ?>">Limpiar</a>
             </form>
             <p class="results-count"><?php echo number_format($filteredCount, 0, ',', '.'); ?> resultados</p>
         </section>
+        <?php svl_list_pager('formularios.php', $listParameters, $pagination); ?>
         <section class="panel scroll" aria-label="Resultados">
             <?php if (!$rows): ?><p class="empty">No hay registros para estos filtros.</p>
             <?php elseif ($view === 'contacts'): ?>
-                <table><thead><tr><th>Fecha</th><th>Contacto</th><th>Destino</th><th>Adultos / niños</th><th>Vuelo</th><th>Correo</th><th>Detalle</th></tr></thead><tbody>
+                <table><thead><tr>
+                    <?php foreach (array_keys($sortColumns) as $key): svl_list_heading($key, 'formularios.php', $listParameters, $sortColumns); endforeach; ?>
+                    <th scope="col">Detalle</th></tr></thead><tbody>
                 <?php foreach ($rows as $row): ?>
                     <tr><td><?php echo svl_inbox_escape($row['date_last_added']); ?></td><td><?php echo svl_inbox_escape(trim($row['nombre'] . ' ' . $row['apellido_1'] . ' ' . $row['apellido_2'])); ?><br><?php echo svl_inbox_escape($row['email']); ?><?php if ($row['phone'] !== ''): ?><small><?php echo svl_inbox_escape($row['phone']); ?></small><?php endif; ?></td><td><?php echo svl_inbox_escape($row['destino']); ?></td><td><?php echo svl_inbox_escape($row['adulto']); ?> / <?php echo svl_inbox_escape($row['ninos']); ?></td><td><?php echo svl_inbox_escape(svl_inbox_value('vuelo', $row['vuelo'])); ?></td><td><span class="status <?php echo svl_inbox_escape($row['mail_status']); ?>"><?php echo svl_inbox_escape(svl_inbox_status($row['mail_status'])); ?></span></td><td><a href="<?php echo svl_inbox_escape(svl_inbox_url(array('id' => (int) $row['id_presupuesto']))); ?>">Ver</a></td></tr>
                 <?php endforeach; ?></tbody></table>
             <?php else: ?>
-                <table><thead><tr><th>Fecha</th><th>Email</th><th>Lista</th><th>Último correo</th><th>Detalle</th></tr></thead><tbody>
+                <table><thead><tr>
+                    <?php foreach (array_keys($sortColumns) as $key): svl_list_heading($key, 'formularios.php', $listParameters, $sortColumns); endforeach; ?>
+                    <th scope="col">Detalle</th></tr></thead><tbody>
                 <?php foreach ($rows as $row): ?>
                     <tr><td><?php echo svl_inbox_escape($row['fecha']); ?></td><td><?php echo svl_inbox_escape($row['email']); ?></td><td><?php echo svl_inbox_escape($row['lista']); ?></td><td><span class="status <?php echo svl_inbox_escape($row['mail_status']); ?>"><?php echo svl_inbox_escape(svl_inbox_status($row['mail_status'])); ?></span></td><td><?php if (!empty($row['submission_id'])): ?><a href="<?php echo svl_inbox_escape(svl_inbox_url(array('submission' => (int) $row['submission_id']))); ?>">Ver</a><?php else: ?>—<?php endif; ?></td></tr>
                 <?php endforeach; ?></tbody></table>
             <?php endif; ?>
         </section>
-        <p class="pager"><?php if ($page > 1): ?><a href="<?php echo svl_inbox_escape(svl_inbox_url(array('page' => $page - 1))); ?>">Anterior</a><?php endif; ?><span>Página <?php echo (int) $page; ?></span><?php if ($hasNext): ?><a href="<?php echo svl_inbox_escape(svl_inbox_url(array('page' => $page + 1))); ?>">Siguiente</a><?php endif; ?></p>
     <?php endif; ?>
     <?php if ($view === 'newsletter'): ?><p class="muted">El estado muestra el último correo de confirmación registrado para cada email.</p><?php endif; ?>
     <p class="notice">«Sin registro» indica que no consta el resultado del correo. «Capturado en local» significa que se ha guardado sin enviarlo. «Aceptado por el servidor» no confirma su recepción. Un fallo del correo no elimina los datos guardados.</p>

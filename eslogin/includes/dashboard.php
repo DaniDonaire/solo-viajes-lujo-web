@@ -1,6 +1,7 @@
 <?php
 /** Shared administration entry point; catalogue actions keep their existing URLs. */
 require_once __DIR__.'/../../include/forms.php';
+require_once __DIR__.'/list-controls.php';
 header('Content-Type: text/html; charset=UTF-8');
 header('Cache-Control: no-store, private');
 header('X-Content-Type-Options: nosniff');
@@ -26,6 +27,13 @@ if ($error !== '') {
 }
 $countries = array();
 $specialties = array();
+$sortColumns = array(
+    'specialty' => array('Especialidad / ruta', array('d.destino')),
+    'country' => array('Destino', array('p.nombre_pais', 'd.destino')),
+    'status' => array('Estado', array('d.activo')),
+);
+$listOptions = svl_list_options($sortColumns, 'country');
+$pagination = svl_list_pagination($listOptions, 0);
 $counts = array('contacts' => null, 'newsletter' => null);
 $connection = null;
 try {
@@ -38,7 +46,13 @@ try {
         http_response_code(400);
     }
     if ($error === '') {
-        $statement = $connection->prepare('SELECT d.id_destino, d.destino, d.activo, p.nombre_pais FROM destinos_svl d LEFT JOIN paises_svl p ON p.id_pais=d.id_pais WHERE (?=0 OR d.id_pais=?) ORDER BY p.nombre_pais, d.destino');
+        $where = ' WHERE (?=0 OR d.id_pais=?)';
+        $statement = $connection->prepare('SELECT COUNT(*) FROM destinos_svl d'.$where);
+        $statement->execute(array($countryId, $countryId));
+        $pagination = svl_list_pagination($listOptions, (int) $statement->get_result()->fetch_row()[0]);
+        $statement->close();
+        $statement = $connection->prepare('SELECT d.id_destino, d.destino, d.activo, p.nombre_pais FROM destinos_svl d LEFT JOIN paises_svl p ON p.id_pais=d.id_pais'.$where
+            .svl_list_order($listOptions, $sortColumns, 'd.id_destino ASC').' LIMIT '.$listOptions['per_page'].' OFFSET '.$pagination['offset']);
         $statement->execute(array($countryId, $countryId));
         $specialties = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
         $statement->close();
@@ -52,6 +66,10 @@ try {
         $connection->close();
     }
 }
+$listOptions['page'] = $pagination['page'];
+$listParameters = array('seccion' => 'especialidades', 'id_destino' => $countryId) + $listOptions;
+$listPath = 'admin_especialidad_visul.php';
+$listFragment = '#especialidades';
 ?>
 <!doctype html>
 <html lang="es">
@@ -79,12 +97,17 @@ try {
 
     <section class="svl-admin-section" id="especialidades">
         <div class="svl-admin-section-heading"><h2>Especialidades por destino</h2><a class="svl-admin-button" href="admin_especialidad_add.php">Añadir especialidad</a></div>
-        <form class="svl-admin-filter" method="get" action="admin_especialidad_visul.php">
-            <div><label for="id-destino">Destino</label><select id="id-destino" name="id_destino"><option value="0">Todos los destinos</option><?php foreach ($countries as $country): ?><option value="<?php echo (int) $country['id_pais']; ?>"<?php echo $countryId === (int) $country['id_pais'] ? ' selected' : ''; ?>><?php echo svl_dashboard_escape($country['nombre_pais']); ?></option><?php endforeach; ?></select></div>
-            <button class="svl-admin-button" type="submit">Filtrar</button><span class="svl-admin-muted"><?php echo count($specialties); ?> especialidades</span>
+        <form class="svl-list-filter" method="get" action="admin_especialidad_visul.php#especialidades">
+            <input type="hidden" name="seccion" value="especialidades">
+            <label>Destino<select id="id-destino" name="id_destino"><option value="0">Todos los destinos</option><?php foreach ($countries as $country): ?><option value="<?php echo (int) $country['id_pais']; ?>"<?php echo $countryId === (int) $country['id_pais'] ? ' selected' : ''; ?>><?php echo svl_dashboard_escape($country['nombre_pais']); ?></option><?php endforeach; ?></select></label>
+            <?php svl_list_selects($listOptions, $sortColumns); ?>
+            <button class="svl-admin-button" type="submit">Aplicar</button><span class="svl-admin-muted"><?php echo svl_dashboard_number($pagination['total']); ?> especialidades</span>
         </form>
+        <?php if ($error === '') svl_list_pager($listPath, $listParameters, $pagination, $listFragment); ?>
         <div class="svl-admin-table-wrap">
-            <table class="svl-admin-table"><thead><tr><th scope="col">Especialidad / ruta</th><th scope="col">Destino</th><th scope="col">Estado</th><th scope="col">Acciones</th></tr></thead><tbody>
+            <table class="svl-admin-table"><thead><tr>
+                <?php foreach (array_keys($sortColumns) as $key): svl_list_heading($key, $listPath, $listParameters, $sortColumns, $listFragment); endforeach; ?>
+                <th scope="col">Acciones</th></tr></thead><tbody>
             <?php foreach ($specialties as $specialty): ?>
                 <tr><td><strong><?php echo svl_dashboard_escape($specialty['destino']); ?></strong></td><td><?php echo svl_dashboard_escape($specialty['nombre_pais']); ?></td><td><span class="svl-admin-status<?php echo (string) $specialty['activo'] === '1' ? ' is-active' : ''; ?>"><?php echo (string) $specialty['activo'] === '1' ? 'Activa' : 'Inactiva'; ?></span></td><td><div class="svl-admin-actions"><a href="admin_especialidad_modif.php?id=<?php echo (int) $specialty['id_destino']; ?>">Visualizar / editar</a><?php if ($isLocal): ?><span class="svl-admin-muted" title="El borrado está desactivado en la vista local">Quitar · desactivado en local</span><?php else: ?><a class="svl-admin-danger" href="admin_especialidad_supp.php?id=<?php echo (int) $specialty['id_destino']; ?>" onclick="return confirm('¿Seguro que quieres borrar esta especialidad?');">Quitar</a><?php endif; ?></div></td></tr>
             <?php endforeach; ?>

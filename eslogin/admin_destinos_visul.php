@@ -1,9 +1,22 @@
 <?php
-// Importation des fichiers
-include('includes/sql_admin.php');
-include('includes/execute_sql_admin.php');
+require_once __DIR__.'/includes/sql_admin.php';
+require_once __DIR__.'/includes/execute_sql_admin.php';
+require_once __DIR__.'/includes/list-controls.php';
 
-// Requette pour prendre tout les armateurs
+$listPath = 'admin_destinos_visul.php';
+$sortColumns = array(
+    'name' => array('Destino', array('nombre_pais')),
+    'status' => array('Estado', array('activo')),
+    'id' => array('Referencia', array('id_pais')),
+);
+$listOptions = svl_list_options($sortColumns, 'name', 'asc', 25);
+$listParameters = $listOptions;
+[$listRows, $pagination, $listError] = svl_list_catalogue(
+    sql_paises_svl(),
+    'SELECT COUNT(*) FROM paises_svl',
+    svl_list_order($listOptions, $sortColumns, 'id_pais ASC'),
+    $listOptions
+);
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML>
@@ -28,9 +41,10 @@ include('includes/execute_sql_admin.php');
 	
 </HEAD>
 <body>
-<table width="800px"  border="0" cellspacing="0" cellpadding="0">
 <form name="formulaire" method="post" action="admin_destinos_supp.php" enctype="multipart/form-data">
 <input type="hidden" name="id" value="">
+</form>
+<table width="800px"  border="0" cellspacing="0" cellpadding="0">
 	<tr>
 		<td colspan="2"><img src="top.jpg" width="800" height="120" ></td>
 	</tr>
@@ -38,17 +52,25 @@ include('includes/execute_sql_admin.php');
 		<td valign="top" width="200">
 <?php
 		include("includes/menu.php");
-		$sql_paises_svl = sql_paises_svl();
-		$result_all_paises = execute_sql($sql_paises_svl);	
-
  ?>
  		</td>
 		<td width="600">
+            <form class="svl-list-filter" method="get" action="<?= svl_list_escape($listPath) ?>">
+                <?php svl_list_selects($listOptions, $sortColumns); ?>
+                <button class="svl-admin-button" type="submit">Aplicar</button>
+                <span class="svl-admin-muted"><?= number_format($pagination['total'], 0, ',', '.') ?> resultados</span>
+            </form>
+            <?php if ($listError !== ''): ?>
+                <p class="svl-admin-note svl-admin-error" role="alert"><?= svl_list_escape($listError) ?></p>
+            <?php elseif (!$listRows): ?>
+                <p>No hay registros en este listado.</p>
+            <?php endif; ?>
+            <?php svl_list_pager($listPath, $listParameters, $pagination); ?>
 			<table cellpadding="0" cellspacing="0" width="100%">
 					
 <?php
 
-			while($RS = mysqli_fetch_array($result_all_paises))
+			foreach ($listRows as $RS)
 			{
 				$id_pais = $RS['id_pais'];
 				$nombre_pais = $RS['nombre_pais'];
@@ -88,7 +110,6 @@ include('includes/execute_sql_admin.php');
 			</table>
 		</td>
 	</tr>
-	</form>
 </table>
 </body>
 </HTML>

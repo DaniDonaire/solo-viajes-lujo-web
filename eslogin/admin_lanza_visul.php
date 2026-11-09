@@ -1,11 +1,21 @@
 <?php
-// Importation des fichiers
-include('includes/sql_admin.php');
-include('includes/execute_sql_admin.php');
+require_once __DIR__.'/includes/sql_admin.php';
+require_once __DIR__.'/includes/execute_sql_admin.php';
+require_once __DIR__.'/includes/list-controls.php';
 
-// Requette pour prendre tout les armateurs
-$sql_all_lanzamientos = sql_all_lanzamientos();
-$resul_all_lanzamientos = execute_sql($sql_all_lanzamientos);
+$listPath = 'admin_lanza_visul.php';
+$sortColumns = array(
+    'name' => array('Nombre', array('nombre')),
+    'id' => array('Referencia', array('id_lanzamiento')),
+);
+$listOptions = svl_list_options($sortColumns, 'id', 'desc', 25);
+$listParameters = $listOptions;
+[$listRows, $pagination, $listError] = svl_list_catalogue(
+    'SELECT * FROM lanzamientos',
+    'SELECT COUNT(*) FROM lanzamientos',
+    svl_list_order($listOptions, $sortColumns, 'id_lanzamiento DESC'),
+    $listOptions
+);
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML>
@@ -25,10 +35,21 @@ $resul_all_lanzamientos = execute_sql($sql_all_lanzamientos);
  ?>
  		</td>
 		<td width="600">
+            <form class="svl-list-filter" method="get" action="<?= svl_list_escape($listPath) ?>">
+                <?php svl_list_selects($listOptions, $sortColumns); ?>
+                <button class="svl-admin-button" type="submit">Aplicar</button>
+                <span class="svl-admin-muted"><?= number_format($pagination['total'], 0, ',', '.') ?> resultados</span>
+            </form>
+            <?php if ($listError !== ''): ?>
+                <p class="svl-admin-note svl-admin-error" role="alert"><?= svl_list_escape($listError) ?></p>
+            <?php elseif (!$listRows): ?>
+                <p>No hay registros en este listado.</p>
+            <?php endif; ?>
+            <?php svl_list_pager($listPath, $listParameters, $pagination); ?>
 			<table cellpadding="0" cellspacing="0" width="100%">
 <?php
 
-			while($RS = mysqli_fetch_array($resul_all_lanzamientos))
+			foreach ($listRows as $RS)
 			{
 				$nombre = $RS["nombre"];
 				$id_lanzamiento = $RS["id_lanzamiento"];
