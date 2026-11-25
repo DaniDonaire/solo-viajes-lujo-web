@@ -136,9 +136,23 @@ function svl_form_request_guard($kind)
     $verification = is_string($response) ? json_decode($response, true) : null;
     $allowedHosts = array('soloviajesdelujo.com', 'www.soloviajesdelujo.com');
     if ($status !== 200 || !is_array($verification) || empty($verification['success'])
-        || !in_array(strtolower($verification['hostname'] ?? ''), $allowedHosts, true)) {
+        || !in_array(strtolower($verification['hostname'] ?? ''), $allowedHosts, true)
+        || !svl_form_captcha_assessment_valid($verification, svl_recaptcha_version(), time())) {
         throw new InvalidArgumentException('No se ha podido validar la comprobación antirrobots. Inténtalo de nuevo.');
     }
+}
+
+function svl_form_captcha_assessment_valid(array $verification, $version, $now)
+{
+    if ($version !== 'v3') {
+        return true;
+    }
+    $score = $verification['score'] ?? null;
+    $created = isset($verification['challenge_ts']) && is_string($verification['challenge_ts'])
+        ? strtotime($verification['challenge_ts']) : false;
+    return (is_int($score) || is_float($score)) && $score >= 0.5 && $score <= 1
+        && ($verification['action'] ?? '') === 'contact'
+        && $created !== false && $now - $created >= -30 && $now - $created <= 120;
 }
 
 function svl_form_insert($connection, $table, array $fields)

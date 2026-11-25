@@ -5,6 +5,7 @@ include ("include/execute_sql.php");
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT, array('options' => array('min_range' => 1))) ?: 0;
 $titulo = '';
 $svlContactLocal = svl_is_test_environment();
+$svlContactV3 = !$svlContactLocal && svl_recaptcha_version() === 'v3';
 if ($id > 0) {
     $result_detalle_viaje = execute_sql(sql_detalle_viaje($id));
     if ($result_detalle_viaje instanceof mysqli_result) {
@@ -28,7 +29,8 @@ function enabledSubmit() {
 }
 </script>
 <?php if (!$svlContactLocal): ?>
-<script src="https://www.google.com/recaptcha/api.js?hl=es" async defer></script>
+<script src="<?= htmlspecialchars(svl_recaptcha_script_url(), ENT_QUOTES, 'UTF-8') ?>" async defer></script>
+<?php if ($svlContactV3): ?><script src="js/contact-captcha.js" defer></script><?php endif; ?>
 <?php endif; ?>
 <head>
 	<script src="js/newsletter.js" defer></script>
@@ -172,7 +174,7 @@ function enabledSubmit() {
 					<div class="step">
 
 						<div id="message-contact"></div>
-						<form method="post" action="confirmacion.php" onSubmit="return controle();" id="contact-request">
+						<form method="post" action="confirmacion.php" onSubmit="return controle();" id="contact-request"<?php if ($svlContactV3): ?> data-recaptcha-version="v3" data-recaptcha-sitekey="<?= htmlspecialchars(svl_recaptcha_site_key(), ENT_QUOTES, 'UTF-8') ?>"<?php endif; ?>>
                         <div style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label>Dejar este campo vacío<input type="text" name="website" value="" tabindex="-1" autocomplete="off"></label></div>
 						<input type="hidden" name="id" value="<?php echo (int) $id; ?>">
 						<div class="row">
@@ -307,11 +309,11 @@ function enabledSubmit() {
 									
 								
 									<div class="form_title2">
-										<?php if (!$svlContactLocal): ?><div class="g-recaptcha" data-sitekey="6LeUddUUAAAAAFl8kcpUvMH1QySg_qYAA__8_ukq" data-callback="enabledSubmit"></div><?php endif; ?>
+										<?php if ($svlContactV3): ?><input type="hidden" name="g-recaptcha-response" value=""><p class="small">Este sitio está protegido por reCAPTCHA. Se aplican la <a href="https://policies.google.com/privacy">Política de Privacidad</a> y los <a href="https://policies.google.com/terms">Términos del Servicio</a> de Google.</p><?php elseif (!$svlContactLocal): ?><div class="g-recaptcha" data-sitekey="<?= htmlspecialchars(svl_recaptcha_site_key(), ENT_QUOTES, 'UTF-8') ?>" data-callback="enabledSubmit"></div><?php endif; ?>
 									</div>
 									
 									
-									<input type="submit" value="Enviar" class="btn_1" id="submit-contact" <?php echo $svlContactLocal ? '' : 'disabled'; ?>>
+									<input type="submit" value="Enviar" class="btn_1" id="submit-contact" <?php echo $svlContactLocal || $svlContactV3 ? '' : 'disabled'; ?>>
 								</div>
 								
 							</div>

@@ -6,6 +6,7 @@ if (!isset($landing) || !is_array($landing)) {
 }
 require_once __DIR__.'/../include/site-path.php';
 $isLocal = svl_is_test_environment();
+$captchaV3 = !$isLocal && svl_recaptcha_version() === 'v3';
 $escape = static function ($value) {
     return htmlspecialchars((string) $value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
 };
@@ -54,9 +55,10 @@ $schema = array('@context' => 'https://schema.org', '@graph' => array(
     <link rel="stylesheet" href="<?= $siteUrl('/css/landing-destino.css') ?>">
     <script type="application/ld+json"><?= json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?></script>
     <script src="<?= $siteUrl('/js/google-analytics.js') ?>" data-environment="<?= $escape(svl_configuration()['env']) ?>" defer></script>
+    <?php if ($captchaV3): ?><script src="<?= $siteUrl('/js/contact-captcha.js') ?>" defer></script><?php endif; ?>
     <script src="<?= $siteUrl('/js/landing-destino.js') ?>" defer></script>
     <?php if (!$isLocal): ?>
-    <script src="https://www.google.com/recaptcha/api.js?hl=es" async defer></script>
+    <script src="<?= $escape(svl_recaptcha_script_url()) ?>" async defer></script>
     <?php endif; ?>
 </head>
 <body class="destination-landing">
@@ -138,7 +140,7 @@ $schema = array('@context' => 'https://schema.org', '@graph' => array(
         <div class="wrap request-inner">
             <div class="request-copy"><p class="eyebrow">TU VIAJE EMPIEZA AQUÍ</p><h2 id="presupuesto-title">Pide tu presupuesto para Egipto<br> desde Barcelona</h2><p>Dinos cuándo te gustaría viajar y qué te apetece descubrir. Prepararemos una propuesta a medida con salida desde Barcelona.</p><div class="request-contact"><p>Si prefieres hablar con nosotros:</p><a class="whatsapp-contact" href="https://wa.me/34610461529" target="_blank" rel="noopener noreferrer"><i class="landing-icon icon-whatsapp" aria-hidden="true"></i><span>Escríbenos por WhatsApp<small>+34 610 461 529</small></span></a><a class="contact-method" href="tel:+34610461529"><i class="landing-icon icon-phone" aria-hidden="true"></i><span>Llámanos al +34 610 461 529</span></a><a class="contact-method" href="mailto:info@soloviajesdelujo.com"><i class="landing-icon icon-mail" aria-hidden="true"></i><span>info@soloviajesdelujo.com</span></a></div></div>
             <div class="request-form-wrap">
-                <form class="request-form" id="egypt-request" method="post" action="<?= $siteUrl('/confirmacion.php') ?>" data-local="<?= $isLocal ? 'true' : 'false' ?>">
+                <form class="request-form" id="egypt-request" method="post" action="<?= $siteUrl('/confirmacion.php') ?>" data-local="<?= $isLocal ? 'true' : 'false' ?>"<?php if ($captchaV3): ?> data-recaptcha-version="v3" data-recaptcha-sitekey="<?= $escape(svl_recaptcha_site_key()) ?>"<?php endif; ?>>
                     <div class="honeypot" aria-hidden="true"><label>Dejar este campo vacío<input name="website" type="text" tabindex="-1" autocomplete="off"></label></div>
                     <input type="hidden" name="id" value="0">
                     <div class="form-grid">
@@ -153,8 +155,8 @@ $schema = array('@context' => 'https://schema.org', '@graph' => array(
                         <div class="field full-width"><label for="egypt-message">¿Cómo te gustaría viajar?</label><textarea id="egypt-message" name="message_contact" rows="4" maxlength="8000" placeholder="Crucero por el Nilo, viaje privado, Dahabeya, días en Hurghada… Cuéntanos tus ideas."></textarea></div>
                     </div>
                     <p class="privacy-note">Grupo Global MPS Viajes y Cruceros S.L. tratará tus datos para atender esta solicitud. Puedes consultar la información y tus derechos en nuestra <a href="<?= $siteUrl('/politica-privacidad.html') ?>">política de privacidad</a>.</p>
-                    <?php if (!$isLocal): ?><div class="g-recaptcha" data-sitekey="6LeUddUUAAAAAFl8kcpUvMH1QySg_qYAA__8_ukq" data-callback="svlEgyptCaptchaReady" data-expired-callback="svlEgyptCaptchaExpired"></div><?php endif; ?>
-                    <button class="button" type="submit"<?= $isLocal ? '' : ' disabled' ?>>Solicitar mi propuesta <span aria-hidden="true">↗</span></button>
+                    <?php if ($captchaV3): ?><input type="hidden" name="g-recaptcha-response" value=""><p class="privacy-note">Este sitio está protegido por reCAPTCHA. Se aplican la <a href="https://policies.google.com/privacy">Política de Privacidad</a> y los <a href="https://policies.google.com/terms">Términos del Servicio</a> de Google.</p><?php elseif (!$isLocal): ?><div class="g-recaptcha" data-sitekey="<?= $escape(svl_recaptcha_site_key()) ?>" data-callback="svlEgyptCaptchaReady" data-expired-callback="svlEgyptCaptchaExpired"></div><?php endif; ?>
+                    <button class="button" type="submit"<?= $isLocal || $captchaV3 ? '' : ' disabled' ?>>Solicitar mi propuesta <span aria-hidden="true">↗</span></button>
                     <p class="form-note">Los campos con * son obligatorios.</p>
                 </form>
                 <p class="form-result" id="egypt-result" role="status" aria-live="polite" tabindex="-1" hidden></p>

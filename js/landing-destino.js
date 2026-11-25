@@ -7,7 +7,8 @@
     var busy = false;
     var saved = false;
     var needsCaptcha = form.dataset.local !== 'true';
-    var captchaReady = !needsCaptcha;
+    var captchaV3 = form.dataset.recaptchaVersion === 'v3';
+    var captchaReady = !needsCaptcha || captchaV3;
 
     window.svlEgyptCaptchaReady = function () {
         captchaReady = true;
@@ -59,7 +60,7 @@
             result.hidden = false;
             result.focus();
             window.alert(result.textContent);
-            if (needsCaptcha && window.grecaptcha) {
+            if (needsCaptcha && !captchaV3 && window.grecaptcha) {
                 window.grecaptcha.reset();
                 captchaReady = false;
             }

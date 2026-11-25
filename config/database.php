@@ -112,6 +112,30 @@ function svl_database_configuration($role)
     return svl_resolve_database_configuration(svl_configuration(), $role);
 }
 
+function svl_recaptcha_version()
+{
+    $version = svl_configuration()['recaptcha_version'] ?? 'v2';
+    if (!in_array($version, array('v2', 'v3'), true)) {
+        throw new RuntimeException('Unknown reCAPTCHA version.');
+    }
+    return $version;
+}
+
+function svl_recaptcha_site_key()
+{
+    $key = svl_configuration()['recaptcha_site_key'] ?? '6LeUddUUAAAAAFl8kcpUvMH1QySg_qYAA__8_ukq';
+    if (!is_string($key) || !preg_match('/^[A-Za-z0-9_-]{20,100}$/D', $key)) {
+        throw new RuntimeException('Invalid reCAPTCHA site key.');
+    }
+    return $key;
+}
+
+function svl_recaptcha_script_url()
+{
+    return 'https://www.google.com/recaptcha/api.js?hl=es'
+        .(svl_recaptcha_version() === 'v3' ? '&render='.rawurlencode(svl_recaptcha_site_key()) : '');
+}
+
 function svl_is_test_environment()
 {
     return in_array(svl_configuration()['env'], array('local', 'staging'), true)
