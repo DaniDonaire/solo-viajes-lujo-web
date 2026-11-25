@@ -19,6 +19,9 @@ Cambios preparados en local el 25/11/2026. No necesitan migrar ni modificar base
   fotografía de otro país. La foto correcta puede añadirse después al manifiesto.
 - Las entradas PHP de compatibilidad recuperan rutas del catálogo que ya estaban en
   enlaces y sitemap. Utilizan las mismas plantillas y consultas, sin duplicar registros.
+  Si falta el parámetro, cada entrada abre su propio destino; las fichas sin viaje
+  seleccionado vuelven al catálogo correspondiente. Las plantillas compartidas
+  responden 404 cuando se intenta ejecutarlas directamente.
 - El renderizado de enlaces `[web=…]` corrige espacios, prefijos y errores verificables.
   Una dirección ambigua queda como texto legible, sin crear enlaces locales ficticios.
 - Las referencias decorativas a imágenes inexistentes conservan el fondo de color que

@@ -1,4 +1,9 @@
 <?php
+// Shared view: only the catalogue entry points may execute this template.
+if (isset($_SERVER['SCRIPT_FILENAME']) && realpath($_SERVER['SCRIPT_FILENAME']) === __FILE__) {
+    http_response_code(404);
+    exit('Página no encontrada.');
+}
 include ("../../include/sql.php");
 include ("../../include/execute_sql.php");
 require_once __DIR__.'/../include/public-media.php';
