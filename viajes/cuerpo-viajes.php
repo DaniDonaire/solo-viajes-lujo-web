@@ -146,7 +146,7 @@ if($RS){
                             <li><a href="../../nosotros.html" >Quienes somos</a></li>
 							<li><a href="../../index.php#destinos" >Principales destinos</a></li>
 							<li><a href="../../index.php#rutas" >Rutas</a></li>
-							<li><a href="cruceros.html" >Cruceros</a></li>
+							<li><a href="../../cruceros.html" >Cruceros</a></li>
 							<li><a href="../../ofertas-exclusivas.php" >Ofertas Exclusivas</a></li>
 							<li class="submenu">
                                 <a href="javascript:void(0);" class="show-submenu">Corporativo<i class="icon-down-open-mini"></i></a>
@@ -372,11 +372,11 @@ if($RS){
                     <h3>Mapa del Sitio</h3>
                     <ul>
                         <li><a href="../../nosotros.html">Quienes somos</a></li>
-                        <li><a href="index.php#rutas">Rutas</a></li>
-                        <li><a href="cruceros.html">Cruceros</a></li>
+                        <li><a href="../../index.php#rutas">Rutas</a></li>
+                        <li><a href="../../cruceros.html">Cruceros</a></li>
                         <li><a href="../../ofertas-exclusivas.php">Ofertas exclusivas</a></li>
-						<li><a href="viajes-empresas.html">Viajes empresas</a></li>
-						<li><a href="buques-exclusiva.html">Fullcharter</a></li>
+						<li><a href="../../viajes-empresas.html">Viajes empresas</a></li>
+						<li><a href="../../buques-exclusiva.html">Fullcharter</a></li>
                         <li><a href="../../contacto.php">Contacto</a></li>
 						<li><a href="../../terminos-condiciones.html">Términos y condiciones</a></li>
 						<li><a href="../../politica-privacidad.html">Política de privacidad</a></li>
