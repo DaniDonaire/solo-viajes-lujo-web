@@ -4,7 +4,7 @@ include('includes/sql_admin.php');
 include('includes/execute_sql_admin.php');
 
 // Récupération des parametres
-$id = $_GET[id];
+$id = $_GET['id'];
 
 // Supprimer un bateau
 $sql_delete_lanza = sql_delete_lanza($id);
