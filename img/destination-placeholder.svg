@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-label="Solo Viajes de Lujo">
+  <rect width="800" height="500" fill="#f9f9f9"/>
+  <path d="M280 211h240M280 289h240" stroke="#c29b4d" stroke-width="2"/>
+  <text x="400" y="258" text-anchor="middle" fill="#714f09" font-family="Arial,sans-serif" font-size="24">Solo Viajes de Lujo</text>
+</svg>

@@ -3,7 +3,7 @@
 	margin:5px 14px 10px 0;
 	height:33px;
 	line-height:33px;
-	background: #ededed url(../img/tag_bg.png) no-repeat 91% center;
+	background: #ededed none no-repeat 91% center;
 	padding:0 28px 0 11px;
 	color:#555;	
 	-webkit-border-top-right-radius: 20px;

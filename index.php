@@ -1,6 +1,7 @@
 <?php
 include ("include/sql.php");
 include ("include/execute_sql.php");
+require_once __DIR__.'/include/public-media.php';
 
 $sql_especialidades = sql_especialidades();
 $result_sql_especialidades = execute_sql($sql_especialidades);
@@ -50,6 +51,13 @@ $result_sql_rutas = execute_sql($sql_rutas);
     
    <!-- REVOLUTION LAYERS STYLES -->
 	<style>
+		/* Reserve the same space as Revolution before its JavaScript initializes. */
+		#rev_slider_22_1_wrapper { height: 650px; }
+		@media (max-width: 1239px) { #rev_slider_22_1_wrapper { height: 500px; } }
+		@media (max-width: 1023px) { #rev_slider_22_1_wrapper { height: 600px; } }
+		@media (max-width: 777px) {
+			#rev_slider_22_1_wrapper { height: auto; aspect-ratio: 480 / 500; max-height: 500px; }
+		}
 		.tp-caption.Travel-BigCaption,
 		.Travel-BigCaption {
 			color: rgba(255, 255, 255, 1.00);
@@ -381,37 +389,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<!-- SLIDE  -->
 					<li data-index="rs-69" data-transition="parallaxhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="rev-slider-files/assets/100x50_travel1.jpg" data-rotate="0" data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off" data-title="Number One" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
 						<!-- MAIN IMAGE -->
-						<img src="rev-slider-files/assets/svl1.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+						<img src="<?php echo svl_image_url('/rev-slider-files/assets/svl1.jpg'); ?>" fetchpriority="high" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
 						<!-- LAYERS -->
 					</li>
 					<!-- SLIDE  -->
 					<li data-index="rs-70" data-transition="parallaxhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="rev-slider-files/assets/100x50_travel2.jpg" data-rotate="0" data-saveperformance="off" data-title="Number Two" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
 						<!-- MAIN IMAGE -->
-						<img src="rev-slider-files/assets/svl2.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+						<img src="<?php echo svl_image_url('/rev-slider-files/assets/svl2.jpg'); ?>" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
 						<!-- LAYERS -->
 					</li>
 					<!-- SLIDE  -->
 					<li data-index="rs-71" data-transition="parallaxhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="rev-slider-files/assets/100x50_travel3.jpg" data-rotate="0" data-saveperformance="off" data-title="Number Three" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
 						<!-- MAIN IMAGE -->
-						<img src="rev-slider-files/assets/svl3.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+						<img src="<?php echo svl_image_url('/rev-slider-files/assets/svl3.jpg'); ?>" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
 						<!-- LAYERS -->
 					</li>
 					<!-- SLIDE  -->
 					<li data-index="rs-72" data-transition="parallaxhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="rev-slider-files/assets/100x50_travel4.jpg" data-rotate="0" data-saveperformance="off" data-title="Number Four" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
 						<!-- MAIN IMAGE -->
-						<img src="rev-slider-files/assets/svl4.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+						<img src="<?php echo svl_image_url('/rev-slider-files/assets/svl4.jpg'); ?>" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
 						<!-- LAYERS -->
 					</li>
 					<!-- SLIDE  -->
 					<li data-index="rs-73" data-transition="parallaxhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="rev-slider-files/assets/100x50_travel4.jpg" data-rotate="0" data-saveperformance="off" data-title="Number Five" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
 						<!-- MAIN IMAGE -->
-						<img src="rev-slider-files/assets/svl5.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+						<img src="<?php echo svl_image_url('/rev-slider-files/assets/svl5.jpg'); ?>" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
 						<!-- LAYERS -->
 					</li>
 					<!-- SLIDE  -->
 					<li data-index="rs-74" data-transition="parallaxhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="rev-slider-files/assets/100x50_travel4.jpg" data-rotate="0" data-saveperformance="off" data-title="Number Six" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
 						<!-- MAIN IMAGE -->
-						<img src="rev-slider-files/assets/svl6.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+						<img src="<?php echo svl_image_url('/rev-slider-files/assets/svl6.jpg'); ?>" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
 						<!-- LAYERS -->
 					</li>
 				</ul>
@@ -481,7 +489,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						
 						<div class="img_container">
 							<a href="destinos/<?php echo "$nombre_pagina_pais"; ?>/destinos-<?php echo "$nombre_pagina_pais"; ?>.php?id=<?php echo "$id_pais"; ?>">
-								<img src="destinos/img/<?php echo "$imagen_pais"; ?>" class="img-responsive" alt="<?php echo "$nombre_pais"; ?>" style="width:400px;height:250px;">
+								<img src="<?php echo svl_image_url('/destinos/img/'.$imagen_pais, 'card'); ?>" width="400" height="250" loading="lazy" decoding="async" class="img-responsive" alt="<?php echo "$nombre_pais"; ?>" style="width:400px;height:250px;">
 								<div class="short_info">
 									<i class="icon_set_1_icon-44"></i><?php echo "$nombre_pais"; ?><span class="price"><sup></sup></span>
 								</div>
@@ -503,7 +511,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			</div>
 			<!-- End row -->
 			<!--p class="text-center add_bottom_30">
-				<a href="principales-destinos.html" class="btn_1 medium"><i class="icon-eye-7"></i>Ver Destinos </a>
+				<a href="index.php#destinos" class="btn_1 medium"><i class="icon-eye-7"></i>Ver Destinos </a>
 			</p-->
 
 			<hr>
@@ -530,7 +538,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<div class="hotel_container">
 						<div class="img_container">
 							<a href="viajes/<?php echo "$destino"; ?>/viaje-<?php echo "$destino"; ?>.php?id_viaje=<?php echo "$id_news"; ?>">
-								<img src="newsletter/images/<?php echo "$id_lanzamiento"; ?>/<?php echo "$imagen"; ?>" width="800" height="533" class="img-responsive" alt="<?php echo "$destino"; ?>" style="width:400px;height:250px;">
+								<img src="<?php echo svl_image_url('/newsletter/images/'.$id_lanzamiento.'/'.$imagen, 'card'); ?>" loading="lazy" decoding="async" width="400" height="250" class="img-responsive" alt="<?php echo "$destino"; ?>" style="width:400px;height:250px;">
 								<div class="short_info hotel">
 								</div>
 							</a>

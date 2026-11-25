@@ -52,7 +52,7 @@ only screen and (min-device-pixel-ratio: 2) and (max-width: 991px) {
 	}
 	
 	header.sticky#colored #logo_home h1 a {
-		background-image: url(../img/logo_sticky_colored_2x.png);
+		background-image: url(../img/logo_sticky_2x.png);
 		background-size: auto 30px;
 	}
 }

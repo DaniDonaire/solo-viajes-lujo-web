@@ -1,6 +1,7 @@
 <?php
 include ("../../include/sql.php");
 include ("../../include/execute_sql.php");
+require_once __DIR__.'/../include/public-media.php';
 
 if ($_GET["id"] != ""){
 	$id = $_GET["id"];
@@ -176,7 +177,7 @@ else {
         </div><!-- container -->
     </header><!-- End Header -->
 	
-	<section class="parallax-window" data-parallax="scroll" data-image-src="../../destinos/img/<?php echo "$imagen_pais"; ?>" data-natural-width="1400" data-natural-height="470" alt="<?php echo "$nombre_pais"; ?>">
+	<section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo svl_image_url('/destinos/img/'.$imagen_pais); ?>" data-natural-width="1400" data-natural-height="470" alt="<?php echo "$nombre_pais"; ?>">
 		<div class="parallax-content-1">
 			<div class="animated fadeInDown">
 				<h1>Los mejores Destinos en <?php echo "$nombre_pais"; ?></h1>
@@ -225,7 +226,7 @@ else {
 					<div class="hotel_container">
 								<div class="img_container">
 									<a href="../../viajes/<?php echo "$nombre_pagina_destino"; ?>/viajes-<?php echo "$nombre_pagina_destino"; ?>.php?id=<?php echo "$id_destino"; ?>">
-										<img src="../../viajes/<?php echo "$nombre_pagina_destino"; ?>/img/<?php echo "$imagen"; ?>" class="img-responsive" alt="viajes <?php echo "$destino"; ?>" style="width:380px;height:250px;" alt="<?php echo "$destino"; ?>">
+										<img src="<?php echo svl_image_url('/viajes/'.$nombre_pagina_destino.'/img/'.$imagen, 'card'); ?>" width="380" height="250" loading="lazy" decoding="async" class="img-responsive" alt="viajes <?php echo "$destino"; ?>" style="width:380px;height:250px;">
 									</a>
 								</div>
 								<div class="hotel_title">

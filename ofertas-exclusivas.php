@@ -1,6 +1,7 @@
 <?php
 include ("include/sql.php");
 include ("include/execute_sql.php");
+require_once __DIR__.'/include/public-media.php';
 
 ?>
 <!DOCTYPE html>
@@ -161,7 +162,7 @@ include ("include/execute_sql.php");
 					?>
 						<div class="box_style_1">
 							<div class="post">
-								<a href="viajes/<?php echo "$nombre_pagina_destino"; ?>/viaje-<?php echo "$nombre_pagina_destino"; ?>.php?id_viaje=<?php echo "$id_viaje"; ?>" title="<?php echo "$titulo"; ?>"><img src="newsletter/images/<?php echo "$id_lanzamiento"; ?>/<?php echo "$imagen"; ?>" alt="<?php echo "$nombre_pagina_destino"; ?>" class="img-responsive"></a>
+								<a href="viajes/<?php echo "$nombre_pagina_destino"; ?>/viaje-<?php echo "$nombre_pagina_destino"; ?>.php?id_viaje=<?php echo "$id_viaje"; ?>" title="<?php echo "$titulo"; ?>"><img src="<?php echo svl_image_url('/newsletter/images/'.$id_lanzamiento.'/'.$imagen, 'card'); ?>" loading="lazy" decoding="async" alt="<?php echo "$nombre_pagina_destino"; ?>" class="img-responsive"></a>
 								<h2><?php echo "$titulo"; ?></h2>
 								<p>
 									<?php echo "$texto"; ?>

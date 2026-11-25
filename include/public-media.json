@@ -1,0 +1,489 @@
+{
+  "aliases": {
+    "/destinos/img/NORUEGA-FINLANDIA-ISLANDIA.jpg": "/destinos/img/FINLANDIA-NORUEGA-ISLANDIA-AURORAS-BOREALES.jpg",
+    "/newsletter/images/166/australia3.jpg": "/newsletter/images/157/australia3.jpg",
+    "/newsletter/images/1/america-Norte.jpg": "/destinos/img/america-Norte.jpg",
+    "/newsletter/images/1/aventura-canadiense.jpg": "/newsletter/images/1/aventuracanadiense.jpg",
+    "/newsletter/images/2/vietnam1.jpg": "/newsletter/images/2/VIETNAM1.jpg",
+    "/newsletter/images/2/vietnam2.JPG": "/newsletter/images/2/VIETNAM2.jpg",
+    "/newsletter/images/62/fin-de-an?o-islandia-reykjavik-auroras-boreales_2852.jpg": "/newsletter/images/62/fin-de-año-islandia-reykjavik-auroras-boreales_2852.jpg",
+    "/newsletter/images/62/islandia-trekking-caban?as.jpg": "/newsletter/images/62/islandia-trekking-cabañas.jpg",
+    "/viajes/-EL-PARQUE-LEGOLAND-Y-COPENHAG/img/-EL-PARQUE-LEGOLAND-Y-COPENHAGUE.jpg": "/viajes/-EL-PARQUE-LEGOLAND-Y-COPENHAGUE/img/-EL-PARQUE-LEGOLAND-Y-COPENHAGUE.jpg",
+    "/viajes/Bali/img/Bali.jpg": "/newsletter/images/45/BALI.jpg",
+    "/viajes/BalieIndonesia/img/BalieIndonesia.jpg": "/newsletter/images/45/BALI.jpg",
+    "/viajes/Cuba/img/Cuba.jpg": "/viajes/CUBA/img/CUBA.jpg",
+    "/viajes/India/img/India.jpg": "/viajes/India/img/india.jpg",
+    "/viajes/Iran/img/Iran.jpg": "/viajes/IRAN/img/IRAN.jpg",
+    "/viajes/Madagascar/img/Madagascar.jpg": "/viajes/MADAGASCAR/img/MADAGASCAR.jpg",
+    "/viajes/Malasia/img/Malasia.jpg": "/destinos/img/Malasia.jpg",
+    "/viajes/Marruecos/img/Marruecos.jpg": "/viajes/MARRUECOS/img/MARRUECOS.jpg",
+    "/viajes/Mauricio/img/Mauricio.jpg": "/newsletter/images/31/Mauricio.jpg",
+    "/viajes/Nepal/img/Nepal.jpg": "/newsletter/images/35/nepal.jpg",
+    "/viajes/PapuaNuevaGuinea/img/PapuaNuevaGuinea.jpg": "/newsletter/images/39/papua nueva guinea.jpeg",
+    "/viajes/Seychelles/img/Seychelles.jpg": "/newsletter/images/31/SEYCHELLES.jpg",
+    "/viajes/Sri-Lanka/img/Sri-Lanka.jpg": "/destinos/img/Sri-Lanka.jpg",
+    "/viajes/Tailandia/img/Tailandia.jpg": "/viajes/TAILANDIA/img/TAILANDIA.jpg",
+    "/viajes/Tibet/img/Tibet.jpg": "/newsletter/images/35/tibet-.jpg",
+    "/viajes/El-Salvador/img/El Salvador.jpg": "/newsletter/images/1/El Salvador 1.jpg",
+    "/viajes/ESTADOS-UNIDOS-Y-CANADA/img/": "/destinos/img/america-Norte.jpg",
+    "/newsletter/images/19/china 10.jxr": "/img/recovered/china-10.png"
+  },
+  "images": {
+    "/destinos/img/ANTARTIDA.jpg": {
+      "card": "/img/optimized/fb4ffb3124ec4718-card.webp",
+      "hero": "/img/optimized/fb4ffb3124ec4718-hero.webp"
+    },
+    "/destinos/img/Alquiler-Vacacional-.jpg": {
+      "card": "/img/optimized/4587b21760c0c0d0-card.webp",
+      "hero": "/img/optimized/4587b21760c0c0d0-hero.webp"
+    },
+    "/destinos/img/America-del-Norte.jpg": {
+      "card": "/img/optimized/50f51a1b6e7bde51-card.webp",
+      "hero": "/img/optimized/50f51a1b6e7bde51-hero.webp"
+    },
+    "/destinos/img/Benin.jpg": {
+      "card": "/img/optimized/fd395ff2d9c5fa74-card.webp",
+      "hero": "/img/optimized/fd395ff2d9c5fa74-hero.webp"
+    },
+    "/destinos/img/Botswana.jpg": {
+      "card": "/img/optimized/4673c686d9159687-card.webp",
+      "hero": "/img/optimized/4673c686d9159687-hero.webp"
+    },
+    "/destinos/img/CATALOGOS.jpg": {
+      "card": "/img/optimized/68d21d605ea11344-card.webp",
+      "hero": "/img/optimized/68d21d605ea11344-hero.webp"
+    },
+    "/destinos/img/CATAMARANES-EN-BALEARES.jpg": {
+      "card": "/img/optimized/d913fa3ab6c81e0c-card.webp",
+      "hero": "/img/optimized/d913fa3ab6c81e0c-hero.webp"
+    },
+    "/destinos/img/Camboya.jpg": {
+      "card": "/img/optimized/c18b48156449bb8e-card.webp",
+      "hero": "/img/optimized/c18b48156449bb8e-hero.webp"
+    },
+    "/destinos/img/Canada.jpg": {
+      "card": "/img/optimized/bdfb494882bd3c2b-card.webp",
+      "hero": "/img/optimized/bdfb494882bd3c2b-hero.webp"
+    },
+    "/destinos/img/Emiratos-Arabes-Unidos.jpg": {
+      "card": "/img/optimized/aca64a5939319236-card.webp",
+      "hero": "/img/optimized/aca64a5939319236-hero.webp"
+    },
+    "/destinos/img/Escandinavia.jpg": {
+      "card": "/img/optimized/dadbf6e7ab2fc998-card.webp",
+      "hero": "/img/optimized/dadbf6e7ab2fc998-hero.webp"
+    },
+    "/destinos/img/Espaa.jpg": {
+      "card": "/img/optimized/f02cc8d515125cbd-card.webp",
+      "hero": "/img/optimized/f02cc8d515125cbd-hero.webp"
+    },
+    "/destinos/img/Etiopia.jpg": {
+      "card": "/img/optimized/4309f70dbc41adb7-card.webp",
+      "hero": "/img/optimized/4309f70dbc41adb7-hero.webp"
+    },
+    "/destinos/img/FINLANDIA-NORUEGA-ISLANDIA-AURORAS-BOREALES.jpg": {
+      "card": "/img/optimized/64cd83620a2e5d04-card.webp",
+      "hero": "/img/optimized/64cd83620a2e5d04-hero.webp"
+    },
+    "/destinos/img/Groenlandia.jpg": {
+      "card": "/img/optimized/acdfeab1b35d5ce0-card.webp",
+      "hero": "/img/optimized/acdfeab1b35d5ce0-hero.webp"
+    },
+    "/destinos/img/IMPORT-MODA-PREMIUM.jpg": {
+      "card": "/img/optimized/b976e637f4610ac4-card.webp",
+      "hero": "/img/optimized/b976e637f4610ac4-hero.webp"
+    },
+    "/destinos/img/Indonesia.jpg": {
+      "card": "/img/optimized/3949d41b8eff5716-card.webp",
+      "hero": "/img/optimized/3949d41b8eff5716-hero.webp"
+    },
+    "/destinos/img/Inglaterra-y-Escocia-.jpg": {
+      "card": "/img/optimized/93ea17b1241e336e-card.webp",
+      "hero": "/img/optimized/93ea17b1241e336e-hero.webp"
+    },
+    "/destinos/img/Inglaterra-y-Paises-Bajos.jpg": {
+      "card": "/img/optimized/8a806e9db0430dd8-card.webp",
+      "hero": "/img/optimized/8a806e9db0430dd8-hero.webp"
+    },
+    "/destinos/img/Kenia.jpg": {
+      "card": "/img/optimized/9f6556e8bb82067c-card.webp",
+      "hero": "/img/optimized/9f6556e8bb82067c-hero.webp"
+    },
+    "/destinos/img/Laos.jpg": {
+      "card": "/img/optimized/0bf1bf74219ef04a-card.webp",
+      "hero": "/img/optimized/0bf1bf74219ef04a-hero.webp"
+    },
+    "/destinos/img/Malasia.jpg": {
+      "card": "/img/optimized/362ec5fd93c21618-card.webp",
+      "hero": "/img/optimized/362ec5fd93c21618-hero.webp"
+    },
+    "/destinos/img/Myanmar.jpg": {
+      "card": "/img/optimized/858d9644969a75ba-card.webp",
+      "hero": "/img/optimized/858d9644969a75ba-hero.webp"
+    },
+    "/destinos/img/NEWS.jpg": {
+      "card": "/img/optimized/a6dd50c5ab2ae145-card.webp",
+      "hero": "/img/optimized/a6dd50c5ab2ae145-hero.webp"
+    },
+    "/destinos/img/Namibia.jpg": {
+      "card": "/img/optimized/0ad549ee388a15ae-card.webp",
+      "hero": "/img/optimized/0ad549ee388a15ae-hero.webp"
+    },
+    "/destinos/img/Nueva-Zelanda.jpg": {
+      "card": "/img/optimized/d3fb3d0a3f9fe54a-card.webp",
+      "hero": "/img/optimized/d3fb3d0a3f9fe54a-hero.webp"
+    },
+    "/destinos/img/Pacfico.jpg": {
+      "card": "/img/optimized/8907953a5891b355-card.webp",
+      "hero": "/img/optimized/8907953a5891b355-hero.webp"
+    },
+    "/destinos/img/Rwanda.jpg": {
+      "card": "/img/optimized/9afc374b0d10458a-card.webp",
+      "hero": "/img/optimized/9afc374b0d10458a-hero.webp"
+    },
+    "/destinos/img/South-Africa.jpg": {
+      "card": "/img/optimized/e4f653c1921bd2a3-card.webp",
+      "hero": "/img/optimized/e4f653c1921bd2a3-hero.webp"
+    },
+    "/destinos/img/Sri-Lanka.jpg": {
+      "card": "/img/optimized/1eb09b44c7d45d28-card.webp",
+      "hero": "/img/optimized/1eb09b44c7d45d28-hero.webp"
+    },
+    "/destinos/img/Tailandia.jpg": {
+      "card": "/img/optimized/878eb94700464d23-card.webp",
+      "hero": "/img/optimized/878eb94700464d23-hero.webp"
+    },
+    "/destinos/img/Tanzania.jpg": {
+      "card": "/img/optimized/0e05d3978abaa1cb-card.webp",
+      "hero": "/img/optimized/0e05d3978abaa1cb-hero.webp"
+    },
+    "/destinos/img/Uganda.jpg": {
+      "card": "/img/optimized/f8489aaba681667e-card.webp",
+      "hero": "/img/optimized/f8489aaba681667e-hero.webp"
+    },
+    "/destinos/img/VIAJES-CON-NINOS.jpg": {
+      "card": "/img/optimized/73944f6ac0da3075-card.webp",
+      "hero": "/img/optimized/73944f6ac0da3075-hero.webp"
+    },
+    "/destinos/img/VUELTAS-AL-MUNDO.jpg": {
+      "card": "/img/optimized/45034f40b3a34378-card.webp",
+      "hero": "/img/optimized/45034f40b3a34378-hero.webp"
+    },
+    "/destinos/img/Viajes-a-Oriente.jpg": {
+      "card": "/img/optimized/ece0bfade87f6fa5-card.webp",
+      "hero": "/img/optimized/ece0bfade87f6fa5-hero.webp"
+    },
+    "/destinos/img/Vietnam.jpg": {
+      "card": "/img/optimized/c965a5f4e39fc6cf-card.webp",
+      "hero": "/img/optimized/c965a5f4e39fc6cf-hero.webp"
+    },
+    "/destinos/img/Vuelos-Charter.jpg": {
+      "card": "/img/optimized/4332678a22f8d67f-card.webp",
+      "hero": "/img/optimized/4332678a22f8d67f-hero.webp"
+    },
+    "/destinos/img/YATES-Y-VELEROS.jpg": {
+      "card": "/img/optimized/9891e2c367cc1de1-card.webp",
+      "hero": "/img/optimized/9891e2c367cc1de1-hero.webp"
+    },
+    "/destinos/img/Zambia.jpg": {
+      "card": "/img/optimized/e61159b9b544f748-card.webp",
+      "hero": "/img/optimized/e61159b9b544f748-hero.webp"
+    },
+    "/destinos/img/Zimbabwe.jpg": {
+      "card": "/img/optimized/0f3538ca41607b51-card.webp",
+      "hero": "/img/optimized/0f3538ca41607b51-hero.webp"
+    },
+    "/destinos/img/africa.jpg": {
+      "card": "/img/optimized/7385067cdd82e323-card.webp",
+      "hero": "/img/optimized/7385067cdd82e323-hero.webp"
+    },
+    "/destinos/img/america-Norte.jpg": {
+      "card": "/img/optimized/c171a3b5e739e595-card.webp",
+      "hero": "/img/optimized/c171a3b5e739e595-hero.webp"
+    },
+    "/destinos/img/america-latina.jpg": {
+      "card": "/img/optimized/1d0585b7971ee0fd-card.webp",
+      "hero": "/img/optimized/1d0585b7971ee0fd-hero.webp"
+    },
+    "/destinos/img/bali-indonesia.jpg": {
+      "card": "/img/optimized/8058b52bb5a757b7-card.webp",
+      "hero": "/img/optimized/8058b52bb5a757b7-hero.webp"
+    },
+    "/destinos/img/caribe.jpg": {
+      "card": "/img/optimized/ab6490946c353867-card.webp",
+      "hero": "/img/optimized/ab6490946c353867-hero.webp"
+    },
+    "/destinos/img/china-y-japon.jpg": {
+      "card": "/img/optimized/3d791d7ebe4c1887-card.webp",
+      "hero": "/img/optimized/3d791d7ebe4c1887-hero.webp"
+    },
+    "/destinos/img/chinayjapon.jpg": {
+      "card": "/img/optimized/3d791d7ebe4c1887-card.webp",
+      "hero": "/img/optimized/3d791d7ebe4c1887-hero.webp"
+    },
+    "/destinos/img/escandinavia-Balticos-Rusia.jpg": {
+      "card": "/img/optimized/92ebae84cd5f55af-card.webp",
+      "hero": "/img/optimized/92ebae84cd5f55af-hero.webp"
+    },
+    "/destinos/img/europa.jpg": {
+      "card": "/img/optimized/dbb9aa457b3ef024-card.webp",
+      "hero": "/img/optimized/dbb9aa457b3ef024-hero.webp"
+    },
+    "/destinos/img/india.jpg": {
+      "card": "/img/optimized/65b967a38d92cfd7-card.webp",
+      "hero": "/img/optimized/65b967a38d92cfd7-hero.webp"
+    },
+    "/destinos/img/indico.jpg": {
+      "card": "/img/optimized/b4bf2fc0d8f7fce2-card.webp",
+      "hero": "/img/optimized/b4bf2fc0d8f7fce2-hero.webp"
+    },
+    "/destinos/img/indochina.jpg": {
+      "card": "/img/optimized/8ea4d67e6ff3b5f5-card.webp",
+      "hero": "/img/optimized/8ea4d67e6ff3b5f5-hero.webp"
+    },
+    "/destinos/img/oriente-medio.jpg": {
+      "card": "/img/optimized/45ca410dd190f409-card.webp",
+      "hero": "/img/optimized/45ca410dd190f409-hero.webp"
+    },
+    "/destinos/img/pacifico.jpg": {
+      "card": "/img/optimized/9d74817986eaa56b-card.webp",
+      "hero": "/img/optimized/9d74817986eaa56b-hero.webp"
+    },
+    "/destinos/img/sudeste-asiatico.jpg": {
+      "card": "/img/optimized/a9ff54260c3bc414-card.webp",
+      "hero": "/img/optimized/a9ff54260c3bc414-hero.webp"
+    },
+    "/img/crucero1.jpg": {
+      "card": "/img/optimized/afc5ed8eb2809259-card.webp",
+      "hero": "/img/optimized/afc5ed8eb2809259-hero.webp"
+    },
+    "/img/crucero2.jpg": {
+      "card": "/img/optimized/02843f5cc5e689d0-card.webp",
+      "hero": "/img/optimized/02843f5cc5e689d0-hero.webp"
+    },
+    "/img/crucero3.jpg": {
+      "card": "/img/optimized/e44637b8ec4ab0ae-card.webp",
+      "hero": "/img/optimized/e44637b8ec4ab0ae-hero.webp"
+    },
+    "/img/crucero4.jpg": {
+      "card": "/img/optimized/a9da1c013dac9133-card.webp",
+      "hero": "/img/optimized/a9da1c013dac9133-hero.webp"
+    },
+    "/img/crucero5.jpg": {
+      "card": "/img/optimized/fae3afdebe2a0d5f-card.webp",
+      "hero": "/img/optimized/fae3afdebe2a0d5f-hero.webp"
+    },
+    "/img/crucero6.jpg": {
+      "card": "/img/optimized/9195fefddfe9b329-card.webp",
+      "hero": "/img/optimized/9195fefddfe9b329-hero.webp"
+    },
+    "/img/home_bg_2.jpg": {
+      "card": "/img/optimized/6728b7e7db8d88d9-card.webp",
+      "hero": "/img/optimized/6728b7e7db8d88d9-hero.webp"
+    },
+    "/img/laptop.png": {
+      "card": "/img/optimized/407aa7454f826cc4-card.webp",
+      "hero": "/img/optimized/407aa7454f826cc4-hero.webp"
+    },
+    "/img/pattern.png": {
+      "card": "/img/optimized/6c5d9e9845ac3e6a-card.webp",
+      "hero": "/img/optimized/6c5d9e9845ac3e6a-hero.webp"
+    },
+    "/newsletter/images/1/Antártida 1.JPG": {
+      "card": "/img/optimized/f0be367ac1ab5db8-card.webp",
+      "hero": "/img/optimized/f0be367ac1ab5db8-hero.webp"
+    },
+    "/newsletter/images/1/El Salvador 1.jpg": {
+      "card": "/img/optimized/9c1faa320dbf2a71-card.webp",
+      "hero": "/img/optimized/9c1faa320dbf2a71-hero.webp"
+    },
+    "/newsletter/images/1/aventuracanadiense.jpg": {
+      "card": "/img/optimized/0988079d4f74e79c-card.webp",
+      "hero": "/img/optimized/0988079d4f74e79c-hero.webp"
+    },
+    "/newsletter/images/157/australia3.jpg": {
+      "card": "/img/optimized/ecbf42979825bb6b-card.webp",
+      "hero": "/img/optimized/ecbf42979825bb6b-hero.webp"
+    },
+    "/newsletter/images/160/MASAI MARA.jpg": {
+      "card": "/img/optimized/bc5da20951eeaf06-card.webp",
+      "hero": "/img/optimized/bc5da20951eeaf06-hero.webp"
+    },
+    "/newsletter/images/160/SAPA VIETNAM.jpg": {
+      "card": "/img/optimized/6d01e0cdbf2349a9-card.webp",
+      "hero": "/img/optimized/6d01e0cdbf2349a9-hero.webp"
+    },
+    "/newsletter/images/165/bosque avatar.jpg": {
+      "card": "/img/optimized/7439ce35ce8392a3-card.webp",
+      "hero": "/img/optimized/7439ce35ce8392a3-hero.webp"
+    },
+    "/newsletter/images/179/OSAKA.jpg": {
+      "card": "/img/optimized/09750b284300c753-card.webp",
+      "hero": "/img/optimized/09750b284300c753-hero.webp"
+    },
+    "/newsletter/images/18/800px-Mittlere_Brücke.jpg": {
+      "card": "/img/optimized/cdb4df969441fab6-card.webp",
+      "hero": "/img/optimized/cdb4df969441fab6-hero.webp"
+    },
+    "/newsletter/images/18/800px-Rheinbrücke_Feuerthalen_01_10.jpg": {
+      "card": "/img/optimized/0abfa080c3dcb015-card.webp",
+      "hero": "/img/optimized/0abfa080c3dcb015-hero.webp"
+    },
+    "/newsletter/images/18/ETH_Zürich_im_Abendlicht.jpg": {
+      "card": "/img/optimized/11cfa1f4aa763e10-card.webp",
+      "hero": "/img/optimized/11cfa1f4aa763e10-hero.webp"
+    },
+    "/newsletter/images/2/VIETNAM1.jpg": {
+      "card": "/img/optimized/6cf6bb6afe99d4be-card.webp",
+      "hero": "/img/optimized/6cf6bb6afe99d4be-hero.webp"
+    },
+    "/newsletter/images/2/VIETNAM2.jpg": {
+      "card": "/img/optimized/cc00fecff426328e-card.webp",
+      "hero": "/img/optimized/cc00fecff426328e-hero.webp"
+    },
+    "/newsletter/images/3/800px-Palazzo_della_civiltà_del_lavoro_(EUR,_Rome)_(5904657870).jpg": {
+      "card": "/img/optimized/528c3a8bf11a2910-card.webp",
+      "hero": "/img/optimized/528c3a8bf11a2910-hero.webp"
+    },
+    "/newsletter/images/3/Avignon_pont_Saint-Bénezet_août_2013.jpg": {
+      "card": "/img/optimized/644cc39aed57cacc-card.webp",
+      "hero": "/img/optimized/644cc39aed57cacc-hero.webp"
+    },
+    "/newsletter/images/31/Mauricio.jpg": {
+      "card": "/img/optimized/645002308d25865a-card.webp",
+      "hero": "/img/optimized/645002308d25865a-hero.webp"
+    },
+    "/newsletter/images/31/SEYCHELLES.jpg": {
+      "card": "/img/optimized/b3e2b7bb76c1a30e-card.webp",
+      "hero": "/img/optimized/b3e2b7bb76c1a30e-hero.webp"
+    },
+    "/newsletter/images/35/nepal.jpg": {
+      "card": "/img/optimized/5338a04c0e3301a0-card.webp",
+      "hero": "/img/optimized/5338a04c0e3301a0-hero.webp"
+    },
+    "/newsletter/images/35/tibet-.jpg": {
+      "card": "/img/optimized/9183ce31f1c3a3b9-card.webp",
+      "hero": "/img/optimized/9183ce31f1c3a3b9-hero.webp"
+    },
+    "/newsletter/images/36/México DF.jpg": {
+      "card": "/img/optimized/b27c6cc8e564e912-card.webp",
+      "hero": "/img/optimized/b27c6cc8e564e912-hero.webp"
+    },
+    "/newsletter/images/36/Riviera MayaMéxico.jpg": {
+      "card": "/img/optimized/6dda0438867d301a-card.webp",
+      "hero": "/img/optimized/6dda0438867d301a-hero.webp"
+    },
+    "/newsletter/images/39/papua nueva guinea.jpeg": {
+      "card": "/img/optimized/d784996681faf43e-card.webp",
+      "hero": "/img/optimized/d784996681faf43e-hero.webp"
+    },
+    "/newsletter/images/45/BALI.jpg": {
+      "card": "/img/optimized/368db50fe99a3997-card.webp",
+      "hero": "/img/optimized/368db50fe99a3997-hero.webp"
+    },
+    "/newsletter/images/5/JAPON ESPIRITUAL.jpg": {
+      "card": "/img/optimized/afc483f6d320be81-card.webp",
+      "hero": "/img/optimized/afc483f6d320be81-hero.webp"
+    },
+    "/newsletter/images/5/NARA JAPON.jpg": {
+      "card": "/img/optimized/c1a3ffc0a561e3e7-card.webp",
+      "hero": "/img/optimized/c1a3ffc0a561e3e7-hero.webp"
+    },
+    "/newsletter/images/5/osaka5.jpg": {
+      "card": "/img/optimized/6c1baaae6df242fd-card.webp",
+      "hero": "/img/optimized/6c1baaae6df242fd-hero.webp"
+    },
+    "/newsletter/images/62/fin-de-año-islandia-reykjavik-auroras-boreales_2852.jpg": {
+      "card": "/img/optimized/62e8be44819c4a84-card.webp",
+      "hero": "/img/optimized/62e8be44819c4a84-hero.webp"
+    },
+    "/newsletter/images/62/islandia-trekking-cabañas.jpg": {
+      "card": "/img/optimized/d7fa7de6e360a7b5-card.webp",
+      "hero": "/img/optimized/d7fa7de6e360a7b5-hero.webp"
+    },
+    "/newsletter/images/70/El gran desierto en 9 días.jpg": {
+      "card": "/img/optimized/ec3668575f641a39-card.webp",
+      "hero": "/img/optimized/ec3668575f641a39-hero.webp"
+    },
+    "/rev-slider-files/assets/svl1.jpg": {
+      "card": "/img/optimized/2ddf74f89e41415a-card.webp",
+      "hero": "/img/optimized/2ddf74f89e41415a-hero.webp"
+    },
+    "/rev-slider-files/assets/svl2.jpg": {
+      "card": "/img/optimized/9bae2a2112dce86f-card.webp",
+      "hero": "/img/optimized/9bae2a2112dce86f-hero.webp"
+    },
+    "/rev-slider-files/assets/svl3.jpg": {
+      "card": "/img/optimized/02263e50c43069e9-card.webp",
+      "hero": "/img/optimized/02263e50c43069e9-hero.webp"
+    },
+    "/rev-slider-files/assets/svl4.jpg": {
+      "card": "/img/optimized/b68b784ce06b3016-card.webp",
+      "hero": "/img/optimized/b68b784ce06b3016-hero.webp"
+    },
+    "/rev-slider-files/assets/svl5.jpg": {
+      "card": "/img/optimized/439a4668607c763d-card.webp",
+      "hero": "/img/optimized/439a4668607c763d-hero.webp"
+    },
+    "/rev-slider-files/assets/svl6.jpg": {
+      "card": "/img/optimized/91bbe360e73ce133-card.webp",
+      "hero": "/img/optimized/91bbe360e73ce133-hero.webp"
+    },
+    "/viajes/-EL-PARQUE-LEGOLAND-Y-COPENHAGUE/img/-EL-PARQUE-LEGOLAND-Y-COPENHAGUE.jpg": {
+      "card": "/img/optimized/a5d99a84f1ee1336-card.webp",
+      "hero": "/img/optimized/a5d99a84f1ee1336-hero.webp"
+    },
+    "/viajes/CUBA/img/CUBA.jpg": {
+      "card": "/img/optimized/cb99684728a0689e-card.webp",
+      "hero": "/img/optimized/cb99684728a0689e-hero.webp"
+    },
+    "/viajes/Canada/img/Canadá.jpg": {
+      "card": "/img/optimized/bdfb494882bd3c2b-card.webp",
+      "hero": "/img/optimized/bdfb494882bd3c2b-hero.webp"
+    },
+    "/viajes/IRAN/img/IRAN.jpg": {
+      "card": "/img/optimized/cf24e87ffeab0e21-card.webp",
+      "hero": "/img/optimized/cf24e87ffeab0e21-hero.webp"
+    },
+    "/viajes/India/img/india.jpg": {
+      "card": "/img/optimized/6950af38e31a92f5-card.webp",
+      "hero": "/img/optimized/6950af38e31a92f5-hero.webp"
+    },
+    "/viajes/MADAGASCAR/img/MADAGASCAR.jpg": {
+      "card": "/img/optimized/0fb91ec02d97f23f-card.webp",
+      "hero": "/img/optimized/0fb91ec02d97f23f-hero.webp"
+    },
+    "/viajes/MARRUECOS/img/MARRUECOS.jpg": {
+      "card": "/img/optimized/26e2333fb604ba49-card.webp",
+      "hero": "/img/optimized/26e2333fb604ba49-hero.webp"
+    },
+    "/viajes/TAILANDIA/img/TAILANDIA.jpg": {
+      "card": "/img/optimized/04aaa3cdf99efda5-card.webp",
+      "hero": "/img/optimized/04aaa3cdf99efda5-hero.webp"
+    },
+    "/newsletter/images/28/.Tahiti.JPG": {
+      "card": "/img/optimized/dd488b64f055c3ba-card.webp",
+      "hero": "/img/optimized/dd488b64f055c3ba-hero.webp"
+    },
+    "/newsletter/images/151/japon.avif": {
+      "card": "/img/optimized/8dd9fde9c8f0ee15-card.webp",
+      "hero": "/img/optimized/8dd9fde9c8f0ee15-hero.webp"
+    },
+    "/newsletter/images/5/japon1.avif": {
+      "card": "/img/optimized/8dd9fde9c8f0ee15-card.webp",
+      "hero": "/img/optimized/8dd9fde9c8f0ee15-hero.webp"
+    },
+    "/newsletter/images/10/bruges.jfif": {
+      "card": "/img/optimized/08ed4b115032676c-card.webp",
+      "hero": "/img/optimized/08ed4b115032676c-hero.webp"
+    },
+    "/newsletter/images/16/futuroscope.jfif": {
+      "card": "/img/optimized/7d6c39c6d7cd267c-card.webp",
+      "hero": "/img/optimized/7d6c39c6d7cd267c-hero.webp"
+    },
+    "/img/recovered/china-10.png": {
+      "card": "/img/optimized/9de2a8db50b1517f-card.webp",
+      "hero": "/img/optimized/9de2a8db50b1517f-hero.webp"
+    }
+  }
+}

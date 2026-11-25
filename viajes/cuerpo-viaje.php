@@ -1,6 +1,7 @@
 <?php
 include ("../../include/sql.php");
 include ("../../include/execute_sql.php");
+require_once __DIR__.'/../include/public-media.php';
 
 if ($_GET["id_viaje"] != ""){
 	$id_viaje = $_GET["id_viaje"];
@@ -34,8 +35,8 @@ while($RS = mysqli_fetch_array($result_detalle_viaje))
 	//$lineas = (strlen($textoAmp)/90) * 100;
 	$lineas = round(strlen($textoAmp)/90) * 10;
 	
-	$textoAmp = preg_replace('@(\[web=([^\]]*)]([^\]]*)\[\/web\])@', '<a href="\2" class="estilolink" target="_blank">\3</a>', $textoAmp);
-	$texto = preg_replace('@(\[web=([^\]]*)]([^\]]*)\[\/web\])@', '<a href="\2" class="estilolink" target="_blank">\3</a>', $texto);
+	$textoAmp = svl_render_travel_links($textoAmp);
+	$texto = svl_render_travel_links($texto);
 }
 
 ?>
@@ -158,7 +159,7 @@ while($RS = mysqli_fetch_array($result_detalle_viaje))
         </div><!-- container -->
     </header><!-- End Header -->
 
-	<section class="parallax-window" data-parallax="scroll" data-image-src="../../newsletter/images/<?php echo "$id_lanzamiento_imagen"; ?>/<?php echo "$imagen"; ?>" data-natural-width="1400" data-natural-height="470">
+	<section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo svl_image_url('/newsletter/images/'.$id_lanzamiento_imagen.'/'.$imagen); ?>" data-natural-width="1400" data-natural-height="470">
 		<div class="parallax-content-2">
 			<div class="container">
 				<div class="row">
@@ -184,11 +185,11 @@ while($RS = mysqli_fetch_array($result_detalle_viaje))
 					<li><a href="../../index.php">Home</a>
 					</li>
 				
-					<li><a href="../../destinos/<?php echo "$nombre_pagina_pais"; ?>/destinos-<?php echo "$nombre_pagina_pais"; ?>.php?id=<?php echo "$id_pais"; ?>"><?php echo "$nombre_pais"; ?></a>
+					<li><a href="<?php echo svl_catalogue_url('destinos', $nombre_pagina_pais ?? '', $id_pais ?? ''); ?>"><?php echo "$nombre_pais"; ?></a>
 					</li>	
 					
 					<li>
-					<a href="viajes-<?php echo "$nombre_pagina_destino"; ?>.php?id=<?php echo "$id_destino"; ?>"><?php echo "$destino"; ?></a></li>
+					<a href="<?php echo svl_catalogue_url('viajes', $nombre_pagina_destino ?? '', $id_destino ?? ''); ?>"><?php echo "$destino"; ?></a></li>
 					
 			
 					<li><?php echo "$titulo"; ?></li>

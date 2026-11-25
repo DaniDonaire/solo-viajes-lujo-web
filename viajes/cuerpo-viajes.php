@@ -1,7 +1,7 @@
 <?php
 include ("../../include/sql.php");
 include ("../../include/execute_sql.php");
-require_once __DIR__.'/../include/site-path.php';
+require_once __DIR__.'/../include/public-media.php';
 
 if ($_GET["id"] != ""){
 	$id = $_GET["id"];
@@ -15,6 +15,7 @@ $result_sql_destino = execute_sql($sql_destino);
 $RS = mysqli_fetch_array($result_sql_destino);
 if($RS){
 	$imagen_destino = $RS['imagen_destino'];
+	$carpeta_destino = $RS['nombre_pagina_destino'];
 	$nombre_pagina_pais = $RS['nombre_pagina_pais'];
 	$nombre_pais = $RS['nombre_pais'];
 	$destino = $RS['destino'];
@@ -196,7 +197,7 @@ if($RS){
         </div><!-- container -->
     </header><!-- End Header -->
 
-	<section class="parallax-window" data-parallax="scroll" data-image-src="img/<?php echo "$imagen_destino"; ?>" data-natural-width="1400" data-natural-height="470">
+	<section class="parallax-window" data-parallax="scroll" data-image-src="<?php echo svl_image_url('/viajes/'.$carpeta_destino.'/img/'.$imagen_destino); ?>" data-natural-width="1400" data-natural-height="470">
 		<div class="parallax-content-2">
 			<div class="container">
 				<div class="row">
@@ -219,7 +220,7 @@ if($RS){
 					</li>
 					
 					<li>
-					<a href="../../destinos/<?php echo "$nombre_pagina_pais"; ?>/destinos-<?php echo "$nombre_pagina_pais"; ?>.php?id=<?php echo "$id_pais"; ?>">
+					<a href="<?php echo svl_catalogue_url('destinos', $nombre_pagina_pais ?? '', $id_pais ?? ''); ?>">
 					<?php echo "$nombre_pais"; ?></a>
 					</li>
 					
@@ -299,7 +300,7 @@ if($RS){
 						<div class="row">
 							<div class="col-lg-4 col-md-4 col-sm-4">
 								<div class="img_list">
-									<a href="viaje-<?php echo "$nombre_pagina_destino"; ?>.php?id_viaje=<?php echo "$id_viaje"; ?>"><img src="../../newsletter/images/<?php echo "$id_lanzamiento_imagen"; ?>/<?php echo "$imagen"; ?>" alt="<?php echo "$titulo"; ?>">
+									<a href="viaje-<?php echo "$nombre_pagina_destino"; ?>.php?id_viaje=<?php echo "$id_viaje"; ?>"><img src="<?php echo svl_image_url('/newsletter/images/'.$id_lanzamiento_imagen.'/'.$imagen); ?>" alt="<?php echo "$titulo"; ?>">
 										<!-- <div class="short_info"><i class="icon_set_1_icon-4"></i>Museums </div> -->
 									</a>
 								</div>

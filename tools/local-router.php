@@ -96,7 +96,7 @@ if ($extension === 'php') {
         exit('This PHP route is outside the public-site preview.');
     }
 } elseif (!in_array($extension, array('html', 'htm', 'css', 'js', 'map', 'jpg', 'jpeg',
-        'png', 'gif', 'webp', 'svg', 'ico', 'pdf', 'woff', 'woff2', 'ttf', 'eot', 'otf',
+        'png', 'gif', 'webp', 'avif', 'jfif', 'svg', 'ico', 'cur', 'pdf', 'woff', 'woff2', 'ttf', 'eot', 'otf',
         'txt', 'xml', 'json'), true)) {
     http_response_code(403);
     exit;
