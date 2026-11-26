@@ -40,28 +40,10 @@ $result_sql_rutas = execute_sql($sql_rutas);
     <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Lato:300,400|Montserrat:400,400i,700,700i" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Great+Vibes|Open+Sans|Roboto" rel="stylesheet"> 
 
-    <!-- Discover the same theme styles immediately, in their original cascade order. -->
+    <!-- Same theme styles and cascade, delivered in one request. -->
     <link rel="preload" as="image" href="<?php echo svl_image_url('/rev-slider-files/assets/svl1.jpg'); ?>" fetchpriority="high">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/menu.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
-    <link href="css/fontello/css/all-fontello.min.css" rel="stylesheet">
-    <link href="css/icon_restaurant/css/icon_restaurants.min.css" rel="stylesheet">
-    <link href="css/new_icons/css/icon_set_all.min.css" rel="stylesheet">
-    <link href="css/magnific-popup.css" rel="stylesheet">
-    <link href="css/pop_up.css" rel="stylesheet">
-    <link href="css/custom.css" rel="stylesheet">
-	
-	<!-- SPECIFIC CSS >
-    <link href="css/jquery.cookiebar.css" rel="stylesheet"-->
+    <link href="css/home-e6200b15b689.css" rel="stylesheet">
 
-    <!-- REVOLUTION SLIDER CSS -->
-    <link rel="stylesheet" type="text/css" href="rev-slider-files/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
-	<link rel="stylesheet" type="text/css" href="rev-slider-files/fonts/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" href="rev-slider-files/css/settings.css">
-    
    <!-- REVOLUTION LAYERS STYLES -->
 	<style>
 		/* Reserve the same space as Revolution before its JavaScript initializes. */
