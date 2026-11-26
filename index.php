@@ -23,6 +23,7 @@ $result_sql_rutas = execute_sql($sql_rutas);
 	<meta name="description" content="Los Mejores Viajes por el Mundo al Mejor Precio a Europa,Asia,America,Africa,EstadosUnidos,Brasil,Argentina,China,Costa-Rica,Mexico,Canada,Noruega Laponia">
 	<meta name="keywords" content="solo viajes de lujo por el mundo, Viajes,Europa,Asia,America,Africa,Estados Unidos,Brasil,Argentina,China,Costa-Rica,Mexico,Canada,Artico,Noruega,Nepal,Laponia,Rusia, Paises Balticos, Perú, Australia, Nueva Zelanda, Fiji, India, Empresas: Eventos" />
 	<title>Los Mejores Viajes de Lujo por el Mundo | soloviajesdelujo.com</title>
+    <link rel="canonical" href="https://soloviajesdelujo.com/">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -529,7 +530,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<div class="col-md-4 col-sm-6 wow zoomIn" data-wow-delay="0.<?php echo "$cont"; ?>s">
 					<div class="hotel_container">
 						<div class="img_container">
-							<a href="viajes/<?php echo "$destino"; ?>/viaje-<?php echo "$destino"; ?>.php?id_viaje=<?php echo "$id_news"; ?>">
+							<a href="<?php echo svl_catalogue_url('viaje', $destino, $id_news); ?>">
 								<img src="<?php echo svl_image_url('/newsletter/images/'.$id_lanzamiento.'/'.$imagen, 'card'); ?>" loading="lazy" decoding="async" width="400" height="250" class="img-responsive" alt="<?php echo "$destino"; ?>" style="width:400px;height:250px;">
 								<div class="short_info hotel">
 								</div>

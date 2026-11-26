@@ -7,7 +7,7 @@ require_once __DIR__.'/include/public-media.php';
 <!DOCTYPE html>
 <!--[if IE 8]><html class="ie ie8"> <![endif]-->
 <!--[if IE 9]><html class="ie ie9"> <![endif]-->
-<html lang="en">
+<html lang="es">
 
 <head>
 	<script src="js/newsletter.js" defer></script>
@@ -19,6 +19,7 @@ require_once __DIR__.'/include/public-media.php';
 	<meta name="description" content="solo Viajes de Lujo - Viajes De lujo, Exclusivos, para Empresas, Safaris, Islas Mauricio, Tanzania, Botswana, Namibia, Sudafrica">
     <meta name="author" content="Ingenio Proyectos | Innovacorp Technology">
     <title>Solo Viajes de Lujo - Viajes Exclusivos</title>
+    <link rel="canonical" href="https://soloviajesdelujo.com/ofertas-exclusivas.php">
 
 	<!-- Favicons-->
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -162,13 +163,13 @@ require_once __DIR__.'/include/public-media.php';
 					?>
 						<div class="box_style_1">
 							<div class="post">
-								<a href="viajes/<?php echo "$nombre_pagina_destino"; ?>/viaje-<?php echo "$nombre_pagina_destino"; ?>.php?id_viaje=<?php echo "$id_viaje"; ?>" title="<?php echo "$titulo"; ?>"><img src="<?php echo svl_image_url('/newsletter/images/'.$id_lanzamiento.'/'.$imagen, 'card'); ?>" loading="lazy" decoding="async" alt="<?php echo "$nombre_pagina_destino"; ?>" class="img-responsive"></a>
+								<a href="<?php echo svl_catalogue_url('viaje', $nombre_pagina_destino, $id_viaje); ?>" title="<?php echo "$titulo"; ?>"><img src="<?php echo svl_image_url('/newsletter/images/'.$id_lanzamiento.'/'.$imagen, 'card'); ?>" loading="lazy" decoding="async" alt="<?php echo "$nombre_pagina_destino"; ?>" class="img-responsive"></a>
 								<h2><?php echo "$titulo"; ?></h2>
 								<p>
 									<?php echo "$texto"; ?>
 								</p>
 								<div class="container">
-									<a href="viajes/<?php echo "$nombre_pagina_destino"; ?>/viaje-<?php echo "$nombre_pagina_destino"; ?>.php?id_viaje=<?php echo "$id_viaje"; ?>" class="btn_1">Ver Descripción</a>
+									<a href="<?php echo svl_catalogue_url('viaje', $nombre_pagina_destino, $id_viaje); ?>" class="btn_1">Ver Descripción</a>
 									<a href="contacto.php?id=<?php echo "$id_viaje"; ?>" class="btn_1">Acceder a la Venta</a>
 								</div>
 							</div>

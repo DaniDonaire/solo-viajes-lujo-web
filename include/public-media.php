@@ -1,6 +1,7 @@
 <?php
 /** Public media aliases keep historical catalogue data untouched. */
 require_once __DIR__.'/site-path.php';
+require_once __DIR__.'/catalogue-seo.php';
 
 function svl_media_manifest()
 {
@@ -34,6 +35,9 @@ function svl_catalogue_url($type, $slug, $id)
     }
     $folder = $type === 'destinos' ? 'destinos' : 'viajes';
     $key = $type === 'viaje' ? 'id_viaje' : 'id';
+    if ($type === 'viaje') {
+        $id = svl_preferred_program_id($slug, $id);
+    }
     // The small compatibility entry points retain these existing public URLs.
     return htmlspecialchars(svl_site_path('/'.$folder.'/'.rawurlencode($slug).'/'.$type.'-'.rawurlencode($slug).'.php?'.$key.'='.(int) $id), ENT_QUOTES, 'UTF-8');
 }

@@ -2,6 +2,7 @@ User-agent: *
 Disallow: /templates/
 Disallow: /pspdevel/
 Disallow: /include/
+Allow: /newsletter/images/
 Disallow: /newsletter/
 Disallow: /lists/
 Disallow: /eslogin/

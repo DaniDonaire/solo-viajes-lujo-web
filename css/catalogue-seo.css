@@ -1,0 +1,12 @@
+/* Preserve the old catalogue's spacing and typography with valid heading markup. */
+.cbp_tmtimeline > li .cbp_tmlabel .svl-heading-divider {
+    height: 11px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+#single_tour_desc .svl-itinerary-copy {
+    font-size: 22px;
+    margin-top: 5px;
+    color: #333;
+}

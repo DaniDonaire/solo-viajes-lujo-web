@@ -8,15 +8,13 @@ include ("../../include/sql.php");
 include ("../../include/execute_sql.php");
 require_once __DIR__.'/../include/public-media.php';
 
-if ($_GET["id_viaje"] != ""){
-	$id_viaje = $_GET["id_viaje"];
-}
-else {
-	$id = 1;
-}
+$id_viaje = svl_catalogue_id('id_viaje');
 
 $sql_detalle_viaje = sql_detalle_viaje($id_viaje);
 $result_detalle_viaje = execute_sql($sql_detalle_viaje);
+if (!$result_detalle_viaje || mysqli_num_rows($result_detalle_viaje) === 0) {
+    svl_catalogue_not_found();
+}
 while($RS = mysqli_fetch_array($result_detalle_viaje))
 {
 	$id_lanzamiento = $RS['id_lanzamiento'];
@@ -44,11 +42,12 @@ while($RS = mysqli_fetch_array($result_detalle_viaje))
 	$texto = svl_render_travel_links($texto);
 }
 
+$canonical = svl_catalogue_resolve_path('viaje', $nombre_pagina_destino, $id_viaje);
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]><html class="ie ie8"> <![endif]-->
 <!--[if IE 9]><html class="ie ie9"> <![endif]-->
-<html lang="en">
+<html lang="es">
 
 <head>
 	<script src="../../js/newsletter.js" defer></script>
@@ -60,6 +59,7 @@ while($RS = mysqli_fetch_array($result_detalle_viaje))
 	<meta name="description" content="Viaje <?php echo "$destino"; ?> : <?php echo "$titulo"; ?>">
     
     <title>Viaje <?php echo "$destino"; ?> - <?php echo "$titulo"; ?></title>
+    <link rel="canonical" href="<?php echo htmlspecialchars($canonical, ENT_QUOTES, 'UTF-8'); ?>">
 
 	<!-- Favicons-->
 	<link rel="shortcut icon" href="../../img/favicon.ico" type="../../image/x-icon">
@@ -76,6 +76,7 @@ while($RS = mysqli_fetch_array($result_detalle_viaje))
 
 	<!-- SPECIFIC CSS -->
 	<link href="../../css/timeline.css" rel="stylesheet">
+	<link href="../../css/catalogue-seo.css" rel="stylesheet">
 	
 	<!-- CSS -->
 	<link href="../../css/slider-pro.min.css" rel="stylesheet">
@@ -223,10 +224,12 @@ while($RS = mysqli_fetch_array($result_detalle_viaje))
 					<time class="cbp_tmtime"><span>Día 1</span></time>
 					<!--div class="cbp_tmicon timeline_icon_point"></div-->
 					<div class="cbp_tmlabel">
-						<h2>VIAJES <?php echo "$nombre_pagina_destino"; ?><h2>
-						<h2>VIAJE <?php echo "$titulo"; ?><h2>
-						<h3><span></span><?php echo "$texto"; ?><h3>
-						<p><?php echo "$textoAmp"; ?></p>
+						<h2>VIAJES <?php echo "$nombre_pagina_destino"; ?></h2>
+						<div class="svl-heading-divider" aria-hidden="true"></div>
+						<h2>VIAJE <?php echo "$titulo"; ?></h2>
+						<div class="svl-heading-divider" aria-hidden="true"></div>
+						<h3><span></span><?php echo "$texto"; ?></h3>
+						<div class="h3 svl-itinerary-copy"><p><?php echo "$textoAmp"; ?></p></div>
 					</div>
 				</li>
 

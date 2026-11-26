@@ -8,16 +8,14 @@ include ("../../include/sql.php");
 include ("../../include/execute_sql.php");
 require_once __DIR__.'/../include/public-media.php';
 
-if ($_GET["id"] != ""){
-	$id = $_GET["id"];
-}
-else {
-	$id = 1;
-}
+$id = svl_catalogue_id('id');
 $sql_destino = sql_destino($id);
 $result_sql_destino = execute_sql($sql_destino);
 
 $RS = mysqli_fetch_array($result_sql_destino);
+if (!$RS) {
+    svl_catalogue_not_found();
+}
 if($RS){
 	$imagen_destino = $RS['imagen_destino'];
 	$carpeta_destino = $RS['nombre_pagina_destino'];
@@ -27,11 +25,12 @@ if($RS){
 	$id_pais = $RS['id_pais'];
 }
 
+$canonical = svl_catalogue_resolve_path('viajes', $carpeta_destino, $id);
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]><html class="ie ie8"> <![endif]-->
 <!--[if IE 9]><html class="ie ie9"> <![endif]-->
-<html lang="en">
+<html lang="es">
 
 <head>
 	<script src="../../js/newsletter.js" defer></script>
@@ -42,6 +41,7 @@ if($RS){
 
 	<meta name="description" content="Viajes <?php echo "$destino"; ?>">
     <title>Viajes <?php echo "$destino"; ?></title>
+    <link rel="canonical" href="<?php echo htmlspecialchars($canonical, ENT_QUOTES, 'UTF-8'); ?>">
 
 
 	<!-- Favicons-->
@@ -305,7 +305,7 @@ if($RS){
 						<div class="row">
 							<div class="col-lg-4 col-md-4 col-sm-4">
 								<div class="img_list">
-									<a href="viaje-<?php echo "$nombre_pagina_destino"; ?>.php?id_viaje=<?php echo "$id_viaje"; ?>"><img src="<?php echo svl_image_url('/newsletter/images/'.$id_lanzamiento_imagen.'/'.$imagen); ?>" alt="<?php echo "$titulo"; ?>">
+									<a href="<?php echo svl_catalogue_url('viaje', $nombre_pagina_destino, $id_viaje); ?>"><img src="<?php echo svl_image_url('/newsletter/images/'.$id_lanzamiento_imagen.'/'.$imagen); ?>" alt="<?php echo "$titulo"; ?>">
 										<!-- <div class="short_info"><i class="icon_set_1_icon-4"></i>Museums </div> -->
 									</a>
 								</div>
@@ -322,7 +322,7 @@ if($RS){
 							<div class="col-lg-2 col-md-2 col-sm-2">
 								<div class="price_list">
 									<div>
-										<p><a href="viaje-<?php echo "$nombre_pagina_destino"; ?>.php?id_viaje=<?php echo "$id_viaje"; ?>" class="btn_1">Detalles</a>
+										<p><a href="<?php echo svl_catalogue_url('viaje', $nombre_pagina_destino, $id_viaje); ?>" class="btn_1">Detalles</a>
 										</p>
 									</div>
 

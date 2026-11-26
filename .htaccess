@@ -6,6 +6,10 @@ Options -Indexes
     RewriteRule (^|/)\. - [F,L]
     RewriteRule ^(?:config|tools)(?:/|$) - [F,L,NC]
     RewriteRule \.(?:log|sql(?:\.(?:gz|bz2|xz))?|bak(?:\..*)?)$ - [F,L,NC]
+
+    # SVL canonical host: retain the path/query and preserve POST bodies.
+    RewriteCond %{HTTP_HOST} ^www\.soloviajesdelujo\.com(?::[0-9]+)?$ [NC]
+    RewriteRule ^ https://soloviajesdelujo.com%{REQUEST_URI} [R=308,L]
 </IfModule>
 
 <FilesMatch "^(?:config(?:\.example)?\.php|info\.php)$">
