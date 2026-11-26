@@ -97,12 +97,12 @@ $email = svl_form_mail_escape($email);
                     </div>
                 </div>
                 <nav class="col-md-9 col-sm-9 col-xs-9">
-                    <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="javascript:void(0);"><span>Menu mobile</span></a>
+                    <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="javascript:void(0);" aria-label="Mostrar u ocultar el men&uacute; principal"><span>Menu mobile</span></a>
                     <div class="main-menu">
                         <div id="header_menu">
                             <img src="img/logo_sticky.png" width="152" height="69" alt="Solo Viajes de Lujo" data-retina="true">
                         </div>
-                        <a href="#" class="open_close" id="close_in"><i class="icon_set_1_icon-77"></i></a>
+                        <a href="#" class="open_close" id="close_in" aria-label="Cerrar el men&uacute; principal"><i class="icon_set_1_icon-77" aria-hidden="true"></i></a>
                         <ul>
                             <li><a href="nosotros.html" >Quienes somos</a></li>
 							<li><a href="index.php#destinos" >Principales destinos</a></li>

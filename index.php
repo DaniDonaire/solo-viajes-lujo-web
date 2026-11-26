@@ -345,12 +345,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
                 <nav class="col-md-9 col-sm-9 col-xs-9">
-                    <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="javascript:void(0);"><span>Menu mobile</span></a>
+                    <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="javascript:void(0);" aria-label="Mostrar u ocultar el men&uacute; principal"><span>Menu mobile</span></a>
                     <div class="main-menu">
                         <div id="header_menu">
                             <img src="img/logo_sticky.png" width="152" height="69" alt="Solo Viajes de Lujo" data-retina="true">
                         </div>
-                        <a href="#" class="open_close" id="close_in"><i class="icon_set_1_icon-77"></i></a>
+                        <a href="#" class="open_close" id="close_in" aria-label="Cerrar el men&uacute; principal"><i class="icon_set_1_icon-77" aria-hidden="true"></i></a>
                         <ul>
                             <li><a href="nosotros.html" >Quienes somos</a></li>
 							<li><a href="#destinos" >Principales destinos</a></li>
@@ -379,37 +379,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<div id="rev_slider_22_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.4.1">
 				<ul>
 					<!-- SLIDE  -->
-					<li data-index="rs-69" data-transition="parallaxhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="rev-slider-files/assets/100x50_travel1.jpg" data-rotate="0" data-fstransition="notransition" data-fsmasterspeed="0" data-fsslotamount="7" data-saveperformance="off" data-title="Number One" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+					<li data-index="rs-69" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="rev-slider-files/assets/100x50_travel1.jpg" data-rotate="0" data-fstransition="notransition" data-fsmasterspeed="0" data-fsslotamount="7" data-saveperformance="off" data-title="Number One" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
 						<!-- MAIN IMAGE -->
 						<img src="<?php echo svl_image_url('/rev-slider-files/assets/svl1.jpg'); ?>" fetchpriority="high" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
 						<!-- LAYERS -->
 					</li>
 					<!-- SLIDE  -->
-					<li data-index="rs-70" data-transition="parallaxhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="rev-slider-files/assets/100x50_travel2.jpg" data-rotate="0" data-saveperformance="off" data-title="Number Two" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+					<li data-index="rs-70" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="rev-slider-files/assets/100x50_travel2.jpg" data-rotate="0" data-saveperformance="off" data-title="Number Two" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
 						<!-- MAIN IMAGE -->
 						<img src="rev-slider-files/assets/dummy.png" data-lazyload="<?php echo svl_image_url('/rev-slider-files/assets/svl2.jpg'); ?>" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
 						<!-- LAYERS -->
 					</li>
 					<!-- SLIDE  -->
-					<li data-index="rs-71" data-transition="parallaxhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="rev-slider-files/assets/100x50_travel3.jpg" data-rotate="0" data-saveperformance="off" data-title="Number Three" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+					<li data-index="rs-71" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="rev-slider-files/assets/100x50_travel3.jpg" data-rotate="0" data-saveperformance="off" data-title="Number Three" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
 						<!-- MAIN IMAGE -->
 						<img src="rev-slider-files/assets/dummy.png" data-lazyload="<?php echo svl_image_url('/rev-slider-files/assets/svl3.jpg'); ?>" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
 						<!-- LAYERS -->
 					</li>
 					<!-- SLIDE  -->
-					<li data-index="rs-72" data-transition="parallaxhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="rev-slider-files/assets/100x50_travel4.jpg" data-rotate="0" data-saveperformance="off" data-title="Number Four" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+					<li data-index="rs-72" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="rev-slider-files/assets/100x50_travel4.jpg" data-rotate="0" data-saveperformance="off" data-title="Number Four" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
 						<!-- MAIN IMAGE -->
 						<img src="rev-slider-files/assets/dummy.png" data-lazyload="<?php echo svl_image_url('/rev-slider-files/assets/svl4.jpg'); ?>" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
 						<!-- LAYERS -->
 					</li>
 					<!-- SLIDE  -->
-					<li data-index="rs-73" data-transition="parallaxhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="rev-slider-files/assets/100x50_travel4.jpg" data-rotate="0" data-saveperformance="off" data-title="Number Five" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+					<li data-index="rs-73" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="rev-slider-files/assets/100x50_travel4.jpg" data-rotate="0" data-saveperformance="off" data-title="Number Five" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
 						<!-- MAIN IMAGE -->
 						<img src="rev-slider-files/assets/dummy.png" data-lazyload="<?php echo svl_image_url('/rev-slider-files/assets/svl5.jpg'); ?>" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
 						<!-- LAYERS -->
 					</li>
 					<!-- SLIDE  -->
-					<li data-index="rs-74" data-transition="parallaxhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="rev-slider-files/assets/100x50_travel4.jpg" data-rotate="0" data-saveperformance="off" data-title="Number Six" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+					<li data-index="rs-74" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="rev-slider-files/assets/100x50_travel4.jpg" data-rotate="0" data-saveperformance="off" data-title="Number Six" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
 						<!-- MAIN IMAGE -->
 						<img src="rev-slider-files/assets/dummy.png" data-lazyload="<?php echo svl_image_url('/rev-slider-files/assets/svl6.jpg'); ?>" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
 						<!-- LAYERS -->
