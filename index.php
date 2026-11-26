@@ -35,11 +35,24 @@ $result_sql_rutas = execute_sql($sql_rutas);
     <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
 	
 	<!-- Google web fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Lato:300,400|Montserrat:400,400i,700,700i" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Great+Vibes|Open+Sans|Roboto" rel="stylesheet"> 
 
-    <!-- BASE CSS -->
-    <link href="css/base.css" rel="stylesheet">
+    <!-- Discover the same theme styles immediately, in their original cascade order. -->
+    <link rel="preload" as="image" href="<?php echo svl_image_url('/rev-slider-files/assets/svl1.jpg'); ?>" fetchpriority="high">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/menu.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <link href="css/fontello/css/all-fontello.min.css" rel="stylesheet">
+    <link href="css/icon_restaurant/css/icon_restaurants.min.css" rel="stylesheet">
+    <link href="css/new_icons/css/icon_set_all.min.css" rel="stylesheet">
+    <link href="css/magnific-popup.css" rel="stylesheet">
+    <link href="css/pop_up.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
 	
 	<!-- SPECIFIC CSS >
     <link href="css/jquery.cookiebar.css" rel="stylesheet"-->
@@ -52,7 +65,13 @@ $result_sql_rutas = execute_sql($sql_rutas);
    <!-- REVOLUTION LAYERS STYLES -->
 	<style>
 		/* Reserve the same space as Revolution before its JavaScript initializes. */
-		#rev_slider_22_1_wrapper { height: 650px; }
+		#rev_slider_22_1_wrapper {
+            height: 650px;
+            /* Paint the identical first photo while the existing carousel starts. */
+            background-image: url("<?php echo svl_image_url('/rev-slider-files/assets/svl1.jpg'); ?>") !important;
+            background-position: center center !important;
+            background-size: cover !important;
+        }
 		@media (max-width: 1239px) { #rev_slider_22_1_wrapper { height: 500px; } }
 		@media (max-width: 1023px) { #rev_slider_22_1_wrapper { height: 600px; } }
 		@media (max-width: 777px) {
@@ -309,16 +328,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a>.</p>
 <![endif]-->
 
-    <div id="preloader">
-        <div class="sk-spinner sk-spinner-wave">
-            <div class="sk-rect1"></div>
-            <div class="sk-rect2"></div>
-            <div class="sk-rect3"></div>
-            <div class="sk-rect4"></div>
-            <div class="sk-rect5"></div>
-        </div>
-    </div>
-    <!-- End Preload -->
+    <!-- Content is visible as it becomes ready; no wait for off-screen downloads. -->
 
     <div class="layer"></div>
     <!-- Mobile menu overlay mask -->
@@ -387,7 +397,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<div id="rev_slider_22_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.4.1">
 				<ul>
 					<!-- SLIDE  -->
-					<li data-index="rs-69" data-transition="parallaxhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="rev-slider-files/assets/100x50_travel1.jpg" data-rotate="0" data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off" data-title="Number One" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+					<li data-index="rs-69" data-transition="parallaxhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="rev-slider-files/assets/100x50_travel1.jpg" data-rotate="0" data-fstransition="notransition" data-fsmasterspeed="0" data-fsslotamount="7" data-saveperformance="off" data-title="Number One" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
 						<!-- MAIN IMAGE -->
 						<img src="<?php echo svl_image_url('/rev-slider-files/assets/svl1.jpg'); ?>" fetchpriority="high" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
 						<!-- LAYERS -->
@@ -395,31 +405,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<!-- SLIDE  -->
 					<li data-index="rs-70" data-transition="parallaxhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="rev-slider-files/assets/100x50_travel2.jpg" data-rotate="0" data-saveperformance="off" data-title="Number Two" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
 						<!-- MAIN IMAGE -->
-						<img src="<?php echo svl_image_url('/rev-slider-files/assets/svl2.jpg'); ?>" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+						<img src="rev-slider-files/assets/dummy.png" data-lazyload="<?php echo svl_image_url('/rev-slider-files/assets/svl2.jpg'); ?>" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
 						<!-- LAYERS -->
 					</li>
 					<!-- SLIDE  -->
 					<li data-index="rs-71" data-transition="parallaxhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="rev-slider-files/assets/100x50_travel3.jpg" data-rotate="0" data-saveperformance="off" data-title="Number Three" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
 						<!-- MAIN IMAGE -->
-						<img src="<?php echo svl_image_url('/rev-slider-files/assets/svl3.jpg'); ?>" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+						<img src="rev-slider-files/assets/dummy.png" data-lazyload="<?php echo svl_image_url('/rev-slider-files/assets/svl3.jpg'); ?>" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
 						<!-- LAYERS -->
 					</li>
 					<!-- SLIDE  -->
 					<li data-index="rs-72" data-transition="parallaxhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="rev-slider-files/assets/100x50_travel4.jpg" data-rotate="0" data-saveperformance="off" data-title="Number Four" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
 						<!-- MAIN IMAGE -->
-						<img src="<?php echo svl_image_url('/rev-slider-files/assets/svl4.jpg'); ?>" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+						<img src="rev-slider-files/assets/dummy.png" data-lazyload="<?php echo svl_image_url('/rev-slider-files/assets/svl4.jpg'); ?>" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
 						<!-- LAYERS -->
 					</li>
 					<!-- SLIDE  -->
 					<li data-index="rs-73" data-transition="parallaxhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="rev-slider-files/assets/100x50_travel4.jpg" data-rotate="0" data-saveperformance="off" data-title="Number Five" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
 						<!-- MAIN IMAGE -->
-						<img src="<?php echo svl_image_url('/rev-slider-files/assets/svl5.jpg'); ?>" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+						<img src="rev-slider-files/assets/dummy.png" data-lazyload="<?php echo svl_image_url('/rev-slider-files/assets/svl5.jpg'); ?>" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
 						<!-- LAYERS -->
 					</li>
 					<!-- SLIDE  -->
 					<li data-index="rs-74" data-transition="parallaxhorizontal" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="rev-slider-files/assets/100x50_travel4.jpg" data-rotate="0" data-saveperformance="off" data-title="Number Six" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
 						<!-- MAIN IMAGE -->
-						<img src="<?php echo svl_image_url('/rev-slider-files/assets/svl6.jpg'); ?>" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+						<img src="rev-slider-files/assets/dummy.png" data-lazyload="<?php echo svl_image_url('/rev-slider-files/assets/svl6.jpg'); ?>" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
 						<!-- LAYERS -->
 					</li>
 				</ul>
@@ -596,7 +606,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<div class="row">
 					<div class="col-md-4 col-sm-6 text-center">
 						<p>
-							<a href="#"><img src="img/crucero1.jpg" alt="Pic" class="img-responsive"></a>
+							<a href="#"><img src="img/crucero1.jpg" alt="Pic" class="img-responsive" width="800" height="450" loading="lazy" decoding="async"></a>
 						</p>
 						<h4><span>Wind</span> Star</h4>
 						<p>
@@ -605,7 +615,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</div>
 					<div class="col-md-4 col-sm-6 text-center">
 						<p>
-							<a href="#"><img src="img/crucero2.jpg" alt="Pic" class="img-responsive"></a>
+							<a href="#"><img src="img/crucero2.jpg" alt="Pic" class="img-responsive" width="800" height="450" loading="lazy" decoding="async"></a>
 						</p>
 						<h4><span>Seabourn  </span>Mediterraneo</h4>
 						<p>
@@ -614,7 +624,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</div>
 					<div class="col-md-4 col-sm-6 text-center">
 						<p>
-							<a href="#"><img src="img/crucero3.jpg" alt="Pic" class="img-responsive"></a>
+							<a href="#"><img src="img/crucero3.jpg" alt="Pic" class="img-responsive" width="800" height="450" loading="lazy" decoding="async"></a>
 						</p>
 						<h4><span>Disney</span> Cruices</h4>
 						<p>
@@ -623,7 +633,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</div>
 					<div class="col-md-4 col-sm-6 text-center">
 						<p>
-							<a href="#"><img src="img/crucero4.jpg" alt="Pic" class="img-responsive"></a>
+							<a href="#"><img src="img/crucero4.jpg" alt="Pic" class="img-responsive" width="800" height="450" loading="lazy" decoding="async"></a>
 						</p>
 						<h4><span>Lujo en </span>Alaska</h4>
 						<p>
@@ -632,7 +642,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</div>
 					<div class="col-md-4 col-sm-6 text-center">
 						<p>
-							<a href="#"><img src="img/crucero5.jpg" alt="Pic" class="img-responsive"></a>
+							<a href="#"><img src="img/crucero5.jpg" alt="Pic" class="img-responsive" width="800" height="450" loading="lazy" decoding="async"></a>
 						</p>
 						<h4><span>Crucero por el </span> Caribe</h4>
 						<p>
@@ -641,7 +651,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</div>
 					<div class="col-md-4 col-sm-6 text-center">
 						<p>
-							<a href="#"><img src="img/crucero6.jpg" alt="Pic" class="img-responsive"></a>
+							<a href="#"><img src="img/crucero6.jpg" alt="Pic" class="img-responsive" width="800" height="450" loading="lazy" decoding="async"></a>
 						</p>
 						<h4><span>Cruceros de</span> Lujo</h4>
 						<p>
@@ -728,7 +738,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 			<div class="row">
 				<div class="col-md-6 col-sm-6 hidden-xs">
-					<img src="img/laptop.png" alt="Laptop" class="img-responsive laptop">
+					<img src="img/laptop.png" alt="Laptop" class="img-responsive laptop" width="502" height="305" loading="lazy" decoding="async">
 				</div>
 				<div class="col-md-6 col-sm-6">
 				  <div class="main_title">
@@ -835,145 +845,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</div><!-- End Search Menu -->
 
     <!-- Common scripts -->
-    <script src="js/jquery-2.2.4.min.js"></script>
-    <script src="js/common_scripts_min.js"></script>
-    <script src="js/functions.js"></script>
+    <script src="js/jquery-2.2.4.min.js" defer></script>
+    <script src="js/common_scripts_min.js" defer></script>
+    <script src="js/functions.js" defer></script>
 
     <!-- SLIDER REVOLUTION SCRIPTS  -->
-    <script type="text/javascript" src="rev-slider-files/js/jquery.themepunch.tools.min.js"></script>
-	<script type="text/javascript" src="rev-slider-files/js/jquery.themepunch.revolution.min.js"></script>
-	<script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.actions.min.js"></script>
-	<script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.carousel.min.js"></script>
-	<script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.kenburn.min.js"></script>
-	<script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.layeranimation.min.js"></script>
-	<script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.migration.min.js"></script>
-	<script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.navigation.min.js"></script>
-	<script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.parallax.min.js"></script>
-	<script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.slideanims.min.js"></script>
-	<script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.video.min.js"></script>
-	<script type="text/javascript">
-		var tpj = jQuery;
-		var revapi22;
-		var revapi52;
-		
-		tpj(document).ready(function () {
-			if (tpj("#rev_slider_22_1").revolution == undefined) {
-				revslider_showDoubleJqueryError("#rev_slider_22_1");
-			} else {
-				revapi22 = tpj("#rev_slider_22_1").show().revolution({
-					sliderType: "standard",
-					jsFileLocation: "rev-slider-files/js/",
-					sliderLayout: "auto",
-					dottedOverlay: "none",
-					delay: 6000,
-					navigation: {
-						keyboardNavigation: "off",
-						keyboard_direction: "horizontal",
-						mouseScrollNavigation: "off",
-						mouseScrollReverse: "default",
-						onHoverStop: "off",
-						touch: {
-							touchenabled: "on",
-							touchOnDesktop: "off",
-							swipe_threshold: 75,
-							swipe_min_touches: 1,
-							swipe_direction: "horizontal",
-							drag_block_vertical: false
-						},
-						bullets: {
-							enable: true,
-							hide_onmobile: true,
-							hide_under: 600,
-							style: "hermes",
-							hide_onleave: true,
-							hide_delay: 200,
-							hide_delay_mobile: 1200,
-							direction: "vertical",
-							h_align: "right",
-							v_align: "center",
-							h_offset: 30,
-							v_offset: 0,
-							space: 5,
-							tmp: ''
-						}
-					},
-					viewPort: {
-						enable: true,
-						outof: "pause",
-						visible_area: "80%",
-						presize: false
-					},
-					responsiveLevels: [1240, 1024, 778, 480],
-					visibilityLevels: [1240, 1024, 778, 480],
-					gridwidth: [1240, 1024, 778, 480],
-					gridheight: [650, 500, 600, 500],
-					lazyType: "none",
-					parallax: {
-						type: "mouse",
-						origo: "slidercenter",
-						speed: 2000,
-						levels: [2, 3, 4, 5, 6, 7, 12, 16, 10, 50, 47, 48, 49, 50, 51, 55],
-					},
-					shadow: 0,
-					spinner: "off",
-					stopLoop: "off",
-					stopAfterLoops: -1,
-					stopAtSlide: -1,
-					shuffle: "off",
-					autoHeight: "off",
-					hideThumbsOnMobile: "off",
-					hideSliderAtLimit: 0,
-					hideCaptionAtLimit: 0,
-					hideAllCaptionAtLilmit: 0,
-					debugMode: false,
-					fallbacks: {
-						simplifyAll: "off",
-						nextSlideOnWindowFocus: "off",
-						disableFocusListener: false,
-					}
-				});
-			}
-		}); /*ready*/
-		
-		tpj(document).ready(function () {
-			if (tpj("#rev_slider_52_1").revolution == undefined) {
-				revslider_showDoubleJqueryError("#rev_slider_52_1");
-			} else {
-				revapi52 = tpj("#rev_slider_52_1").show().revolution({
-					sliderType: "hero",
-					jsFileLocation: "rev-slider-files/js/",
-					sliderLayout: "fullwidth",
-					dottedOverlay: "none",
-					delay: 9000,
-					navigation: {},
-					responsiveLevels: [1240, 1024, 778, 480],
-					visibilityLevels: [1240, 1024, 778, 480],
-					gridwidth: [1240, 1024, 778, 480],
-					gridheight: [650, 500, 420, 420],
-					lazyType: "none",
-					parallax: {
-						type: "mouse",
-						origo: "slidercenter",
-						speed: 2000,
-						levels: [2, 3, 4, 5, 6, 7, 12, 16, 10, 50, 47, 48, 49, 50, 51, 55],
-					},
-					shadow: 0,
-					spinner: "off",
-					autoHeight: "off",
-					disableProgressBar: "on",
-					hideThumbsOnMobile: "off",
-					hideSliderAtLimit: 0,
-					hideCaptionAtLimit: 0,
-					hideAllCaptionAtLilmit: 0,
-					debugMode: false,
-					fallbacks: {
-						simplifyAll: "off",
-						disableFocusListener: false,
-					}
-				});
-			}
-		}); /*ready*/
-	</script>
+    <script type="text/javascript" src="rev-slider-files/js/jquery.themepunch.tools.min.js" defer></script>
+	<script type="text/javascript" src="rev-slider-files/js/jquery.themepunch.revolution.min.js" defer></script>
+	<script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.actions.min.js" defer></script>
+	<script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.carousel.min.js" defer></script>
+	<script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.kenburn.min.js" defer></script>
+	<script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.layeranimation.min.js" defer></script>
+	<script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.migration.min.js" defer></script>
+	<script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.navigation.min.js" defer></script>
+	<script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.parallax.min.js" defer></script>
+	<script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.slideanims.min.js" defer></script>
+	<script type="text/javascript" src="rev-slider-files/js/extensions/revolution.extension.video.min.js" defer></script>
+    <script src="js/home-slider.js" defer></script>
 
 	<!-- Cookie bar script >
     <script src="js/jquery.cookiebar.js"></script>
